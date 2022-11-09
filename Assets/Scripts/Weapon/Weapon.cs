@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
-    private IWeaponBehavior behavior;
+    [SerializeField] private string weaponName;
+    [SerializeField] private string description;
+    [SerializeField] private float cooldown;
+    [SerializeField] private bool isActive = true;
+    [SerializeField] private IWeaponBehavior behavior;
 
     public void UseWeapon()
     {
@@ -12,12 +16,20 @@ public class Weapon : MonoBehaviour
     }
     void Start()
     {
-
+        StartCoroutine(WeaponTimer());
     }
 
     // Update is called once per frame
     void Update()
     {
 
+    }
+    IEnumerator WeaponTimer()
+    {
+        while (isActive)
+        {
+            UseWeapon();
+        }
+        yield return new WaitForSeconds(cooldown);
     }
 }
