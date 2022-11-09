@@ -83,3 +83,4 @@ Packages/manifest.json
 Packages/packages-lock.json
 Assets/NuGet.config
 Assets/NuGet.config.meta
+Library/
