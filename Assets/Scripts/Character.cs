@@ -21,18 +21,7 @@ public class Character : MonoBehaviour
     protected void Update()
     {    
         Move();
-        if (oldPos.x != transform.position.x) 
-        {
-            if (oldPos.x > transform.position.x)
-            {
-                spriteRenderer.flipX = true;
-            }
-            else
-            {
-                spriteRenderer.flipX = false;
-            }
-            oldPos = transform.position;
-        }
+        CheckPosition();
     }
 
     public void TakeDamage(int damage)
@@ -54,6 +43,21 @@ public class Character : MonoBehaviour
     private void Move()
     {
         rb.velocity = moveDirection * speed;
-       
+    }
+
+    private void CheckPosition() 
+    {
+        if (oldPos.x != transform.position.x)
+        {
+            if (oldPos.x > transform.position.x)
+            {
+                spriteRenderer.flipX = true;
+            }
+            else
+            {
+                spriteRenderer.flipX = false;
+            }
+            oldPos = transform.position;
+        }
     }
 }
