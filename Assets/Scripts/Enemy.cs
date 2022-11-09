@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Enemy : Character
 {
+    [SerializeField] private int damage;
     private GameObject target;
+    
 
     public void SetTarget(GameObject value)
     { 
@@ -15,5 +17,10 @@ public class Enemy : Character
         base.Update();
         moveDirection = target.transform.position - transform.position;
         moveDirection = moveDirection.normalized;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        collision.GetComponent<Player>()?.TakeDamage(damage);
     }
 }

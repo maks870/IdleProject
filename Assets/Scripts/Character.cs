@@ -8,15 +8,23 @@ public class Character : MonoBehaviour
     [SerializeField] protected int hp;
     protected Rigidbody2D rb;
     protected Vector3 moveDirection;
+    private SpriteRenderer spriteRenderer;
+    private Vector2 oldPos;
 
     protected void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        oldPos = transform.position;
     }
 
     protected void Update()
     {
         Move();
+        if (oldPos.x > transform.position.x)
+            spriteRenderer.flipX = true;
+        else
+            spriteRenderer.flipX = false;
     }
 
     public void TakeDamage(int damage)
@@ -25,7 +33,16 @@ public class Character : MonoBehaviour
             hp -= damage;
         else
             hp = 0;
+        StartCoroutine(TimerDamage());
     }
+
+    private IEnumerator TimerDamage()
+    {
+        spriteRenderer.material.SetFloat("_White", 1);
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.material.SetFloat("_White", 0);
+    }
+
     private void Move()
     {
         rb.velocity = moveDirection * speed;
