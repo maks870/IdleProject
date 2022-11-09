@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Enemy : Character
 {
-   
     private GameObject target;
 
     public void SetTarget(GameObject value)
