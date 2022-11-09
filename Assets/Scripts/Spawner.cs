@@ -9,7 +9,7 @@ public class Spawner : MonoBehaviour
     private Enemy enemy;
     private Character character;
 
-    
+
     private void Start()
     {
         character = FindObjectOfType<Character>();
@@ -21,23 +21,23 @@ public class Spawner : MonoBehaviour
         transform.position = character.transform.position;
     }
 
-    private IEnumerator TimerSpawn() 
+    private IEnumerator TimerSpawn()
     {
         yield return new WaitForSeconds(0.5f);
         Spawn();
         StartCoroutine(TimerSpawn());
     }
 
-    private void Spawn() 
+    private void Spawn()
     {
-        foreach (BoxCollider2D collider in zones) 
-        {
-            float x = Random.Range(collider.transform.position.x - collider.size.x/2, collider.transform.position.x + collider.size.x / 2);
-            float y = Random.Range(collider.transform.position.y - collider.size.y / 2, collider.transform.position.y + collider.size.y / 2);
+        int i = Random.Range(0, zones.Length);
 
-            enemy = Instantiate(pref, new Vector3(x, y, -3f), Quaternion.identity).GetComponent<Enemy>();
+        float x = Random.Range(zones[i].transform.position.x - zones[i].size.x / 2, zones[i].transform.position.x + zones[i].size.x / 2);
+        float y = Random.Range(zones[i].transform.position.y - zones[i].size.y / 2, zones[i].transform.position.y + zones[i].size.y / 2);
 
-            enemy.SetTarget(character.gameObject);
-        }
+        enemy = Instantiate(pref, new Vector3(x, y, -3f), Quaternion.identity).GetComponent<Enemy>();
+
+        enemy.SetTarget(character.gameObject);
+
     }
 }

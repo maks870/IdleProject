@@ -5,7 +5,7 @@ using UnityEngine;
 public class Character : MonoBehaviour
 {
     [SerializeField] private float speed;
-    //private Animator animator;
+    private Animator animator;
     private Vector3 moveDirection;
     private Rigidbody2D rb;
     [SerializeField]private List<Enemy> enemys = new List<Enemy>();
@@ -14,6 +14,7 @@ public class Character : MonoBehaviour
     {
         StartCoroutine(TimerAttack());
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
     private void Update()
     {
@@ -23,7 +24,7 @@ public class Character : MonoBehaviour
     private IEnumerator TimerAttack() 
     {
         yield return new WaitForSeconds(0.2f);
-        //animator.SetTrigger("Attack");
+        animator.SetTrigger("Attack");
         StartCoroutine(TimerAttack());
         Attack();
     }
