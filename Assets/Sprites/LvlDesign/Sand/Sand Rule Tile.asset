@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d1514134bc4fbd41bb739b1b9a49231, type: 3}
+  m_Name: Sand Rule Tile
+  m_EditorClassIdentifier: 
+  m_DefaultSprite: {fileID: -1955448553306655712, guid: f107c58d6004a574d9c3e9f9c8adb354,
+    type: 3}
+  m_DefaultGameObject: {fileID: 0}
+  m_DefaultColliderType: 0
+  m_TilingRules:
+  - m_Neighbors: 0000000000000000000000000000000000000000000000000000000000000000
+    m_Sprites:
+    - {fileID: -1955448553306655712, guid: f107c58d6004a574d9c3e9f9c8adb354, type: 3}
+    - {fileID: 7014286043975846214, guid: f107c58d6004a574d9c3e9f9c8adb354, type: 3}
+    - {fileID: -9078219959484023005, guid: f107c58d6004a574d9c3e9f9c8adb354, type: 3}
+    - {fileID: -4817409605821441833, guid: f107c58d6004a574d9c3e9f9c8adb354, type: 3}
+    - {fileID: -2146368423942107817, guid: f107c58d6004a574d9c3e9f9c8adb354, type: 3}
+    - {fileID: -3958678274390686719, guid: f107c58d6004a574d9c3e9f9c8adb354, type: 3}
+    m_GameObject: {fileID: 0}
+    m_AnimationSpeed: 1
+    m_PerlinScale: 0.5
+    m_RuleTransform: 0
+    m_Output: 1
+    m_ColliderType: 0
+    m_RandomTransform: 0
