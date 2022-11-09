@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float speed;
+    [SerializeField] private int hp;
     private Rigidbody2D rb;
     private GameObject target;
     private bool moves = false;
@@ -21,7 +22,7 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
-        if (moves) 
+        if (moves)
         {
             Move();
         }
@@ -31,5 +32,13 @@ public class Enemy : MonoBehaviour
         Vector2 moveDirection = target.transform.position - transform.position;
         moveDirection = moveDirection.normalized;
         rb.velocity = moveDirection * speed;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (hp - damage > 0)
+            hp -= damage;
+        else
+            hp = 0;
     }
 }
