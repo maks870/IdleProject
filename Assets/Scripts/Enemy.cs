@@ -5,9 +5,14 @@ using UnityEngine;
 public class Enemy : Character
 {
     [SerializeField] private int damage;
+<<<<<<< HEAD
     private GameObject target;
     private Player player;
 
+=======
+    [SerializeField] private GameObject target;
+    
+>>>>>>> 6e001f3e69c776cd4d39353d53c88c265714d440
 
     public void SetTarget(GameObject value)
     { 

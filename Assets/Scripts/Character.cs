@@ -19,7 +19,7 @@ public class Character : MonoBehaviour
     }
 
     protected void Update()
-    {    
+    {
         Move();
         CheckPosition();
     }
@@ -27,10 +27,19 @@ public class Character : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if (hp - damage > 0)
+        {
             hp -= damage;
+        }
         else
+        {
             hp = 0;
+<<<<<<< HEAD
         StartCoroutine(TimerDamageSprite());
+=======
+            Destroy(gameObject);
+        }
+        StartCoroutine(TimerDamage());
+>>>>>>> 6e001f3e69c776cd4d39353d53c88c265714d440
     }
 
     private IEnumerator TimerDamageSprite()
@@ -45,7 +54,7 @@ public class Character : MonoBehaviour
         rb.velocity = moveDirection * speed;
     }
 
-    private void CheckPosition() 
+    private void CheckPosition()
     {
         if (oldPos.x != transform.position.x)
         {

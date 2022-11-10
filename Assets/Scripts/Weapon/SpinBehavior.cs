@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpinBehavior : MonoBehaviour, IWeaponBehavior
+public class SpinBehavior : WeaponBehavior
 {
-    public void CombineWeapon()
+    public override void CombineWeapon()
     {
         //логика объединения оружия
     }
 
-    public void UseBehavior()
+    public override void UseBehavior()
     {
         //логика работы оружия
     }

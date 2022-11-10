@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallBehavior : MonoBehaviour, IWeaponBehavior
+public class FallBehavior : WeaponBehavior
 {
-    public void CombineWeapon()
+    public override void CombineWeapon()
     {
         //логика объединения оружия
     }
 
-    public void UseBehavior()
+    public override void UseBehavior()
     {
         //логика работы оружия
     }
@@ -17,12 +17,12 @@ public class FallBehavior : MonoBehaviour, IWeaponBehavior
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
