@@ -6,10 +6,7 @@ public class AreaBehavior : WeaponBehavior
 {
     [SerializeField] private int damage;
     [SerializeField] private float areaSize;
-    private CircleCollider2D area;
     [SerializeField] private List<Enemy> enemyList = new List<Enemy>();
-    private GameObject weaponAreaSprite;
-    private Vector2 spiteSize;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -39,17 +36,12 @@ public class AreaBehavior : WeaponBehavior
     public void SetAreaSize(float newAreaSize)
     {
         areaSize = newAreaSize;
-        area.radius = areaSize;
-        weaponAreaSprite.transform.localScale = Vector3.one * areaSize;
+        transform.localScale = Vector3.one * areaSize;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        weaponAreaSprite = transform.GetChild(0).gameObject;
-        area = GetComponent<CircleCollider2D>();
-        area.radius = areaSize;
-        weaponAreaSprite.transform.localScale = Vector3.one * areaSize;
     }
     // Update is called once per frame
     void Update()
