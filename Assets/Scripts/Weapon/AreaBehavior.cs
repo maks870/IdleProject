@@ -31,10 +31,9 @@ public class AreaBehavior : WeaponBehavior
     }
     public override void UseBehavior()
     {
-        foreach (Enemy enemy in enemyList)
+        for (int i = 0; i < enemyList.Count; i++)
         {
-            enemy.TakeDamage(damage);
-
+            enemyList[i].TakeDamage(damage);
         }
     }
     public void SetAreaSize(float newAreaSize)
