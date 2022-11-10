@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class Player : Character
 {
+    private int coins;
+    public static Player instance = null;
     protected override void Start()
     {
         base.Start();
+
+        if (instance == null)
+            instance = this;
+        else if (instance == this)
+            Destroy(gameObject);
+        DontDestroyOnLoad(gameObject);
     }
 
     protected override void Update()
@@ -15,6 +23,12 @@ public class Player : Character
         moveDirection.x = Input.GetAxis("Horizontal");
         moveDirection.y = Input.GetAxis("Vertical");
         moveDirection = transform.TransformDirection(moveDirection.normalized);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Coin>() != null)
+            coins += collision.GetComponent<Coin>().GetValue();
     }
 
     protected override void Dead()
