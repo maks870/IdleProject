@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 7931713123099130118}
   - component: {fileID: 6573957973423420868}
   - component: {fileID: 4071909851084993264}
-  - component: {fileID: 536338590369653220}
+  - component: {fileID: 6519187392809573188}
   - component: {fileID: 6924540937332378979}
   - component: {fileID: 4903520901570539729}
   m_Layer: 0
-  m_Name: ShootProjectile
+  m_Name: SpinProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -96,7 +96,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6162771019044189261}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4600c92522cd6a346b531de173516009, type: 2}
   m_CullingMode: 0
@@ -108,7 +108,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &536338590369653220
+--- !u!114 &6519187392809573188
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -117,11 +117,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6162771019044189261}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70045071370cc5c49b2b6c85d12e8b67, type: 3}
+  m_Script: {fileID: 11500000, guid: 9fce83e44f575b94190e9300453d47f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  speed: 20
+  damage: 3
+  speed: 200
 --- !u!50 &6924540937332378979
 Rigidbody2D:
   serializedVersion: 4
