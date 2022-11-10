@@ -5,11 +5,13 @@ using UnityEngine;
 
 namespace UserInterfaces 
 {
+    using TMPro;
     using UnityEngine.UI;
-    public class HealthBarPlayer : MonoBehaviour
+    public class PlayerUI : MonoBehaviour
     {
         [SerializeField] private GameObject heartPref;
         [SerializeField] private List<GameObject> heartsUI = new List<GameObject>();
+        [SerializeField] private TextMeshProUGUI textGold;
 
         private void Update()
         {
@@ -23,9 +25,9 @@ namespace UserInterfaces
             {
                 heartsUI.Add(Instantiate(heartPref, transform));
             }
+
+            textGold.text = Player.instance.Coins.ToString();
         }
-
-
     }
 
 }

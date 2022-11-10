@@ -6,6 +6,9 @@ public class Player : Character
 {
     private int coins;
     public static Player instance = null;
+
+    public int Coins { get => coins;}
+
     protected override void Start()
     {
         base.Start();
