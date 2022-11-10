@@ -28,6 +28,9 @@ public class Character : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (hp == 0)
+            return;
+
         if (hp - damage > 0)
         {
             hp -= damage;
