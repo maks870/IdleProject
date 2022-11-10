@@ -11,14 +11,14 @@ public class Character : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Vector2 oldPos;
 
-    protected void Start()
+    protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         oldPos = transform.position;
     }
 
-    protected void Update()
+    protected virtual void Update()
     {
         Move();
         CheckPosition();
@@ -33,8 +33,7 @@ public class Character : MonoBehaviour
         else
         {
             hp = 0;
-            StartCoroutine(TimerDamageSprite());
-            Destroy(gameObject);
+            Dead();
         }
         StartCoroutine(TimerDamageSprite());
     }
@@ -65,5 +64,9 @@ public class Character : MonoBehaviour
             }
             oldPos = transform.position;
         }
+    }
+
+    protected virtual void Dead() 
+    {
     }
 }

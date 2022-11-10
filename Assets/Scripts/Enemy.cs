@@ -12,7 +12,7 @@ public class Enemy : Character
     { 
         target = value;
     }
-    private new void Update()
+    protected override void Update()
     {
         base.Update();
         moveDirection = target.transform.position - transform.position;
@@ -48,5 +48,11 @@ public class Enemy : Character
     {
         yield return new WaitForSeconds(0.5f);
         Damage();
+    }
+
+    protected override void Dead()
+    {
+        base.Dead();
+        Spawner.KillEnemy(this);
     }
 }
