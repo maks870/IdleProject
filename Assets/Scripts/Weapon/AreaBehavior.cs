@@ -34,6 +34,7 @@ public class AreaBehavior : WeaponBehavior
         foreach (Enemy enemy in enemyList)
         {
             enemy.TakeDamage(damage);
+
         }
     }
     public void SetAreaSize(float newAreaSize)
