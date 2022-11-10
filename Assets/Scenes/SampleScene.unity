@@ -552,8 +552,7 @@ MonoBehaviour:
   weaponName: Knife
   description: It just throwing knife
   cooldown: 1
-  isActive: 1
-  behavior: {fileID: 0}
+  behavior: {fileID: 418973675}
 --- !u!1 &454981197
 GameObject:
   m_ObjectHideFlags: 0
