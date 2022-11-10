@@ -33,13 +33,10 @@ public class Character : MonoBehaviour
         else
         {
             hp = 0;
-<<<<<<< HEAD
-        StartCoroutine(TimerDamageSprite());
-=======
+            StartCoroutine(TimerDamageSprite());
             Destroy(gameObject);
         }
-        StartCoroutine(TimerDamage());
->>>>>>> 6e001f3e69c776cd4d39353d53c88c265714d440
+        StartCoroutine(TimerDamageSprite());
     }
 
     private IEnumerator TimerDamageSprite()

@@ -7,8 +7,9 @@ public class Weapon : MonoBehaviour
     [SerializeField] private string weaponName;
     [SerializeField] private string description;
     [SerializeField] private float cooldown;
-    [SerializeField] private bool isActive = true;
     [SerializeField] private WeaponBehavior behavior;
+    private bool isActive = true;
+    
 
     public void UseWeapon()
     {
