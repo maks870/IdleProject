@@ -6,7 +6,8 @@ public class Enemy : Character
 {
     [SerializeField] private int damage;
     private GameObject target;
-    
+    private Player player;
+
 
     public void SetTarget(GameObject value)
     { 
@@ -21,6 +22,32 @@ public class Enemy : Character
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        collision.GetComponent<Player>()?.TakeDamage(damage);
+        if (collision.GetComponent<Player>() != null) 
+        {
+            player = collision.GetComponent<Player>();
+            Damage();
+        }
+            
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.GetComponent<Player>()!=null)
+            player = null;
+    }
+
+    private void Damage() 
+    {
+        if (player != null) 
+        {
+            player.TakeDamage(damage);
+            StartCoroutine(ReloadDamage());
+        }  
+    }
+
+    private IEnumerator ReloadDamage() 
+    {
+        yield return new WaitForSeconds(0.5f);
+        Damage();
     }
 }

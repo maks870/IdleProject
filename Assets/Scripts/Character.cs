@@ -30,10 +30,10 @@ public class Character : MonoBehaviour
             hp -= damage;
         else
             hp = 0;
-        StartCoroutine(TimerDamage());
+        StartCoroutine(TimerDamageSprite());
     }
 
-    private IEnumerator TimerDamage()
+    private IEnumerator TimerDamageSprite()
     {
         spriteRenderer.material.SetFloat("_White", 1);
         yield return new WaitForSeconds(0.2f);
