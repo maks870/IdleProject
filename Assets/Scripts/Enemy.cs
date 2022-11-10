@@ -5,7 +5,7 @@ using UnityEngine;
 public class Enemy : Character
 {
     [SerializeField] private int damage;
-    private GameObject target;
+    [SerializeField] private GameObject target;
     
 
     public void SetTarget(GameObject value)

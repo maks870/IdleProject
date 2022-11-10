@@ -8,11 +8,12 @@ public class Weapon : MonoBehaviour
     [SerializeField] private string description;
     [SerializeField] private float cooldown;
     [SerializeField] private bool isActive = true;
-    [SerializeField] private IWeaponBehavior behavior;
+    [SerializeField] private WeaponBehavior behavior;
 
     public void UseWeapon()
     {
         behavior.UseBehavior();
+;
     }
     void Start()
     {
@@ -29,7 +30,7 @@ public class Weapon : MonoBehaviour
         while (isActive)
         {
             UseWeapon();
+            yield return new WaitForSeconds(cooldown);
         }
-        yield return new WaitForSeconds(cooldown);
     }
 }

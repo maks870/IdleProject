@@ -19,7 +19,7 @@ public class Character : MonoBehaviour
     }
 
     protected void Update()
-    {    
+    {
         Move();
         CheckPosition();
     }
@@ -27,9 +27,14 @@ public class Character : MonoBehaviour
     public void TakeDamage(int damage)
     {
         if (hp - damage > 0)
+        {
             hp -= damage;
+        }
         else
+        {
             hp = 0;
+            Destroy(gameObject);
+        }
         StartCoroutine(TimerDamage());
     }
 
@@ -45,7 +50,7 @@ public class Character : MonoBehaviour
         rb.velocity = moveDirection * speed;
     }
 
-    private void CheckPosition() 
+    private void CheckPosition()
     {
         if (oldPos.x != transform.position.x)
         {
