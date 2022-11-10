@@ -55,7 +55,8 @@ public class Enemy : Character
     protected override void Dead()
     {
         base.Dead();
-        Instantiate(coin, transform.position, Quaternion.identity);
         Spawner.KillEnemy(this);
+        Instantiate(coin, transform.position, Quaternion.identity);
+        
     }
 }
