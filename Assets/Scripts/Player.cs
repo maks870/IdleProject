@@ -25,12 +25,11 @@ public class Player : Character
         moveDirection = transform.TransformDirection(moveDirection.normalized);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void AddCoin(int coinCount) 
     {
-        if (collision.GetComponent<Coin>() != null)
-            coins += collision.GetComponent<Coin>().GetValue();
+        coins += coinCount;
     }
-
+   
     protected override void Dead()
     {
         base.Dead();

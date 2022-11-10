@@ -11,6 +11,8 @@ public class Character : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private Vector2 oldPos;
 
+    public int Hp { get => hp;}
+
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();

@@ -5,8 +5,10 @@ using UnityEngine;
 public class Enemy : Character
 {
     [SerializeField] private int damage;
+    [SerializeField] private GameObject coin;
     private GameObject target;
-    private Player player;    
+    private Player player;   
+    
 
     public void SetTarget(GameObject value)
     { 
@@ -53,6 +55,7 @@ public class Enemy : Character
     protected override void Dead()
     {
         base.Dead();
+        Instantiate(coin, transform.position, Quaternion.identity);
         Spawner.KillEnemy(this);
     }
 }
