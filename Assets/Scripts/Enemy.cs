@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Enemy : Character
 {
     [SerializeField] private int damage;
     [SerializeField] private GameObject coin;
     private GameObject target;
-    private Player player;   
+    private Player player;
+    public readonly UnityEvent deathEvent = new UnityEvent();
     
 
     public void SetTarget(GameObject value)
@@ -55,7 +57,8 @@ public class Enemy : Character
     protected override void Dead()
     {
         base.Dead();
-        Spawner.KillEnemy(this);
+        //Spawner.KillEnemy(this);
+        deathEvent.Invoke();
         Instantiate(coin, transform.position, Quaternion.identity);
         
     }

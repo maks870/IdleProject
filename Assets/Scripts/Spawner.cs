@@ -86,6 +86,9 @@ public class Spawner : MonoBehaviour
         enemy = Instantiate(spawnObject, SpawnPosition(), Quaternion.identity).GetComponent<Enemy>();
         enemy.SetTarget(Player.instance.gameObject);
         spawnedEnemys.Add(enemy);
+        Enemy enemyForDelegate = enemy;
+        enemy.deathEvent.AddListener(delegate { KillEnemy(enemyForDelegate); });// добавление слушателя метода KillEnemy() срабатывающего при смерти врага
+
 
         rounds[roundNumber].countEnemy--;
         if (rounds[roundNumber].countEnemy == 0 && roundNumber + 1 < rounds.Length)
@@ -102,9 +105,15 @@ public class Spawner : MonoBehaviour
         return new Vector2(x, y);
     }
 
-    public static void KillEnemy(Enemy enemyDes)
+    //public static void KillEnemy(Enemy enemyDes)
+    //{
+    //    instance.spawnedEnemys.Remove(enemyDes);
+    //    Destroy(enemyDes.gameObject);
+    //}
+    public void KillEnemy(Enemy enemy) //метод для добавления в событие смерти врага
     {
-        instance.spawnedEnemys.Remove(enemyDes);
-        Destroy(enemyDes.gameObject);
+        spawnedEnemys.Remove(enemy);
+        Destroy(enemy.gameObject);
+        Debug.Log("Уничтожение врага" + enemy);
     }
 }

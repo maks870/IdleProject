@@ -14,14 +14,18 @@ public class AreaBehavior : WeaponBehavior
     {
         if (collision.GetComponent<Enemy>() != null)
         {
-            enemyList.Add(collision.GetComponent<Enemy>());
+            Enemy enemy = collision.GetComponent<Enemy>();
+            enemyList.Add(enemy);
+            enemy.deathEvent.AddListener(delegate { enemyList.Remove(enemy); });
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<Enemy>() != null)
         {
-            enemyList.Remove(collision.GetComponent<Enemy>());
+            Enemy enemy = collision.GetComponent<Enemy>();
+            enemyList.Remove(enemy);
+            enemy.deathEvent.RemoveListener(delegate { enemyList.Remove(enemy); });
         }
     }
     public override void CombineWeapon()

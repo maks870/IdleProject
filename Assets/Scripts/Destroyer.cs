@@ -13,8 +13,13 @@ public class Destroyer : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Enemy>() != null)
-            Spawner.KillEnemy(collision.GetComponent<Enemy>());
-        if (collision.GetComponent<Projectile>() != null) 
+        {
+            Enemy enemy = collision.GetComponent<Enemy>();
+            //Spawner.KillEnemy(collision.GetComponent<Enemy>());
+            enemy.deathEvent.Invoke();
+        }
+
+        if (collision.GetComponent<Projectile>() != null)
         {
             Destroy(collision.GetComponent<Projectile>().gameObject);
         }
