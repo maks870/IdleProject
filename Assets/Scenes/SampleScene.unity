@@ -16496,6 +16496,7 @@ Transform:
   - {fileID: 850252861}
   - {fileID: 454981198}
   - {fileID: 1168119504}
+  - {fileID: 2011670504}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -16682,6 +16683,7 @@ MonoBehaviour:
   speed: 5
   hp: 5
   fly: 0
+  maxLevelCount: 0
 --- !u!58 &238483678
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17094,6 +17096,7 @@ MonoBehaviour:
   weaponName: Knife
   description: It just throwing knife
   cooldown: 1
+  maxLevelCount: 0
   behavior: {fileID: 418973675}
 --- !u!1 &454981197
 GameObject:
@@ -23069,6 +23072,7 @@ MonoBehaviour:
   weaponName: Cursed Area
   description: It just cursed area
   cooldown: 1
+  maxLevelCount: 0
   behavior: {fileID: 962488010}
 --- !u!212 &962488012
 SpriteRenderer:
@@ -45101,6 +45105,7 @@ MonoBehaviour:
   weaponName: Knife
   description: It just throwing knife
   cooldown: 6
+  maxLevelCount: 0
   behavior: {fileID: 1810974290}
 --- !u!1001 &1835711802
 PrefabInstance:
@@ -45691,6 +45696,89 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1152790541401430382, guid: 841e0b63b2cf4bc4ea18925302aca615, type: 3}
   m_PrefabInstance: {fileID: 1597548693}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2011670503
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011670504}
+  - component: {fileID: 2011670507}
+  - component: {fileID: 2011670506}
+  - component: {fileID: 2011670505}
+  m_Layer: 0
+  m_Name: ExperienceCollector
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2011670504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011670503}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 209265563}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &2011670505
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011670503}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &2011670506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011670503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4c775c53944c6f40aed51a0e0850039, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!58 &2011670507
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011670503}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 3.39
 --- !u!1 &2019407193
 GameObject:
   m_ObjectHideFlags: 0

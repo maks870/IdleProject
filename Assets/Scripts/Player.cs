@@ -4,17 +4,23 @@ using UnityEngine;
 
 public class Player : Character
 {
+    [SerializeField] private int maxLevelCount;
     private int coins;
+    private PlayerLevel level;
     public static Player instance = null;
 
     public int Coins { get => coins;}
+    public PlayerLevel GetLevel { get => level; }
 
     protected override void Start()
     {
         base.Start();
 
         if (instance == null)
+        {
             instance = this;
+            level = new PlayerLevel(maxLevelCount);
+        }
         else if (instance == this)
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
@@ -37,7 +43,7 @@ public class Player : Character
     {
         coins += coinCount;
     }
-   
+
     protected override void Dead()
     {
         base.Dead();
