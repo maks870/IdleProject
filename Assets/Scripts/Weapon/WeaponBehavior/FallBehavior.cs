@@ -13,6 +13,10 @@ public class FallBehavior : WeaponBehavior
     {
         //логика работы оружия
     }
+    public override void ImproveWeapon(bool isMaxLevel)
+    {
+        //метод улучщения оружия
+    }
 
     // Start is called before the first frame update
     void Start()

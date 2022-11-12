@@ -8,6 +8,8 @@ public class Weapon : MonoBehaviour
     [SerializeField] private string description;
     [SerializeField] private float cooldown;
     [SerializeField] private WeaponBehavior behavior;
+    [SerializeField] private WeaponLevel level;
+    LevelUpImprove improve;
     private bool isActive = true;
     
 
@@ -16,8 +18,13 @@ public class Weapon : MonoBehaviour
         behavior.UseBehavior();
 ;
     }
+    public void LevelUp()
+    {
+        level.LevelUp(improve);
+    }
     void Start()
     {
+        improve += behavior.ImproveWeapon;
         StartCoroutine(WeaponTimer());
     }
 

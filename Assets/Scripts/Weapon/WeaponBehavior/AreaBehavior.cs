@@ -32,6 +32,10 @@ public class AreaBehavior : WeaponBehavior
     {
         //логика объединения оружия
     }
+    public override void ImproveWeapon(bool isMaxLevel)
+    {
+        //метод улучщения оружия
+    }
     public override void UseBehavior()
     {
         for (int i = 0; i < enemyList.Count; i++)

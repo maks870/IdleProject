@@ -51,7 +51,10 @@ public class ShootBehavior : WeaponBehavior
         GameObject shoot = Instantiate(projectile, transform);
         shoot.GetComponent<Rigidbody2D>().AddForce((targetEnemy.transform.position - transform.position).normalized * projectile.GetComponent<Projectile>().speed , ForceMode2D.Impulse);
     }
-
+    public override void ImproveWeapon(bool isMaxLevel)
+    {
+        //метод улучщения оружия
+    }
     void Start()
     {
 

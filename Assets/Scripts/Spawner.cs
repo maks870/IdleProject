@@ -86,7 +86,7 @@ public class Spawner : MonoBehaviour
         enemy = Instantiate(spawnObject, SpawnPosition(), Quaternion.identity).GetComponent<Enemy>();
         enemy.SetTarget(Player.instance.gameObject);
         spawnedEnemys.Add(enemy);
-        Enemy enemyForDelegate = enemy;
+        Enemy enemyForDelegate = enemy;// создание уникалного объекта врага, так как Enemy - ссылочный тип
         enemy.deathEvent.AddListener(delegate { KillEnemy(enemyForDelegate); });// добавление слушател€ метода KillEnemy() срабатывающего при смерти врага
 
 
@@ -114,6 +114,5 @@ public class Spawner : MonoBehaviour
     {
         spawnedEnemys.Remove(enemy);
         Destroy(enemy.gameObject);
-        Debug.Log("”ничтожение врага" + enemy);
     }
 }

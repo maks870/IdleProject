@@ -13,6 +13,10 @@ public abstract class WeaponBehavior : MonoBehaviour
     {
         Debug.Log("Абстрактный CombineWeapon");
     }
+    public virtual void ImproveWeapon(bool isMaxLevel)
+    {
+        Debug.Log("Абстрактный ImproveWeapon");
+    }
     void Start()
     {
 
