@@ -26,6 +26,11 @@ public class Player : Character
         moveDirection.x = Input.GetAxis("Horizontal");
         moveDirection.y = Input.GetAxis("Vertical");
         moveDirection = transform.TransformDirection(moveDirection.normalized);
+
+        if (moveDirection != Vector3.zero)
+            animator.SetBool("Run", true);
+        else
+            animator.SetBool("Run", false);
     }
 
     public void AddCoin(int coinCount) 

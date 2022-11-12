@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class AreaBehavior : WeaponBehavior
 {
     [SerializeField] private int damage;
     [SerializeField] private float areaSize;
     [SerializeField] private List<Enemy> enemyList = new List<Enemy>();
+    private Animator animator;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -30,8 +32,9 @@ public class AreaBehavior : WeaponBehavior
     {
         for (int i = 0; i < enemyList.Count; i++)
         {
-            enemyList[i].TakeDamage(damage);
+            enemyList[i].TakeDamage(damage);  
         }
+        animator.SetTrigger("Use");
     }
     public void SetAreaSize(float newAreaSize)
     {
@@ -39,11 +42,13 @@ public class AreaBehavior : WeaponBehavior
         transform.localScale = Vector3.one * areaSize;
     }
 
-    // Start is called before the first frame update
     void Start()
     {
+        SetAreaSize(areaSize);
+        animator = GetComponent<Animator>();
     }
-    // Update is called once per frame
+
+
     void Update()
     {
 

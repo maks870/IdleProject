@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Animator))]
 public class Character : MonoBehaviour
 {
     [SerializeField] protected float speed;
     [SerializeField] protected int hp;
+    [SerializeField] private bool fly;
     protected Rigidbody2D rb;
     protected Vector3 moveDirection;
+    protected Animator animator;
     private SpriteRenderer spriteRenderer;
     private Vector2 oldPos;
 
@@ -16,8 +20,10 @@ public class Character : MonoBehaviour
     protected virtual void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         oldPos = transform.position;
+        animator.SetBool("Fly", fly);
     }
 
     protected virtual void Update()
