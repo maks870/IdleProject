@@ -38,7 +38,7 @@ public class ShootBehavior : WeaponBehavior
             return;
         }
         Enemy targetEnemy = enemyList[0];
-        float distanse = (transform.position - targetEnemy.transform.position).magnitude;
+        float distanse = (transform.position - targetEnemy.transform.position).magnitude;/////// ошибка, надо проверить target enemy на null
         foreach (Enemy enemy in enemyList)
         {
             float newDistanse = (transform.position - enemy.transform.position).magnitude;
