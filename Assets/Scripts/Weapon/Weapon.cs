@@ -7,13 +7,21 @@ public class Weapon : MonoBehaviour, IAward
 {
     [SerializeField] private string weaponName;
     [SerializeField] private string description;
+    [SerializeField] private Sprite sprite;
     [SerializeField] private float cooldown;
     [SerializeField] private int maxLevelCount = 5;
     [SerializeField] private WeaponBehavior behavior;
     [SerializeField] private WeaponLevel level;
     private Action<bool> improve;
     private bool isActive = true;
-    
+
+    public Sprite GetAwardSprite => sprite;
+
+    public string GetAwardName => weaponName;
+
+    public string GetAwardDescription => description;
+
+
 
     public void UseWeapon()
     {
@@ -21,7 +29,10 @@ public class Weapon : MonoBehaviour, IAward
     }
     public void AwardAction()
     {
-        level.LevelUp(behavior.ImproveWeapon);
+        if (gameObject.activeInHierarchy)
+            level.LevelUp(behavior.ImproveWeapon);
+        else
+            gameObject.SetActive(true);
     }
     void Start()
     {

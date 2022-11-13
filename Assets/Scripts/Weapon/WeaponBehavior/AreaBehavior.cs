@@ -34,7 +34,7 @@ public class AreaBehavior : WeaponBehavior
     }
     public override void ImproveWeapon(bool isMaxLevel)
     {
-        //метод улучщения оружия
+        Debug.Log("Область нанесения урона улучшена");
     }
     public override void UseBehavior()
     {

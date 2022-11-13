@@ -53,6 +53,7 @@ MonoBehaviour:
   fly: 0
   damage: 1
   coin: {fileID: 1490192420080904487, guid: a3dcfa91b0d59744c8f72a5d545cbeae, type: 3}
+  expPoint: {fileID: 1490192420080904487, guid: 1633b12828da91f4a8cc250e0b449563, type: 3}
 --- !u!50 &170471156909879502
 Rigidbody2D:
   serializedVersion: 4

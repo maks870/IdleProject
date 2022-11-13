@@ -26,7 +26,7 @@ public class SpinBehavior : WeaponBehavior
     }
     public override void ImproveWeapon(bool isMaxLevel)
     {
-        //метод улучщения оружия
+        Debug.Log("Кружащаяся хуйня улучшена");
     }
 
     // Start is called before the first frame update

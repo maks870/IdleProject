@@ -9,10 +9,16 @@ public class ExperienceCollector : MonoBehaviour
     [SerializeField] private double lvlExpMultiply = 1.3;
     [SerializeField] private AwardPresenter presenter;
 
+    private void Start()
+    {
+        presenter = transform.parent.GetComponentInChildren<AwardPresenter>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<ExpPoint>() != null)
-            Player.instance.AddCoin(collision.GetComponent<ExpPoint>().GetValue());
+        {
+            GetExperiencePoint(collision.GetComponent<ExpPoint>().GetValue());
+        }
     }
     private void GetExperiencePoint(int expPoint)
     {

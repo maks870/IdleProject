@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
     private int roundNumber = 0;
     private BoxCollider2D[] zones;
     private Enemy enemy;
-    private List<Enemy> spawnedEnemys = new List<Enemy>();
+    private List<Enemy> spawnedEnemies = new List<Enemy>();
     public static Spawner instance = null;
 
     private void Start()
@@ -57,7 +57,7 @@ public class Spawner : MonoBehaviour
     {
         yield return new WaitForSeconds(0.3f);
 
-        if (spawnedEnemys.Count < maxEnemy && rounds[roundNumber]?.spawnEnemies!=null)
+        if (spawnedEnemies.Count < maxEnemy && rounds[roundNumber]?.spawnEnemies!=null)
         {
             Spawn();
         }
@@ -85,7 +85,7 @@ public class Spawner : MonoBehaviour
 
         enemy = Instantiate(spawnObject, SpawnPosition(), Quaternion.identity).GetComponent<Enemy>();
         enemy.SetTarget(Player.instance.gameObject);
-        spawnedEnemys.Add(enemy);
+        spawnedEnemies.Add(enemy);
         Enemy enemyForDelegate = enemy;// создание уникалного объекта врага, так как Enemy - ссылочный тип
         enemy.deathEvent.AddListener(delegate { KillEnemy(enemyForDelegate); });// добавление слушателя метода KillEnemy() срабатывающего при смерти врага
 
@@ -112,7 +112,7 @@ public class Spawner : MonoBehaviour
     //}
     public void KillEnemy(Enemy enemy) //метод для добавления в событие смерти врага
     {
-        spawnedEnemys.Remove(enemy);
+        spawnedEnemies.Remove(enemy);
         Destroy(enemy.gameObject);
     }
 }

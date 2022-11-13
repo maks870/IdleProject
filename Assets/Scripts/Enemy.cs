@@ -7,6 +7,7 @@ public class Enemy : Character
 {
     [SerializeField] private int damage;
     [SerializeField] private GameObject coin;
+    [SerializeField] private GameObject expPoint;
     private GameObject target;
     private Player player;
     public readonly UnityEvent deathEvent = new UnityEvent();
@@ -59,7 +60,7 @@ public class Enemy : Character
         base.Dead();
         //Spawner.KillEnemy(this);
         deathEvent.Invoke();
-        Instantiate(coin, transform.position, Quaternion.identity);
+        Instantiate(expPoint, transform.position, Quaternion.identity);
 
     }
 }

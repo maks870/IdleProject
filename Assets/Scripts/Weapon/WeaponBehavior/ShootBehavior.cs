@@ -53,6 +53,7 @@ public class ShootBehavior : WeaponBehavior
     }
     public override void ImproveWeapon(bool isMaxLevel)
     {
+        Debug.Log("Стрельба улучшена");
         //метод улучщения оружия
     }
     void Start()

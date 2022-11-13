@@ -9,8 +9,8 @@ public class Player : Character
     private PlayerLevel level;
     public static Player instance = null;
 
-    public int Coins { get => coins;}
-    public PlayerLevel GetLevel { get => level; }
+    public int Coins => coins;
+    public PlayerLevel GetLevel => level;
 
     protected override void Start()
     {
@@ -39,7 +39,7 @@ public class Player : Character
             animator.SetBool("Run", false);
     }
 
-    public void AddCoin(int coinCount) 
+    public void AddCoin(int coinCount)
     {
         coins += coinCount;
     }

@@ -4,5 +4,11 @@ using UnityEngine;
 
 public interface IAward
 {
+    public Sprite GetAwardSprite { get; }
+    public string GetAwardName { get; }
+    public string GetAwardDescription { get; }
     public void AwardAction();
+
+
+
 }
