@@ -12,25 +12,29 @@ public class Player : Character
     public int Coins => coins;
     public PlayerLevel GetLevel => level;
 
-    protected override void Start()
+    private void Awake()
     {
-        base.Start();
-
         if (instance == null)
-        {
             instance = this;
-            level = new PlayerLevel(maxLevelCount);
-        }
         else if (instance == this)
             Destroy(gameObject);
         DontDestroyOnLoad(gameObject);
     }
 
+    protected override void Start()
+    {
+        base.Start();
+        level = new PlayerLevel(maxLevelCount);
+    }
+
+    public void SetInputAxis(Vector2 axis) 
+    {
+        moveDirection = axis.normalized;
+    }
+
     protected override void Update()
     {
-        base.Update();
-        moveDirection.x = Input.GetAxis("Horizontal");
-        moveDirection.y = Input.GetAxis("Vertical");
+        base.Update(); 
         moveDirection = transform.TransformDirection(moveDirection.normalized);
 
         if (moveDirection != Vector3.zero)
