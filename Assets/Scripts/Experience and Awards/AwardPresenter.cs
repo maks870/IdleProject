@@ -46,14 +46,15 @@ public class AwardPresenter : MonoBehaviour
         List<GameObject> currentWeapons = new List<GameObject>();
         weapons = GetComponentInChildren<Transform>().gameObject;
         Weapon[] awardGameObjects = weapons.GetComponentsInChildren<Weapon>();
-        Debug.Log(awardGameObjects.Length);
+        Debug.Log("Общее колличсесво оружия " + awardGameObjects.Length);
         for (int i = 0; i < awardGameObjects.Length; i++)
         {
-            if (awardGameObjects[i].gameObject.activeInHierarchy)
+            if (awardGameObjects[i].IsWeaponActive)
             {
                 currentWeapons.Add(awardGameObjects[i].gameObject);
             }
         }
+        Debug.Log("Колличество текущего оружия "+ currentWeapons.Count);
         return currentWeapons;
     }
     private void Start()
@@ -77,6 +78,7 @@ public class AwardPresenter : MonoBehaviour
         GetAwardsList();
         List<IAward> newAwardsList = new List<IAward>();
         newAwardsList.AddRange(awardList);
+        Debug.Log(awardList.Count);
         List<IAward> randomAwards = new List<IAward>(givingAwardsCount);
         for (int i = 0; i < randomAwards.Capacity; i++)
         {

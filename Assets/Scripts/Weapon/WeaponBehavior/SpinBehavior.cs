@@ -26,7 +26,10 @@ public class SpinBehavior : Behavior
     }
     public override void Improve(bool isMaxLevel)
     {
-        Debug.Log("Кружащаяся хуйня улучшена");
+        if (!isMaxLevel)
+        {
+            AddSpin();
+        }
     }
 
     // Start is called before the first frame update

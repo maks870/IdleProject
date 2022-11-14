@@ -13,7 +13,7 @@ public class Weapon : MonoBehaviour, IAward
     [SerializeField] private Behavior behavior;
     [SerializeField] private Level level;
     private Action<bool> improve;
-    private bool isActive = true;
+    [SerializeField] private bool isActive = false;
 
     public Sprite GetAwardSprite => sprite;
 
@@ -23,16 +23,22 @@ public class Weapon : MonoBehaviour, IAward
 
     public bool GetAwardAccessibility => !level.IsMaxLevel;
 
+    public bool IsWeaponActive => isActive;
+
     public void UseWeapon()
     {
         behavior.Use();
     }
     public void AwardAction()
     {
-        if (gameObject.activeInHierarchy)
+        if (isActive)
             level.LevelUp(behavior.Improve);
         else
-            gameObject.SetActive(true);
+        {
+            isActive = true;
+            StartCoroutine(WeaponTimer());
+        }
+        //gameObject.SetActive(true);
     }
     void Start()
     {
