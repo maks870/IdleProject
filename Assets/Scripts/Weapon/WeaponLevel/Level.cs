@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WeaponLevel : ILevel
+public class Level : ILevel
 {
     private int levelCount;
     private int maxLevelCount;
 
     public bool IsMaxLevel => levelCount != maxLevelCount ? false : true;
-    public WeaponLevel(int maxLevelCount)
+    public Level(int maxLevelCount)
     {
         levelCount = 0;
         this.maxLevelCount = maxLevelCount;
@@ -23,6 +23,8 @@ public class WeaponLevel : ILevel
 
     public void LevelUp(Action reward)
     {
-        throw new NotImplementedException();
+        if (!IsMaxLevel)
+            levelCount++;
+        reward.Invoke();
     }
 }

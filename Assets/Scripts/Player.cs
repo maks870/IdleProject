@@ -6,11 +6,11 @@ public class Player : Character
 {
     [SerializeField] private int maxLevelCount;
     private int coins;
-    private PlayerLevel level;
+    private Level level;
     public static Player instance = null;
 
     public int Coins => coins;
-    public PlayerLevel GetLevel => level;
+    public Level GetLevel => level;
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class Player : Character
     protected override void Start()
     {
         base.Start();
-        level = new PlayerLevel(maxLevelCount);
+        level = new Level(maxLevelCount);
     }
 
     public void SetInputAxis(Vector2 axis) 

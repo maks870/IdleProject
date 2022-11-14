@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour, IAward
     [SerializeField] private float cooldown;
     [SerializeField] private int maxLevelCount = 5;
     [SerializeField] private WeaponBehavior behavior;
-    [SerializeField] private WeaponLevel level;
+    [SerializeField] private Level level;
     private Action<bool> improve;
     private bool isActive = true;
 
@@ -36,7 +36,7 @@ public class Weapon : MonoBehaviour, IAward
     }
     void Start()
     {
-        level = new WeaponLevel(maxLevelCount);
+        level = new Level(maxLevelCount);
         improve += behavior.ImproveWeapon;
         StartCoroutine(WeaponTimer());
     }
