@@ -28,7 +28,14 @@ public class SpinBehavior : Behavior
     {
         if (!isMaxLevel)
         {
-            AddSpin();
+            if (isSpinActive)
+            {
+                isAddSpin = true;
+            }
+            else
+            {
+                AddSpin();
+            }
         }
     }
 
@@ -47,18 +54,6 @@ public class SpinBehavior : Behavior
             offset = (rotate * relativeDistanceList[i]).normalized;
             spinList[i].transform.position = transform.position + offset * radius;
             relativeDistanceList[i] = spinList[i].transform.position - transform.position;
-        }
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (isSpinActive)
-            {
-                isAddSpin = true;
-            }
-            else
-            {
-                AddSpin();
-            }
-
         }
     }
     IEnumerator SpinTimer()

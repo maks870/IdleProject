@@ -16,9 +16,9 @@ public class Level : ILevel
     }
     public void LevelUp(Action<bool> improve)
     {
+        improve.Invoke(IsMaxLevel);
         if (!IsMaxLevel)
             levelCount++;
-        improve.Invoke(IsMaxLevel);
     }
 
     public void LevelUp(Action reward)

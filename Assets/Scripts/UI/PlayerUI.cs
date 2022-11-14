@@ -23,7 +23,7 @@ namespace UserInterfaces
                 heartsUI.Add(Instantiate(heartPref, transform));
             }
 
-            textGold.text = Player.instance.Coins.ToString();
+            textGold.text = Player.instance.Coins.ToString(); //рейяр цндкш
         }
     }
 

@@ -36,6 +36,7 @@ namespace UserInterfaces
             List<IAward> awardList = awardPresenter.RandomAwards();
             for (int i = 0; i < awardList.Count; i++)
             {
+                buttonList[i].gameObject.SetActive(true);
                 buttonList[i].image.sprite = awardList[i].GetAwardSprite;
                 buttonList[i].GetComponentInChildren<Text>().text = awardList[i].GetAwardName;
                 buttonList[i].onClick.RemoveAllListeners();
@@ -45,6 +46,10 @@ namespace UserInterfaces
                     awardPresenter.GetAward(award);
                     ClosePresenterUI();
                 });
+            }
+            for (int i = awardList.Count; i < buttonList.Count; i++ )
+            {
+                buttonList[i].gameObject.SetActive(false);
             }
         }
         private void OpenPresenterUI()
