@@ -319,7 +319,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &49214650
 Transform:
   m_ObjectHideFlags: 0
@@ -383,6 +383,7 @@ MonoBehaviour:
   cooldown: 1
   maxLevelCount: 5
   behavior: {fileID: 49214652}
+  isActive: 0
 --- !u!4 &54401392 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 44035917519494807, guid: 20f25fed18942ff4bbacb46910ff7455, type: 3}
@@ -1176,7 +1177,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &80077120
 Transform:
   m_ObjectHideFlags: 0
@@ -1241,6 +1242,7 @@ MonoBehaviour:
   cooldown: 6
   maxLevelCount: 5
   behavior: {fileID: 80077122}
+  isActive: 0
 --- !u!1 &92091887
 GameObject:
   m_ObjectHideFlags: 0
@@ -17382,6 +17384,7 @@ MonoBehaviour:
   cooldown: 1
   maxLevelCount: 5
   behavior: {fileID: 418973675}
+  isActive: 1
 --- !u!1 &454981197
 GameObject:
   m_ObjectHideFlags: 0
@@ -23403,7 +23406,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &962488008
 Transform:
   m_ObjectHideFlags: 0
@@ -23468,6 +23471,7 @@ MonoBehaviour:
   cooldown: 1
   maxLevelCount: 5
   behavior: {fileID: 962488010}
+  isActive: 0
 --- !u!212 &962488012
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -28721,7 +28725,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &989074280
 Transform:
   m_ObjectHideFlags: 0
@@ -28858,6 +28862,7 @@ MonoBehaviour:
   cooldown: 1
   maxLevelCount: 5
   behavior: {fileID: 989074284}
+  isActive: 0
 --- !u!4 &990895116 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9149216186648952332, guid: 60d2069e9be3dc24081a928c3e80db90, type: 3}
@@ -45938,7 +45943,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1810974288
 Transform:
   m_ObjectHideFlags: 0
@@ -46003,6 +46008,7 @@ MonoBehaviour:
   cooldown: 6
   maxLevelCount: 5
   behavior: {fileID: 1810974290}
+  isActive: 0
 --- !u!1001 &1835711802
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -23,7 +23,6 @@ public class AwardPresenterUI : MonoBehaviour
     }
     private void CreateButtons(int awardCount)
     {
-        Debug.Log("создание кнопок");
         Button newButton;
         buttonList.Add(button);
         for (int i = 0; i < awardCount - 1; i++)
