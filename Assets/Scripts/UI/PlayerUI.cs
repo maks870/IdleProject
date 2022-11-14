@@ -1,17 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 
 namespace UserInterfaces 
 {
-    using TMPro;
-    using UnityEngine.UI;
     public class PlayerUI : MonoBehaviour
     {
         [SerializeField] private GameObject heartPref;
         [SerializeField] private List<GameObject> heartsUI = new List<GameObject>();
-        [SerializeField] private TextMeshProUGUI textGold;
+        [SerializeField] private Text textGold;
 
         private void Update()
         {

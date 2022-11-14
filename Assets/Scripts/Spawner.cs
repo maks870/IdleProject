@@ -25,6 +25,7 @@ public class Spawner : MonoBehaviour
 {
     [SerializeField] private Round[] rounds;
     [SerializeField] private int maxEnemy;
+    [SerializeField] private float spawnTime = 0.3f;
     private int roundNumber = 0;
     private BoxCollider2D[] zones;
     private Enemy enemy;
@@ -55,7 +56,7 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator TimerSpawn()
     {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(spawnTime);
 
         if (spawnedEnemies.Count < maxEnemy && rounds[roundNumber]?.spawnEnemies!=null)
         {
