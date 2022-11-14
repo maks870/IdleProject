@@ -5,19 +5,60 @@ using UnityEngine;
 public class AwardPresenter : MonoBehaviour
 {
     [SerializeField] private int givingAwardsCount = 3;
+    [SerializeField] private int maxWeaponCount = 4;
+    [SerializeField] private List<GameObject> currentWeapons = new List<GameObject>();
     private List<IAward> awardList = new List<IAward>();
     private AwardPresenterUI presenterUI;
     public int GetAwardsCount => givingAwardsCount;
     public AwardPresenterUI SetPresenterUI { set { presenterUI = value; } }
     private void GetAwardsList()
     {
-        GameObject weapons = GetComponentInChildren<Transform>().gameObject;
-        IAward[] awards = weapons.GetComponentsInChildren<IAward>();
-        awardList.AddRange(awards);
+        GameObject allWeapons;
+        awardList.Clear();
+        currentWeapons.Clear();
+        currentWeapons.AddRange(CountUpCurrentWeapons(out allWeapons));
+        if (currentWeapons.Count != maxWeaponCount)
+        {
+            IAward[] awards = allWeapons.GetComponentsInChildren<IAward>();
+            foreach (IAward award in awards)
+            {
+                if (award.GetAwardAccessibility)
+                {
+                    awardList.Add(award);
+                }
+            }
+        }
+        else
+        {
+            IAward award;
+            foreach (GameObject weapon in currentWeapons)
+            {
+                award = weapon.GetComponent<IAward>();
+                if (award.GetAwardAccessibility)
+                {
+                    awardList.Add(award);
+                }
+            }
+        }
+    }
+    private List<GameObject> CountUpCurrentWeapons(out GameObject weapons)
+    {
+        List<GameObject> currentWeapons = new List<GameObject>();
+        weapons = GetComponentInChildren<Transform>().gameObject;
+        Weapon[] awardGameObjects = weapons.GetComponentsInChildren<Weapon>();
+        Debug.Log(awardGameObjects.Length);
+        for (int i = 0; i < awardGameObjects.Length; i++)
+        {
+            if (awardGameObjects[i].gameObject.activeInHierarchy)
+            {
+                currentWeapons.Add(awardGameObjects[i].gameObject);
+            }
+        }
+        return currentWeapons;
     }
     private void Start()
     {
-        GetAwardsList();
+        //GetAwardsList();
     }
     public void GetAward(IAward award)
     {
@@ -33,6 +74,7 @@ public class AwardPresenter : MonoBehaviour
     }
     public List<IAward> RandomAwards()
     {
+        GetAwardsList();
         List<IAward> newAwardsList = new List<IAward>();
         newAwardsList.AddRange(awardList);
         List<IAward> randomAwards = new List<IAward>(givingAwardsCount);

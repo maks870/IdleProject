@@ -11,7 +11,7 @@ public class Level : ILevel
     public bool IsMaxLevel => levelCount != maxLevelCount ? false : true;
     public Level(int maxLevelCount)
     {
-        levelCount = 0;
+        levelCount = 1;
         this.maxLevelCount = maxLevelCount;
     }
     public void LevelUp(Action<bool> improve)

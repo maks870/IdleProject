@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour, IAward
 
     public string GetAwardDescription => description;
 
-
+    public bool GetAwardAccessibility => !level.IsMaxLevel;
 
     public void UseWeapon()
     {
