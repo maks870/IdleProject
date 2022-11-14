@@ -36,6 +36,7 @@ public class Weapon : MonoBehaviour, IAward
         else
         {
             isActive = true;
+            behavior.ActiveBehavior();
             StartCoroutine(WeaponTimer());
         }
         //gameObject.SetActive(true);

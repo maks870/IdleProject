@@ -8,6 +8,7 @@ public class AreaBehavior : Behavior
     [SerializeField] private float areaSize;
     [SerializeField] private List<Enemy> enemyList = new List<Enemy>();
     private Animator animator;
+    private SpriteRenderer spriteRenderer;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -35,6 +36,12 @@ public class AreaBehavior : Behavior
     {
         Debug.Log("Область нанесения урона улучшена");
     }
+    public override void ActiveBehavior()
+    {
+        spriteRenderer.enabled = true;
+        SetAreaSize(areaSize);
+        animator = GetComponent<Animator>();
+    }
     public override void Use()
     {
         for (int i = 0; i < enemyList.Count; i++)
@@ -51,8 +58,8 @@ public class AreaBehavior : Behavior
 
     void Start()
     {
-        SetAreaSize(areaSize);
-        animator = GetComponent<Animator>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.enabled = false;
     }
 
 

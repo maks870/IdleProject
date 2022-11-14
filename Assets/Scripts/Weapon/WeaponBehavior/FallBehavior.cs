@@ -8,7 +8,10 @@ public class FallBehavior : Behavior
     {
         //логика объединения оружия
     }
+    public override void ActiveBehavior()
+    {
 
+    }
     public override void Use()
     {
         //логика работы оружия

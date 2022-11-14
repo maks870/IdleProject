@@ -19,7 +19,10 @@ public class SpinBehavior : Behavior
     {
         //логика объединения оружия
     }
-
+    public override void ActiveBehavior()
+    {
+        AddSpin();
+    }
     public override void Use()
     {
         StartCoroutine(SpinTimer());
@@ -42,7 +45,6 @@ public class SpinBehavior : Behavior
     // Start is called before the first frame update
     void Start()
     {
-        AddSpin();
     }
 
     // Update is called once per frame

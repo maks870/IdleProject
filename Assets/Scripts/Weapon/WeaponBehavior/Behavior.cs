@@ -5,6 +5,10 @@ using UnityEngine;
 public abstract class Behavior : MonoBehaviour
 {
 
+    public virtual void ActiveBehavior()
+    {
+
+    }
     public virtual void Use()
     {
         Debug.Log("Абстрактный Use");

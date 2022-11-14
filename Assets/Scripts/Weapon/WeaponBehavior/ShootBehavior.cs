@@ -30,6 +30,10 @@ public class ShootBehavior : Behavior
         //логика объединения оружия
     }
 
+    public override void ActiveBehavior()
+    {
+
+    }
     public override void Use()
     {
         if (enemyList.Count == 0)
