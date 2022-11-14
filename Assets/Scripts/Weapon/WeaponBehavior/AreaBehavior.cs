@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class AreaBehavior : WeaponBehavior
+public class AreaBehavior : Behavior
 {
     [SerializeField] private int damage;
     [SerializeField] private float areaSize;
@@ -28,15 +28,15 @@ public class AreaBehavior : WeaponBehavior
             enemy.deathEvent.RemoveListener(delegate { enemyList.Remove(enemy); });
         }
     }
-    public override void CombineWeapon()
+    public override void Combine()
     {
         //логика объединения оружия
     }
-    public override void ImproveWeapon(bool isMaxLevel)
+    public override void Improve(bool isMaxLevel)
     {
         Debug.Log("Область нанесения урона улучшена");
     }
-    public override void UseBehavior()
+    public override void Use()
     {
         for (int i = 0; i < enemyList.Count; i++)
         {

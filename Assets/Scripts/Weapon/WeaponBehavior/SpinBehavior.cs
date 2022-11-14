@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SpinBehavior : WeaponBehavior
+public class SpinBehavior : Behavior
 {
     [SerializeField] private GameObject projectile;
     [SerializeField] private float spinningTime;
@@ -15,16 +15,16 @@ public class SpinBehavior : WeaponBehavior
     private bool isAddSpin = false;
     private bool isSpinActive = false;
 
-    public override void CombineWeapon()
+    public override void Combine()
     {
         //логика объединения оружия
     }
 
-    public override void UseBehavior()
+    public override void Use()
     {
         StartCoroutine(SpinTimer());
     }
-    public override void ImproveWeapon(bool isMaxLevel)
+    public override void Improve(bool isMaxLevel)
     {
         Debug.Log("Кружащаяся хуйня улучшена");
     }

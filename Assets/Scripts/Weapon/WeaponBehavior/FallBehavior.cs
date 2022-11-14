@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FallBehavior : WeaponBehavior
+public class FallBehavior : Behavior
 {
-    public override void CombineWeapon()
+    public override void Combine()
     {
         //логика объединения оружия
     }
 
-    public override void UseBehavior()
+    public override void Use()
     {
         //логика работы оружия
     }
-    public override void ImproveWeapon(bool isMaxLevel)
+    public override void Improve(bool isMaxLevel)
     {
         //метод улучщения оружия
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CircleCollider2D))]
-public class ShootBehavior : WeaponBehavior
+public class ShootBehavior : Behavior
 {
     [SerializeField] private GameObject projectile;
     [SerializeField] private CircleCollider2D shootZone;
@@ -26,12 +26,12 @@ public class ShootBehavior : WeaponBehavior
             enemy.deathEvent.RemoveListener(delegate { enemyList.Remove(enemy); });
         }
     }
-    public override void CombineWeapon()
+    public override void Combine()
     {
         //логика объединения оружия
     }
 
-    public override void UseBehavior()
+    public override void Use()
     {
         if (enemyList.Count == 0)
         {
@@ -51,7 +51,7 @@ public class ShootBehavior : WeaponBehavior
         GameObject shoot = Instantiate(projectile, transform);
         shoot.GetComponent<Rigidbody2D>().AddForce((targetEnemy.transform.position - transform.position).normalized * projectile.GetComponent<Projectile>().speed , ForceMode2D.Impulse);
     }
-    public override void ImproveWeapon(bool isMaxLevel)
+    public override void Improve(bool isMaxLevel)
     {
         Debug.Log("Стрельба улучшена");
         //метод улучщения оружия
