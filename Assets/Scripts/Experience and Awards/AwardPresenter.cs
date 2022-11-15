@@ -82,7 +82,6 @@ public class AwardPresenter : MonoBehaviour
         List<IAward> randomAwards = new List<IAward>(randomAwardsCount);
         for (int i = 0; i < randomAwards.Capacity; i++)
         {
-
             int rand = Random.Range(0, newAwardsList.Count);
             randomAwards.Add(newAwardsList[rand]);
             newAwardsList.RemoveAt(rand);

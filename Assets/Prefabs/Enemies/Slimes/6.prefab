@@ -52,8 +52,8 @@ MonoBehaviour:
   hp: 1
   fly: 0
   damage: 1
-  coin: {fileID: 1490192420080904487, guid: a3dcfa91b0d59744c8f72a5d545cbeae, type: 3}
-  expPoint: {fileID: 1490192420080904487, guid: 1633b12828da91f4a8cc250e0b449563, type: 3}
+  coin: {fileID: 4788945594064710141, guid: a3dcfa91b0d59744c8f72a5d545cbeae, type: 3}
+  expPoint: {fileID: 3957463621492816713, guid: 1633b12828da91f4a8cc250e0b449563, type: 3}
 --- !u!50 &6339000409927291808
 Rigidbody2D:
   serializedVersion: 4

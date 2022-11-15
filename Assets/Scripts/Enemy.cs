@@ -6,8 +6,8 @@ using UnityEngine.Events;
 public class Enemy : Character
 {
     [SerializeField] private int damage;
-    [SerializeField] private GameObject coin;
-    [SerializeField] private GameObject expPoint;
+    [SerializeField] private Coin coin;
+    [SerializeField] private ExpPoint expPoint;
     private GameObject target;
     private Player player;
     public readonly UnityEvent deathEvent = new UnityEvent();
@@ -59,8 +59,8 @@ public class Enemy : Character
     {
         base.Dead();
         //Spawner.KillEnemy(this);
+        ExperienceCollector.DropExpPoint(expPoint, transform.position);
         deathEvent.Invoke();
-        Instantiate(expPoint, transform.position, Quaternion.identity);
 
     }
 }

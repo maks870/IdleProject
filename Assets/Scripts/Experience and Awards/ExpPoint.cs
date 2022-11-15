@@ -5,10 +5,16 @@ using UnityEngine;
 public class ExpPoint : MonoBehaviour
 {
     [SerializeField] private int expValue;
-
-    public int GetValue()
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    public int GetValue => expValue;
+    public SpriteRenderer GetSpriteRenderer { get { return spriteRenderer; } }
+    public void ChangeExpPoint(int expValue, Sprite sprite)
     {
-        Destroy(gameObject);
-        return expValue;
+        this.expValue = expValue;
+        spriteRenderer.sprite = sprite;
+    }
+    private void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 }
