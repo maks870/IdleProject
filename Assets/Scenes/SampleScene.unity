@@ -17172,10 +17172,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c0ba55d943a8e49a8e9687036632a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxExpCount: 100
   currentExperience: 0
   experienceToLvlup: 100
   lvlExpMultiply: 1.3
   presenter: {fileID: 0}
+  defaultExpPoint: {fileID: 1490192420080904487, guid: 1633b12828da91f4a8cc250e0b449563, type: 3}
 --- !u!224 &354988126 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8135886326569738822, guid: 56fae09712773584fb63896d473a98ee, type: 3}
