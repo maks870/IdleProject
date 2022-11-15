@@ -45921,7 +45921,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   givingAwardsCount: 3
   maxWeaponCount: 3
-  weapons: {fileID: 0}
+  weapons: {fileID: 1168119503}
   currentWeapons: []
 --- !u!1 &1748236150
 GameObject:
