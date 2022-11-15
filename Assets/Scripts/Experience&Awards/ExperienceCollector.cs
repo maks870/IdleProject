@@ -12,35 +12,6 @@ public class ExperienceCollector : MonoBehaviour
     [SerializeField] private GameObject defaultExpPoint;
     private static List<GameObject> expObjectPull = new List<GameObject>();
 
-    public static void DropExpPoint(ExpPoint expPoint, Vector3 position)
-    {
-        //if (visibleExpList.Count + invisibleExpList.Count < maxExpCount)
-        //{
-        //    visibleExpList.Add(Instantiate(expPoint, position, quaternionRotation));
-
-        //}
-        //else if (invisibleExpList.Count != 0)
-        //{
-        //    expObject = invisibleExpList[0];
-        //    invisibleExpList.Remove(expObject);
-        //    visibleExpList.Add(expObject);
-        //    expObject.transform.position = position;
-        //    expObject.SetActive(true);
-        //}
-        //else
-        //{
-        //    условие когда нехватает объектов в пуле
-        //}
-        if (expObjectPull.Count > 0)
-        {
-            RemoveExpObjectFromPull(expPoint).transform.position = position;
-        }
-        else
-        {
-            //условие когда нехватает объектов в пуле
-        }
-
-    }
     private static void AddToExpObjectPull(GameObject expPoint)
     {
         expObjectPull.Add(expPoint);
@@ -53,6 +24,22 @@ public class ExperienceCollector : MonoBehaviour
         expObject.GetComponent<ExpPoint>().ChangeExpPoint(expPoint.GetValue, expPoint.GetSpriteRenderer.sprite);
         expObject.SetActive(true);
         return expObject;
+    }
+    public static void DropExpPoint(ExpPoint expPoint, Vector3 position)
+    {
+
+        if (expObjectPull.Count > 0)
+        {
+            RemoveExpObjectFromPull(expPoint).transform.position = position;
+        }
+        else
+        {
+            //условие когда нехватает объектов в пуле
+        }
+    }
+    public static void PickUpExpPoint(GameObject expPoint)
+    {
+        AddToExpObjectPull(expPoint);
     }
     private void Awake()
     {

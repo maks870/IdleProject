@@ -7,6 +7,7 @@ public class AwardPresenter : MonoBehaviour
 {
     [SerializeField] private int givingAwardsCount = 3;
     [SerializeField] private int maxWeaponCount = 4;
+    [SerializeField] private GameObject weapons;
     [SerializeField] private List<GameObject> currentWeapons = new List<GameObject>();
     private List<IAward> awardList = new List<IAward>();
     private AwardPresenterUI presenterUI;
@@ -14,13 +15,12 @@ public class AwardPresenter : MonoBehaviour
     public AwardPresenterUI SetPresenterUI { set { presenterUI = value; } }
     private void GetAwardsList()
     {
-        GameObject allWeapons;
         awardList.Clear();
         currentWeapons.Clear();
-        currentWeapons.AddRange(CountUpCurrentWeapons(out allWeapons));
+        CountUpCurrentWeapons();
         if (currentWeapons.Count != maxWeaponCount)
         {
-            IAward[] awards = allWeapons.GetComponentsInChildren<IAward>();
+            IAward[] awards = weapons.GetComponentsInChildren<IAward>();
             foreach (IAward award in awards)
             {
                 if (award.GetAwardAccessibility)
@@ -42,10 +42,8 @@ public class AwardPresenter : MonoBehaviour
             }
         }
     }
-    private List<GameObject> CountUpCurrentWeapons(out GameObject weapons)
+    private void CountUpCurrentWeapons()
     {
-        List<GameObject> currentWeapons = new List<GameObject>();
-        weapons = GetComponentInChildren<Transform>().gameObject;
         Weapon[] awardGameObjects = weapons.GetComponentsInChildren<Weapon>();
         for (int i = 0; i < awardGameObjects.Length; i++)
         {
@@ -54,11 +52,9 @@ public class AwardPresenter : MonoBehaviour
                 currentWeapons.Add(awardGameObjects[i].gameObject);
             }
         }
-        return currentWeapons;
     }
     private void Start()
     {
-        //GetAwardsList();
     }
     public void GetAward(IAward award)
     {
