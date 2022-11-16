@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-    [SerializeField] private Vector2 chunkSize;
+    [SerializeField] private Vector2Int chunkSize;
     [SerializeField] private GameObject[] chunksLeft;
     [SerializeField] private GameObject[] chunksCenter;
     [SerializeField] private GameObject[] chunksRight;
