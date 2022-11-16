@@ -9,6 +9,9 @@ public class AwardPresenter : MonoBehaviour
     [SerializeField] private int maxWeaponCount = 4;
     [SerializeField] private GameObject weapons;
     [SerializeField] private List<GameObject> currentWeapons = new List<GameObject>();
+    [SerializeField] private Coin defaultCoin;
+    [SerializeField] private int minCoinAwardValue;
+    [SerializeField] private int maxCoinAwardValue;
     private List<IAward> awardList = new List<IAward>();
     private AwardPresenterUI presenterUI;
     public int GetAwardsCount => givingAwardsCount;
@@ -53,8 +56,13 @@ public class AwardPresenter : MonoBehaviour
             }
         }
     }
-    private void Start()
+    private IAward GetCoinsAsAward()
     {
+        int randomValueCoin = Random.Range(minCoinAwardValue, maxCoinAwardValue);
+        Coin coinAward = defaultCoin;
+        coinAward.ChangeCoin(randomValueCoin, defaultCoin.GetAwardSprite);
+        IAward award = coinAward;
+        return award;
     }
     public void GetAward(IAward award)
     {
@@ -81,6 +89,10 @@ public class AwardPresenter : MonoBehaviour
             int rand = Random.Range(0, newAwardsList.Count);
             randomAwards.Add(newAwardsList[rand]);
             newAwardsList.RemoveAt(rand);
+        }
+        if (randomAwards.Count == 0)
+        {
+            randomAwards.Add(GetCoinsAsAward());
         }
         return randomAwards;
     }

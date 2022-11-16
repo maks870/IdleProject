@@ -16,7 +16,7 @@ public class CoinCollector : MonoBehaviour
     {
         GameObject coinObject = coinObjectPull[0];
         coinObjectPull.Remove(coinObject);
-        coinObject.GetComponent<ExpPoint>().ChangeExpPoint(coinPoint.GetValue, coinPoint.GetSpriteRenderer.sprite);
+        coinObject.GetComponent<ExpPoint>().ChangeExpPoint(coinPoint.GetValue, coinPoint.GetAwardSprite);
         coinObject.SetActive(true);
         return coinObject;
     }

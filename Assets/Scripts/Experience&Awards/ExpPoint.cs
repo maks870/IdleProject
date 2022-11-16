@@ -7,7 +7,7 @@ public class ExpPoint : MonoBehaviour
     [SerializeField] private int expValue;
     [SerializeField] private SpriteRenderer spriteRenderer;
     public int GetValue => expValue;
-    public SpriteRenderer GetSpriteRenderer { get { return spriteRenderer; } }
+    public Sprite GetSprite => spriteRenderer.sprite;
     public void ChangeExpPoint(int expValue, Sprite sprite)
     {
         this.expValue = expValue;

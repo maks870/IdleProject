@@ -21,7 +21,7 @@ public class ExperienceCollector : MonoBehaviour
     {
         GameObject expObject = expObjectPull[0];
         expObjectPull.Remove(expObject);
-        expObject.GetComponent<ExpPoint>().ChangeExpPoint(expPoint.GetValue, expPoint.GetSpriteRenderer.sprite);
+        expObject.GetComponent<ExpPoint>().ChangeExpPoint(expPoint.GetValue, expPoint.GetSprite);
         expObject.SetActive(true);
         return expObject;
     }
