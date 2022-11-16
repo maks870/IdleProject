@@ -1,12 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
 
 [RequireComponent(typeof(CircleCollider2D))]
 public class ShootBehavior : Behavior
 {
+    [SerializeField] private List<StatsToImprove> statToImprove = new List<StatsToImprove>();
     [SerializeField] private GameObject projectile;
     [SerializeField] private CircleCollider2D shootZone;
     private List<Enemy> enemyList = new List<Enemy>();
+    private void Start()
+    {
+        SetDataVariables();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Enemy>() != null)
@@ -41,7 +47,7 @@ public class ShootBehavior : Behavior
             return;
         }
         Enemy targetEnemy = enemyList[0];
-        float distanse = (transform.position - targetEnemy.transform.position).magnitude;/////// ошибка, надо проверить target enemy на null
+        float distanse = (transform.position - targetEnemy.transform.position).magnitude;
         foreach (Enemy enemy in enemyList)
         {
             float newDistanse = (transform.position - enemy.transform.position).magnitude;
@@ -59,13 +65,10 @@ public class ShootBehavior : Behavior
         Debug.Log("Стрельба улучшена");
         //метод улучщения оружия
     }
-    void Start()
+    public override void SetDataVariables()
     {
-
-    }
-
-    void Update()
-    {
-
+        int improveLevel = YandexGame.savesData.shootWeaponLvl;
+        projectile.GetComponent<Projectile>().damage = statToImprove[improveLevel].stats[0].value;
+        shootZone.radius = statToImprove[improveLevel].stats[1].value;
     }
 }

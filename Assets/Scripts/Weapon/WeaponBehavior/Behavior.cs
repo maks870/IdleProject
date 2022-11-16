@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Behavior : MonoBehaviour
+public abstract class Behavior : MonoBehaviour, IImprovable
 {
 
     public virtual void ActiveBehavior()
@@ -28,6 +28,11 @@ public abstract class Behavior : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+
+    }
+
+    public virtual void SetDataVariables()
     {
 
     }

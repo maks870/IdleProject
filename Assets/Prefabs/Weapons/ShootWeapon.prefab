@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4573911166684390165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4573911166684390166}
+  - component: {fileID: 4573911166684390161}
+  - component: {fileID: 4573911166684390167}
+  - component: {fileID: 4573911166684390160}
+  m_Layer: 0
+  m_Name: ShootWeapon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4573911166684390166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573911166684390165}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4573911166684390161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573911166684390165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86a9c34c159c6ce4f885a6628f51f659, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  weaponName: Knife
+  description: It just throwing knife
+  sprite: {fileID: 21300000, guid: 6c6f6f5f4bd54ea46b3412bdffbcdcbb, type: 3}
+  cooldown: 1
+  maxLevelCount: 5
+  behavior: {fileID: 4573911166684390167}
+  isActive: 1
+--- !u!114 &4573911166684390167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573911166684390165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0f515ca3fff6164f8ad1d354faf8f99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statToImprove:
+  - statLevel: 0
+    stats:
+    - name: ShootDamage
+      value: 1
+    - name: ShootRange
+      value: 10
+  - statLevel: 1
+    stats:
+    - name: ShootDamage
+      value: 2
+    - name: ShootRange
+      value: 15
+  - statLevel: 2
+    stats:
+    - name: ShootDamage
+      value: 3
+    - name: ShootRange
+      value: 20
+  projectile: {fileID: 6162771019044189261, guid: 1364e65cb039098469d9bf8f8826fa4b, type: 3}
+  shootZone: {fileID: 4573911166684390160}
+--- !u!58 &4573911166684390160
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573911166684390165}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 10

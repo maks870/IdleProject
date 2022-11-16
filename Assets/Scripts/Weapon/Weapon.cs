@@ -1,6 +1,5 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Weapon : MonoBehaviour, IAward
@@ -12,9 +11,8 @@ public class Weapon : MonoBehaviour, IAward
     [SerializeField] private int maxLevelCount = 5;
     [SerializeField] private Behavior behavior;
     [SerializeField] private Level level;
-    private Action<bool> improve;
     [SerializeField] private bool isActive = false;
-
+    private Action<bool> improve;
     public Sprite GetAwardSprite => sprite;
 
     public string GetAwardName => weaponName;
