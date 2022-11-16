@@ -2,9 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Behavior : MonoBehaviour, IImprovable
+public abstract class Behavior : MonoBehaviour, IUpgradeble
 {
-
+    [SerializeField] protected List<StatsToImprove> statToImprove = new List<StatsToImprove>();
+    public int improveMaxLevel;
+    void Start()
+    {
+        SetDataVariables();
+    }
     public virtual void ActiveBehavior()
     {
 
@@ -20,10 +25,6 @@ public abstract class Behavior : MonoBehaviour, IImprovable
     public virtual void Improve(bool isMaxLevel)
     {
         Debug.Log("Абстрактный Improve");
-    }
-    void Start()
-    {
-
     }
 
     // Update is called once per frame

@@ -5,14 +5,9 @@ using YG;
 [RequireComponent(typeof(CircleCollider2D))]
 public class ShootBehavior : Behavior
 {
-    [SerializeField] private List<StatsToImprove> statToImprove = new List<StatsToImprove>();
     [SerializeField] private GameObject projectile;
     [SerializeField] private CircleCollider2D shootZone;
     private List<Enemy> enemyList = new List<Enemy>();
-    private void Start()
-    {
-        SetDataVariables();
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Enemy>() != null)

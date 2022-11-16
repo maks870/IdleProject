@@ -5,6 +5,7 @@ using UnityEngine;
 public class Weapon : MonoBehaviour, IAward
 {
     [SerializeField] private string weaponName;
+    [SerializeField] private IUpgradeble IImprovable;
     [SerializeField] private string description;
     [SerializeField] private Sprite sprite;
     [SerializeField] private float cooldown;
