@@ -42,6 +42,17 @@ public class Upgrader : MonoBehaviour
         upgradeble = GetComponent<IUpgradeble>();
         return upgradeble.GetStatLvl(statName);
     }
+    public int GetMaxStatLvl(string statName)
+    {
+        foreach (Stat stat in stats)
+        {
+            if (stat.name == statName)
+            {
+                return stat.maxUpgradeLvl;
+            }
+        }
+        return 0;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
