@@ -5,5 +5,7 @@ using UnityEngine;
 public class Stat
 {
     public string name;
-    public int value;
+    public int maxUpgradeLvl;
+    public List<int> values;
+    public List<int> upgradeCost;
 }

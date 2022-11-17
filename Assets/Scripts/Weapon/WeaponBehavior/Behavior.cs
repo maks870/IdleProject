@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Behavior : MonoBehaviour, IUpgradeble
+[RequireComponent(typeof(Upgrader))]
+public abstract class Behavior : MonoBehaviour
 {
-    [SerializeField] protected List<StatsToImprove> statToImprove = new List<StatsToImprove>();
-    public int improveMaxLevel;
     void Start()
     {
         SetDataVariables();
@@ -36,5 +35,10 @@ public abstract class Behavior : MonoBehaviour, IUpgradeble
     public virtual void SetDataVariables()
     {
 
+    }
+
+    public virtual void Upgrade(string statName)
+    {
+       
     }
 }

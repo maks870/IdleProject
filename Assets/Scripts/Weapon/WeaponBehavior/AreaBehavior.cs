@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class AreaBehavior : Behavior
+public class AreaBehavior : Behavior, IUpgradeble
 {
     [SerializeField] private int damage;
     [SerializeField] private float areaSize;
@@ -56,15 +56,18 @@ public class AreaBehavior : Behavior
         transform.localScale = Vector3.one * areaSize;
     }
 
-    void Start()
+    public override void SetDataVariables()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.enabled = false;
+      
+
+    }
+    public override void Upgrade(string statName)
+    {
+
     }
 
-
-    void Update()
+    public int GetStatLvl(string statName)
     {
-
+        return 0;
     }
 }

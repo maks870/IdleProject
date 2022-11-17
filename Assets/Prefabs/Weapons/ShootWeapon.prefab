@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4573911166684390166}
   - component: {fileID: 4573911166684390161}
   - component: {fileID: 4573911166684390167}
+  - component: {fileID: 6673464593174049874}
   - component: {fileID: 4573911166684390160}
   m_Layer: 0
   m_Name: ShootWeapon
@@ -65,7 +66,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0f515ca3fff6164f8ad1d354faf8f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  improveMaxLevel: 5
   statToImprove:
   - statLevel: 0
     stats:
@@ -85,8 +85,21 @@ MonoBehaviour:
       value: 3
     - name: ShootRange
       value: 20
+  improveMaxLevel: 5
   projectile: {fileID: 6162771019044189261, guid: 1364e65cb039098469d9bf8f8826fa4b, type: 3}
   shootZone: {fileID: 4573911166684390160}
+--- !u!114 &6673464593174049874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573911166684390165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4a639c9b82c8545bf642b56d6f18fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!58 &4573911166684390160
 CircleCollider2D:
   m_ObjectHideFlags: 0

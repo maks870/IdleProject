@@ -13,12 +13,14 @@ namespace YG
         public bool sound;
 
         // Ваши сохранения
-        public int money = 1;
+        public int money = 100;
         public string newPlayerName = "Hello!";
         public bool[] openLevels = new bool[3];
         //
+        public Dictionary<string, int> shootWeapon = new Dictionary<string, int>(2) { ["shootDamage"] = 1, ["shootRange"] = 1 };
         public int shootWeaponLvl = 0; 
         public int spinWeaponLvl = 0; 
-        public int areaWeaponLvl = 0; 
+        public int areaWeaponLvl = 0;
+        public int gold = 100;
     }
 }

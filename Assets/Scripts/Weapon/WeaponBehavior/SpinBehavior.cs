@@ -102,4 +102,17 @@ public class SpinBehavior : Behavior
         TurnOff();
         isAddSpin = false;
     }
+    public override void SetDataVariables()
+    {
+
+    }
+    public override void Upgrade(string statName)
+    {
+
+    }
+
+    public int GetStatLvl(string statName)
+    {
+        return 0;
+    }
 }

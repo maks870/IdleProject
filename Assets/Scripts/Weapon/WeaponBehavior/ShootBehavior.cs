@@ -3,7 +3,7 @@ using UnityEngine;
 using YG;
 
 [RequireComponent(typeof(CircleCollider2D))]
-public class ShootBehavior : Behavior
+public class ShootBehavior : Behavior, IUpgradeble
 {
     [SerializeField] private GameObject projectile;
     [SerializeField] private CircleCollider2D shootZone;
@@ -53,7 +53,7 @@ public class ShootBehavior : Behavior
             }
         }
         GameObject shoot = Instantiate(projectile, transform);
-        shoot.GetComponent<Rigidbody2D>().AddForce((targetEnemy.transform.position - transform.position).normalized * projectile.GetComponent<Projectile>().speed , ForceMode2D.Impulse);
+        shoot.GetComponent<Rigidbody2D>().AddForce((targetEnemy.transform.position - transform.position).normalized * projectile.GetComponent<Projectile>().speed, ForceMode2D.Impulse);
     }
     public override void Improve(bool isMaxLevel)
     {
@@ -62,8 +62,21 @@ public class ShootBehavior : Behavior
     }
     public override void SetDataVariables()
     {
-        int improveLevel = YandexGame.savesData.shootWeaponLvl;
-        projectile.GetComponent<Projectile>().damage = statToImprove[improveLevel].stats[0].value;
-        shootZone.radius = statToImprove[improveLevel].stats[1].value;
+        Upgrader upgrader = GetComponent<Upgrader>();
+
+        projectile.GetComponent<Projectile>().damage = upgrader.GetDataVariable("shootDamage", YandexGame.savesData.shootWeapon);
+        shootZone.radius = upgrader.GetDataVariable("shootRange", YandexGame.savesData.shootWeapon);
+
+    }
+    public override void Upgrade(string statName)
+    {
+        Debug.Log("Upgrade");
+        Debug.Log(YandexGame.savesData.shootWeapon["shootDamage"]);
+        //YandexGame.savesData.shootWeapon[statName]++;// включить для билда
+    }
+
+    public int GetStatLvl(string statName)//разобраться когда работает забирание инфы из сохранения
+    {
+        return YandexGame.savesData.shootWeapon[statName];
     }
 }
