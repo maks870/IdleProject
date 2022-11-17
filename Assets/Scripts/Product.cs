@@ -9,12 +9,14 @@ public class Product : MonoBehaviour, IProduct
     [SerializeField] private int playerGold;
     [SerializeField] private int goldToUpgrade;
     [SerializeField] private int currentLvl;
+    [SerializeField] private int maxLvl;
     [SerializeField] private Upgrader upgrader;
 
     void Start()
     {
         PurchaseUpdate();
         PlayerGoldGet();
+        GetMaxStatLvl();
     }
 
     private void PurchaseUpdateCost()
@@ -34,11 +36,14 @@ public class Product : MonoBehaviour, IProduct
     {
         playerGold = YandexGame.savesData.gold;
     }
-
+    private void GetMaxStatLvl()
+    {
+        maxLvl = upgrader.GetMaxStatLvl(statName);
+    }
     public void Purchase()
     {
         int balance = playerGold - goldToUpgrade;
-        if (balance >= 0)
+        if (balance >= 0 && currentLvl < maxLvl)
         {
             playerGold = balance;
             upgrader.Upgrade(statName);
