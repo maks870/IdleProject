@@ -5,14 +5,12 @@ using UnityEngine;
 public class ShootingEnemy : Enemy, IShooting
 {
     [SerializeField] private int shootRaduis;
-    [SerializeField] private int stopDistance;
     [SerializeField] private int runningAwayDistance;
     [SerializeField] private GameObject projectile;
-    private bool isStopped = false;
     public Projectile GetProjectile() => projectile.GetComponent<Projectile>();
     protected override void Update()
     {
-        if ((target.transform.position - transform.position).magnitude > stopDistance)
+        if ((target.transform.position - transform.position).magnitude > shootRaduis)
         {
             Move();
         }
@@ -21,8 +19,8 @@ public class ShootingEnemy : Enemy, IShooting
             RunningAway();
         }
         else
-        { 
-        
+        {
+            Stop();
         }
     }
     protected override void Action()
