@@ -89,6 +89,14 @@ MonoBehaviour:
       cost: 3
     - value: 3
       cost: 10
+  - name: shootRange
+    levels:
+    - value: 10
+      cost: 20
+    - value: 15
+      cost: 40
+    - value: 20
+      cost: 60
 --- !u!58 &4573911166684390160
 CircleCollider2D:
   m_ObjectHideFlags: 0

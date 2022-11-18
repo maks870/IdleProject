@@ -10,6 +10,12 @@ public class AreaBehavior : Behavior, IUpgradeble
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
+    protected override void Start()
+    {
+        base.Start();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.enabled = false;
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Enemy>() != null)
@@ -38,7 +44,6 @@ public class AreaBehavior : Behavior, IUpgradeble
     }
     public override void ActiveBehavior()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = true;
         SetAreaSize(areaSize);
         animator = GetComponent<Animator>();

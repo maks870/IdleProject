@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 2096810405805874225}
   - component: {fileID: 2096810405805874228}
   - component: {fileID: 2096810405805874229}
+  - component: {fileID: 7337422711773497920}
   m_Layer: 0
   m_Name: AreaWeapon
   m_TagString: Untagged
@@ -158,3 +159,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7337422711773497920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096810405805874239}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4a639c9b82c8545bf642b56d6f18fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: []

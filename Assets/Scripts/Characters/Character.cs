@@ -30,6 +30,7 @@ public class Character : MonoBehaviour
     {
         Move();
         CheckPosition();
+
     }
 
     public void TakeDamage(int damage)

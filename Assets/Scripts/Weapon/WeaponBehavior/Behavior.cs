@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Upgrader))]
 public abstract class Behavior : MonoBehaviour
 {
-    void Start()
+    protected virtual void Start()
     {
         SetDataVariables();
     }
@@ -39,6 +39,6 @@ public abstract class Behavior : MonoBehaviour
 
     public virtual void Upgrade(string statName)
     {
-       
+
     }
 }
