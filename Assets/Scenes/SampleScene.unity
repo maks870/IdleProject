@@ -19570,7 +19570,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 854912839}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_TargetAssemblyTypeName: MenuGame, Assembly-CSharp
         m_MethodName: SetPause
         m_Mode: 6
         m_Arguments:
@@ -30505,7 +30505,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 854912836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86d78d75e2552604daa2a35ca789a976, type: 3}
+  m_Script: {fileID: 11500000, guid: b362ba099306f2e41992e5e9cb3fdfe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   soundOn: {fileID: 1311506189}
@@ -31218,7 +31218,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7547716372102204010}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -39506,7 +39506,7 @@ GameObject:
   - component: {fileID: 1183486022}
   - component: {fileID: 1183486021}
   m_Layer: 5
-  m_Name: ButtonPlay (1)
+  m_Name: ButtonMain menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -39526,7 +39526,7 @@ RectTransform:
   m_Children:
   - {fileID: 263774040}
   m_Father: {fileID: 7547716372102204010}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -51941,6 +51941,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3490596261668995006, guid: 8946ee90ec65fff46965b4454b7184ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 854912839}
+    - target: {fileID: 3490596261668995006, guid: 8946ee90ec65fff46965b4454b7184ad, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSound
+      objectReference: {fileID: 0}
     - target: {fileID: 3490596261668995007, guid: 8946ee90ec65fff46965b4454b7184ad, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -51951,7 +51959,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3490596261668995007, guid: 8946ee90ec65fff46965b4454b7184ad, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3490596261668995007, guid: 8946ee90ec65fff46965b4454b7184ad, type: 3}
       propertyPath: m_AnchorMax.x
@@ -55056,6 +55064,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8765651622033893959, guid: fa17cec2ae777124eb092e076fb1d78c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 854912839}
+    - target: {fileID: 8765651622033893959, guid: fa17cec2ae777124eb092e076fb1d78c, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSound
+      objectReference: {fileID: 0}
     - target: {fileID: 8765651622033893962, guid: fa17cec2ae777124eb092e076fb1d78c, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -55066,7 +55082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8765651622033893962, guid: fa17cec2ae777124eb092e076fb1d78c, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8765651622033893962, guid: fa17cec2ae777124eb092e076fb1d78c, type: 3}
       propertyPath: m_AnchorMax.x
@@ -71652,7 +71668,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}
+  m_Sprite: {fileID: -3338749442709606003, guid: ecb71482030aaae47997a2d4a45c2008, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -72257,7 +72273,7 @@ RectTransform:
   m_Children:
   - {fileID: 7547716373366329411}
   m_Father: {fileID: 7547716372102204010}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -72333,7 +72349,7 @@ MonoBehaviour:
           m_BoolArgument: 1
         m_CallState: 2
       - m_Target: {fileID: 854912839}
-        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_TargetAssemblyTypeName: MenuGame, Assembly-CSharp
         m_MethodName: SetPause
         m_Mode: 6
         m_Arguments:
@@ -72419,12 +72435,12 @@ RectTransform:
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 126876215}
   - {fileID: 1957354317}
   - {fileID: 913176355}
   - {fileID: 7547716372075550201}
   - {fileID: 7547716373910500170}
   - {fileID: 1183486020}
-  - {fileID: 126876215}
   m_Father: {fileID: 1258336354}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -72505,7 +72521,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
+  m_Text: Continue
 --- !u!222 &7547716373366329413
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -72531,8 +72547,8 @@ MonoBehaviour:
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
   ru: "\u041F\u0440\u043E\u0434\u043E\u043B\u0436\u0438\u0442\u044C"
-  en: Proceed
-  tr: "\u0130lerlemek"
+  en: Continue
+  tr: Devam et
   az: 
   be: 
   he: 
@@ -72595,7 +72611,7 @@ RectTransform:
   m_Children:
   - {fileID: 7547716374068090743}
   m_Father: {fileID: 7547716372102204010}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
