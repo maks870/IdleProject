@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using YG;
 
@@ -8,7 +9,7 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] private Button soundOn;
     [SerializeField] private Button soundOff;
-    [SerializeField] private Text goldText;
+    [SerializeField] private Text allGoldText;
     // Подписываемся на событие GetDataEvent в OnEnable
     private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
 
@@ -31,7 +32,8 @@ public class Menu : MonoBehaviour
     // Ваш метод, который будет запускаться в старте
     public void GetLoad()
     {
-        goldText.text = YandexGame.savesData.gold.ToString();
+        if (allGoldText != null)
+            allGoldText.text = YandexGame.savesData.gold.ToString();
         SwapButtonSound(YandexGame.savesData.sound);
     }
     public void SetSound(bool enable)
@@ -45,5 +47,10 @@ public class Menu : MonoBehaviour
     {
         soundOff.gameObject.SetActive(!sound);
         soundOn.gameObject.SetActive(sound);
+    }
+
+    public void LoadScene(int scene)
+    {
+        SceneManager.LoadScene(scene);
     }
 }

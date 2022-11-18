@@ -18,7 +18,6 @@ public class Player : Character
             instance = this;
         else if (instance == this)
             Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
     }
 
     protected override void Start()
@@ -52,5 +51,6 @@ public class Player : Character
     {
         base.Dead();
         Debug.Log("You dead");
+        MenuGame.instance.EndRound();
     }
 }

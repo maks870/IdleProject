@@ -7,6 +7,7 @@ namespace UserInterfaces
     public class PlayerUI : MonoBehaviour
     {
         [SerializeField] private GameObject heartPref;
+        [SerializeField] private Transform heartTransform;
         [SerializeField] private List<GameObject> heartsUI = new List<GameObject>();
         [SerializeField] private Text textGold;
 
@@ -20,7 +21,7 @@ namespace UserInterfaces
             }
             else if (heartsUI.Count < Player.instance.Hp) 
             {
-                heartsUI.Add(Instantiate(heartPref, transform));
+                heartsUI.Add(Instantiate(heartPref, heartTransform));
             }
 
             textGold.text = Player.instance.Coins.ToString(); //ÒÅÊÑÒ ÃÎÄËÛ

@@ -823,9 +823,8 @@ GameObject:
   - component: {fileID: 92091888}
   - component: {fileID: 92091891}
   - component: {fileID: 92091890}
-  - component: {fileID: 92091889}
   m_Layer: 5
-  m_Name: Player
+  m_Name: Hp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -851,21 +850,6 @@ RectTransform:
   m_AnchoredPosition: {x: 42, y: -38}
   m_SizeDelta: {x: 30, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &92091889
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 92091887}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81cf465302a98dd468814b1beb421762, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  heartPref: {fileID: 7011364318315950234, guid: e8c9077c754d3bf488b1caa843bc01e7, type: 3}
-  heartsUI: []
-  textGold: {fileID: 3672756490015179806}
 --- !u!114 &92091890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19585,6 +19569,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 854912839}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: SetPause
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &406674800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30451,6 +30447,71 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7224080864121100860, guid: 145b793a250b2de41a6a568ed0fee846, type: 3}
   m_PrefabInstance: {fileID: 1300120528}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &854912836
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 854912838}
+  - component: {fileID: 854912837}
+  - component: {fileID: 854912839}
+  m_Layer: 0
+  m_Name: Loader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &854912837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854912836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81cf465302a98dd468814b1beb421762, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heartPref: {fileID: 7011364318315950234, guid: e8c9077c754d3bf488b1caa843bc01e7, type: 3}
+  heartTransform: {fileID: 92091888}
+  heartsUI: []
+  textGold: {fileID: 3672756490015179806}
+--- !u!4 &854912838
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854912836}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 945.82227, y: 551.7277, z: 1.2027805}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &854912839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854912836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86d78d75e2552604daa2a35ca789a976, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundOn: {fileID: 1311506189}
+  soundOff: {fileID: 1585558185}
+  allGoldText: {fileID: 0}
+  endRoundMenu: {fileID: 0}
 --- !u!1001 &856140303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39532,6 +39593,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 854912839}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -51962,6 +52035,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8946ee90ec65fff46965b4454b7184ad, type: 3}
+--- !u!114 &1311506189 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3490596261668995006, guid: 8946ee90ec65fff46965b4454b7184ad, type: 3}
+  m_PrefabInstance: {fileID: 1311506188}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1317589024
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -55066,6 +55150,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa17cec2ae777124eb092e076fb1d78c, type: 3}
+--- !u!114 &1585558185 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8765651622033893959, guid: fa17cec2ae777124eb092e076fb1d78c, type: 3}
+  m_PrefabInstance: {fileID: 1585558184}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1588797482 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7941652525251184050, guid: a3c9ef00e2eb0034db23f5d08b62e9e5, type: 3}
@@ -71557,7 +71652,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -3338749442709606003, guid: ecb71482030aaae47997a2d4a45c2008, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -72236,6 +72331,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 854912839}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: SetPause
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &7547716372075550203
 MonoBehaviour:

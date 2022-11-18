@@ -53,6 +53,7 @@ public class CoinCollector : MonoBehaviour
         if (collision.GetComponent<Coin>() != null)
         {
             Player.instance.AddCoin(collision.GetComponent<Coin>().GetValue);
+
             AddToCoinObjectPull(collision.gameObject);
         }
     }
