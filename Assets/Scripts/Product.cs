@@ -1,71 +1,57 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using YG;
 
-public class Product : MonoBehaviour, IProduct
+public class Product : MonoBehaviour
 {
     [SerializeField] private string statName;
-    [SerializeField] private int playerGold;
-    [SerializeField] private int goldToUpgrade;
-    [SerializeField] private int currentLvl;
-    [SerializeField] private int maxLvl;
     [SerializeField] private Upgrader upgrader;
+    [SerializeField] private Text lvlText; 
+    [SerializeField] private Text costText; 
+    private int cost;
+    private int currentLvl;
+    private int maxLvl;
+
+    private void OnEnable() => YandexGame.GetDataEvent += PurchaseUpdate;
+    private void OnDisable() => YandexGame.GetDataEvent -= PurchaseUpdate;
 
     void Start()
     {
-        PurchaseUpdate();
-        PlayerGoldGet();
-        GetMaxStatLvl();
+        if (YandexGame.SDKEnabled == true)
+        {
+            PurchaseUpdate();
+        } 
     }
 
-    private void PurchaseUpdateCost()
-    {
-        goldToUpgrade = upgrader.GetStatCost(statName, currentLvl);
-    }
-    private void PurchaseUpdateLvl()
-    {
-        currentLvl = upgrader.GetStatLvl(statName);
-    }
-    private void PlayerGoldSet()
-    {
-        Debug.Log("Остаток деняг " + playerGold);
-        //YandexGame.savesData.gold = playerGold;
-    }
-    private void PlayerGoldGet()
-    {
-        playerGold = YandexGame.savesData.gold;
-    }
-    private void GetMaxStatLvl()
+    private void PurchaseUpdate()
     {
         maxLvl = upgrader.GetMaxStatLvl(statName);
+        cost = upgrader.GetStatCost(statName);
+        costText.text = cost.ToString();
+        currentLvl = upgrader.GetStatLvl(statName);
+        lvlText.text = currentLvl.ToString();
     }
     public void Purchase()
     {
-        int balance = playerGold - goldToUpgrade;
-        if (balance >= 0 && currentLvl < maxLvl)
-        {
-            playerGold = balance;
-            upgrader.Upgrade(statName);
-            PurchaseUpdate();
-            PlayerGoldUpdate();
-        }
-        else
+        int gold = YandexGame.savesData.gold;
+        int balance = gold - cost;
+        if (balance < 0)
         {
             Debug.Log("Нехватает денег бичара");
         }
-
-
+        else if (currentLvl >= maxLvl)
+        {
+            gameObject.SetActive(false);
+        }
+        else 
+        {
+            gold = balance;
+            upgrader.Upgrade(statName);
+            PurchaseUpdate();
+            YandexGame.savesData.gold = gold;
+            YandexGame.SaveProgress();
+        }
     }
-    public void PurchaseUpdate()
-    {
-        PurchaseUpdateLvl();
-        PurchaseUpdateCost();
-    }
-    public void PlayerGoldUpdate()
-    {
-        PlayerGoldSet();
-        PlayerGoldGet();
-    }
-
 }

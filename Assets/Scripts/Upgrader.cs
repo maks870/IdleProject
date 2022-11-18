@@ -14,7 +14,7 @@ public class Upgrader : MonoBehaviour
         {
             if (stat.name == statName)
             {
-                return stat.values[statLvl];
+                return stat.levels[statLvl].value;
             }
         }
         return 0;
@@ -22,21 +22,26 @@ public class Upgrader : MonoBehaviour
     public void Upgrade(string statName)
     {
         upgradeble = GetComponent<IUpgradeble>();
-        Debug.Log(upgradeble);
         upgradeble.Upgrade(statName);
     }
     public int GetStatCost(string statName, int statLvl)
     {
-        int cost = 0;
         foreach (Stat stat in stats)
         {
             if (stat.name == statName)
             {
-                cost = stat.upgradeCost[statLvl];
+                return stat.levels[statLvl].cost;
             }
         }
+        return 0;
+    }
+
+    public int GetStatCost(string statName)
+    {
+        int cost = GetStatCost(statName, GetStatLvl(statName));
         return cost;
     }
+
     public int GetStatLvl(string statName)
     {
         upgradeble = GetComponent<IUpgradeble>();
@@ -48,18 +53,9 @@ public class Upgrader : MonoBehaviour
         {
             if (stat.name == statName)
             {
-                return stat.maxUpgradeLvl;
+                return stat.levels.Count;
             }
         }
         return 0;
     }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Upgrade("shootDamage");
-            Upgrade("shootRange");
-        }
-    }
-  
 }

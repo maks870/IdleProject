@@ -43,6 +43,7 @@ public class ShootBehavior : Behavior, IUpgradeble
         }
         Enemy targetEnemy = enemyList[0];
         float distanse = (transform.position - targetEnemy.transform.position).magnitude;
+
         foreach (Enemy enemy in enemyList)
         {
             float newDistanse = (transform.position - enemy.transform.position).magnitude;
@@ -53,7 +54,7 @@ public class ShootBehavior : Behavior, IUpgradeble
             }
         }
         GameObject shoot = Instantiate(projectile, transform);
-        shoot.GetComponent<Rigidbody2D>().AddForce((targetEnemy.transform.position - transform.position).normalized * projectile.GetComponent<Projectile>().speed, ForceMode2D.Impulse);
+        shoot.GetComponent<Rigidbody2D>().AddForce((targetEnemy.transform.position - transform.position).normalized * projectile.GetComponent<Projectile>().speed, ForceMode2D.Impulse);// переделать внутрь проджектайла
     }
     public override void Improve(bool isMaxLevel)
     {
@@ -70,8 +71,8 @@ public class ShootBehavior : Behavior, IUpgradeble
     }
     public override void Upgrade(string statName)
     {
-        Debug.Log("Upgrade");
-        Debug.Log(YandexGame.savesData.shootWeapon["shootDamage"]);
+        YandexGame.savesData.shootWeapon[statName]++;
+        YandexGame.SaveProgress();
         //YandexGame.savesData.shootWeapon[statName]++;// включить для билда
     }
 

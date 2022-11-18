@@ -80,7 +80,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f4a639c9b82c8545bf642b56d6f18fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: []
+  stats:
+  - name: shootDamage
+    levels:
+    - value: 1
+      cost: 5
+    - value: 2
+      cost: 3
+    - value: 3
+      cost: 10
 --- !u!58 &4573911166684390160
 CircleCollider2D:
   m_ObjectHideFlags: 0
