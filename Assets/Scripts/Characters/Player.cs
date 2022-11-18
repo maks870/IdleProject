@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Player : Character
 {
@@ -8,6 +9,7 @@ public class Player : Character
     private int coins;
     private Level level;
     public static Player instance = null;
+    public UnityEvent endRound;
 
     public int Coins => coins;
     public Level GetLevel => level;
@@ -51,6 +53,7 @@ public class Player : Character
     {
         base.Dead();
         Debug.Log("You dead");
-        MenuGame.instance.EndRound();
+        endRound.Invoke();
+        //MenuGame.instance.EndRound();
     }
 }

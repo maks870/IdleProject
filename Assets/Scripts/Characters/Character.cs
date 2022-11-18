@@ -78,6 +78,11 @@ public class Character : MonoBehaviour
         }
     }
 
+    public void AddHp(int hp) 
+    {
+        this.hp += hp;
+    }
+
     protected virtual void Dead() 
     {
     }

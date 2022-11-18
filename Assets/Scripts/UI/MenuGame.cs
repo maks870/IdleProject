@@ -7,7 +7,6 @@ using YG;
 
 public class MenuGame : Menu
 {
-    [SerializeField] private GameObject endRoundMenu;
     public static MenuGame instance = null;
    
     private void Awake()
@@ -26,15 +25,17 @@ public class MenuGame : Menu
             Time.timeScale = 1;
     }
 
-    public void EndRound() 
+    public void ContinueGame() 
     {
-        endRoundMenu.SetActive(true);
+        Player.instance.AddHp(1);
+        SetPause(false);
     }
 
     public void EndGame() 
     {
         YandexGame.savesData.gold += Player.instance.Coins;
         YandexGame.SaveProgress();
+        SetPause(false);
         LoadScene(0);
     }
 }
