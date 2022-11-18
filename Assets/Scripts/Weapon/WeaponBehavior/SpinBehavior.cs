@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using YG;
 
+[RequireComponent(typeof(Upgrader))]
 public class SpinBehavior : Behavior
 {
     [SerializeField] private GameObject projectile;

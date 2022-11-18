@@ -3,6 +3,7 @@ using UnityEngine;
 using YG;
 
 [RequireComponent(typeof(CircleCollider2D))]
+[RequireComponent(typeof(Upgrader))]
 public class ShootBehavior : Behavior, IUpgradeble
 {
     [SerializeField] private GameObject projectile;

@@ -1,7 +1,9 @@
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
 
 [RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(Upgrader))]
 public class AreaBehavior : Behavior, IUpgradeble
 {
     [SerializeField] private int damage;
@@ -22,6 +24,7 @@ public class AreaBehavior : Behavior, IUpgradeble
         if (collision.GetComponent<Enemy>() != null)
         {
             Enemy enemy = collision.GetComponent<Enemy>();
+            enemy.Speed *= (100f - slow)/100f;
             enemyList.Add(enemy);
             enemy.deathEvent.AddListener(delegate { enemyList.Remove(enemy); });
         }
@@ -31,6 +34,7 @@ public class AreaBehavior : Behavior, IUpgradeble
         if (collision.GetComponent<Enemy>() != null)
         {
             Enemy enemy = collision.GetComponent<Enemy>();
+            enemy.Speed /= (100f - slow) / 100f;
             enemyList.Remove(enemy);
             enemy.deathEvent.RemoveListener(delegate { enemyList.Remove(enemy); });
         }
@@ -65,16 +69,19 @@ public class AreaBehavior : Behavior, IUpgradeble
 
     public override void SetDataVariables()
     {
-      
+        Upgrader upgrader = GetComponent<Upgrader>();
+        damage = upgrader.GetDataVariable("areaDamage", YandexGame.savesData.areaWeapon);
+        slow = upgrader.GetDataVariable("areaSlow", YandexGame.savesData.areaWeapon);
 
     }
     public override void Upgrade(string statName)
     {
-
+        YandexGame.savesData.areaWeapon[statName]++;
+        YandexGame.SaveProgress();
     }
 
     public int GetStatLvl(string statName)
     {
-        return 0;
+        return YandexGame.savesData.areaWeapon[statName];
     }
 }
