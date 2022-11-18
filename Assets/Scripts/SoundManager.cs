@@ -47,13 +47,8 @@ public class SoundManager : MonoBehaviour
     {
         YandexGame.savesData.sound = enable;
         YandexGame.SaveProgress();
-        if (enable)
-        {
-            soundOn.Invoke();
-        }
-        else
-        {
-            soundOff.Invoke();
-        }
+
+        if (enable) soundOn.Invoke();
+        else soundOff.Invoke();
     }
 }
