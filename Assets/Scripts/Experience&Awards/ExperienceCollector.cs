@@ -84,7 +84,7 @@ public class ExperienceCollector : MonoBehaviour
     private void GetExperience(int expPoint)
     {
         currentExperience += expPoint;
-        if (currentExperience >= experienceToLvlup)
+        if (currentExperience >= experienceToLvlup)//LVLUP
         {
             currentExperience -= experienceToLvlup;
             experienceToLvlup = (int)(experienceToLvlup * lvlExpMultiply);
