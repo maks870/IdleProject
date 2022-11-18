@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using YG;
 
 public class CoinCollector : MonoBehaviour
 {
     [SerializeField] private int maxCoinCount = 100;
     [SerializeField] private GameObject defaultCoin;
-    [SerializeField] static private int coinDropChance = 50;
+    [SerializeField] private int coinDropChance = 50;
+    [SerializeField] private int collectedGold = 0;
     private List<GameObject> invisiblePull = new List<GameObject>();
     private List<GameObject> visiblePull = new List<GameObject>();
     public static CoinCollector instance = null;
+    public int CollectedGold => collectedGold;
     private void Awake()
     {
         if (instance == null)
@@ -21,6 +24,14 @@ public class CoinCollector : MonoBehaviour
             Destroy(gameObject);
         }
         CreateCoinObjectPull();
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.GetComponent<Coin>() != null)
+        {
+            collectedGold += collision.GetComponent<Coin>().GetValue;
+            AddToPull(collision.gameObject);
+        }
     }
     private void AddToPull(GameObject coinPoint)
     {
@@ -37,13 +48,22 @@ public class CoinCollector : MonoBehaviour
         coinObject.SetActive(true);
         return coinObject;
     }
+    public void AddCoin(int value)
+    {
+        collectedGold += value;
+    }
+    public void UploadGold()
+    {
+        YandexGame.savesData.gold += collectedGold;
+        YandexGame.SaveProgress();
+    }
     public void Drop(Coin coinPoint, Vector3 position)
     {
         if (invisiblePull.Count > 0)
         {
             if (Random.Range(0, 100) < coinDropChance)
             {
-                RemoveFromPull(coinPoint).transform.position = position + new Vector3(Random.Range(0f,1f), Random.Range(0f,1f), 0);
+                RemoveFromPull(coinPoint).transform.position = position + new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), 0);
             }
         }
         else
@@ -65,15 +85,6 @@ public class CoinCollector : MonoBehaviour
         {
             GameObject newCoinObject = Instantiate(defaultCoin, transform.position, Quaternion.identity);
             AddToPull(newCoinObject);
-        }
-    }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.GetComponent<Coin>() != null)
-        {
-            Player.instance.AddCoin(collision.GetComponent<Coin>().GetValue);
-
-            AddToPull(collision.gameObject);
         }
     }
 }

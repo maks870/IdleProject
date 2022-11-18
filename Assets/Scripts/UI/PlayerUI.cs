@@ -26,7 +26,7 @@ namespace UserInterfaces
             }
             CheckExperience();
 
-            textGold.text = Player.instance.Coins.ToString(); //рейяр цндкш
+            textGold.text = CoinCollector.instance.CollectedGold.ToString(); //рейяр цндкш
         }
 
         private void CheckExperience() 

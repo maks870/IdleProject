@@ -17742,6 +17742,7 @@ GameObject:
   - component: {fileID: 238483675}
   - component: {fileID: 238483676}
   - component: {fileID: 238483677}
+  - component: {fileID: 238483681}
   - component: {fileID: 238483678}
   - component: {fileID: 238483679}
   - component: {fileID: 238483680}
@@ -17894,6 +17895,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 354988127}
+--- !u!114 &238483681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 238483673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4a639c9b82c8545bf642b56d6f18fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats:
+  - name: health
+    levels:
+    - value: 3
+      cost: 20
+    - value: 4
+      cost: 40
+    - value: 5
+      cost: 60
+    - value: 6
+      cost: 60
+  - name: speed
+    levels:
+    - value: 4
+      cost: 40
+    - value: 5
+      cost: 80
+    - value: 6
+      cost: 120
+    - value: 7
+      cost: 120
 --- !u!1001 &241257575
 PrefabInstance:
   m_ObjectHideFlags: 0

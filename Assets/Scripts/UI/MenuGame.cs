@@ -33,8 +33,7 @@ public class MenuGame : Menu
 
     public void EndGame() 
     {
-        YandexGame.savesData.gold += Player.instance.Coins;
-        YandexGame.SaveProgress();
+        CoinCollector.instance.UploadGold();
         SetPause(false);
         LoadScene(0);
     }

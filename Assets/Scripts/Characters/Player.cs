@@ -2,22 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using YG;
 
-public class Player : Character
+[RequireComponent(typeof(Upgrader))]
+public class Player : Character, IUpgradeble
 {
     [SerializeField] private int maxLevelCount;
-    private int coins;
     private Level level;
     public static Player instance = null;
     public UnityEvent endRound;
 
-    public int Coins => coins;
     public Level GetLevel => level;
 
     private void Awake()
     {
         if (instance == null) instance = this;
         else if (instance == this) Destroy(gameObject);
+        SetDataVariables();
     }
 
     protected override void Start()
@@ -40,16 +41,27 @@ public class Player : Character
         else animator.SetBool("Run", false);
     }
 
-    public void AddCoin(int coinCount)
-    {
-        coins += coinCount;
-    }
-
     protected override void Dead()
     {
         base.Dead();
         Debug.Log("You dead");
         endRound.Invoke();
         //MenuGame.instance.EndRound();
+    }
+
+    public void SetDataVariables()
+    {
+        Upgrader upgrader = GetComponent<Upgrader>();
+        hp = upgrader.GetDataVariable("health", YandexGame.savesData.playerSkill);
+        speed = upgrader.GetDataVariable("speed", YandexGame.savesData.playerSkill);
+    }
+    public void Upgrade(string statName)
+    {
+        YandexGame.savesData.playerSkill[statName]++;
+        YandexGame.SaveProgress();
+    }
+    public int GetStatLvl(string statName)
+    {
+        return YandexGame.savesData.playerSkill[statName];
     }
 }

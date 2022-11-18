@@ -24,7 +24,7 @@ public class Coin : MonoBehaviour, IAward
 
     public void AwardAction()
     {
-        Player.instance.AddCoin(coinValue);
+        CoinCollector.instance.AddCoin(coinValue);
     }
     public void ChangeCoin(int coinValue, Sprite sprite)
     {
