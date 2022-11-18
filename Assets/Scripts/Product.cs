@@ -8,8 +8,8 @@ public class Product : MonoBehaviour
 {
     [SerializeField] private string statName;
     [SerializeField] private Upgrader upgrader;
-    [SerializeField] private Text lvlText; 
-    [SerializeField] private Text costText; 
+    [SerializeField] private Text lvlText;
+    [SerializeField] private Text costText;
     private int cost;
     private int currentLvl;
     private int maxLvl;
@@ -22,7 +22,7 @@ public class Product : MonoBehaviour
         if (YandexGame.SDKEnabled == true)
         {
             PurchaseUpdate();
-        } 
+        }
     }
 
     private void PurchaseUpdate()
@@ -41,11 +41,11 @@ public class Product : MonoBehaviour
         {
             Debug.Log("Нехватает денег бичара");
         }
-        else if (currentLvl >= maxLvl)
+        else if (currentLvl >= maxLvl - 1)
         {
             gameObject.SetActive(false);
         }
-        else 
+        else
         {
             gold = balance;
             upgrader.Upgrade(statName);

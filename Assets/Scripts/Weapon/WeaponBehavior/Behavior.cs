@@ -5,9 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(Upgrader))]
 public abstract class Behavior : MonoBehaviour
 {
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         SetDataVariables();
+    }
+    protected virtual void Start()
+    {
     }
     public virtual void ActiveBehavior()
     {

@@ -5,6 +5,7 @@ using UnityEngine;
 public class AreaBehavior : Behavior, IUpgradeble
 {
     [SerializeField] private int damage;
+    [SerializeField] private int slow;
     [SerializeField] private float areaSize;
     [SerializeField] private List<Enemy> enemyList = new List<Enemy>();
     private Animator animator;

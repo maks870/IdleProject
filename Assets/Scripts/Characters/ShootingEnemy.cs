@@ -49,7 +49,8 @@ public class ShootingEnemy : Enemy, IShooting
         float distanse = (transform.position - target.transform.position).magnitude;
         if (distanse <= shootRaduis)
         {
-            GameObject shoot = Instantiate(projectile);
+            GameObject shoot = Instantiate(projectile, transform);
+            shoot.transform.parent = null;
             shoot.GetComponent<Rigidbody2D>().AddForce((target.transform.position - transform.position).normalized * projectile.GetComponent<Projectile>().speed, ForceMode2D.Impulse);
         }
     }
