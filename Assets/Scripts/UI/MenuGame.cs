@@ -31,10 +31,10 @@ public class MenuGame : Menu
         SetPause(false);
     }
 
-    public void EndGame() 
+    public void EndGame(int scene) 
     {
-        CoinCollector.instance.UploadGold();
+        CoinCollector.instance?.UploadGold();
         SetPause(false);
-        LoadScene(0);
+        LoadScene(scene);
     }
 }

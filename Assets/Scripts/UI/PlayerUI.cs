@@ -10,6 +10,7 @@ namespace UserInterfaces
         [SerializeField] private Transform heartTransform;
         [SerializeField] private List<GameObject> heartsUI = new List<GameObject>();
         [SerializeField] private Text textGold;
+        [SerializeField] private Text textEndGameGold;
         [SerializeField] private Image experienceImage;
 
         private void Update()
@@ -27,6 +28,7 @@ namespace UserInterfaces
             CheckExperience();
 
             textGold.text = CoinCollector.instance.CollectedGold.ToString(); //“≈ —“ √ŒƒÀ€
+            textEndGameGold.text = "+" + CoinCollector.instance.CollectedGold.ToString();
         }
 
         private void CheckExperience() 
