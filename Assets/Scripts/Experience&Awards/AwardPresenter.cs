@@ -16,11 +16,11 @@ public class AwardPresenter : MonoBehaviour
     private AwardPresenterUI presenterUI;
     public int GetAwardsCount => givingAwardsCount;
     public AwardPresenterUI SetPresenterUI { set { presenterUI = value; } }
-    private void GetAwardsList()
+    private void FillAwardsList()
     {
         awardList.Clear();
         currentWeapons.Clear();
-        CountUpCurrentWeapons();
+        FillCurrentWeapons();
         if (currentWeapons.Count != maxWeaponCount)
         {
             IAward[] awards = weapons.GetComponentsInChildren<IAward>();
@@ -45,7 +45,7 @@ public class AwardPresenter : MonoBehaviour
             }
         }
     }
-    private void CountUpCurrentWeapons()
+    private void FillCurrentWeapons()
     {
         Weapon[] awardGameObjects = weapons.GetComponentsInChildren<Weapon>();
         for (int i = 0; i < awardGameObjects.Length; i++)
@@ -56,7 +56,7 @@ public class AwardPresenter : MonoBehaviour
             }
         }
     }
-    private IAward GetCoinsAsAward()
+    private IAward GetCoinAward()
     {
         int randomValueCoin = Random.Range(minCoinAwardValue, maxCoinAwardValue);
         Coin coinAward = defaultCoin;
@@ -64,7 +64,7 @@ public class AwardPresenter : MonoBehaviour
         IAward award = coinAward;
         return award;
     }
-    public void GetAward(IAward award)
+    public void GiveAward(IAward award)
     {
         Player.instance.GetLevel.LevelUp(award.AwardAction);
     }
@@ -76,10 +76,10 @@ public class AwardPresenter : MonoBehaviour
     {
         presenterUI.ShowAwards();
     }
-    public List<IAward> RandomAwards()
+    public List<IAward> GetRandomAwards()
     {
 
-        GetAwardsList();
+        FillAwardsList();
         int randomAwardsCount = awardList.Count < givingAwardsCount ? awardList.Count : givingAwardsCount;
         List<IAward> newAwardsList = new List<IAward>();
         newAwardsList.AddRange(awardList);
@@ -92,7 +92,7 @@ public class AwardPresenter : MonoBehaviour
         }
         if (randomAwards.Count == 0)
         {
-            randomAwards.Add(GetCoinsAsAward());
+            randomAwards.Add(GetCoinAward());
         }
         return randomAwards;
     }
