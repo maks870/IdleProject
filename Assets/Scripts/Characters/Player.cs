@@ -16,10 +16,8 @@ public class Player : Character
 
     private void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else if (instance == this)
-            Destroy(gameObject);
+        if (instance == null) instance = this;
+        else if (instance == this) Destroy(gameObject);
     }
 
     protected override void Start()
@@ -38,10 +36,8 @@ public class Player : Character
         base.Update(); 
         moveDirection = transform.TransformDirection(moveDirection.normalized);
 
-        if (moveDirection != Vector3.zero)
-            animator.SetBool("Run", true);
-        else
-            animator.SetBool("Run", false);
+        if (moveDirection != Vector3.zero) animator.SetBool("Run", true);
+        else animator.SetBool("Run", false);
     }
 
     public void AddCoin(int coinCount)
