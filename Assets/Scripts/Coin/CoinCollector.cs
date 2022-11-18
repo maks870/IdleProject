@@ -7,50 +7,64 @@ public class CoinCollector : MonoBehaviour
     [SerializeField] private int maxCoinCount = 100;
     [SerializeField] private GameObject defaultCoin;
     [SerializeField] static private int coinDropChance = 50;
-    private static List<GameObject> coinObjectPull = new List<GameObject>();
-    private static void AddToCoinObjectPull(GameObject coinPoint)
+    private List<GameObject> invisiblePull = new List<GameObject>();
+    private List<GameObject> visiblePull = new List<GameObject>();
+    public static CoinCollector instance = null;
+    private void Awake()
     {
-        coinObjectPull.Add(coinPoint);
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance == this)
+        {
+            Destroy(gameObject);
+        }
+        CreateCoinObjectPull();
+    }
+    private void AddToPull(GameObject coinPoint)
+    {
+        invisiblePull.Add(coinPoint);
+        visiblePull.Remove(coinPoint);
         coinPoint.SetActive(false);
     }
-    private static GameObject RemoveCoinObjectFromPull(Coin coinPoint)
+    private GameObject RemoveFromPull(Coin coinPoint)
     {
-        GameObject coinObject = coinObjectPull[0];
-        coinObjectPull.Remove(coinObject);
+        GameObject coinObject = invisiblePull[0];
+        invisiblePull.Remove(coinObject);
+        visiblePull.Add(coinObject);
         coinObject.GetComponent<Coin>().ChangeCoin(coinPoint.GetValue, coinPoint.GetAwardSprite);
         coinObject.SetActive(true);
         return coinObject;
     }
-    public static void DropCoin(Coin coinPoint, Vector3 position)
+    public void Drop(Coin coinPoint, Vector3 position)
     {
-        if (coinObjectPull.Count > 0)
+        if (invisiblePull.Count > 0)
         {
             if (Random.Range(0, 100) < coinDropChance)
             {
-                RemoveCoinObjectFromPull(coinPoint).transform.position = position + new Vector3(Random.Range(0f,1f), Random.Range(0f,1f), 0);
+                RemoveFromPull(coinPoint).transform.position = position + new Vector3(Random.Range(0f,1f), Random.Range(0f,1f), 0);
             }
         }
         else
         {
-            //условие когда нехватает объектов в пуле
+            GameObject coinObject = visiblePull[0];
+            visiblePull.Remove(coinObject);
+            visiblePull.Add(coinObject);
+            coinObject.transform.position = position + new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), 0); ;
         }
 
     }
-    public static void PickUpCoin(GameObject coin)
+    public void PickUp(GameObject coin)
     {
-        AddToCoinObjectPull(coin);
-    }
-    private void Awake()
-    {
-        CreateCoinObjectPull();
+        AddToPull(coin);
     }
     private void CreateCoinObjectPull()
     {
-        coinObjectPull.Clear();
         for (int i = 0; i < maxCoinCount; i++)
         {
             GameObject newCoinObject = Instantiate(defaultCoin, transform.position, Quaternion.identity);
-            AddToCoinObjectPull(newCoinObject);
+            AddToPull(newCoinObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -59,7 +73,7 @@ public class CoinCollector : MonoBehaviour
         {
             Player.instance.AddCoin(collision.GetComponent<Coin>().GetValue);
 
-            AddToCoinObjectPull(collision.gameObject);
+            AddToPull(collision.gameObject);
         }
     }
 }

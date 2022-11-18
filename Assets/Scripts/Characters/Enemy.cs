@@ -70,8 +70,8 @@ public class Enemy : Character
     {
         base.Dead();
         //Spawner.KillEnemy(this);
-        ExperienceCollector.DropExpPoint(expPoint, transform.position);
-        CoinCollector.DropCoin(coin, transform.position);
+        ExperienceCollector.instance.Drop(expPoint, transform.position);
+        CoinCollector.instance.Drop(coin, transform.position);
         deathEvent.Invoke();
 
     }

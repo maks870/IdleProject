@@ -10,50 +10,66 @@ public class ExperienceCollector : MonoBehaviour
     [SerializeField] private double lvlExpMultiply = 1.3;
     [SerializeField] private AwardPresenter presenter;
     [SerializeField] private GameObject defaultExpPoint;
-    private static List<GameObject> expObjectPull = new List<GameObject>();
+    private List<GameObject> invisiblePull = new List<GameObject>();
+    private List<GameObject> visiblePull = new List<GameObject>();
+    public static ExperienceCollector instance = null;
+    public int CurrentExp => currentExperience;
+    public int ExpToLvlup => experienceToLvlup;
 
-    private static void AddToExpObjectPull(GameObject expPoint)
+    private void Awake()
     {
-        expObjectPull.Add(expPoint);
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance == this)
+        {
+            Destroy(gameObject);
+        }
+
+        presenter = transform.parent.GetComponentInChildren<AwardPresenter>();
+        CreatePull();
+    }
+    private void AddToPull(GameObject expPoint)
+    {
+        invisiblePull.Add(expPoint);
+        visiblePull.Remove(expPoint);
         expPoint.SetActive(false);
     }
-    private static GameObject RemoveExpObjectFromPull(ExpPoint expPoint)
+    private GameObject RemoveFromPull(ExpPoint expPoint)
     {
-        GameObject expObject = expObjectPull[0];
-        expObjectPull.Remove(expObject);
+        GameObject expObject = invisiblePull[0];
+        invisiblePull.Remove(expObject);
+        visiblePull.Add(expObject);
         expObject.GetComponent<ExpPoint>().ChangeExpPoint(expPoint.GetValue, expPoint.GetSprite);
         expObject.SetActive(true);
         return expObject;
     }
-    public static void DropExpPoint(ExpPoint expPoint, Vector3 position)
+    public void Drop(ExpPoint expPoint, Vector3 position)
     {
 
-        if (expObjectPull.Count > 0)
+        if (invisiblePull.Count > 0)
         {
-            RemoveExpObjectFromPull(expPoint).transform.position = position;
+            RemoveFromPull(expPoint).transform.position = position;
         }
         else
         {
-            //условие когда нехватает объектов в пуле
+            GameObject expObject = visiblePull[0];
+            visiblePull.Remove(expObject);
+            visiblePull.Add(expObject);
+            expObject.transform.position = position;
         }
     }
-    public static void PickUpExpPoint(GameObject expPoint)
+    public void PickUp(GameObject expPoint)
     {
-        AddToExpObjectPull(expPoint);
+        AddToPull(expPoint);
     }
-    private void Awake()
+    private void CreatePull()
     {
-        presenter = transform.parent.GetComponentInChildren<AwardPresenter>();
-        CreateExpObjectPull();
-        Debug.Log(expObjectPull.Count);
-    }
-    private void CreateExpObjectPull()
-    {
-        expObjectPull.Clear();
         for (int i = 0; i < maxExpCount; i++)
         {
             GameObject newExpObject = Instantiate(defaultExpPoint, transform.position, Quaternion.identity);
-            AddToExpObjectPull(newExpObject);
+            AddToPull(newExpObject);
         }
     }
 
@@ -61,11 +77,11 @@ public class ExperienceCollector : MonoBehaviour
     {
         if (collision.GetComponent<ExpPoint>() != null)
         {
-            GetExperiencePoint(collision.GetComponent<ExpPoint>().GetValue);
-            AddToExpObjectPull(collision.gameObject);
+            GetExperience(collision.GetComponent<ExpPoint>().GetValue);
+            AddToPull(collision.gameObject);
         }
     }
-    private void GetExperiencePoint(int expPoint)
+    private void GetExperience(int expPoint)
     {
         currentExperience += expPoint;
         if (currentExperience >= experienceToLvlup)

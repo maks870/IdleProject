@@ -23,13 +23,5 @@ public class Destroyer : MonoBehaviour
         {
             Destroy(collision.GetComponent<Projectile>().gameObject);
         }
-        if (collision.GetComponent<ExpPoint>() != null)
-        {
-            ExperienceCollector.PickUpExpPoint(collision.gameObject);
-        }  
-        if (collision.GetComponent<Coin>() != null)
-        {
-            CoinCollector.PickUpCoin(collision.gameObject);
-        }
     }
 }
