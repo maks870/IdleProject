@@ -33,7 +33,7 @@ namespace UserInterfaces
         }
         private void ReplaceAwards()
         {
-            List<IAward> awardList = awardPresenter.RandomAwards();
+            List<IAward> awardList = awardPresenter.GetRandomAwards();
             for (int i = 0; i < awardList.Count; i++)
             {
                 buttonList[i].gameObject.SetActive(true);
@@ -43,8 +43,10 @@ namespace UserInterfaces
                 IAward award = awardList[i];
                 buttonList[i].onClick.AddListener(() =>
                 {
-                    awardPresenter.GetAward(award);
-                    ClosePresenterUI();
+                    awardPresenter.GiveAward(award);
+                    panel.SetActive(false);
+                    MenuGame.instance.SetPause(false);
+
                 });
             }
             for (int i = awardList.Count; i < buttonList.Count; i++ )
@@ -52,20 +54,11 @@ namespace UserInterfaces
                 buttonList[i].gameObject.SetActive(false);
             }
         }
-        private void OpenPresenterUI()
-        {
-            Time.timeScale = 0;
-            panel.SetActive(true);
-        }
-        private void ClosePresenterUI()
-        {
-            panel.SetActive(false);
-            Time.timeScale = 1;
-        }
         public void ShowAwards()
         {
             ReplaceAwards();
-            OpenPresenterUI();
+            MenuGame.instance.SetPause(true);
+            panel.SetActive(true);
         }
     }
 }
