@@ -8,6 +8,7 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] private Button soundOn;
     [SerializeField] private Button soundOff;
+    [SerializeField] private Text goldText;
     // Подписываемся на событие GetDataEvent в OnEnable
     private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
 
@@ -30,33 +31,19 @@ public class Menu : MonoBehaviour
     // Ваш метод, который будет запускаться в старте
     public void GetLoad()
     {
-        if (YandexGame.savesData.isFirstSession)
-        {
-#if !UNITY_EDITOR
-			YandexGame.SwitchLanguage(YandexGame.EnvironmentData.language);
-#else
-            YandexGame.SwitchLanguage("en");
-#endif
-            YandexGame.savesData.isFirstSession = false;
-            YandexGame.SaveProgress();
-        }
-        else
-        {
-            YandexGame.SwitchLanguage(YandexGame.savesData.language);
-        }
-
-        SwapButtonSound();
+        goldText.text = YandexGame.savesData.gold.ToString();
+        SwapButtonSound(YandexGame.savesData.sound);
     }
     public void SetSound(bool enable)
     {
         YandexGame.savesData.sound = enable;
         YandexGame.SaveProgress();
-        SwapButtonSound();
+        SwapButtonSound(enable);
     }
 
-    private void SwapButtonSound()
+    private void SwapButtonSound(bool sound)
     {
-        soundOff.gameObject.SetActive(!YandexGame.savesData.sound);
-        soundOn.gameObject.SetActive(YandexGame.savesData.sound);
+        soundOff.gameObject.SetActive(!sound);
+        soundOn.gameObject.SetActive(sound);
     }
 }
