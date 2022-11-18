@@ -5,11 +5,12 @@ using UnityEngine.Events;
 
 public class Enemy : Character
 {
-    [SerializeField] private int damage;
-    [SerializeField] private Coin coin;
-    [SerializeField] private ExpPoint expPoint;
-    private GameObject target;
-    private Player player;
+    [SerializeField] protected int damage;
+    [SerializeField] protected Coin coin;
+    [SerializeField] protected ExpPoint expPoint;
+    [SerializeField] protected float actionCooldown;
+    protected GameObject target;
+    protected Player player;
     public readonly UnityEvent deathEvent = new UnityEvent();
 
 
@@ -23,7 +24,17 @@ public class Enemy : Character
         moveDirection = target.transform.position - transform.position;
         moveDirection = moveDirection.normalized;
     }
+    protected override void Start()
+    {
+        base.Start();
+        StartCoroutine(ActionDelay());
+    }
 
+    protected virtual void Action()
+    {
+
+
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Player>() != null)
@@ -62,5 +73,13 @@ public class Enemy : Character
         ExperienceCollector.DropExpPoint(expPoint, transform.position);
         deathEvent.Invoke();
 
+    }
+    IEnumerator ActionDelay()
+    {
+        while (true)
+        {
+            Action();
+            yield return new WaitForSeconds(actionCooldown);
+        }
     }
 }

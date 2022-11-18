@@ -29952,28 +29952,7 @@ MonoBehaviour:
       probability: 100
     - pref: {fileID: 1407325740460826213, guid: 74c74ffc98fb8264a972436e5d02b196, type: 3}
       probability: 100
-    probabilityAll: 0
-  - countEnemy: 100
-    spawnEnemies:
-    - pref: {fileID: 6671133975693403855, guid: db69263afdb4c494f96c1db8e1447a42, type: 3}
-      probability: 100
-    - pref: {fileID: 7021874694344000532, guid: a5688f2f9611e3f48bd50854a52243bb, type: 3}
-      probability: 100
-    - pref: {fileID: 4273593183990007115, guid: 79cb870038c849b43ab9727cbd546782, type: 3}
-      probability: 100
-    - pref: {fileID: 5212249326353535177, guid: ef889068726ed4a4d9d7f6261fb54d8e, type: 3}
-      probability: 100
-    - pref: {fileID: 9089521684223570581, guid: 41cc5c45d13940149b6159df277dda3c, type: 3}
-      probability: 100
-    - pref: {fileID: 5549458774916765644, guid: 4a32649e5f66c444fa2a7f290e8a0287, type: 3}
-      probability: 100
-    - pref: {fileID: 1266776709719100865, guid: db4344d48d07ce84d8d5026206053d66, type: 3}
-      probability: 100
-    - pref: {fileID: 8371183056946718255, guid: 0e15b700229a2ec48b857fa6ab7af2e0, type: 3}
-      probability: 100
-    - pref: {fileID: 5309914895533913938, guid: d3172cda15ca3e44383b733e02c963a2, type: 3}
-      probability: 100
-    - pref: {fileID: 3514629195901707110, guid: cfa863601588f7d4d83d9156b94c3b8b, type: 3}
+    - pref: {fileID: 80696927362117936, guid: a9f6e72e1ae90ca4cab1c2f48834e7d2, type: 3}
       probability: 100
     probabilityAll: 0
   maxEnemy: 200
@@ -63500,6 +63479,7 @@ MonoBehaviour:
   playerGold: 0
   goldToUpgrade: 0
   currentLvl: 0
+  maxLvl: 0
   upgrader: {fileID: 6673464593174049874, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
 --- !u!4 &1974938136 stripped
 Transform:
