@@ -38,6 +38,7 @@ public class AreaBehavior : Behavior, IUpgradeble
     }
     public override void ActiveBehavior()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = true;
         SetAreaSize(areaSize);
         animator = GetComponent<Animator>();
