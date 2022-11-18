@@ -45,9 +45,11 @@ public class ExperienceCollector : MonoBehaviour
     {
         presenter = transform.parent.GetComponentInChildren<AwardPresenter>();
         CreateExpObjectPull();
+        Debug.Log(expObjectPull.Count);
     }
     private void CreateExpObjectPull()
     {
+        expObjectPull.Clear();
         for (int i = 0; i < maxExpCount; i++)
         {
             GameObject newExpObject = Instantiate(defaultExpPoint, transform.position, Quaternion.identity);

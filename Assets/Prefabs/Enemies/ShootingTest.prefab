@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b6babd89e3a1d247acf43a7403650fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 2
   hp: 1
   fly: 1
   damage: 1
@@ -56,7 +56,6 @@ MonoBehaviour:
   expPoint: {fileID: 3957463621492816713, guid: 1633b12828da91f4a8cc250e0b449563, type: 3}
   actionCooldown: 3
   shootRaduis: 15
-  stopDistance: 17
   runningAwayDistance: 10
   projectile: {fileID: 6162771019044189261, guid: 9d3f3bb26b1d0f74aa2448f87369506f, type: 3}
 --- !u!50 &2010212363200984412
