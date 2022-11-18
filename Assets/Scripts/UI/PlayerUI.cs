@@ -10,6 +10,7 @@ namespace UserInterfaces
         [SerializeField] private Transform heartTransform;
         [SerializeField] private List<GameObject> heartsUI = new List<GameObject>();
         [SerializeField] private Text textGold;
+        [SerializeField] private Image experienceImage;
 
         private void Update()
         {
@@ -23,8 +24,15 @@ namespace UserInterfaces
             {
                 heartsUI.Add(Instantiate(heartPref, heartTransform));
             }
+            CheckExperience();
 
             textGold.text = Player.instance.Coins.ToString(); //“≈ —“ √ŒƒÀ€
+        }
+
+        private void CheckExperience() 
+        {
+            ExperienceCollector experienceCollector = ExperienceCollector.instance;
+            experienceImage.fillAmount = 1f / experienceCollector.ExpToLvlup * experienceCollector.CurrentExp;
         }
     }
 

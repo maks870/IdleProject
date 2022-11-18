@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class ExperienceCollector : MonoBehaviour
 {
-    [SerializeField] private int maxExpCount = 100;
+    [SerializeField] private int maxExpObj = 100;
     [SerializeField] private int currentExperience = 0;
     [SerializeField] private int experienceToLvlup = 100;
     [SerializeField] private double lvlExpMultiply = 1.3;
-    [SerializeField] private AwardPresenter presenter;
-    [SerializeField] private GameObject defaultExpPoint;
+    [SerializeField] private GameObject expPref;
+    private AwardPresenter presenter;
     private List<GameObject> invisiblePull = new List<GameObject>();
     private List<GameObject> visiblePull = new List<GameObject>();
     public static ExperienceCollector instance = null;
@@ -66,9 +66,9 @@ public class ExperienceCollector : MonoBehaviour
     }
     private void CreatePull()
     {
-        for (int i = 0; i < maxExpCount; i++)
+        for (int i = 0; i < maxExpObj; i++)
         {
-            GameObject newExpObject = Instantiate(defaultExpPoint, transform.position, Quaternion.identity);
+            GameObject newExpObject = Instantiate(expPref, transform.position, Quaternion.identity);
             AddToPull(newExpObject);
         }
     }
@@ -77,11 +77,11 @@ public class ExperienceCollector : MonoBehaviour
     {
         if (collision.GetComponent<ExpPoint>() != null)
         {
-            GetExperience(collision.GetComponent<ExpPoint>().GetValue);
+            AddExperience(collision.GetComponent<ExpPoint>().GetValue);
             AddToPull(collision.gameObject);
         }
     }
-    private void GetExperience(int expPoint)
+    private void AddExperience(int expPoint)
     {
         currentExperience += expPoint;
         if (currentExperience >= experienceToLvlup)//LVLUP
