@@ -8,6 +8,7 @@ using YG;
 public class MenuGame : Menu
 {
     public static MenuGame instance = null;
+    private int pauseCount = 0;
    
     private void Awake()
     {
@@ -20,6 +21,11 @@ public class MenuGame : Menu
     public void SetPause(bool pause)
     {
         if (pause)
+            pauseCount++;
+        else 
+            pauseCount--;
+
+        if (pauseCount>0)
             Time.timeScale = 0;
         else
             Time.timeScale = 1;
@@ -34,6 +40,7 @@ public class MenuGame : Menu
     public void EndGame(int scene) 
     {
         CoinCollector.instance?.UploadGold();
+        pauseCount = 0;
         SetPause(false);
         LoadScene(scene);
     }

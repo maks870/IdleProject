@@ -46,7 +46,6 @@ public class Player : Character, IUpgradeble
         base.Dead();
         Debug.Log("You dead");
         endRound.Invoke();
-        //MenuGame.instance.EndRound();
     }
 
     public void SetDataVariables()
