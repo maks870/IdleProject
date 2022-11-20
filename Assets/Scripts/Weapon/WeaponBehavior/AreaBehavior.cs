@@ -77,7 +77,6 @@ public class AreaBehavior : Behavior, IUpgradeble
     public override void Upgrade(string statName)
     {
         YandexGame.savesData.areaWeapon[statName]++;
-        YandexGame.SaveProgress();
     }
 
     public int GetStatLvl(string statName)

@@ -55,7 +55,6 @@ public class CoinCollector : MonoBehaviour
     public void UploadGold()
     {
         YandexGame.savesData.gold += collectedGold;
-        YandexGame.SaveProgress();
     }
     public void Drop(Coin coinPoint, Vector3 position)
     {

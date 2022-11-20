@@ -96,7 +96,6 @@ public class SpinBehavior : Behavior
     public override void Upgrade(string statName)
     {
         YandexGame.savesData.spinWeapon[statName]++;
-        YandexGame.SaveProgress();
     }
 
     public int GetStatLvl(string statName)

@@ -57,7 +57,6 @@ public class Player : Character, IUpgradeble
     public void Upgrade(string statName)
     {
         YandexGame.savesData.playerSkill[statName]++;
-        YandexGame.SaveProgress();
     }
     public int GetStatLvl(string statName)
     {

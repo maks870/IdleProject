@@ -51,7 +51,8 @@ public class Product : MonoBehaviour
             upgrader.Upgrade(statName);
             PurchaseUpdate();
             YandexGame.savesData.gold = gold;
-            YandexGame.SaveProgress();
+            Debug.LogError("Переделать");
+            //YandexGame.SaveProgress();
         }
     }
 }

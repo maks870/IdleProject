@@ -18,6 +18,12 @@ public class MenuGame : Menu
             Destroy(gameObject);
     }
 
+    private void Start()
+    {
+        pauseCount = 0;
+        Time.timeScale = 1;
+    }
+
     public void SetPause(bool pause)
     {
         if (pause)
@@ -40,8 +46,6 @@ public class MenuGame : Menu
     public void EndGame(int scene) 
     {
         CoinCollector.instance?.UploadGold();
-        pauseCount = 0;
-        SetPause(false);
         LoadScene(scene);
     }
 }
