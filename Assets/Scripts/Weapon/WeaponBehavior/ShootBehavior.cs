@@ -72,7 +72,6 @@ public class ShootBehavior : Behavior, IUpgradeble
     public override void Upgrade(string statName)
     {
         YandexGame.savesData.shootWeapon[statName]++;
-        YandexGame.SaveProgress();
         //YandexGame.savesData.shootWeapon[statName]++;// включить для билда
     }
 
