@@ -9,6 +9,7 @@ public class SpinBehavior : Behavior
     [SerializeField] private GameObject projectile;
     [SerializeField] private float spinningTime;
     [SerializeField] private float radius;
+    [SerializeField] private float projectileSpeed;
     private List<GameObject> spinList = new List<GameObject>();
     private List<Vector3> relativeDistanceList = new List<Vector3>();
     private GameObject spin;
@@ -17,11 +18,22 @@ public class SpinBehavior : Behavior
     private bool isAddSpin = false;
     private bool isSpinActive = false;
 
+    protected override void Start()
+    {
+        projectileSpeed = projectile.GetComponent<SpinProjectile>().speed;
+    }
     void Update()
+    {
+        if (isSpinActive)
+        {
+            Spin();
+        }
+    }
+    private void Spin()
     {
         for (int i = 0; i < spinList.Count; i++)
         {
-            Quaternion rotate = Quaternion.Euler(0, 0, projectile.GetComponent<SpinProjectile>().speed * Time.deltaTime);
+            Quaternion rotate = Quaternion.Euler(0, 0, projectileSpeed * Time.deltaTime);
             offset = (rotate * relativeDistanceList[i]).normalized;
             spinList[i].transform.position = transform.position + offset * radius;
             relativeDistanceList[i] = spinList[i].transform.position - transform.position;

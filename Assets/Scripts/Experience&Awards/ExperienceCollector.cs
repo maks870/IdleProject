@@ -9,6 +9,7 @@ public class ExperienceCollector : MonoBehaviour
     [SerializeField] private int experienceToLvlup = 100;
     [SerializeField] private double lvlExpMultiply = 1.3;
     [SerializeField] private GameObject expPref;
+    private int queue = 0;
     private AwardPresenter presenter;
     private List<GameObject> invisiblePull = new List<GameObject>();
     private List<GameObject> visiblePull = new List<GameObject>();
@@ -29,6 +30,15 @@ public class ExperienceCollector : MonoBehaviour
 
         presenter = transform.parent.GetComponentInChildren<AwardPresenter>();
         CreatePull();
+    }
+    private void Update()
+    {
+        //if (queue > 0 && !MenuGame.instance.IsPaused)
+        //{
+        //    presenter.GiveAwards();
+        //    queue--;
+        //}
+        CheckLvlup();
     }
     private void AddToPull(GameObject expPoint)
     {
@@ -77,14 +87,24 @@ public class ExperienceCollector : MonoBehaviour
     {
         if (collision.GetComponent<ExpPoint>() != null)
         {
-            AddExperience(collision.GetComponent<ExpPoint>().GetValue);
+            //AddExperience(collision.GetComponent<ExpPoint>().GetValue);
+            currentExperience += collision.GetComponent<ExpPoint>().GetValue;
             AddToPull(collision.gameObject);
         }
     }
-    private void AddExperience(int expPoint)
+    //private void AddExperience(int expPoint)
+    //{
+    //    currentExperience += expPoint;
+    //    if (currentExperience >= experienceToLvlup)//LVLUP
+    //    {
+    //        currentExperience -= experienceToLvlup;
+    //        experienceToLvlup = (int)(experienceToLvlup * lvlExpMultiply);
+    //        queue++;
+    //    }
+    //}  
+    private void CheckLvlup()
     {
-        currentExperience += expPoint;
-        if (currentExperience >= experienceToLvlup)//LVLUP
+        if (currentExperience >= experienceToLvlup)
         {
             currentExperience -= experienceToLvlup;
             experienceToLvlup = (int)(experienceToLvlup * lvlExpMultiply);
