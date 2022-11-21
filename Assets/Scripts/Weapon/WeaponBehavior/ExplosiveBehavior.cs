@@ -105,7 +105,6 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
     // Start is called before the first frame update
     public override void SetDataVariables()
     {
-        Debug.Log("установка начальных значений");
         Upgrader upgrader = GetComponent<Upgrader>();
         projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("explodeDamage", YandexGame.savesData.explosiveWeapon);
         projectile.GetComponent<CircleCollider2D>().radius = upgrader.GetDataVariable("explodeRadius", YandexGame.savesData.explosiveWeapon);
