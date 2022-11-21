@@ -46,7 +46,6 @@ public class Spawner : MonoBehaviour
             instance = this;
         else if (instance == this)
             Destroy(gameObject);
-        DontDestroyOnLoad(gameObject);
 
         foreach (Round round in rounds) 
         {
