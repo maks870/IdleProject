@@ -18,10 +18,6 @@ public class MenuGame : Menu
             instance = this;
         else if (instance == this)
             Destroy(gameObject);
-    }
-
-    private void Start()
-    {
         pauseCount = 0;
         Time.timeScale = 1;
     }
