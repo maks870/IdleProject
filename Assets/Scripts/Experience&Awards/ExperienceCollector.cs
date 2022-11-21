@@ -70,10 +70,6 @@ public class ExperienceCollector : MonoBehaviour
             expObject.transform.position = position;
         }
     }
-    public void PickUp(GameObject expPoint)
-    {
-        AddToPull(expPoint);
-    }
     private void CreatePull()
     {
         for (int i = 0; i < maxExpObj; i++)

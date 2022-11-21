@@ -63,7 +63,7 @@ public class CoinCollector : MonoBehaviour
         {
             if (Random.Range(0, 100) < coinDropChance)
             {
-                RemoveFromPull(coinPoint).transform.position = position + new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), 0);
+                RemoveFromPull(coinPoint).transform.position = position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
             }
         }
         else
@@ -71,7 +71,7 @@ public class CoinCollector : MonoBehaviour
             GameObject coinObject = visiblePull[0];
             visiblePull.Remove(coinObject);
             visiblePull.Add(coinObject);
-            coinObject.transform.position = position + new Vector3(Random.Range(0f, 1f), Random.Range(0f, 1f), 0); ;
+            coinObject.transform.position = position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0); ;
         }
 
     }

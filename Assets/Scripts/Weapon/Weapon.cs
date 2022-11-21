@@ -12,7 +12,8 @@ public class Weapon : MonoBehaviour, IAward
     [SerializeField] private int maxLevelCount = 5;
     [SerializeField] private Behavior behavior;
     [SerializeField] private Level level;
-    [SerializeField] private bool isActive = false;
+    [SerializeField] private bool isStartWeapon = false;
+    private bool isActive = false;
     private Action<bool> improve;
     public Sprite GetAwardSprite => sprite;
 
@@ -24,6 +25,21 @@ public class Weapon : MonoBehaviour, IAward
 
     public bool IsWeaponActive => isActive;
 
+    void Start()
+    {
+        level = new Level(maxLevelCount);
+        improve += behavior.Improve;
+        if (isStartWeapon)
+        {
+            ActiveWeapon();
+        }
+    }
+    private void ActiveWeapon()
+    {
+        isActive = true;
+        behavior.ActiveBehavior();
+        StartCoroutine(WeaponTimer());
+    }
     public void UseWeapon()
     {
         behavior.Use();
@@ -34,23 +50,8 @@ public class Weapon : MonoBehaviour, IAward
             level.LevelUp(behavior.Improve);
         else
         {
-            isActive = true;
-            behavior.ActiveBehavior();
-            StartCoroutine(WeaponTimer());
+            ActiveWeapon();
         }
-        //gameObject.SetActive(true);
-    }
-    void Start()
-    {
-        level = new Level(maxLevelCount);
-        improve += behavior.Improve;
-        StartCoroutine(WeaponTimer());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
     }
     IEnumerator WeaponTimer()
     {

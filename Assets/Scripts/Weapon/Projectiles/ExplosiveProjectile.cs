@@ -7,6 +7,7 @@ public class ExplosiveProjectile : Projectile
     [SerializeField] private float timer = 1;
     private List<Enemy> enemyList = new List<Enemy>();
     private Animator animator;
+    public ExplosiveBehavior explosiveBehavior;
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -38,7 +39,7 @@ public class ExplosiveProjectile : Projectile
         {
             enemyList[i].TakeDamage(damage);
         }
-        Destroy(gameObject);
+        explosiveBehavior.AddToPull(gameObject);
     }
     IEnumerator TimerToExplode()
     {

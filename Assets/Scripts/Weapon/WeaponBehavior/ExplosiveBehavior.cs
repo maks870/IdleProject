@@ -4,11 +4,12 @@ using UnityEngine;
 using YG;
 
 [RequireComponent(typeof(Upgrader))]
-public class ExplosiveBehavior : Behavior
+public class ExplosiveBehavior : Behavior, IUpgradeble
 {
     [SerializeField] private GameObject projectile;
     [SerializeField] private float radius;
     [SerializeField] private int maxBobmObj = 20;
+    private float bombRadius;
     private List<GameObject> invisiblePull = new List<GameObject>();
     private List<GameObject> visiblePull = new List<GameObject>();
     private void DropProjectile()
@@ -21,12 +22,16 @@ public class ExplosiveBehavior : Behavior
             float randomX = Random.Range(-x, x);
             float y = x - Mathf.Abs(randomX);
             float randomY = Random.Range(-y, y);
-            if (Mathf.Pow(randomX, 2) + Mathf.Pow(randomY, 2) <= Mathf.Pow(radius, 2))
-            {               
-                dropPlace.x = randomX;
-                dropPlace.y = randomY;
-                dropPlace.z = 0;
+            dropPlace.x = randomX;
+            dropPlace.y = randomY;
+            dropPlace.z = 0;
+            if (CheckPlace(dropPlace))
+            {
                 break;
+            }
+            else
+            {
+                Debug.Log("точка не подошщла");
             }
         }
 
@@ -41,13 +46,28 @@ public class ExplosiveBehavior : Behavior
             visiblePull.Add(bombObject);
             bombObject.transform.position = transform.position + dropPlace;
         }
-        Instantiate(projectile, transform.position + dropPlace, Quaternion.identity);
     }
-    private void AddToPull(GameObject projectile)
+    private bool CheckPlace(Vector3 dropPlace)
     {
-        invisiblePull.Add(projectile);
-        visiblePull.Remove(projectile);
-        projectile.SetActive(false);
+        float range;
+        for (int i = 0; i < visiblePull.Count; i++)
+        {
+            range = (visiblePull[i].transform.position - (dropPlace + transform.position)).magnitude;
+            if (range <= bombRadius)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    private void CreatePull()
+    {
+        for (int i = 0; i < maxBobmObj; i++)
+        {
+            GameObject newProjectileObject = Instantiate(projectile, transform.position, Quaternion.identity);
+            newProjectileObject.GetComponent<ExplosiveProjectile>().explosiveBehavior = this;
+            AddToPull(newProjectileObject);
+        }
     }
     private GameObject RemoveFromPull()
     {
@@ -57,13 +77,20 @@ public class ExplosiveBehavior : Behavior
         bombObject.SetActive(true);
         return bombObject;
     }
+    public void AddToPull(GameObject projectile)
+    {
+        invisiblePull.Add(projectile);
+        visiblePull.Remove(projectile);
+        projectile.SetActive(false);
+    }
     public override void Combine()
     {
         //логика объединения оружия
     }
     public override void ActiveBehavior()
     {
-
+        bombRadius = projectile.GetComponent<CircleCollider2D>().radius;
+        CreatePull();
     }
     public override void Use()
     {
