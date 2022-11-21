@@ -64,6 +64,7 @@ public class ShootBehavior : Behavior, IUpgradeble
     }
     public override void SetDataVariables()
     {
+        Debug.Log("IT WORKS");
         Upgrader upgrader = GetComponent<Upgrader>();
         projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("shootDamage", YandexGame.savesData.shootWeapon);
         shootZone.radius = upgrader.GetDataVariable("shootRange", YandexGame.savesData.shootWeapon);

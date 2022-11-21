@@ -38367,6 +38367,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1168119504}
     m_Modifications:
+    - target: {fileID: 4573911166684390161, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
+      propertyPath: isActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4573911166684390165, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
       propertyPath: m_Name
       value: ExplosiveWeapon
@@ -73383,6 +73387,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1168119504}
     m_Modifications:
+    - target: {fileID: 4573911166684390161, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
+      propertyPath: isActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4573911166684390165, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
       propertyPath: m_Name
       value: ShootWeapon

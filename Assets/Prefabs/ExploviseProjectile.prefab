@@ -102,6 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   speed: 0
+  timer: 1
 --- !u!95 &4071909851084993264
 Animator:
   serializedVersion: 4
@@ -112,7 +113,7 @@ Animator:
   m_GameObject: {fileID: 6162771019044189261}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 4600c92522cd6a346b531de173516009, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

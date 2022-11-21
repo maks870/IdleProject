@@ -25,6 +25,11 @@ public class Menu : MonoBehaviour
             // Если плагин еще не прогрузился, то метод не запуститься в методе Start,
             // но он запустится при вызове события GetDataEvent, после прогрузки плагина
         }
+        if (YandexGame.savesData.isFirstSession)
+        {
+            YandexGame.savesData.isFirstSession = false;
+            YandexGame.SaveProgress();
+        }
     }
 
     // Ваш метод, который будет запускаться в старте

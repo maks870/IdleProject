@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ExplosiveProjectile : Projectile
 {
-    private float timer = 1;
+    [SerializeField] private float timer = 1;
     private List<Enemy> enemyList = new List<Enemy>();
     private Animator animator;
     private void Start()
@@ -17,7 +17,6 @@ public class ExplosiveProjectile : Projectile
         {
             Enemy enemy = collision.GetComponent<Enemy>();
             enemyList.Add(enemy);
-            collision.GetComponent<Enemy>().TakeDamage(damage);
         }
         if (enemyList.Count == 1)
         {
@@ -35,10 +34,11 @@ public class ExplosiveProjectile : Projectile
     private void Explode()
     {
         animator.SetTrigger(""); //“–»√√≈– ¿Õ»Ã¿÷»» ¬«–€¬¿
-        foreach (Enemy enemy in enemyList)
+        for (int i = 0; i < enemyList.Count; i++)
         {
-            enemy.TakeDamage(damage);
+            enemyList[i].TakeDamage(damage);
         }
+        Destroy(gameObject);
     }
     IEnumerator TimerToExplode()
     {
