@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7931713123099130118}
   - component: {fileID: 6573957973423420868}
+  - component: {fileID: 3271097035496640742}
   - component: {fileID: 4071909851084993264}
-  - component: {fileID: 536338590369653220}
   - component: {fileID: 6924540937332378979}
   - component: {fileID: 7588374825091663524}
   m_Layer: 0
@@ -88,6 +88,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3271097035496640742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6162771019044189261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: decdd734e68076047b915dfd470da3e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  speed: 0
 --- !u!95 &4071909851084993264
 Animator:
   serializedVersion: 4
@@ -96,7 +110,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6162771019044189261}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 4600c92522cd6a346b531de173516009, type: 2}
   m_CullingMode: 0
@@ -108,20 +122,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &536338590369653220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6162771019044189261}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70045071370cc5c49b2b6c85d12e8b67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
-  speed: 20
 --- !u!50 &6924540937332378979
 Rigidbody2D:
   serializedVersion: 4
@@ -159,7 +159,7 @@ PolygonCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: -0.00061054487, y: 0.5000001}
+    pivot: {x: 0, y: 0.5}
     oldSize: {x: 5.35, y: 2}
     newSize: {x: 17, y: 18}
     adaptiveTilingThreshold: 0.5

@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7095154187732122947}
   - component: {fileID: 7095154187732122944}
-  - component: {fileID: 7095154187732122945}
-  - component: {fileID: 7095154187732122946}
+  - component: {fileID: -2097604548177440384}
   - component: {fileID: 1215393480093257734}
   m_Layer: 0
-  m_Name: SpinWeapon
+  m_Name: SlayWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,11 +49,11 @@ MonoBehaviour:
   weaponName: Shuriken
   description: It just throwing knife
   sprite: {fileID: 21300000, guid: 7567d5eadabfcda42b7b376df2d1cf12, type: 3}
-  cooldown: 6
+  cooldown: 3
   maxLevelCount: 5
-  behavior: {fileID: 7095154187732122945}
-  isActive: 0
---- !u!114 &7095154187732122945
+  behavior: {fileID: -2097604548177440384}
+  isStartWeapon: 0
+--- !u!114 &-2097604548177440384
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -63,28 +62,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7095154187732122972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5b0d88408be176e4081fd6d325169ce9, type: 3}
+  m_Script: {fileID: 11500000, guid: 139fe97de7138624a98568c8a9718686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 6162771019044189261, guid: a0fd04f943cf9a24d9bb19ff58472a77, type: 3}
-  spinningTime: 2
-  radius: 5
---- !u!58 &7095154187732122946
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7095154187732122972}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 10
+  projectile: {fileID: 6162771019044189261, guid: f1c47c02f65ada14f8ab0c921f376ed9, type: 3}
+  duration: 2
+  slayObject: {fileID: 0}
 --- !u!114 &1215393480093257734
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class ExplosiveProjectile : Projectile
     {
         animator = GetComponent<Animator>();
     }
-    public override void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Enemy>() != null)
         {

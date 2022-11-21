@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyProjectile : Projectile
 {
-    public override void OnTriggerEnter2D(Collider2D collision)
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Player>() != null)
         {

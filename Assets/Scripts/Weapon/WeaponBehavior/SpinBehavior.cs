@@ -9,7 +9,7 @@ public class SpinBehavior : Behavior
     [SerializeField] private GameObject projectile;
     [SerializeField] private float spinningTime;
     [SerializeField] private float radius;
-    [SerializeField] private float projectileSpeed;
+    private float projectileSpeed;
     private List<GameObject> spinList = new List<GameObject>();
     private List<Vector3> relativeDistanceList = new List<Vector3>();
     private GameObject spin;

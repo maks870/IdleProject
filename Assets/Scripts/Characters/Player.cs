@@ -13,6 +13,7 @@ public class Player : Character, IUpgradeble
     public UnityEvent endRound;
 
     public Level GetLevel => level;
+    public Vector3 GetMoveDirection => moveDirection;
 
     private void Awake()
     {

@@ -4,15 +4,40 @@ using UnityEngine;
 
 public class SlayProjectile : Projectile
 {
-    // Start is called before the first frame update
-    void Start()
+    private List<Enemy> enemyList = new List<Enemy>();
+    public SlayBehavior slayBehavior;
+    protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (collision.GetComponent<Enemy>() != null)
+        {
+            Enemy enemy = collision.GetComponent<Enemy>();
+            enemyList.Add(enemy);
+            Slay(enemy);
+        }
     }
-
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        
+        if (collision.GetComponent<Enemy>() != null)
+        {
+            Enemy enemy = collision.GetComponent<Enemy>();
+            enemyList.Remove(enemy);
+        }
+    }
+    public void Slay(Enemy enemy)
+    {
+        if (enemyList.Contains(enemy))
+        { 
+        enemy.TakeDamage(damage);
+        }
+        StartCoroutine(ReloadDamage(enemy));
+
+    }
+    private IEnumerator ReloadDamage(Enemy enemy)
+    {
+        yield return new WaitForSeconds(0.5f);
+        if (slayBehavior.IsSlaying)
+        {
+            Slay(enemy);
+        }
     }
 }
