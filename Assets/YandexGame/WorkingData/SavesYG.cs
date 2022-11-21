@@ -10,7 +10,7 @@ namespace YG
         public string language = "ru";
        // public bool feedbackDone;
         public bool promptDone;
-        public bool sound;
+        public bool sound = true;
 
         // Ваши сохранения
       //  public string newPlayerName = "Hello!";
@@ -20,6 +20,6 @@ namespace YG
         public Dictionary<string, int> shootWeapon = new Dictionary<string, int>(2) { ["shootDamage"] = 0, ["shootRange"] = 0 };
         public Dictionary<string, int> spinWeapon = new Dictionary<string, int>(2) { ["spinDamage"] = 0, ["spinRadius"] = 0 };
         public Dictionary<string, int> playerSkill = new Dictionary<string, int>(2) { ["health"] = 0, ["speed"] = 0 };
-        public int gold = 100;
+        public int gold = 0;
     }
 }

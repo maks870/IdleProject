@@ -4,11 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+
 [Serializable]
 public class SpawnEnemy
 {
     public GameObject pref;
-
     [Range(0, 100)] 
     public float probability;
 }
@@ -23,6 +23,7 @@ public class Round
 
 public class Spawner : MonoBehaviour
 {
+    public GameObject targetObject;
     [SerializeField] private Round[] rounds;
     [SerializeField] private int maxEnemy;
     [SerializeField] private float spawnTime = 0.3f;
@@ -34,6 +35,10 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
+        if (targetObject == null) 
+        {
+            targetObject = Player.instance.gameObject;
+        }
         zones = GetComponentsInChildren<BoxCollider2D>();
         StartCoroutine(TimerSpawn());
 
@@ -85,7 +90,7 @@ public class Spawner : MonoBehaviour
         }
 
         enemy = Instantiate(spawnObject, SpawnPosition(), Quaternion.identity).GetComponent<Enemy>();
-        enemy.SetTarget(Player.instance.gameObject);
+        enemy.SetTarget(targetObject);
         spawnedEnemies.Add(enemy);
         Enemy enemyForDelegate = enemy;// создание уникалного объекта врага, так как Enemy - ссылочный тип
         enemy.deathEvent.AddListener(delegate { KillEnemy(enemyForDelegate); });// добавление слушателя метода KillEnemy() срабатывающего при смерти врага

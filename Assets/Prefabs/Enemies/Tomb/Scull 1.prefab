@@ -54,6 +54,7 @@ MonoBehaviour:
   damage: 2
   coin: {fileID: 4788945594064710141, guid: a3dcfa91b0d59744c8f72a5d545cbeae, type: 3}
   expPoint: {fileID: 3957463621492816713, guid: 1633b12828da91f4a8cc250e0b449563, type: 3}
+  actionCooldown: 0
 --- !u!50 &3695611444749702702
 Rigidbody2D:
   serializedVersion: 4
@@ -85,7 +86,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
