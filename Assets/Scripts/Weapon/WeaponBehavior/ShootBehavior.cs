@@ -59,12 +59,10 @@ public class ShootBehavior : Behavior, IUpgradeble
     }
     public override void Improve(bool isMaxLevel)
     {
-        Debug.Log("Стрельба улучшена");
         //метод улучщения оружия
     }
     public override void SetDataVariables()
     {
-        Debug.Log("IT WORKS");
         Upgrader upgrader = GetComponent<Upgrader>();
         projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("shootDamage", YandexGame.savesData.shootWeapon);
         shootZone.radius = upgrader.GetDataVariable("shootRange", YandexGame.savesData.shootWeapon);

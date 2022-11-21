@@ -5,9 +5,10 @@ using UnityEngine;
 public class ExplosiveProjectile : Projectile
 {
     [SerializeField] private float timer = 1;
+    [SerializeField] private GameObject explosion;
     private List<Enemy> enemyList = new List<Enemy>();
     private Animator animator;
-    public ExplosiveBehavior explosiveBehavior;
+    [HideInInspector] public ExplosiveBehavior explosiveBehavior;
     private void Start()
     {
         animator = GetComponent<Animator>();
@@ -34,7 +35,7 @@ public class ExplosiveProjectile : Projectile
     }
     private void Explode()
     {
-
+        Instantiate(explosion, transform);
         for (int i = 0; i < enemyList.Count; i++)
         {
             enemyList[i].TakeDamage(damage);

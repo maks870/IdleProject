@@ -71975,6 +71975,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1168119504}
     m_Modifications:
+    - target: {fileID: -2097604548177440384, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
+      propertyPath: spawnDistanse
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7095154187732122944, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
       propertyPath: isStartWeapon
       value: 1
@@ -73819,6 +73823,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1215393480093257734, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7095154187732122944, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
+      propertyPath: isStartWeapon
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7095154187732122947, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}

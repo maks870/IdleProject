@@ -6,21 +6,13 @@ using YG;
 public class SlayBehavior : Behavior, IUpgradeble
 {
     [SerializeField] private GameObject projectile;
-    [SerializeField] private float duration;
-    [SerializeField] private SlayProjectile slayProjectile;
-    private SpriteRenderer spriteRenderer;
+    [SerializeField] private float spawnDistanse = 2;
     private bool isSlaying = false;
     public bool IsSlaying => isSlaying;
 
     private void Update()
     {
-        if (isSlaying)
-        {
-            float angle = Vector3.SignedAngle(Vector3.up, Player.instance.GetMoveDirection.normalized, Vector3.forward);
-            if (angle <= 0) spriteRenderer.flipY = false;
-            else spriteRenderer.flipY = true;
-            slayProjectile.gameObject.transform.rotation = Quaternion.Euler(0, 0, angle + 90);
-        }
+        Debug.Log(Player.instance.GetMoveDirection);
     }
     public override void Combine()
     {
@@ -29,23 +21,23 @@ public class SlayBehavior : Behavior, IUpgradeble
 
     public override void ActiveBehavior()
     {
-        slayProjectile = Instantiate(projectile, transform).GetComponent<SlayProjectile>();
-        slayProjectile.GetComponent<SlayProjectile>().slayBehavior = this;
-        spriteRenderer = slayProjectile.GetComponent<SpriteRenderer>();
-        slayProjectile.gameObject.SetActive(false);
     }
     public override void Use()
     {
-        StartCoroutine(Timer());
+        Vector3 dir = Player.instance.GetMoveDirection;
+        if (dir != Vector3.zero)
+        {
+            float angle = Vector3.SignedAngle(Vector3.up, dir, Vector3.forward);
+            Quaternion rotation = Quaternion.Euler(0, 0, angle);
+            Instantiate(projectile, transform.position + dir * spawnDistanse, rotation);
+        }
     }
     public override void Improve(bool isMaxLevel)
     {
-        Debug.Log("Стрельба улучшена");
         //метод улучщения оружия
     }
     public override void SetDataVariables()
     {
-        Debug.Log("установка начальных значений");
         Upgrader upgrader = GetComponent<Upgrader>();
     }
     public override void Upgrade(string statName)
@@ -56,14 +48,5 @@ public class SlayBehavior : Behavior, IUpgradeble
     public int GetStatLvl(string statName)
     {
         return YandexGame.savesData.explosiveWeapon[statName];
-    }
-
-    IEnumerator Timer()
-    {
-        slayProjectile.gameObject.SetActive(true);
-        isSlaying = true;
-        yield return new WaitForSeconds(duration);
-        isSlaying = false;
-        slayProjectile.gameObject.SetActive(false);
     }
 }

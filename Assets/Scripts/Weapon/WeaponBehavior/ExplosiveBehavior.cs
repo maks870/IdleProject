@@ -53,6 +53,7 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
         float range;
         for (int i = 0; i < visiblePull.Count; i++)
         {
+            if (visiblePull[i] == null) continue;
             range = (visiblePull[i].transform.position - (dropPlace + transform.position)).magnitude;
             if (range <= bombRadius)
             {

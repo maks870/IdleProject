@@ -6,7 +6,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public int damage;
-    public float speed;
+    public float speed; //убрать speed для базового класса, а вообще можно переделать типо с помощью стратегии
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Enemy>() != null)

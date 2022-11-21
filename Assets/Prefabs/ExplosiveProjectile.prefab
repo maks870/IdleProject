@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6924540937332378979}
   - component: {fileID: 4903520901570539729}
   m_Layer: 0
-  m_Name: ExploviseProjectile
+  m_Name: ExplosiveProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   damage: 1
   speed: 0
   timer: 1
+  explosion: {fileID: 3668915634709128442, guid: 5f16738ba08f9ac4aa783a7f508248c5, type: 3}
   explosiveBehavior: {fileID: 0}
 --- !u!95 &4071909851084993264
 Animator:
