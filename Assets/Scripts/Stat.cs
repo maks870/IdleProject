@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public struct StatLvl
 {
-    public int value;
+    public float value;
     public int cost;
 }
 

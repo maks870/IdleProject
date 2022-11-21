@@ -102,7 +102,7 @@ public class SpinBehavior : Behavior
     public override void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
-        projectile.GetComponent<Projectile>().damage = upgrader.GetDataVariable("spinDamage", YandexGame.savesData.spinWeapon);
+        projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("spinDamage", YandexGame.savesData.spinWeapon);
         radius = upgrader.GetDataVariable("spinRadius", YandexGame.savesData.spinWeapon);
     }
     public override void Upgrade(string statName)

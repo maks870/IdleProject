@@ -7,7 +7,7 @@ public class Upgrader : MonoBehaviour
 {
     public List<Stat> stats = new List<Stat>();
     IUpgradeble upgradeble;
-    public int GetDataVariable(string statName, Dictionary<string, int> data)
+    public float GetDataVariable(string statName, Dictionary<string, int> data)
     {
         int statLvl = data[statName];
         foreach (Stat stat in stats)

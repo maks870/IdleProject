@@ -70,8 +70,8 @@ public class AreaBehavior : Behavior, IUpgradeble
     public override void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
-        damage = upgrader.GetDataVariable("areaDamage", YandexGame.savesData.areaWeapon);
-        slow = upgrader.GetDataVariable("areaSlow", YandexGame.savesData.areaWeapon);
+        damage = (int)upgrader.GetDataVariable("areaDamage", YandexGame.savesData.areaWeapon);
+        slow = (int)upgrader.GetDataVariable("areaSlow", YandexGame.savesData.areaWeapon);
 
     }
     public override void Upgrade(string statName)

@@ -51,7 +51,7 @@ public class Player : Character, IUpgradeble
     public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
-        hp = upgrader.GetDataVariable("health", YandexGame.savesData.playerSkill);
+        hp = (int)upgrader.GetDataVariable("health", YandexGame.savesData.playerSkill);
         speed = upgrader.GetDataVariable("speed", YandexGame.savesData.playerSkill);
     }
     public void Upgrade(string statName)
