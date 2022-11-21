@@ -34,7 +34,7 @@ public class ExplosiveProjectile : Projectile
     }
     private void Explode()
     {
-        animator.SetTrigger(""); //ÒĞÈÃÃÅĞ ÀÍÈÌÀÖÈÈ ÂÇĞÛÂÀ
+
         for (int i = 0; i < enemyList.Count; i++)
         {
             enemyList[i].TakeDamage(damage);
@@ -43,6 +43,7 @@ public class ExplosiveProjectile : Projectile
     }
     IEnumerator TimerToExplode()
     {
+        animator.SetTrigger("Activate"); //ÒĞÈÃÃÅĞ ÀÍÈÌÀÖÈÈ ÂÇĞÛÂÀ
         yield return new WaitForSeconds(timer);
         Explode();
     }
