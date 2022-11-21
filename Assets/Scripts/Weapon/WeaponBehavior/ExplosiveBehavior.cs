@@ -8,6 +8,7 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
 {
     [SerializeField] private GameObject projectile;
     [SerializeField] private float radius;
+    [SerializeField] private float radiusImprove;
     [SerializeField] private int maxBobmObj = 20;
     private float bombRadius;
     private List<GameObject> invisiblePull = new List<GameObject>();
@@ -98,7 +99,7 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
     }
     public override void Improve(bool isMaxLevel)
     {
-        //метод улучщения оружия
+        radius += radiusImprove;
     }
 
     // Start is called before the first frame update
