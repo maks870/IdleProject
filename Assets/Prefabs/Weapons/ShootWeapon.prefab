@@ -53,7 +53,7 @@ MonoBehaviour:
   cooldown: 1
   maxLevelCount: 5
   behavior: {fileID: 4573911166684390167}
-  isActive: 1
+  isActive: 0
 --- !u!114 &4573911166684390167
 MonoBehaviour:
   m_ObjectHideFlags: 0
