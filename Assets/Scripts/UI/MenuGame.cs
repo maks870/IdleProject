@@ -9,6 +9,7 @@ public class MenuGame : Menu
 {
     public static MenuGame instance = null;
     private int pauseCount = 0;
+    
     public bool IsPaused => pauseCount == 0 ? false : true;
 
     private void Awake()
