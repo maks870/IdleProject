@@ -1,15 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using YG;
+
 
 public class MenuGame : Menu
 {
-    public static MenuGame instance = null;
+    [SerializeField] private Text stopwatchText;
+    private Stopwatch stopwatch;
     private int pauseCount = 0;
-    
+    public static MenuGame instance = null;
+
     public bool IsPaused => pauseCount == 0 ? false : true;
 
     private void Awake()
@@ -18,8 +17,17 @@ public class MenuGame : Menu
             instance = this;
         else if (instance == this)
             Destroy(gameObject);
+
         pauseCount = 0;
         Time.timeScale = 1;
+
+        stopwatch = new Stopwatch();
+        stopwatch.StartStopWatch();
+    }
+
+    private void Update()
+    {
+        stopwatchText.text = stopwatch.GetTime();
     }
 
     public void SetPause(bool pause)
@@ -43,6 +51,7 @@ public class MenuGame : Menu
 
     public void EndGame(int scene) 
     {
+        stopwatch.Stop();
         CoinCollector.instance?.UploadGold();
         LoadScene(scene);
     }
