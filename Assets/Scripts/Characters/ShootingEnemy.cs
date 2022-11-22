@@ -4,28 +4,33 @@ using UnityEngine;
 
 public class ShootingEnemy : Enemy, IShooting
 {
-    [SerializeField] private int shootRaduis;
+    [SerializeField] private int shootRadius;
     [SerializeField] private int runningAwayDistance;
     [SerializeField] private GameObject projectile;
+    private bool isShooting = false;
     public Projectile GetProjectile() => projectile.GetComponent<Projectile>();
+
     protected override void Update()
     {
-        if ((target.transform.position - transform.position).magnitude > shootRaduis)
+        if ((target.transform.position - transform.position).magnitude > shootRadius)
         {
             Move();
-        }
-        else if ((target.transform.position - transform.position).magnitude < runningAwayDistance)
-        {
-            RunningAway();
+            isShooting = false;
         }
         else
         {
-            Stop();
+            if (!isShooting)
+            {
+                isShooting = true;
+                StartCoroutine(ShootingDelay());
+            }
         }
-    }
-    protected override void Action()
-    {
-        Shoot();
+
+        if ((target.transform.position - transform.position).magnitude < runningAwayDistance)
+            RunningAway();
+        else
+            Stop();
+
     }
     private void Move()
     {
@@ -47,14 +52,21 @@ public class ShootingEnemy : Enemy, IShooting
     public void Shoot()
     {
         float distanse = (transform.position - target.transform.position).magnitude;
-        if (distanse <= shootRaduis)
+        if (distanse <= shootRadius)
         {
             GameObject shoot = Instantiate(projectile, transform);
             shoot.transform.parent = null;
             shoot.GetComponent<Rigidbody2D>().AddForce((target.transform.position - transform.position).normalized * projectile.GetComponent<Projectile>().speed, ForceMode2D.Impulse);
         }
     }
-
+    IEnumerator ShootingDelay()
+    {
+        while (isShooting)
+        {
+            Shoot();
+            yield return new WaitForSeconds(actionCooldown);
+        }
+    }
 
 
 }

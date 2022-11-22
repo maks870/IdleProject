@@ -27,14 +27,8 @@ public class Enemy : Character
     protected override void Start()
     {
         base.Start();
-        StartCoroutine(ActionDelay());
     }
 
-    protected virtual void Action()
-    {
-
-
-    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Player>() != null)
@@ -74,13 +68,5 @@ public class Enemy : Character
         CoinCollector.instance.Drop(coin, transform.position);
         deathEvent.Invoke();
 
-    }
-    IEnumerator ActionDelay()
-    {
-        while (true)
-        {
-            Action();
-            yield return new WaitForSeconds(actionCooldown);
-        }
     }
 }

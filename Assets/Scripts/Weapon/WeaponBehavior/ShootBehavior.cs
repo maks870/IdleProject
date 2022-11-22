@@ -59,7 +59,7 @@ public class ShootBehavior : Behavior, IUpgradeble
     }
     public override void Improve(bool isMaxLevel)
     {
-        //метод улучщения оружия
+        //ДОБАВИТЬ КОЛЛИЧЕСТВО ЦЕЛЕЙ ДЛЯ ВЫСТРЕЛА
     }
     public override void SetDataVariables()
     {
