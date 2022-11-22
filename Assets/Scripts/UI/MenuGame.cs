@@ -1,10 +1,11 @@
 using UnityEngine;
 using UnityEngine.UI;
-
+using YG;
 
 public class MenuGame : Menu
 {
-    [SerializeField] private Text stopwatchText;
+    [SerializeField] private Text stopwatchGame;
+    [SerializeField] private Text stopwatchMenu;
     private Stopwatch stopwatch;
     private int pauseCount = 0;
     public static MenuGame instance = null;
@@ -27,7 +28,11 @@ public class MenuGame : Menu
 
     private void Update()
     {
-        stopwatchText.text = stopwatch.GetTime();
+        string timeString = stopwatch.GetTime();//вызывать только один раз за кадр, не чаще
+        //или создать отдельный объект 
+
+        stopwatchGame.text = timeString;
+        stopwatchMenu.text = timeString;
     }
 
     public void SetPause(bool pause)
@@ -51,8 +56,11 @@ public class MenuGame : Menu
 
     public void EndGame(int scene) 
     {
-        stopwatch.Stop();
-        CoinCollector.instance?.UploadGold();
+        YandexGame.savesData.gold += CoinCollector.instance.CollectedGold;
+
+        if (YandexGame.savesData.recordScore < CoinCollector.instance.CollectedGold)
+            YandexGame.savesData.recordScore = CoinCollector.instance.CollectedGold;
+        YandexGame.SaveProgress();
         LoadScene(scene);
     }
 }

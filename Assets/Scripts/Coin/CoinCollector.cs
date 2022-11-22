@@ -1,7 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using YG;
 
 public class CoinCollector : MonoBehaviour
 {
@@ -12,7 +10,9 @@ public class CoinCollector : MonoBehaviour
     private List<GameObject> invisiblePull = new List<GameObject>();
     private List<GameObject> visiblePull = new List<GameObject>();
     public static CoinCollector instance = null;
+
     public int CollectedGold => collectedGold;
+
     private void Awake()
     {
         if (instance == null)
@@ -25,6 +25,7 @@ public class CoinCollector : MonoBehaviour
         }
         CreateCoinObjectPull();
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Coin>() != null)
@@ -33,12 +34,14 @@ public class CoinCollector : MonoBehaviour
             AddToPull(collision.gameObject);
         }
     }
+
     private void AddToPull(GameObject coinPoint)
     {
         invisiblePull.Add(coinPoint);
         visiblePull.Remove(coinPoint);
         coinPoint.SetActive(false);
     }
+
     private GameObject RemoveFromPull(Coin coinPoint)
     {
         GameObject coinObject = invisiblePull[0];
@@ -48,15 +51,12 @@ public class CoinCollector : MonoBehaviour
         coinObject.SetActive(true);
         return coinObject;
     }
+
     public void AddCoin(int value)
     {
         collectedGold += value;
     }
-    public void UploadGold()
-    {
-        YandexGame.savesData.gold += collectedGold;
-        YandexGame.SaveProgress();
-    }
+
     public void Drop(Coin coinPoint, Vector3 position)
     {
         if (invisiblePull.Count > 0)
@@ -73,12 +73,13 @@ public class CoinCollector : MonoBehaviour
             visiblePull.Add(coinObject);
             coinObject.transform.position = position + new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0); ;
         }
-
     }
+
     public void PickUp(GameObject coin)
     {
         AddToPull(coin);
     }
+
     private void CreateCoinObjectPull()
     {
         for (int i = 0; i < maxCoinCount; i++)

@@ -1,75 +1,48 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class ShootingEnemy : Enemy, IShooting
+public class ShootingEnemy : Enemy
 {
     [SerializeField] private int shootRadius;
     [SerializeField] private int runningAwayDistance;
     [SerializeField] private GameObject projectile;
-    private bool shootAvaliable = false;
-    private bool isShooting = false;
-    public Projectile GetProjectile() => projectile.GetComponent<Projectile>();
+    private float oldSpeed;
+    private bool reloading = false;
+
+    protected override void Start()
+    {
+        oldSpeed = speed;
+        base.Start();    
+    }
 
     protected override void Update()
     {
-        if ((target.transform.position - transform.position).magnitude > shootRadius)
-        {
-            Move();
-            shootAvaliable = false;
-        }
-        else
-        {
-            if (!shootAvaliable)
-            {
-                shootAvaliable = true;
-                if(!isShooting)
-                    StartCoroutine(ShootingDelay());
-            }
-        }
-
-        if ((target.transform.position - transform.position).magnitude < runningAwayDistance)
-            RunningAway();
-        else if ((target.transform.position - transform.position).magnitude < shootRadius)
-            Stop();
-    }
-    private void Move()
-    {
         base.Update();
-    }
-    private void RunningAway()
-    {
-        rb.velocity = -moveDirection * speed;
-        moveDirection = target.transform.position - transform.position;
-        moveDirection = moveDirection.normalized;
-    }
-    private void Stop()
-    {
-        rb.velocity = Vector2.zero;
-        moveDirection = target.transform.position - transform.position;
-        moveDirection = moveDirection.normalized;
-    }
 
-    public void Shoot()
-    {
-        float distanse = (transform.position - target.transform.position).magnitude;
-        if (distanse <= shootRadius)
-        {
-            GameObject shoot = Instantiate(projectile, transform);
-            shoot.transform.parent = null;
-            shoot.GetComponent<ShootProjectile>().Launch((target.transform.position - transform.position).normalized);
-        }
-    }
-    IEnumerator ShootingDelay()
-    {
-        isShooting = true;
-        while (shootAvaliable)
+        if (GetDistanceToTarget() <= shootRadius && !reloading)
         {
             Shoot();
-            yield return new WaitForSeconds(actionCooldown);
         }
-        isShooting = false;
+
+        if (GetDistanceToTarget() < runningAwayDistance)
+            speed = -oldSpeed;
+        else if (GetDistanceToTarget() < shootRadius)
+            speed = 0;
+        else
+            speed = oldSpeed;
     }
 
-
+    private void Shoot()
+    {
+        reloading = true;
+        GameObject shoot = Instantiate(projectile, transform.position, Quaternion.identity);
+        shoot.GetComponent<ShootProjectile>().Launch((target.transform.position - transform.position).normalized);
+        StartCoroutine(Recharge(actionCooldown));
+    }
+    
+    private IEnumerator Recharge(float time)
+    {
+        yield return new WaitForSeconds(time);
+        reloading = false;
+    }
 }

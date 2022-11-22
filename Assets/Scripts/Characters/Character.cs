@@ -6,16 +6,16 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Character : MonoBehaviour
 {
+    private SpriteRenderer spriteRenderer;
+    private Vector2 oldPos;
     [SerializeField] protected float speed;
     [SerializeField] protected int hp;
     [SerializeField] private bool fly;
     protected Rigidbody2D rb;
     protected Vector3 moveDirection;
     protected Animator animator;
-    private SpriteRenderer spriteRenderer;
-    private Vector2 oldPos;
 
-    public int Hp { get => hp;}
+    public int Hp { get => hp; }
 
     protected virtual void Start()
     {
@@ -30,7 +30,6 @@ public class Character : MonoBehaviour
     {
         Move();
         CheckPosition();
-
     }
 
     public void TakeDamage(int damage)
@@ -78,12 +77,12 @@ public class Character : MonoBehaviour
         }
     }
 
-    public void AddHp(int hp) 
+    public void AddHp(int hp)
     {
         this.hp += hp;
     }
 
-    protected virtual void Dead() 
+    protected virtual void Dead()
     {
     }
 }

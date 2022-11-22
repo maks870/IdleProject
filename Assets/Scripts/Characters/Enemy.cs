@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -36,7 +35,6 @@ public class Enemy : Character
             player = collision.GetComponent<Player>();
             Damage();
         }
-
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -60,6 +58,11 @@ public class Enemy : Character
         Damage();
     }
 
+    protected float GetDistanceToTarget()
+    {
+        return Vector3.Distance(target.transform.position, transform.position);
+    }
+
     protected override void Dead()
     {
         base.Dead();
@@ -67,6 +70,5 @@ public class Enemy : Character
         ExperienceCollector.instance.Drop(expPoint, transform.position);
         CoinCollector.instance.Drop(coin, transform.position);
         deathEvent.Invoke();
-
     }
 }
