@@ -38369,15 +38369,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -7617095499134624783, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
       propertyPath: maxBobmObj
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573911166684390161, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
-      propertyPath: isActive
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4573911166684390161, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
       propertyPath: isStartWeapon
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4573911166684390165, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
       propertyPath: m_Name
@@ -71975,13 +71971,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1168119504}
     m_Modifications:
-    - target: {fileID: -2097604548177440384, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
-      propertyPath: spawnDistanse
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7095154187732122944, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
       propertyPath: isStartWeapon
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7095154187732122947, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
       propertyPath: m_RootOrder
@@ -73467,16 +73459,16 @@ PrefabInstance:
     m_TransformParent: {fileID: 1168119504}
     m_Modifications:
     - target: {fileID: 4573911166684390161, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
-      propertyPath: isActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573911166684390161, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
       propertyPath: isStartWeapon
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4573911166684390165, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
       propertyPath: m_Name
       value: ShootWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573911166684390165, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4573911166684390166, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
       propertyPath: m_RootOrder
@@ -73821,10 +73813,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1168119504}
     m_Modifications:
-    - target: {fileID: 1215393480093257734, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7095154187732122944, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
       propertyPath: isStartWeapon
       value: 0

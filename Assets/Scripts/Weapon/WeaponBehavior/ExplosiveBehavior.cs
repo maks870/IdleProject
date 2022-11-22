@@ -43,8 +43,9 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
         else
         {
             GameObject bombObject = visiblePull[0];
+
             visiblePull.Remove(bombObject);
-            visiblePull.Add(bombObject);
+            bombObject.GetComponent<ExplosiveProjectile>().Explode();
             bombObject.transform.position = transform.position + dropPlace;
         }
     }

@@ -78,7 +78,6 @@ public class AwardPresenter : MonoBehaviour
     }
     public List<IAward> GetRandomAwards()
     {
-
         FillAwardsList();
         int randomAwardsCount = awardList.Count < givingAwardsCount ? awardList.Count : givingAwardsCount;
         List<IAward> newAwardsList = new List<IAward>();

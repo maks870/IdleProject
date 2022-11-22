@@ -7,12 +7,11 @@ public class SlayBehavior : Behavior, IUpgradeble
 {
     [SerializeField] private GameObject projectile;
     [SerializeField] private float spawnDistanse = 2;
-    private bool isSlaying = false;
-    public bool IsSlaying => isSlaying;
+    private Vector3 dir;
+    private bool isReady = false;
 
     private void Update()
     {
-        Debug.Log(Player.instance.GetMoveDirection);
     }
     public override void Combine()
     {
@@ -24,13 +23,13 @@ public class SlayBehavior : Behavior, IUpgradeble
     }
     public override void Use()
     {
-        Vector3 dir = Player.instance.GetMoveDirection;
-        if (dir != Vector3.zero)
-        {
-            float angle = Vector3.SignedAngle(Vector3.up, dir, Vector3.forward);
-            Quaternion rotation = Quaternion.Euler(0, 0, angle);
-            Instantiate(projectile, transform.position + dir * spawnDistanse, rotation);
-        }
+        dir = Player.instance.GetMoveDirection;
+        if (dir == Vector3.zero) return;
+
+        dir = Player.instance.GetMoveDirection;
+        float angle = Vector3.SignedAngle(Vector3.up, dir, Vector3.forward);
+        Quaternion rotation = Quaternion.Euler(0, 0, angle);
+        Instantiate(projectile, transform.position + dir * spawnDistanse, rotation);
     }
     public override void Improve(bool isMaxLevel)
     {
