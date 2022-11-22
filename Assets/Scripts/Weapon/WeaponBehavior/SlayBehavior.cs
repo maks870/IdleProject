@@ -38,14 +38,16 @@ public class SlayBehavior : Behavior, IUpgradeble
     public override void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
+        projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("slayDamage", YandexGame.savesData.slayWeapon);
+        projectile.GetComponent<SlayProjectile>().speed = upgrader.GetDataVariable("slaySpeed", YandexGame.savesData.slayWeapon);
     }
     public override void Upgrade(string statName)
     {
-        YandexGame.savesData.explosiveWeapon[statName]++;
+        YandexGame.savesData.slayWeapon[statName]++;
     }
 
     public int GetStatLvl(string statName)
     {
-        return YandexGame.savesData.explosiveWeapon[statName];
+        return YandexGame.savesData.slayWeapon[statName];
     }
 }

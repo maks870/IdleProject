@@ -13,10 +13,6 @@ public class ShootingEnemy : Enemy, IShooting
 
     protected override void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log((target.transform.position - transform.position).magnitude);
-        }
         if ((target.transform.position - transform.position).magnitude > shootRadius)
         {
             Move();
@@ -29,7 +25,6 @@ public class ShootingEnemy : Enemy, IShooting
                 shootAvaliable = true;
                 if(!isShooting)
                     StartCoroutine(ShootingDelay());
-
             }
         }
 
@@ -62,7 +57,7 @@ public class ShootingEnemy : Enemy, IShooting
         {
             GameObject shoot = Instantiate(projectile, transform);
             shoot.transform.parent = null;
-            shoot.GetComponent<Rigidbody2D>().AddForce((target.transform.position - transform.position).normalized * projectile.GetComponent<Projectile>().speed, ForceMode2D.Impulse);
+            shoot.GetComponent<ShootProjectile>().Launch((target.transform.position - transform.position).normalized);
         }
     }
     IEnumerator ShootingDelay()

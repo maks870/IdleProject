@@ -95,13 +95,13 @@ MonoBehaviour:
       cost: 90
   - name: explodeRadius
     levels:
-    - value: 1
-      cost: 40
-    - value: 1.5
-      cost: 80
     - value: 2
-      cost: 120
+      cost: 40
     - value: 2.5
+      cost: 80
+    - value: 3
+      cost: 120
+    - value: 3.5
       cost: 120
 --- !u!58 &4573911166684390160
 CircleCollider2D:

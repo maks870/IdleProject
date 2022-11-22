@@ -55,7 +55,7 @@ public class ShootBehavior : Behavior, IUpgradeble
             }
         }
         GameObject shoot = Instantiate(projectile, transform);
-        shoot.GetComponent<Rigidbody2D>().AddForce((targetEnemy.transform.position - transform.position).normalized * projectile.GetComponent<Projectile>().speed, ForceMode2D.Impulse);// переделать внутрь проджектайла
+        shoot.GetComponent<ShootProjectile>().Launch((targetEnemy.transform.position - transform.position).normalized);
     }
     public override void Improve(bool isMaxLevel)
     {
