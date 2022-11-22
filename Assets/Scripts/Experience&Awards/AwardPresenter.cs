@@ -79,6 +79,14 @@ public class AwardPresenter : MonoBehaviour
     public List<IAward> GetRandomAwards()
     {
         FillAwardsList();
+        //дебаг
+        string s ="";
+        foreach (IAward award in awardList)
+        {
+            s += award.GetAwardName+ " ";
+        }
+        Debug.Log(s);
+        //
         int randomAwardsCount = awardList.Count < givingAwardsCount ? awardList.Count : givingAwardsCount;
         List<IAward> newAwardsList = new List<IAward>();
         newAwardsList.AddRange(awardList);

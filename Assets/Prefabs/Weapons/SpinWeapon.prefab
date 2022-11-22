@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7095154187732122946}
   - component: {fileID: 1215393480093257734}
   m_Layer: 0
-  m_Name: SpinWeapon 1
+  m_Name: SpinWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
