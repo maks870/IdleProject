@@ -17,6 +17,7 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
     {
         bool findPlace = false;
         Vector3 dropPlace = new Vector3();
+
         while (!findPlace)
         {
             float x = Mathf.Sqrt(Mathf.Pow(radius, 2) / 2);
@@ -26,14 +27,9 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
             dropPlace.x = randomX;
             dropPlace.y = randomY;
             dropPlace.z = 0;
+
             if (CheckPlace(dropPlace))
-            {
                 break;
-            }
-            else
-            {
-                Debug.Log("עמקךא םו ןמהמרשכא");
-            }
         }
 
         if (invisiblePull.Count > 0)
@@ -54,12 +50,12 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
         float range;
         for (int i = 0; i < visiblePull.Count; i++)
         {
-            if (visiblePull[i] == null) continue;
+            if (visiblePull[i] == null)
+                continue;
             range = (visiblePull[i].transform.position - (dropPlace + transform.position)).magnitude;
+
             if (range <= bombRadius)
-            {
                 return false;
-            }
         }
         return true;
     }
@@ -110,6 +106,7 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
         Upgrader upgrader = GetComponent<Upgrader>();
         projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("explodeDamage", YandexGame.savesData.explosiveWeapon);
         projectile.GetComponent<CircleCollider2D>().radius = upgrader.GetDataVariable("explodeRadius", YandexGame.savesData.explosiveWeapon);
+        projectile.GetComponent<ExplosiveProjectile>().newSize = upgrader.GetDataVariable("explodeRadius", YandexGame.savesData.explosiveWeapon);
     }
     public override void Upgrade(string statName)
     {

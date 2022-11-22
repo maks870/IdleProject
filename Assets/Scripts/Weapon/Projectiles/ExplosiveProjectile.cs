@@ -6,12 +6,16 @@ public class ExplosiveProjectile : Projectile
 {
     [SerializeField] private float timer = 1;
     [SerializeField] private GameObject explosion;
+    [SerializeField] private Transform explodeArea;
     private List<Enemy> enemyList = new List<Enemy>();
     private Animator animator;
     private bool isActivated = false;
     [HideInInspector] public ExplosiveBehavior explosiveBehavior;
+    [HideInInspector] public float newSize;
+
     private void Start()
     {
+        explodeArea.localScale = new Vector3(newSize, newSize, 0);
         animator = GetComponent<Animator>();
     }
     protected override void OnTriggerEnter2D(Collider2D collision)
