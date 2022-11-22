@@ -191,7 +191,7 @@ MonoBehaviour:
   explosion: {fileID: 3668915634709128442, guid: 5f16738ba08f9ac4aa783a7f508248c5, type: 3}
   explodeArea: {fileID: 1600545682812013662}
   explosiveBehavior: {fileID: 0}
-  newSize: 0
+  newSize: 2
 --- !u!95 &4071909851084993264
 Animator:
   serializedVersion: 4
@@ -248,4 +248,4 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 2

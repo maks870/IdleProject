@@ -7,30 +7,36 @@ public class ShootingEnemy : Enemy, IShooting
     [SerializeField] private int shootRadius;
     [SerializeField] private int runningAwayDistance;
     [SerializeField] private GameObject projectile;
+    private bool shootAvaliable = false;
     private bool isShooting = false;
     public Projectile GetProjectile() => projectile.GetComponent<Projectile>();
 
     protected override void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log((target.transform.position - transform.position).magnitude);
+        }
         if ((target.transform.position - transform.position).magnitude > shootRadius)
         {
             Move();
-            isShooting = false;
+            shootAvaliable = false;
         }
         else
         {
-            if (!isShooting)
+            if (!shootAvaliable)
             {
-                isShooting = true;
-                StartCoroutine(ShootingDelay());
+                shootAvaliable = true;
+                if(!isShooting)
+                    StartCoroutine(ShootingDelay());
+
             }
         }
 
         if ((target.transform.position - transform.position).magnitude < runningAwayDistance)
             RunningAway();
-        else
+        else if ((target.transform.position - transform.position).magnitude < shootRadius)
             Stop();
-
     }
     private void Move()
     {
@@ -61,11 +67,13 @@ public class ShootingEnemy : Enemy, IShooting
     }
     IEnumerator ShootingDelay()
     {
-        while (isShooting)
+        isShooting = true;
+        while (shootAvaliable)
         {
             Shoot();
             yield return new WaitForSeconds(actionCooldown);
         }
+        isShooting = false;
     }
 
 
