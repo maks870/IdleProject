@@ -22,6 +22,7 @@ public class SpinBehavior : Behavior
     {
         projectileSpeed = projectile.GetComponent<SpinProjectile>().speed;
     }
+
     void Update()
     {
         if (isSpinActive)
@@ -29,6 +30,7 @@ public class SpinBehavior : Behavior
             Spin();
         }
     }
+
     private void Spin()
     {
         for (int i = 0; i < spinList.Count; i++)
@@ -39,6 +41,7 @@ public class SpinBehavior : Behavior
             relativeDistanceList[i] = spinList[i].transform.position - transform.position;
         }
     }
+
     private void TurnOn()
     {
         foreach (GameObject spin in spinList)
@@ -47,6 +50,7 @@ public class SpinBehavior : Behavior
         }
         isSpinActive = true;
     }
+
     private void TurnOff()
     {
         foreach (GameObject spin in spinList)
@@ -55,6 +59,7 @@ public class SpinBehavior : Behavior
         }
         isSpinActive = false;
     }
+
     private void AddSpin()
     {
         int spinCounts = spinList.Count;
@@ -73,18 +78,22 @@ public class SpinBehavior : Behavior
         TurnOff();
         isAddSpin = false;
     }
+
     public override void Combine()
     {
         //логика объединения оружия
     }
+
     public override void ActiveBehavior()
     {
         AddSpin();
     }
+
     public override void Use()
     {
         StartCoroutine(SpinTimer());
     }
+
     public override void Improve(bool isMaxLevel)
     {
         if (!isMaxLevel)
@@ -99,12 +108,14 @@ public class SpinBehavior : Behavior
             }
         }
     }
+
     public override void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
         projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("spinDamage", YandexGame.savesData.spinWeapon);
         radius = upgrader.GetDataVariable("spinRadius", YandexGame.savesData.spinWeapon);
     }
+
     public override void Upgrade(string statName)
     {
         YandexGame.savesData.spinWeapon[statName]++;
@@ -114,6 +125,7 @@ public class SpinBehavior : Behavior
     {
         return YandexGame.savesData.spinWeapon[statName];
     }
+
     IEnumerator SpinTimer()
     {
         TurnOn();

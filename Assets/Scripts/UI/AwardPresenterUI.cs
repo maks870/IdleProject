@@ -8,7 +8,7 @@ namespace UserInterfaces
     {
         [SerializeField] private AwardPresenter awardPresenter;
         [SerializeField] private List<Button> buttonList = new List<Button>();
-        private Button button;
+        [SerializeField] private Button button;
         private GameObject panel;
 
 
@@ -17,7 +17,6 @@ namespace UserInterfaces
         {
             awardPresenter.SetPresenterUI = this;
             panel = transform.GetChild(0).gameObject;
-            button = panel.GetComponentInChildren<Button>();
             CreateButtons(awardPresenter.GetAwardsCount);
             panel.SetActive(false);
         }
@@ -25,7 +24,7 @@ namespace UserInterfaces
         {
             Button newButton;
             buttonList.Add(button);
-            for (int i = 0; i < awardCount - 1; i++)
+            for (int i = 0; i < awardCount; i++)
             {
                 newButton = Instantiate(button, panel.transform);
                 buttonList.Add(newButton);
@@ -37,7 +36,7 @@ namespace UserInterfaces
             for (int i = 0; i < awardList.Count; i++)
             {
                 buttonList[i].gameObject.SetActive(true);
-                buttonList[i].image.sprite = awardList[i].GetAwardSprite;
+                buttonList[i].GetComponentsInChildren<Image>()[1].sprite = awardList[i].GetAwardSprite;
                 buttonList[i].GetComponentInChildren<Text>().text = awardList[i].GetAwardName;
                 buttonList[i].onClick.RemoveAllListeners();
                 IAward award = awardList[i];

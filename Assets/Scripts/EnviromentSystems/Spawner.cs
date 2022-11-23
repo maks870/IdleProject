@@ -23,7 +23,6 @@ public class Round
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject targetObject;
     [SerializeField] private Round[] rounds;
     [SerializeField] private int maxEnemy;
     [SerializeField] private float spawnTime = 0.3f;
@@ -31,6 +30,7 @@ public class Spawner : MonoBehaviour
     private BoxCollider2D[] zones;
     private Enemy enemy;
     private List<Enemy> spawnedEnemies = new List<Enemy>();
+    public GameObject targetObject;
     public static Spawner instance = null;
 
     private void Start()
@@ -39,6 +39,7 @@ public class Spawner : MonoBehaviour
         {
             targetObject = Player.instance.gameObject;
         }
+
         zones = GetComponentsInChildren<BoxCollider2D>();
         StartCoroutine(TimerSpawn());
 
@@ -50,10 +51,12 @@ public class Spawner : MonoBehaviour
         foreach (Round round in rounds) 
         {
             float probAll = 0;
+
             foreach (SpawnEnemy spawnEnemy in round.spawnEnemies) 
             {
                 probAll += spawnEnemy.probability;
             }
+
             round.probabilityAll = probAll;
         }
     }
@@ -93,9 +96,8 @@ public class Spawner : MonoBehaviour
         spawnedEnemies.Add(enemy);
         Enemy enemyForDelegate = enemy;// создание уникалного объекта врага, так как Enemy - ссылочный тип
         enemy.deathEvent.AddListener(delegate { KillEnemy(enemyForDelegate); });// добавление слушателя метода KillEnemy() срабатывающего при смерти врага
-
-
         rounds[roundNumber].countEnemy--;
+
         if (rounds[roundNumber].countEnemy == 0 && roundNumber + 1 < rounds.Length)
             roundNumber++;
     }
@@ -110,11 +112,6 @@ public class Spawner : MonoBehaviour
         return new Vector2(x, y);
     }
 
-    //public static void KillEnemy(Enemy enemyDes)
-    //{
-    //    instance.spawnedEnemys.Remove(enemyDes);
-    //    Destroy(enemyDes.gameObject);
-    //}
     public void KillEnemy(Enemy enemy) //метод для добавления в событие смерти врага
     {
         spawnedEnemies.Remove(enemy);

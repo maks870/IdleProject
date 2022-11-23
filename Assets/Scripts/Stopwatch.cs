@@ -7,7 +7,7 @@ public class Stopwatch
     private bool isActive = false;
     private TimeSpan timeSpan;
 
-    public String GetTime()
+    public string GetTime()
     {
         if (isActive)
             currentSeconds += Time.deltaTime;

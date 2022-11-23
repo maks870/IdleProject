@@ -15,8 +15,11 @@ public class Player : Character, IUpgradeble
 
     private void Awake()
     {
-        if (instance == null) instance = this;
-        else if (instance == this) Destroy(gameObject);
+        if (instance == null) 
+            instance = this;
+        else if (instance == this)
+            Destroy(gameObject);
+
         SetDataVariables();
     }
 

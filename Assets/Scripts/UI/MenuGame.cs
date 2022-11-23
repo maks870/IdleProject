@@ -58,8 +58,12 @@ public class MenuGame : Menu
     {
         YandexGame.savesData.gold += CoinCollector.instance.CollectedGold;
 
-        if (YandexGame.savesData.recordScore < CoinCollector.instance.CollectedGold)
+        if (YandexGame.savesData.recordScore < CoinCollector.instance.CollectedGold) 
+        {
             YandexGame.savesData.recordScore = CoinCollector.instance.CollectedGold;
+            YandexGame.NewLeaderboardScores("Leaderboard", CoinCollector.instance.CollectedGold);
+        }
+           
         YandexGame.SaveProgress();
         LoadScene(scene);
     }
