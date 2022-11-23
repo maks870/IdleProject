@@ -11,6 +11,7 @@ public class ShootBehavior : Behavior, IUpgradeble
     [SerializeField] private CircleCollider2D shootZone;
     private List<Enemy> enemyList = new List<Enemy>();
     private int targetCount = 1;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Enemy>() != null)
@@ -20,6 +21,7 @@ public class ShootBehavior : Behavior, IUpgradeble
             enemy.deathEvent.AddListener(delegate { enemyList.Remove(enemy); });
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.GetComponent<Enemy>() != null)
@@ -29,10 +31,12 @@ public class ShootBehavior : Behavior, IUpgradeble
             enemy.deathEvent.RemoveListener(delegate { enemyList.Remove(enemy); });
         }
     }
+
     private void Awake()
     {
         SetDataVariables();
     }
+
     public override void Combine()
     {
         //логика объединения оружия
@@ -42,6 +46,7 @@ public class ShootBehavior : Behavior, IUpgradeble
     {
 
     }
+
     public override void Use()
     {
         if (enemyList.Count == 0)
@@ -64,12 +69,14 @@ public class ShootBehavior : Behavior, IUpgradeble
             shoot.GetComponent<ShootProjectile>().Launch((enemyList[i].transform.position - transform.position).normalized);
         }
     }
+
     public override void Improve(bool isMaxLevel)
     {
         if (!isMaxLevel)
             targetCount++;
 
     }
+
     public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
@@ -77,6 +84,7 @@ public class ShootBehavior : Behavior, IUpgradeble
         shootZone.radius = upgrader.GetDataVariable("shootRange", YandexGame.savesData.shootWeapon);
 
     }
+
     public void Upgrade(string statName)
     {
         YandexGame.savesData.shootWeapon[statName]++;

@@ -32,22 +32,22 @@ namespace UserInterfaces
         }
         private void ReplaceAwards()
         {
-            List<IAward> awardList = awardPresenter.GetRandomAwards();
+            List<Award> awardList = awardPresenter.GetRandomAwards();
             for (int i = 0; i < awardList.Count; i++)
             {
                 buttonList[i].gameObject.SetActive(true);
-                buttonList[i].GetComponentsInChildren<Image>()[1].sprite = awardList[i].GetAwardSprite;
+                buttonList[i].GetComponentsInChildren<Image>()[1].sprite = awardList[i].Sprite;
 
                 if (choosingStartWeapon)
                 {
-                    buttonList[i].GetComponentInChildren<Text>().text = awardList[i].GetAwardName;
+                    buttonList[i].GetComponentInChildren<Text>().text = awardList[i].Name;
                     choosingStartWeapon = false;
                 }
                 else
-                    buttonList[i].GetComponentInChildren<Text>().text = awardList[i].GetAwardDescription;
+                    buttonList[i].GetComponentInChildren<Text>().text = awardList[i].Description;
 
                 buttonList[i].onClick.RemoveAllListeners();
-                IAward award = awardList[i];
+                Award award = awardList[i];
                 buttonList[i].onClick.AddListener(() =>
                 {
                     awardPresenter.GiveAward(award);

@@ -47,7 +47,7 @@ public class CoinCollector : MonoBehaviour
         GameObject coinObject = invisiblePull[0];
         invisiblePull.Remove(coinObject);
         visiblePull.Add(coinObject);
-        coinObject.GetComponent<Coin>().ChangeCoin(coinPoint.GetValue, coinPoint.GetAwardSprite);
+        coinObject.GetComponent<Coin>().ChangeCoin(coinPoint.GetValue, coinPoint.Sprite);
         coinObject.SetActive(true);
         return coinObject;
     }

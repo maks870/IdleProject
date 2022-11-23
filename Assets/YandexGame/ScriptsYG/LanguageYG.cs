@@ -13,7 +13,7 @@ namespace YG
 {
     public class LanguageYG : MonoBehaviour
     {
-        public string currentTranslation;//
+        public string currentTranslation;
         public Text textUIComponent;
         public TextMesh textMeshComponent;
         public InfoYG infoYG;
@@ -68,6 +68,8 @@ namespace YG
 
         void AssignTranslate(string translation)
         {
+            currentTranslation = translation;
+
             if (textUIComponent)
                 textUIComponent.text = translation;
             else if (textMeshComponent)

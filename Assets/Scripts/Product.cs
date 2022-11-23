@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using YG;
@@ -37,6 +35,7 @@ public class Product : MonoBehaviour
     {
         int gold = YandexGame.savesData.gold;
         int balance = gold - cost;
+
         if (balance < 0)
         {
             Debug.Log("Нехватает денег бичара");

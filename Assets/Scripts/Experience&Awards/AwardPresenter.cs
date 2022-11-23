@@ -13,25 +13,28 @@ public class AwardPresenter : MonoBehaviour, IUpgradeble
     [SerializeField] private Coin defaultCoin;
     [SerializeField] private int minCoinAwardValue;
     [SerializeField] private int maxCoinAwardValue;
-    private List<IAward> awardList = new List<IAward>();
+    private List<Award> awardList = new List<Award>();
     private AwardPresenterUI presenterUI;
     public int GetAwardsCount => givingAwardsCount;
     public AwardPresenterUI SetPresenterUI { set { presenterUI = value; } }
+
     private void Awake()
     {
         SetDataVariables();
     }
+
     private void FillAwardsList()
     {
         awardList.Clear();
         currentWeapons.Clear();
         FillCurrentWeapons();
+
         if (currentWeapons.Count != maxWeaponCount)
         {
-            IAward[] awards = weapons.GetComponentsInChildren<IAward>();
-            foreach (IAward award in awards)
+            Award[] awards = weapons.GetComponentsInChildren<Award>();
+            foreach (Award award in awards)
             {
-                if (award.GetAwardAccessibility)
+                if (award.Accessibility)
                 {
                     awardList.Add(award);
                 }
@@ -39,73 +42,78 @@ public class AwardPresenter : MonoBehaviour, IUpgradeble
         }
         else
         {
-            IAward award;
+            Award award;
             foreach (GameObject weapon in currentWeapons)
             {
-                award = weapon.GetComponent<IAward>();
-                if (award.GetAwardAccessibility)
+                award = weapon.GetComponent<Award>();
+                if (award.Accessibility)
                 {
                     awardList.Add(award);
                 }
             }
         }
     }
+
     private void FillCurrentWeapons()
     {
         Weapon[] awardGameObjects = weapons.GetComponentsInChildren<Weapon>();
         for (int i = 0; i < awardGameObjects.Length; i++)
         {
-            if (awardGameObjects[i].IsWeaponActive)
+            if (awardGameObjects[i].IsActive)
             {
                 currentWeapons.Add(awardGameObjects[i].gameObject);
             }
         }
     }
-    private IAward GetCoinAward()
+
+    private Award GetCoinAward()
     {
         int randomValueCoin = Random.Range(minCoinAwardValue, maxCoinAwardValue);
         Coin coinAward = defaultCoin;
-        coinAward.ChangeCoin(randomValueCoin, defaultCoin.GetAwardSprite);
-        IAward award = coinAward;
+        coinAward.ChangeCoin(randomValueCoin, defaultCoin.Sprite);
+        Award award = coinAward;
         return award;
     }
-    public void GiveAward(IAward award)
+
+    public void GiveAward(Award award)
     {
         Player.instance.GetLevel.LevelUp(award.AwardAction);
     }
+
     public void DropAward()//получение награды за убийство сильного моба
     {
 
     }
+
     public void GiveAwards()//получение награды после уровня
     {
         presenterUI.ShowAwards();
     }
-    public List<IAward> GetRandomAwards()
+
+    public List<Award> GetRandomAwards()
     {
         FillAwardsList();
-        //дебаг
-        string s = "";
-        foreach (IAward award in awardList)
-        {
-            s += award.GetAwardName + " ";
-        }
-        Debug.Log(s);
-        //
-        int randomAwardsCount = awardList.Count < givingAwardsCount ? awardList.Count : givingAwardsCount;
-        List<IAward> newAwardsList = new List<IAward>();
+
+        int randomAwardsCount = awardList.Count < givingAwardsCount 
+            ? awardList.Count 
+            : givingAwardsCount;
+
+        List<Award> newAwardsList = new List<Award>();
         newAwardsList.AddRange(awardList);
-        List<IAward> randomAwards = new List<IAward>(randomAwardsCount);
+        List<Award> randomAwards = new List<Award>(randomAwardsCount);
+
         for (int i = 0; i < randomAwards.Capacity; i++)
         {
             int rand = Random.Range(0, newAwardsList.Count);
             randomAwards.Add(newAwardsList[rand]);
             newAwardsList.RemoveAt(rand);
         }
+
         if (randomAwards.Count == 0)
         {
             randomAwards.Add(GetCoinAward());
         }
+
         return randomAwards;
     }
 
