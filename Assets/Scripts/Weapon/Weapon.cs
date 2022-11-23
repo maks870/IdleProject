@@ -9,8 +9,9 @@ public class Weapon : Award
     private Behavior behavior;
     private Level level;
     private bool isActive = false;
-
     public bool IsActive  => isActive;
+
+    public override bool Accessibility => !level.IsMaxLevel;
 
     void Awake()
     {
@@ -42,14 +43,8 @@ public class Weapon : Award
     public override void AwardAction()
     {
         if (isActive) 
-        {
             level.LevelUp(behavior.Improve);
-            accessibility = !level.IsMaxLevel;
-        }
-           
         else
-        {
             ActiveWeapon();
-        }
     }
 }
