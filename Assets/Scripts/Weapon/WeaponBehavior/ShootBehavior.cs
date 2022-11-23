@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using YG;
@@ -9,6 +10,7 @@ public class ShootBehavior : Behavior, IUpgradeble
     [SerializeField] private GameObject projectile;
     [SerializeField] private CircleCollider2D shootZone;
     private List<Enemy> enemyList = new List<Enemy>();
+    private int targetCount = 1;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.GetComponent<Enemy>() != null)
@@ -42,24 +44,28 @@ public class ShootBehavior : Behavior, IUpgradeble
         {
             return;
         }
-        Enemy targetEnemy = enemyList[0];
-        float distanse = (transform.position - targetEnemy.transform.position).magnitude;
 
-        foreach (Enemy enemy in enemyList)
+        enemyList.Sort(delegate (Enemy x, Enemy y)
         {
-            float newDistanse = (transform.position - enemy.transform.position).magnitude;
-            if (newDistanse <= distanse)
-            {
-                targetEnemy = enemy;
-                distanse = newDistanse;
-            }
+            float firstDist = (transform.position - x.transform.position).magnitude;
+            float secondDist = (transform.position - y.transform.position).magnitude;
+            return firstDist.CompareTo(secondDist);
+        });
+
+        int counterMax = targetCount < enemyList.Count ? targetCount : enemyList.Count;
+
+        for (int i = 0; i < counterMax; i++)
+        {
+            GameObject shoot = Instantiate(projectile, transform);
+            shoot.GetComponent<ShootProjectile>().Launch((enemyList[i].transform.position - transform.position).normalized);
         }
-        GameObject shoot = Instantiate(projectile, transform);
-        shoot.GetComponent<ShootProjectile>().Launch((targetEnemy.transform.position - transform.position).normalized);
     }
     public override void Improve(bool isMaxLevel)
     {
-        //днаюбхрэ йнккхвеярбн жекеи дкъ бшярпекю
+        if (!isMaxLevel)
+        {
+            targetCount++;
+        }
     }
     public override void SetDataVariables()
     {
