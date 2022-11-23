@@ -1,12 +1,13 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using YG;
 
 public class Weapon : MonoBehaviour, IAward
 {
-    [SerializeField] private string weaponName;
     [SerializeField] private IUpgradeble IImprovable;
-    [SerializeField] private string description;
+    [SerializeField] private LanguageYG weaponName;
+    [SerializeField] private LanguageYG description;
     [SerializeField] private Sprite sprite;
     [SerializeField] private float cooldown;
     [SerializeField] private int maxLevelCount = 5;
@@ -17,9 +18,9 @@ public class Weapon : MonoBehaviour, IAward
     private Action<bool> improve;
     public Sprite GetAwardSprite => sprite;
 
-    public string GetAwardName => weaponName/*translations.currentLanguage.fields[0]*/;
+    public string GetAwardName => weaponName.currentTranslation;
 
-    public string GetAwardDescription => description;
+    public string GetAwardDescription => description.currentTranslation;
 
     public bool GetAwardAccessibility => !level.IsMaxLevel;
 
