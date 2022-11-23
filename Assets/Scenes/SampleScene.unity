@@ -18414,6 +18414,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTranslation: 
   textUIComponent: {fileID: 263774042}
   textMeshComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
@@ -29269,6 +29270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTranslation: 
   textUIComponent: {fileID: 714526671}
   textMeshComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
@@ -39621,6 +39623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTranslation: 
   textUIComponent: {fileID: 1057785842}
   textMeshComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
@@ -41111,6 +41114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTranslation: 
   textUIComponent: {fileID: 1202042560}
   textMeshComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
@@ -57749,6 +57753,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTranslation: 
   textUIComponent: {fileID: 1683388596}
   textMeshComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
@@ -73601,6 +73606,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 1168119504}
     m_Modifications:
     - target: {fileID: 4573911166684390161, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
+      propertyPath: language
+      value: 
+      objectReference: {fileID: 4573911166552859902}
+    - target: {fileID: 4573911166684390161, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
+      propertyPath: weaponName
+      value: 
+      objectReference: {fileID: 4573911166552859903}
+    - target: {fileID: 4573911166684390161, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
+      propertyPath: description
+      value: 
+      objectReference: {fileID: 4573911166552859902}
+    - target: {fileID: 4573911166684390161, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
       propertyPath: isStartWeapon
       value: 0
       objectReference: {fileID: 0}
@@ -73658,6 +73675,112 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
+--- !u!1 &4573911166552859901 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4573911166684390165, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
+  m_PrefabInstance: {fileID: 4573911166552859900}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4573911166552859902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573911166552859901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTranslation: 
+  textUIComponent: {fileID: 0}
+  textMeshComponent: {fileID: 0}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: It just throwing knife
+  ru: "\u042D\u0442\u043E \u043F\u0440\u043E\u0441\u0442\u043E \u043C\u0435\u0442\u0430\u0442\u0435\u043B\u044C\u043D\u044B\u0439
+    \u043D\u043E\u0436"
+  en: It just throwing knife
+  tr: "Sadece b\u0131\xE7ak f\u0131rlat\u0131yor"
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 2/3 completed
+  componentTextField: 0
+  countLang: 2
+--- !u!114 &4573911166552859903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573911166552859901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTranslation: 
+  textUIComponent: {fileID: 0}
+  textMeshComponent: {fileID: 0}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: GUN
+  ru: "\u041F\u0423\u0428\u041A\u0410"
+  en: GUN
+  tr: "S\u0130LAH"
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 2/3 completed
+  componentTextField: 0
+  countLang: 2
 --- !u!1001 &5137187449951845088
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -74255,6 +74378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTranslation: 
   textUIComponent: {fileID: 7547716373366329412}
   textMeshComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
@@ -74381,6 +74505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentTranslation: 
   textUIComponent: {fileID: 7547716374068086921}
   textMeshComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
