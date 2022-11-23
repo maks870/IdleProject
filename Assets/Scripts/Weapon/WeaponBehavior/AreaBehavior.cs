@@ -8,7 +8,8 @@ public class AreaBehavior : Behavior, IUpgradeble
 {
     [SerializeField] private int damage;
     [SerializeField] private int slow;
-    [SerializeField] private float areaSize;
+    [SerializeField] private float areaSize = 1;
+    [SerializeField] private float areaImprove = 0.25f;
     [SerializeField] private List<Enemy> enemyList = new List<Enemy>();
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -45,12 +46,16 @@ public class AreaBehavior : Behavior, IUpgradeble
     }
     public override void Improve(bool isMaxLevel)
     {
-        Debug.Log("Область нанесения урона улучшена");
+        if (!isMaxLevel)
+        {
+            areaSize += areaImprove;
+            SetAreaSize();
+        }
     }
     public override void ActiveBehavior()
     {
         spriteRenderer.enabled = true;
-        SetAreaSize(areaSize);
+        SetAreaSize();
         animator = GetComponent<Animator>();
     }
     public override void Use()
@@ -61,9 +66,8 @@ public class AreaBehavior : Behavior, IUpgradeble
         }
         animator.SetTrigger("Use");
     }
-    public void SetAreaSize(float newAreaSize)
+    public void SetAreaSize()
     {
-        areaSize = newAreaSize;
         transform.localScale = Vector3.one * areaSize;
     }
 

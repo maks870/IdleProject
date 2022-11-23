@@ -55,7 +55,7 @@ MonoBehaviour:
   cooldown: 1
   maxLevelCount: 5
   behavior: {fileID: 2096810405805874226}
-  isActive: 0
+  isStartWeapon: 0
 --- !u!114 &2096810405805874226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,6 +71,7 @@ MonoBehaviour:
   damage: 1
   slow: 0
   areaSize: 1
+  improveMultiply: 1.25
   enemyList: []
 --- !u!114 &7337422711773497920
 MonoBehaviour:

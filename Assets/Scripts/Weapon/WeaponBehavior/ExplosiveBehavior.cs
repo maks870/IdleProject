@@ -97,7 +97,8 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
     }
     public override void Improve(bool isMaxLevel)
     {
-        radius += radiusImprove;
+        if (!isMaxLevel)
+            radius += radiusImprove;
     }
 
     // Start is called before the first frame update

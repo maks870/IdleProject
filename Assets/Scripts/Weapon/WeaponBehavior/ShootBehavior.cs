@@ -63,9 +63,8 @@ public class ShootBehavior : Behavior, IUpgradeble
     public override void Improve(bool isMaxLevel)
     {
         if (!isMaxLevel)
-        {
             targetCount++;
-        }
+
     }
     public override void SetDataVariables()
     {

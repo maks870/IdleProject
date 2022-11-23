@@ -7,6 +7,7 @@ public class SlayBehavior : Behavior, IUpgradeble
 {
     [SerializeField] private GameObject projectile;
     [SerializeField] private float spawnDistanse = 2;
+    [SerializeField] private int pierceCount = 1;
     private Vector3 dir;
     private bool isReady = false;
 
@@ -29,11 +30,14 @@ public class SlayBehavior : Behavior, IUpgradeble
         dir = Player.instance.GetMoveDirection;
         float angle = Vector3.SignedAngle(Vector3.up, dir, Vector3.forward);
         Quaternion rotation = Quaternion.Euler(0, 0, angle);
-        Instantiate(projectile, transform.position + dir * spawnDistanse, rotation);
+        GameObject newProjectile = projectile;
+        newProjectile.GetComponent<SlayProjectile>().pierceLeft = pierceCount;
+        Instantiate(newProjectile, transform.position + dir * spawnDistanse, rotation);
     }
     public override void Improve(bool isMaxLevel)
     {
-        //метод улучщения оружия
+        if (!isMaxLevel)
+            pierceCount++;
     }
     public override void SetDataVariables()
     {

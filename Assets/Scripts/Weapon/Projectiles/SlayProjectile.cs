@@ -5,6 +5,7 @@ using UnityEngine;
 public class SlayProjectile : Projectile
 {
     public float speed;
+    public int pierceLeft = 1;
     private void Start()
     {
         GetComponent<Rigidbody2D>().AddForce(Player.instance.GetMoveDirection * speed, ForceMode2D.Impulse);
@@ -14,6 +15,9 @@ public class SlayProjectile : Projectile
         if (collision.GetComponent<Enemy>() != null)
         {
             collision.GetComponent<Enemy>().TakeDamage(damage);
+            pierceLeft--;
+            if (pierceLeft == 0)
+                Destroy(gameObject);
         }
     }
 }

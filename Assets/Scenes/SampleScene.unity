@@ -72077,7 +72077,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 7095154187732122944, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
       propertyPath: isStartWeapon
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7095154187732122947, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
       propertyPath: m_RootOrder
@@ -73018,6 +73018,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2096810405805874227, guid: d7e5c57a9e9d9e34490db5f78b9ca2ed, type: 3}
+      propertyPath: isStartWeapon
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2096810405805874239, guid: d7e5c57a9e9d9e34490db5f78b9ca2ed, type: 3}
       propertyPath: m_Name
       value: AreaWeapon
@@ -73564,7 +73568,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4573911166684390161, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
       propertyPath: isStartWeapon
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4573911166684390165, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
       propertyPath: m_Name
