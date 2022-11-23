@@ -39,7 +39,10 @@ namespace UserInterfaces
                 buttonList[i].GetComponentsInChildren<Image>()[1].sprite = awardList[i].GetAwardSprite;
 
                 if (choosingStartWeapon)
+                {
                     buttonList[i].GetComponentInChildren<Text>().text = awardList[i].GetAwardName;
+                    choosingStartWeapon = false;
+                }
                 else
                     buttonList[i].GetComponentInChildren<Text>().text = awardList[i].GetAwardDescription;
 
@@ -53,7 +56,7 @@ namespace UserInterfaces
 
                 });
             }
-            for (int i = awardList.Count; i < buttonList.Count; i++ )
+            for (int i = awardList.Count; i < buttonList.Count; i++)
             {
                 buttonList[i].gameObject.SetActive(false);
             }
