@@ -6,6 +6,8 @@ public class Coin : Award
     [SerializeField] private SpriteRenderer spriteRenderer;
     public int GetValue => coinValue;
 
+    public override string Description => coinValue.ToString();
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();

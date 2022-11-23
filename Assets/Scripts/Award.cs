@@ -10,7 +10,7 @@ public abstract class Award : MonoBehaviour
 
     public Sprite Sprite => sprite; 
     public string Name => nameLang.currentTranslation; 
-    public string Description => descriptionLang.currentTranslation; 
+    public virtual string Description => descriptionLang.currentTranslation; 
     public bool Accessibility => accessibility;
     public abstract void AwardAction();
 }
