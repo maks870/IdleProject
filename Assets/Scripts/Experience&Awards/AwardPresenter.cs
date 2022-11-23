@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UserInterfaces;
+using YG;
 
-public class AwardPresenter : MonoBehaviour
+public class AwardPresenter : MonoBehaviour, IUpgradeble
 {
-    [SerializeField] private int givingAwardsCount = 3;
-    [SerializeField] private int maxWeaponCount = 4;
+    [SerializeField] private int givingAwardsCount = 3;// устанавливать в awake из YGsaves
+    [SerializeField] private int maxWeaponCount = 3; // устанавливать в awake из YGsaves
     [SerializeField] private GameObject weapons;
     [SerializeField] private List<GameObject> currentWeapons = new List<GameObject>();
     [SerializeField] private Coin defaultCoin;
@@ -16,6 +17,10 @@ public class AwardPresenter : MonoBehaviour
     private AwardPresenterUI presenterUI;
     public int GetAwardsCount => givingAwardsCount;
     public AwardPresenterUI SetPresenterUI { set { presenterUI = value; } }
+    private void Awake()
+    {
+        SetDataVariables();
+    }
     private void FillAwardsList()
     {
         awardList.Clear();
@@ -80,10 +85,10 @@ public class AwardPresenter : MonoBehaviour
     {
         FillAwardsList();
         //дебаг
-        string s ="";
+        string s = "";
         foreach (IAward award in awardList)
         {
-            s += award.GetAwardName+ " ";
+            s += award.GetAwardName + " ";
         }
         Debug.Log(s);
         //
@@ -102,5 +107,22 @@ public class AwardPresenter : MonoBehaviour
             randomAwards.Add(GetCoinAward());
         }
         return randomAwards;
+    }
+
+    public void SetDataVariables()
+    {
+        Upgrader upgrader = GetComponent<Upgrader>();
+        maxWeaponCount = (int)upgrader.GetDataVariable("slots", YandexGame.savesData.inventory);
+        givingAwardsCount = (int)upgrader.GetDataVariable("awards", YandexGame.savesData.inventory);
+    }
+
+    public void Upgrade(string statName)
+    {
+        YandexGame.savesData.inventory[statName]++;
+    }
+
+    public int GetStatLvl(string statName)
+    {
+        return YandexGame.savesData.inventory[statName];
     }
 }

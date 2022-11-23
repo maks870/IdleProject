@@ -14,9 +14,12 @@ public class AreaBehavior : Behavior, IUpgradeble
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
-    protected override void Start()
+    private void Awake()
     {
-        base.Start();
+        SetDataVariables();
+    }
+    private void Start()
+    {
         spriteRenderer = GetComponent<SpriteRenderer>();
         spriteRenderer.enabled = false;
     }
@@ -25,7 +28,7 @@ public class AreaBehavior : Behavior, IUpgradeble
         if (collision.GetComponent<Enemy>() != null)
         {
             Enemy enemy = collision.GetComponent<Enemy>();
-            enemy.Speed *= (100f - slow)/100f;
+            enemy.Speed *= (100f - slow) / 100f;
             enemyList.Add(enemy);
             enemy.deathEvent.AddListener(delegate { enemyList.Remove(enemy); });
         }
@@ -62,7 +65,7 @@ public class AreaBehavior : Behavior, IUpgradeble
     {
         for (int i = 0; i < enemyList.Count; i++)
         {
-            enemyList[i].TakeDamage(damage);  
+            enemyList[i].TakeDamage(damage);
         }
         animator.SetTrigger("Use");
     }
@@ -71,14 +74,14 @@ public class AreaBehavior : Behavior, IUpgradeble
         transform.localScale = Vector3.one * areaSize;
     }
 
-    public override void SetDataVariables()
+    public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
         damage = (int)upgrader.GetDataVariable("areaDamage", YandexGame.savesData.areaWeapon);
         slow = (int)upgrader.GetDataVariable("areaSlow", YandexGame.savesData.areaWeapon);
 
     }
-    public override void Upgrade(string statName)
+    public void Upgrade(string statName)
     {
         YandexGame.savesData.areaWeapon[statName]++;
     }

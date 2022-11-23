@@ -18,6 +18,7 @@ namespace YG
         public Dictionary<string, int> explosiveWeapon = new Dictionary<string, int>(2) { ["explodeDamage"] = 0, ["explodeRadius"] = 0 };
         public Dictionary<string, int> slayWeapon = new Dictionary<string, int>(2) { ["slayDamage"] = 0, ["slaySpeed"] = 0 };
         public Dictionary<string, int> playerSkill = new Dictionary<string, int>(2) { ["health"] = 0, ["speed"] = 0 };
+        public Dictionary<string, int> inventory = new Dictionary<string, int>(2) { ["slots"] = 0, ["awards"] = 0 };
         public int gold = 0;
     }
 }

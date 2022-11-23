@@ -12,12 +12,12 @@ public class Weapon : MonoBehaviour, IAward
     [SerializeField] private int maxLevelCount = 5;
     [SerializeField] private Behavior behavior;
     [SerializeField] private Level level;
-    [SerializeField] private bool isStartWeapon = false;
+    //[SerializeField] private Translations translations = new Translations(2);
     private bool isActive = false;
     private Action<bool> improve;
     public Sprite GetAwardSprite => sprite;
 
-    public string GetAwardName => weaponName;
+    public string GetAwardName => weaponName/*translations.currentLanguage.fields[0]*/;
 
     public string GetAwardDescription => description;
 
@@ -25,14 +25,13 @@ public class Weapon : MonoBehaviour, IAward
 
     public bool IsWeaponActive => isActive;
 
-    void Start()
+    void Awake()
     {
         level = new Level(maxLevelCount);
         improve += behavior.Improve;
-        if (isStartWeapon)
-        {
-            ActiveWeapon();
-        }
+    }
+    void Start()
+    {
     }
     private void ActiveWeapon()
     {

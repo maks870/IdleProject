@@ -18,7 +18,11 @@ public class SpinBehavior : Behavior
     private bool isAddSpin = false;
     private bool isSpinActive = false;
 
-    protected override void Start()
+    private void Awake()
+    {
+        SetDataVariables();
+    }
+    private void Start()
     {
         projectileSpeed = projectile.GetComponent<SpinProjectile>().speed;
     }
@@ -109,14 +113,14 @@ public class SpinBehavior : Behavior
         }
     }
 
-    public override void SetDataVariables()
+    public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
         projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("spinDamage", YandexGame.savesData.spinWeapon);
         radius = upgrader.GetDataVariable("spinRadius", YandexGame.savesData.spinWeapon);
     }
 
-    public override void Upgrade(string statName)
+    public void Upgrade(string statName)
     {
         YandexGame.savesData.spinWeapon[statName]++;
     }

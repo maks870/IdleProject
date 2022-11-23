@@ -11,6 +11,10 @@ public class SlayBehavior : Behavior, IUpgradeble
     private Vector3 dir;
     private bool isReady = false;
 
+    private void Awake()
+    {
+        SetDataVariables();
+    }
     private void Update()
     {
     }
@@ -39,13 +43,13 @@ public class SlayBehavior : Behavior, IUpgradeble
         if (!isMaxLevel)
             pierceCount++;
     }
-    public override void SetDataVariables()
+    public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
         projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("slayDamage", YandexGame.savesData.slayWeapon);
         projectile.GetComponent<SlayProjectile>().speed = upgrader.GetDataVariable("slaySpeed", YandexGame.savesData.slayWeapon);
     }
-    public override void Upgrade(string statName)
+    public void Upgrade(string statName)
     {
         YandexGame.savesData.slayWeapon[statName]++;
     }

@@ -29,6 +29,10 @@ public class ShootBehavior : Behavior, IUpgradeble
             enemy.deathEvent.RemoveListener(delegate { enemyList.Remove(enemy); });
         }
     }
+    private void Awake()
+    {
+        SetDataVariables();
+    }
     public override void Combine()
     {
         //логика объединения оружия
@@ -66,17 +70,16 @@ public class ShootBehavior : Behavior, IUpgradeble
             targetCount++;
 
     }
-    public override void SetDataVariables()
+    public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
         projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("shootDamage", YandexGame.savesData.shootWeapon);
         shootZone.radius = upgrader.GetDataVariable("shootRange", YandexGame.savesData.shootWeapon);
 
     }
-    public override void Upgrade(string statName)
+    public void Upgrade(string statName)
     {
         YandexGame.savesData.shootWeapon[statName]++;
-        //YandexGame.savesData.shootWeapon[statName]++;// включить для билда
     }
 
     public int GetStatLvl(string statName)//разобраться когда работает забирание инфы из сохранения

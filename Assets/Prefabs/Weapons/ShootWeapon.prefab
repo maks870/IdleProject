@@ -54,6 +54,8 @@ MonoBehaviour:
   maxLevelCount: 5
   behavior: {fileID: 4573911166684390167}
   isStartWeapon: 0
+  translations:
+    languages: []
 --- !u!114 &4573911166684390167
 MonoBehaviour:
   m_ObjectHideFlags: 0

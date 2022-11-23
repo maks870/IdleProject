@@ -63442,6 +63442,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1735952907}
   - component: {fileID: 1735952908}
+  - component: {fileID: 1735952909}
   m_Layer: 0
   m_Name: AwardPresenter
   m_TagString: Untagged
@@ -63481,8 +63482,37 @@ MonoBehaviour:
   weapons: {fileID: 1168119503}
   currentWeapons: []
   defaultCoin: {fileID: 4788945594064710141, guid: a3dcfa91b0d59744c8f72a5d545cbeae, type: 3}
-  minCoinAwardValue: 0
-  maxCoinAwardValue: 0
+  minCoinAwardValue: 15
+  maxCoinAwardValue: 30
+--- !u!114 &1735952909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735952906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f4a639c9b82c8545bf642b56d6f18fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats:
+  - name: slots
+    levels:
+    - value: 1
+      cost: 50
+    - value: 2
+      cost: 150
+    - value: 3
+      cost: 150
+  - name: awards
+    levels:
+    - value: 1
+      cost: 70
+    - value: 2
+      cost: 170
+    - value: 3
+      cost: 170
 --- !u!1001 &1743377638
 PrefabInstance:
   m_ObjectHideFlags: 0

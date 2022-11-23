@@ -56,6 +56,16 @@ MonoBehaviour:
   maxLevelCount: 5
   behavior: {fileID: 2096810405805874226}
   isStartWeapon: 0
+  translations:
+    languages:
+    - name: en
+      fields:
+      - Area
+      - Radius +1
+    - name: ru
+      fields:
+      - "\u041E\u0431\u043B\u0430\u0441\u0442\u044C"
+      - "\u0420\u0430\u0434\u0438\u0443\u0441 +1"
 --- !u!114 &2096810405805874226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +81,7 @@ MonoBehaviour:
   damage: 1
   slow: 0
   areaSize: 1
-  improveMultiply: 1.25
+  areaImprove: 0.25
   enemyList: []
 --- !u!114 &7337422711773497920
 MonoBehaviour:

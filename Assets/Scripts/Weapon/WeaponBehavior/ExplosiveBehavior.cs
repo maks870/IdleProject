@@ -13,6 +13,10 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
     private float bombRadius;
     private List<GameObject> invisiblePull = new List<GameObject>();
     private List<GameObject> visiblePull = new List<GameObject>();
+    private void Awake()
+    {
+        SetDataVariables();
+    }
     private void DropProjectile()
     {
         bool findPlace = false;
@@ -102,14 +106,14 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
     }
 
     // Start is called before the first frame update
-    public override void SetDataVariables()
+    public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
         projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("explodeDamage", YandexGame.savesData.explosiveWeapon);
         projectile.GetComponent<CircleCollider2D>().radius = upgrader.GetDataVariable("explodeRadius", YandexGame.savesData.explosiveWeapon);
         projectile.GetComponent<ExplosiveProjectile>().newSize = upgrader.GetDataVariable("explodeRadius", YandexGame.savesData.explosiveWeapon);
     }
-    public override void Upgrade(string statName)
+    public void Upgrade(string statName)
     {
         YandexGame.savesData.explosiveWeapon[statName]++;
     }
