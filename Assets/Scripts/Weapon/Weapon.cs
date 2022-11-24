@@ -11,6 +11,7 @@ public class Weapon : Award
     private bool isActive = false;
     public bool IsActive  => isActive;
 
+    public override string Description => isActive ? base.Description : Name;
     public override bool Accessibility => !level.IsMaxLevel;
 
     void Awake()

@@ -21592,14 +21592,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1168119504}
     m_Modifications:
-    - target: {fileID: 7095154187732122944, guid: e819b9fc51ca17245927a0848faad324, type: 3}
-      propertyPath: nameLang
-      value: 
-      objectReference: {fileID: 2096810405651856123}
-    - target: {fileID: 7095154187732122944, guid: e819b9fc51ca17245927a0848faad324, type: 3}
-      propertyPath: descriptionLang
-      value: 
-      objectReference: {fileID: 2096810405651856122}
     - target: {fileID: 7095154187732122947, guid: e819b9fc51ca17245927a0848faad324, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -21655,111 +21647,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7095154187732122947, guid: e819b9fc51ca17245927a0848faad324, type: 3}
   m_PrefabInstance: {fileID: 558244194}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &558244196 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7095154187732122972, guid: e819b9fc51ca17245927a0848faad324, type: 3}
-  m_PrefabInstance: {fileID: 558244194}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &558244197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558244196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 0}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: 3
-  ru: 3
-  en: 3
-  tr: 3
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 2/3 completed
-  componentTextField: 0
-  countLang: 2
---- !u!114 &558244198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 558244196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 0}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: 2
-  ru: 2
-  en: 2
-  tr: 2
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 2/3 completed
-  componentTextField: 0
-  countLang: 2
 --- !u!1001 &560444969
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31151,7 +31038,9 @@ MonoBehaviour:
   rounds:
   - countEnemy: 0
     spawnEnemies:
-    - pref: {fileID: 80696927362117936, guid: a9f6e72e1ae90ca4cab1c2f48834e7d2, type: 3}
+    - pref: {fileID: 5325241181129791845, guid: beb19f8086182ec498ca86b1bfc28488, type: 3}
+      probability: 100
+    - pref: {fileID: 3004594831583318594, guid: 08bb196931c234f49a628edb82a8d710, type: 3}
       probability: 100
     probabilityAll: 0
   maxEnemy: 200
@@ -38410,29 +38299,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1168119504}
     m_Modifications:
-    - target: {fileID: -7617095499134624783, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
-      propertyPath: maxBobmObj
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573911166684390161, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
-      propertyPath: nameLang
-      value: 
-      objectReference: {fileID: 2096810405651856123}
-    - target: {fileID: 4573911166684390161, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
-      propertyPath: isStartWeapon
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573911166684390161, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
-      propertyPath: descriptionLang
-      value: 
-      objectReference: {fileID: 2096810405651856122}
     - target: {fileID: 4573911166684390165, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
       propertyPath: m_Name
       value: ExplosiveWeapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573911166684390165, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4573911166684390166, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
       propertyPath: m_RootOrder
@@ -38478,22 +38347,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6673464593174049874, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
-      propertyPath: stats.Array.data[1].levels.Array.data[0].value
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6673464593174049874, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
-      propertyPath: stats.Array.data[1].levels.Array.data[1].value
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6673464593174049874, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
-      propertyPath: stats.Array.data[1].levels.Array.data[2].value
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6673464593174049874, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
-      propertyPath: stats.Array.data[1].levels.Array.data[3].value
-      value: 3.5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
 --- !u!4 &1004896468 stripped
@@ -38501,111 +38354,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4573911166684390166, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
   m_PrefabInstance: {fileID: 1004896467}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1004896469 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4573911166684390165, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
-  m_PrefabInstance: {fileID: 1004896467}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1004896470
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004896469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 0}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: 5
-  ru: 5
-  en: 5
-  tr: 5
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
---- !u!114 &1004896471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1004896469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 0}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: 4
-  ru: 4
-  en: 4
-  tr: 4
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!1001 &1006761199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -72170,18 +71918,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1168119504}
     m_Modifications:
-    - target: {fileID: 7095154187732122944, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
-      propertyPath: nameLang
-      value: 
-      objectReference: {fileID: 2096810405651856123}
-    - target: {fileID: 7095154187732122944, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
-      propertyPath: isStartWeapon
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7095154187732122944, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
-      propertyPath: descriptionLang
-      value: 
-      objectReference: {fileID: 2096810405651856122}
     - target: {fileID: 7095154187732122947, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -72230,117 +71966,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlayWeapon
       objectReference: {fileID: 0}
-    - target: {fileID: 7095154187732122972, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
---- !u!1 &2092270580 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7095154187732122972, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
-  m_PrefabInstance: {fileID: 2092270579}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2092270581
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092270580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 0}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: 6
-  ru: 6
-  en: 6
-  tr: 6
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
---- !u!114 &2092270582
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092270580}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 0}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: 6
-  ru: 6
-  en: 6
-  tr: 6
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!4 &2098598919 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1382191687784576921, guid: 988892adaf234c9429ae04f7409e77bb, type: 3}
@@ -73291,133 +72918,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2096810405805874227, guid: d7e5c57a9e9d9e34490db5f78b9ca2ed, type: 3}
-      propertyPath: nameLang
-      value: 
-      objectReference: {fileID: 2096810405651856123}
-    - target: {fileID: 2096810405805874227, guid: d7e5c57a9e9d9e34490db5f78b9ca2ed, type: 3}
-      propertyPath: isStartWeapon
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2096810405805874227, guid: d7e5c57a9e9d9e34490db5f78b9ca2ed, type: 3}
-      propertyPath: descriptionLang
-      value: 
-      objectReference: {fileID: 2096810405651856122}
     - target: {fileID: 2096810405805874239, guid: d7e5c57a9e9d9e34490db5f78b9ca2ed, type: 3}
       propertyPath: m_Name
       value: AreaWeapon
       objectReference: {fileID: 0}
-    - target: {fileID: 2096810405805874239, guid: d7e5c57a9e9d9e34490db5f78b9ca2ed, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7e5c57a9e9d9e34490db5f78b9ca2ed, type: 3}
---- !u!1 &2096810405651856121 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2096810405805874239, guid: d7e5c57a9e9d9e34490db5f78b9ca2ed, type: 3}
-  m_PrefabInstance: {fileID: 2096810405651856120}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2096810405651856122
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096810405651856121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 0}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: 1
-  ru: 1
-  en: 1
-  tr: 1
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
---- !u!114 &2096810405651856123
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2096810405651856121}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 0}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: 1
-  ru: 1
-  en: 1
-  tr: 1
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!1001 &3129944300409175223
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -73959,10 +73465,6 @@ PrefabInstance:
     - target: {fileID: 4573911166684390165, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
       propertyPath: m_Name
       value: ShootWeapon
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573911166684390165, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4573911166684390166, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
       propertyPath: m_RootOrder

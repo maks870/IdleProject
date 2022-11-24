@@ -10,7 +10,6 @@ namespace UserInterfaces
         [SerializeField] private List<Button> buttonList = new List<Button>();
         [SerializeField] private Button button;
         private GameObject panel;
-        private bool choosingStartWeapon = true;
 
 
         // Start is called before the first frame update
@@ -37,14 +36,7 @@ namespace UserInterfaces
             {
                 buttonList[i].gameObject.SetActive(true);
                 buttonList[i].GetComponentsInChildren<Image>()[1].sprite = awardList[i].Sprite;
-
-                if (choosingStartWeapon)
-                {
-                    buttonList[i].GetComponentInChildren<Text>().text = awardList[i].Name;
-                    choosingStartWeapon = false;
-                }
-                else
-                    buttonList[i].GetComponentInChildren<Text>().text = awardList[i].Description;
+                buttonList[i].GetComponentInChildren<Text>().text = awardList[i].Description;
 
                 buttonList[i].onClick.RemoveAllListeners();
                 Award award = awardList[i];
@@ -56,6 +48,7 @@ namespace UserInterfaces
 
                 });
             }
+
             for (int i = awardList.Count; i < buttonList.Count; i++)
             {
                 buttonList[i].gameObject.SetActive(false);
