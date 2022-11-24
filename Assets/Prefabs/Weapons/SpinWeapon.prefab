@@ -47,13 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a9c34c159c6ce4f885a6628f51f659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Shuriken
-  description: It just throwing knife
-  sprite: {fileID: 21300000, guid: 7567d5eadabfcda42b7b376df2d1cf12, type: 3}
+  sprite: {fileID: 21300000, guid: d76adcda01d7f6946bfe033e811728f0, type: 3}
+  nameLang: {fileID: 0}
+  descriptionLang: {fileID: 0}
   cooldown: 6
   maxLevelCount: 5
-  behavior: {fileID: 7095154187732122945}
-  isActive: 0
 --- !u!114 &7095154187732122945
 MonoBehaviour:
   m_ObjectHideFlags: 0
