@@ -38430,6 +38430,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ExplosiveWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 4573911166684390165, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4573911166684390166, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -72226,6 +72230,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SlayWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 7095154187732122972, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
 --- !u!1 &2092270580 stripped
@@ -73299,6 +73307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AreaWeapon
       objectReference: {fileID: 0}
+    - target: {fileID: 2096810405805874239, guid: d7e5c57a9e9d9e34490db5f78b9ca2ed, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7e5c57a9e9d9e34490db5f78b9ca2ed, type: 3}
 --- !u!1 &2096810405651856121 stripped
@@ -73947,6 +73959,10 @@ PrefabInstance:
     - target: {fileID: 4573911166684390165, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
       propertyPath: m_Name
       value: ShootWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 4573911166684390165, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4573911166684390166, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
       propertyPath: m_RootOrder

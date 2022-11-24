@@ -1,43 +1,44 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using YG;
 
 public class Product : MonoBehaviour
 {
+    [SerializeField] private GameObject prefPoint;
     [SerializeField] private string statName;
     [SerializeField] private bool percentageValue = false;
     [SerializeField] private Upgrader upgrader;
-    [SerializeField] private Text lvlText;
+    [SerializeField] private RectTransform pointGrid;
     [SerializeField] private Text costText;
     [SerializeField] private Text descriptionText;
     [SerializeField] private LanguageYG descriptionLang;
     [SerializeField] private LanguageYG maxCostLang;
+    [SerializeField] private List<Image> points = new List<Image>();
     private Button purchaseButton;
     private int cost;
     private int currentLvl;
     private int maxLvl;
     private bool isMaxLvl = false;
 
-    private void OnEnable()
-    {
-        YandexGame.GetDataEvent += UpdatePurchase;
-        YandexGame.SwitchLangEvent += UpdateText;
-    }
-
-    private void OnDisable()
-    {
-        YandexGame.GetDataEvent -= UpdatePurchase;
-        YandexGame.SwitchLangEvent -= UpdateText;
-    }
 
     void Start()
     {
+        YandexGame.GetDataEvent += UpdatePurchase;//есть вероятность не загрузки
         purchaseButton = GetComponent<Button>();
 
-        if (YandexGame.SDKEnabled == true)
+        for (int i = 0; i < upgrader.GetMaxStatLvl(statName); i++)
         {
-            UpdatePurchase();
+            GameObject point = Instantiate(prefPoint, pointGrid);
+            points.Add(point.transform.GetChild(0).GetComponent<Image>());
         }
+        UpdatePurchase();
+    }
+
+    private void RefreshPoints()
+    {
+        for (int i = 0; i < points.Count; i++)
+            points[i].enabled = i < currentLvl;
     }
 
     private void UpdatePurchase()
@@ -54,7 +55,7 @@ public class Product : MonoBehaviour
         string currentValue;
         string currentTranslation = descriptionLang.currentTranslation;
 
-        lvlText.text = currentLvl.ToString();
+        RefreshPoints();
 
         if (isMaxLvl)
         {
@@ -83,16 +84,12 @@ public class Product : MonoBehaviour
         {
             isMaxLvl = true;
             purchaseButton.enabled = false;
+            descriptionText.enabled = false;
         }
         else
         {
             isMaxLvl = false;
         }
-    }
-
-    private void UpdateText(string lang)
-    {
-        UpdateText();
     }
 
     public void Purchase()
