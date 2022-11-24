@@ -20,8 +20,7 @@ public class MenuGame : Menu
         else if (instance == this)
             Destroy(gameObject);
 
-        pauseCount = 0;
-        Time.timeScale = 1;
+        ResetPause();
 
         stopwatch = new Stopwatch();
         stopwatch.StartStopWatch();
@@ -58,6 +57,12 @@ public class MenuGame : Menu
         SetPause(false);
     }
 
+    private void ResetPause() 
+    {
+        Time.timeScale = 1;
+        pauseCount = 0;
+    }
+
     public void EndGame(int scene) 
     {
         YandexGame.savesData.gold += CoinCollector.instance.CollectedGold;
@@ -68,7 +73,7 @@ public class MenuGame : Menu
             YandexGame.NewLeaderboardScores("Leaderboard", CoinCollector.instance.CollectedGold);
         }
 
-        SetPause(false);
+        ResetPause();
         YandexGame.SaveProgress();
         LoadScene(scene);
     }

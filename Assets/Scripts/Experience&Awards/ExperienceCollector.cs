@@ -92,6 +92,10 @@ public class ExperienceCollector : MonoBehaviour
         if (currentExperience >= experienceToLvlup)
         {
             currentExperience -= experienceToLvlup;
+            if (currentExperience >= experienceToLvlup) 
+            {
+                Debug.LogError("Двойной LVLUP, двойная пауза");
+            }
             experienceToLvlup = (int)(experienceToLvlup * lvlExpMultiply);
             presenter.GiveAwards();
         }

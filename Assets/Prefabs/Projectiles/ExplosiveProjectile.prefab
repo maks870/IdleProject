@@ -186,7 +186,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 0
   timer: 1
   explosion: {fileID: 3668915634709128442, guid: 5f16738ba08f9ac4aa783a7f508248c5, type: 3}
   explodeArea: {fileID: 1600545682812013662}
