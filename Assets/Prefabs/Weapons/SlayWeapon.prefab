@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a9c34c159c6ce4f885a6628f51f659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 372985789, guid: 7d8377eae60b3f04ab500b4197320440, type: 3}
+  sprite: {fileID: 508778119, guid: 11a2508020d51dd4f9e2422f096aee5b, type: 3}
   nameLang: {fileID: 2092270581}
   descriptionLang: {fileID: 2092270582}
   cooldown: 1
