@@ -31038,13 +31038,7 @@ MonoBehaviour:
   rounds:
   - countEnemy: 0
     spawnEnemies:
-    - pref: {fileID: 5325241181129791845, guid: beb19f8086182ec498ca86b1bfc28488, type: 3}
-      probability: 100
-    - pref: {fileID: 3004594831583318594, guid: 08bb196931c234f49a628edb82a8d710, type: 3}
-      probability: 100
-    - pref: {fileID: 2248146331278195821, guid: fb987b02411c7ec4bb41a7f53c8f2f56, type: 3}
-      probability: 100
-    - pref: {fileID: 2502803431165908623, guid: 5b849cb49f4147c4aa344e03977f131a, type: 3}
+    - pref: {fileID: 5674000339651005593, guid: ff139563b28ebd846a53c7cef49d4581, type: 3}
       probability: 100
     probabilityAll: 0
   maxEnemy: 200
