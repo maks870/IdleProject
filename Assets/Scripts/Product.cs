@@ -33,7 +33,6 @@ public class Product : MonoBehaviour
 
     void Start()
     {
-        maxCostLang.enabled = isMaxLvl;
         if (YandexGame.SDKEnabled == true)
         {
             UpdatePurchase();
