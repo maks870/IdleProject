@@ -15015,6 +15015,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ButtonImprove (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3785792253530032502, guid: cb38c38feb3cd6441a94077e09c2eac1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3785792253530032503, guid: cb38c38feb3cd6441a94077e09c2eac1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

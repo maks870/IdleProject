@@ -18802,7 +18802,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &307618666
 RectTransform:
   m_ObjectHideFlags: 0
@@ -19569,9 +19569,9 @@ MonoBehaviour:
   textMeshComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
   text: 
-  ru: "\u0413\u043B\u0430\u0432\u043D\u043E\u0435 \u043C\u0435\u043D\u044E"
-  en: Main menu
-  tr: "Ana men\xFC"
+  ru: "\u0422\u044B \u043F\u0440\u043E\u0434\u0435\u0440\u0436\u0430\u043B\u0441\u044F:"
+  en: 'You lasted:'
+  tr: "Sen s\xFCrd\xFCn:"
   az: 
   be: 
   he: 
@@ -19599,9 +19599,9 @@ MonoBehaviour:
   fontNumber: 0
   uniqueFont: {fileID: 0}
   textHeight: 20
-  processTranslateLabel: 3/3 completed
+  processTranslateLabel: 2/3 completed
   componentTextField: 1
-  countLang: 3
+  countLang: 2
 --- !u!114 &393096937
 MonoBehaviour:
   m_ObjectHideFlags: 0
