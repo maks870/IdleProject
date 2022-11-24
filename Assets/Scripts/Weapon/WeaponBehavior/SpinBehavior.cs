@@ -4,7 +4,7 @@ using UnityEngine;
 using YG;
 
 [RequireComponent(typeof(Upgrader))]
-public class SpinBehavior : Behavior
+public class SpinBehavior : Behavior, IUpgradeble
 {
     [SerializeField] private GameObject projectile;
     [SerializeField] private float spinningTime;
