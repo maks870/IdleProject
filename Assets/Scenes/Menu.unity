@@ -291,7 +291,7 @@ MonoBehaviour:
   costText: {fileID: 1973805382}
   descriptionText: {fileID: 157225382}
   descriptionLang: {fileID: 2029505847}
-  maxCostLang: {fileID: 1973805384}
+  maxCostLang: {fileID: 2029505848}
   purchaseButton: {fileID: 0}
 --- !u!1 &20356151
 GameObject:
@@ -730,7 +730,7 @@ MonoBehaviour:
   costText: {fileID: 1090539089}
   descriptionText: {fileID: 1220281105}
   descriptionLang: {fileID: 2029505847}
-  maxCostLang: {fileID: 1090539088}
+  maxCostLang: {fileID: 2029505848}
   purchaseButton: {fileID: 0}
 --- !u!114 &87128575
 MonoBehaviour:
@@ -1235,7 +1235,7 @@ MonoBehaviour:
   costText: {fileID: 253633432}
   descriptionText: {fileID: 1720814513}
   descriptionLang: {fileID: 2029505846}
-  maxCostLang: {fileID: 253633434}
+  maxCostLang: {fileID: 2029505848}
   purchaseButton: {fileID: 0}
 --- !u!114 &190406957
 MonoBehaviour:
@@ -1565,7 +1565,7 @@ MonoBehaviour:
   costText: {fileID: 644658629}
   descriptionText: {fileID: 79429690}
   descriptionLang: {fileID: 2029505846}
-  maxCostLang: {fileID: 644658628}
+  maxCostLang: {fileID: 2029505848}
   purchaseButton: {fileID: 0}
 --- !u!114 &245423616
 MonoBehaviour:
@@ -1769,7 +1769,6 @@ GameObject:
   - component: {fileID: 253633431}
   - component: {fileID: 253633433}
   - component: {fileID: 253633432}
-  - component: {fileID: 253633434}
   m_Layer: 5
   m_Name: TextCost2
   m_TagString: Untagged
@@ -1839,56 +1838,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 253633430}
   m_CullTransparentMesh: 1
---- !u!114 &253633434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 253633430}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 253633432}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: "\u041C\u0430\u043A\u0441"
-  ru: "\u041C\u0430\u043A\u0441"
-  en: Max
-  tr: maks.
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!1 &267277271
 GameObject:
   m_ObjectHideFlags: 0
@@ -2369,7 +2318,6 @@ GameObject:
   - component: {fileID: 474139090}
   - component: {fileID: 474139093}
   - component: {fileID: 474139092}
-  - component: {fileID: 474139091}
   m_Layer: 5
   m_Name: TextCost2
   m_TagString: Untagged
@@ -2397,56 +2345,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 344.8629, y: 174.5029}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &474139091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 474139089}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 474139092}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: "\u041C\u0430\u043A\u0441"
-  ru: "\u041C\u0430\u043A\u0441"
-  en: Max
-  tr: maks.
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!114 &474139092
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2551,7 +2449,7 @@ MonoBehaviour:
   costText: {fileID: 1954873470}
   descriptionText: {fileID: 1911869309}
   descriptionLang: {fileID: 2029505846}
-  maxCostLang: {fileID: 1954873469}
+  maxCostLang: {fileID: 2029505848}
   purchaseButton: {fileID: 0}
 --- !u!114 &500826969
 MonoBehaviour:
@@ -3486,7 +3384,6 @@ GameObject:
   - component: {fileID: 644658627}
   - component: {fileID: 644658630}
   - component: {fileID: 644658629}
-  - component: {fileID: 644658628}
   m_Layer: 5
   m_Name: TextCost2
   m_TagString: Untagged
@@ -3514,56 +3411,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 344.8629, y: 174.5029}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &644658628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644658626}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 644658629}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: "\u041C\u0430\u043A\u0441"
-  ru: "\u041C\u0430\u043A\u0441"
-  en: Max
-  tr: maks.
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!114 &644658629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3748,7 +3595,6 @@ GameObject:
   - component: {fileID: 667181709}
   - component: {fileID: 667181712}
   - component: {fileID: 667181711}
-  - component: {fileID: 667181710}
   m_Layer: 5
   m_Name: TextCost1
   m_TagString: Untagged
@@ -3776,56 +3622,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 344.8629, y: 174.5029}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &667181710
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 667181708}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 667181711}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: "\u041C\u0430\u043A\u0441"
-  ru: "\u041C\u0430\u043A\u0441"
-  en: Max
-  tr: maks.
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!114 &667181711
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3930,7 +3726,7 @@ MonoBehaviour:
   costText: {fileID: 1302440785}
   descriptionText: {fileID: 552745050}
   descriptionLang: {fileID: 2029505847}
-  maxCostLang: {fileID: 1302440784}
+  maxCostLang: {fileID: 2029505848}
   purchaseButton: {fileID: 0}
 --- !u!114 &674580100
 MonoBehaviour:
@@ -4336,7 +4132,7 @@ MonoBehaviour:
   costText: {fileID: 474139092}
   descriptionText: {fileID: 1008961204}
   descriptionLang: {fileID: 2029505846}
-  maxCostLang: {fileID: 474139091}
+  maxCostLang: {fileID: 2029505848}
   purchaseButton: {fileID: 0}
 --- !u!114 &759311031
 MonoBehaviour:
@@ -4953,7 +4749,7 @@ MonoBehaviour:
   costText: {fileID: 667181711}
   descriptionText: {fileID: 249471080}
   descriptionLang: {fileID: 2029505847}
-  maxCostLang: {fileID: 667181710}
+  maxCostLang: {fileID: 2029505848}
   purchaseButton: {fileID: 0}
 --- !u!114 &854932611
 MonoBehaviour:
@@ -7399,7 +7195,7 @@ MonoBehaviour:
   costText: {fileID: 1925927640}
   descriptionText: {fileID: 2066672808}
   descriptionLang: {fileID: 2029505847}
-  maxCostLang: {fileID: 1925927639}
+  maxCostLang: {fileID: 2029505848}
   purchaseButton: {fileID: 0}
 --- !u!114 &946640246
 MonoBehaviour:
@@ -7750,7 +7546,7 @@ MonoBehaviour:
   costText: {fileID: 1150524665}
   descriptionText: {fileID: 1562191499}
   descriptionLang: {fileID: 2029505846}
-  maxCostLang: {fileID: 1150524664}
+  maxCostLang: {fileID: 2029505848}
   purchaseButton: {fileID: 0}
 --- !u!114 &973050245
 MonoBehaviour:
@@ -8071,7 +7867,7 @@ MonoBehaviour:
   costText: {fileID: 1907868066}
   descriptionText: {fileID: 1946800405}
   descriptionLang: {fileID: 2029505846}
-  maxCostLang: {fileID: 1907868065}
+  maxCostLang: {fileID: 2029505848}
   purchaseButton: {fileID: 0}
 --- !u!114 &1027590103
 MonoBehaviour:
@@ -8300,7 +8096,6 @@ GameObject:
   - component: {fileID: 1090539087}
   - component: {fileID: 1090539090}
   - component: {fileID: 1090539089}
-  - component: {fileID: 1090539088}
   m_Layer: 5
   m_Name: TextCost1
   m_TagString: Untagged
@@ -8328,56 +8123,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 344.8629, y: 174.5029}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1090539088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090539086}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 1090539089}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: "\u041C\u0430\u043A\u0441"
-  ru: "\u041C\u0430\u043A\u0441"
-  en: Max
-  tr: maks.
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!114 &1090539089
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8928,7 +8673,6 @@ GameObject:
   - component: {fileID: 1150524663}
   - component: {fileID: 1150524666}
   - component: {fileID: 1150524665}
-  - component: {fileID: 1150524664}
   m_Layer: 5
   m_Name: TextCost2
   m_TagString: Untagged
@@ -8956,56 +8700,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 344.8629, y: 174.5029}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1150524664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1150524662}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 1150524665}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: "\u041C\u0430\u043A\u0441"
-  ru: "\u041C\u0430\u043A\u0441"
-  en: Max
-  tr: maks.
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!114 &1150524665
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11601,7 +11295,6 @@ GameObject:
   - component: {fileID: 1291645144}
   - component: {fileID: 1291645147}
   - component: {fileID: 1291645146}
-  - component: {fileID: 1291645145}
   m_Layer: 5
   m_Name: TextCost2
   m_TagString: Untagged
@@ -11629,56 +11322,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 344.8629, y: 174.5029}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1291645145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1291645143}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 1291645146}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: "\u041C\u0430\u043A\u0441"
-  ru: "\u041C\u0430\u043A\u0441"
-  en: Max
-  tr: maks.
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!114 &1291645146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11732,7 +11375,6 @@ GameObject:
   - component: {fileID: 1302440783}
   - component: {fileID: 1302440786}
   - component: {fileID: 1302440785}
-  - component: {fileID: 1302440784}
   m_Layer: 5
   m_Name: TextCost1
   m_TagString: Untagged
@@ -11760,56 +11402,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 344.8629, y: 174.5029}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1302440784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1302440782}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 1302440785}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: "\u041C\u0430\u043A\u0441"
-  ru: "\u041C\u0430\u043A\u0441"
-  en: Max
-  tr: maks.
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!114 &1302440785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12328,7 +11920,7 @@ MonoBehaviour:
   costText: {fileID: 1632886378}
   descriptionText: {fileID: 365119411}
   descriptionLang: {fileID: 2029505847}
-  maxCostLang: {fileID: 1632886377}
+  maxCostLang: {fileID: 2029505848}
   purchaseButton: {fileID: 0}
 --- !u!114 &1358276366
 MonoBehaviour:
@@ -12569,7 +12161,7 @@ MonoBehaviour:
   costText: {fileID: 1416992967}
   descriptionText: {fileID: 196007908}
   descriptionLang: {fileID: 2029505847}
-  maxCostLang: {fileID: 1416992966}
+  maxCostLang: {fileID: 2029505848}
   purchaseButton: {fileID: 0}
 --- !u!114 &1375539817
 MonoBehaviour:
@@ -12768,7 +12360,6 @@ GameObject:
   - component: {fileID: 1416992965}
   - component: {fileID: 1416992968}
   - component: {fileID: 1416992967}
-  - component: {fileID: 1416992966}
   m_Layer: 5
   m_Name: TextCost1
   m_TagString: Untagged
@@ -12796,56 +12387,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 344.8629, y: 174.5029}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1416992966
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1416992964}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 1416992967}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: "\u041C\u0430\u043A\u0441"
-  ru: "\u041C\u0430\u043A\u0441"
-  en: Max
-  tr: maks.
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!114 &1416992967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14054,7 +13595,6 @@ GameObject:
   - component: {fileID: 1632886376}
   - component: {fileID: 1632886379}
   - component: {fileID: 1632886378}
-  - component: {fileID: 1632886377}
   m_Layer: 5
   m_Name: TextCost1
   m_TagString: Untagged
@@ -14082,56 +13622,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 344.8629, y: 174.5029}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1632886377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1632886375}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 1632886378}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: "\u041C\u0430\u043A\u0441"
-  ru: "\u041C\u0430\u043A\u0441"
-  en: Max
-  tr: maks.
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!114 &1632886378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14846,7 +14336,6 @@ GameObject:
   - component: {fileID: 1907868064}
   - component: {fileID: 1907868067}
   - component: {fileID: 1907868066}
-  - component: {fileID: 1907868065}
   m_Layer: 5
   m_Name: TextCost2
   m_TagString: Untagged
@@ -14874,56 +14363,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 344.8629, y: 174.5029}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1907868065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1907868063}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 1907868066}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: "\u041C\u0430\u043A\u0441"
-  ru: "\u041C\u0430\u043A\u0441"
-  en: Max
-  tr: maks.
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!114 &1907868066
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15057,7 +14496,6 @@ GameObject:
   - component: {fileID: 1925927638}
   - component: {fileID: 1925927641}
   - component: {fileID: 1925927640}
-  - component: {fileID: 1925927639}
   m_Layer: 5
   m_Name: TextCost1
   m_TagString: Untagged
@@ -15085,56 +14523,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: 344.8629, y: 174.5029}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1925927639
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1925927637}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 1925927640}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: "\u041C\u0430\u043A\u0441"
-  ru: "\u041C\u0430\u043A\u0441"
-  en: Max
-  tr: maks.
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!114 &1925927640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15494,7 +14882,6 @@ GameObject:
   - component: {fileID: 1954873468}
   - component: {fileID: 1954873471}
   - component: {fileID: 1954873470}
-  - component: {fileID: 1954873469}
   m_Layer: 5
   m_Name: TextCost2
   m_TagString: Untagged
@@ -15522,56 +14909,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 344.8629, y: 174.5029}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1954873469
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1954873467}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 1954873470}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: "\u041C\u0430\u043A\u0441"
-  ru: "\u041C\u0430\u043A\u0441"
-  en: Max
-  tr: maks.
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!114 &1954873470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15673,7 +15010,6 @@ GameObject:
   - component: {fileID: 1973805381}
   - component: {fileID: 1973805383}
   - component: {fileID: 1973805382}
-  - component: {fileID: 1973805384}
   m_Layer: 5
   m_Name: TextCost1
   m_TagString: Untagged
@@ -15743,56 +15079,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1973805380}
   m_CullTransparentMesh: 1
---- !u!114 &1973805384
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1973805380}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentTranslation: 
-  textUIComponent: {fileID: 1973805382}
-  textMeshComponent: {fileID: 0}
-  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: "\u041C\u0430\u043A\u0441"
-  ru: "\u041C\u0430\u043A\u0441"
-  en: Max
-  tr: maks.
-  az: 
-  be: 
-  he: 
-  hy: 
-  ka: 
-  et: 
-  fr: 
-  kk: 
-  ky: 
-  lt: 
-  lv: 
-  ro: 
-  tg: 
-  tk: 
-  uk: 
-  uz: 
-  es: 
-  pt: 
-  ar: 
-  id: 
-  ja: 
-  it: 
-  de: 
-  hi: 
-  fontNumber: 0
-  uniqueFont: {fileID: 0}
-  textHeight: 20
-  processTranslateLabel: 3/3 completed
-  componentTextField: 0
-  countLang: 3
 --- !u!1001 &1980461497
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16422,6 +15708,7 @@ GameObject:
   - component: {fileID: 2029505845}
   - component: {fileID: 2029505847}
   - component: {fileID: 2029505846}
+  - component: {fileID: 2029505848}
   m_Layer: 0
   m_Name: MenuController
   m_TagString: Untagged
@@ -16540,6 +15827,56 @@ MonoBehaviour:
   ru: "\u0423\u0440\u043E\u043D +"
   en: damage +
   tr: hasar +
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 3/3 completed
+  componentTextField: 0
+  countLang: 3
+--- !u!114 &2029505848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029505841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTranslation: 
+  textUIComponent: {fileID: 0}
+  textMeshComponent: {fileID: 0}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: "\u041C\u0430\u043A\u0441"
+  ru: "\u041C\u0430\u043A\u0441"
+  en: Max
+  tr: maks.
   az: 
   be: 
   he: 
@@ -17036,7 +16373,7 @@ MonoBehaviour:
   costText: {fileID: 1291645146}
   descriptionText: {fileID: 1379848462}
   descriptionLang: {fileID: 2029505846}
-  maxCostLang: {fileID: 1291645145}
+  maxCostLang: {fileID: 2029505848}
   purchaseButton: {fileID: 0}
 --- !u!114 &2133112258
 MonoBehaviour:
