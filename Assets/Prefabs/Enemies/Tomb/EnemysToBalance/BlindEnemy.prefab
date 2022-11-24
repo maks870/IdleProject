@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -956602752, guid: 43a0ab87861bfbc4bbca715be5c3d36c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ca3b87f11db3fd4468e7a871622d1b85, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -93,12 +93,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8331789942173191900}
-  - component: {fileID: 8509068626968965348}
+  - component: {fileID: -693248598222949708}
   - component: {fileID: 7691519647368328503}
   - component: {fileID: 1296815947905807891}
   - component: {fileID: 5701091359728043138}
   m_Layer: 0
-  m_Name: SimpleEnemy3
+  m_Name: BlindEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -120,7 +120,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8509068626968965348
+--- !u!114 &-693248598222949708
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,16 +129,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 8090365220817514843}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d64d13f3ad65535469597346820344a0, type: 3}
+  m_Script: {fileID: 11500000, guid: 77a232f306771004ca5110219c6ec137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  hp: 4
-  fly: 1
-  damage: 1
+  speed: 2.5
+  hp: 3
+  fly: 0
+  damage: 3
   coin: {fileID: 4788945594064710141, guid: a3dcfa91b0d59744c8f72a5d545cbeae, type: 3}
   expPoint: {fileID: 3957463621492816713, guid: 1633b12828da91f4a8cc250e0b449563, type: 3}
   actionCooldown: 0
+  blindRange: 7
 --- !u!50 &7691519647368328503
 Rigidbody2D:
   serializedVersion: 4
