@@ -12,7 +12,7 @@ public class Product : MonoBehaviour
     [SerializeField] private Text descriptionText;
     [SerializeField] private LanguageYG descriptionLang;
     [SerializeField] private LanguageYG maxCostLang;
-    [SerializeField] private Button purchaseButton;
+    private Button purchaseButton;
     private int cost;
     private int currentLvl;
     private int maxLvl;
@@ -22,7 +22,6 @@ public class Product : MonoBehaviour
     {
         YandexGame.GetDataEvent += UpdatePurchase;
         YandexGame.SwitchLangEvent += UpdateText;
-        UpdatePurchase();
     }
 
     private void OnDisable()
@@ -33,6 +32,8 @@ public class Product : MonoBehaviour
 
     void Start()
     {
+        purchaseButton = GetComponent<Button>();
+
         if (YandexGame.SDKEnabled == true)
         {
             UpdatePurchase();
