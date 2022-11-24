@@ -57,7 +57,7 @@ public class Product : MonoBehaviour
 
         if (isMaxLvl)
         {
-            maxCostLang.enabled = true;
+            costText.text = maxCostLang.currentTranslation;
             currentValue = upgrader.GetValue(statName).ToString();
         }
         else
@@ -71,13 +71,9 @@ public class Product : MonoBehaviour
             currentValue = currentTranslation == descriptionLang.tr
                 ? "%" + currentValue
                 : currentValue + "%";
+        }
 
-            descriptionText.text = $"{currentTranslation}{currentValue}";
-        }
-        else
-        {
-            descriptionText.text = $"{currentTranslation}{currentValue}";
-        }
+        descriptionText.text = $"{currentTranslation}{currentValue}";
     }
 
     private void CheckMaxLevel()

@@ -345,7 +345,7 @@ MonoBehaviour:
   stats:
   - name: health
     levels:
-    - value: 10
+    - value: 3
       cost: 20
     - value: 4
       cost: 40
