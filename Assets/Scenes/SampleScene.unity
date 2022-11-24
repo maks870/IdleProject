@@ -31042,6 +31042,10 @@ MonoBehaviour:
       probability: 100
     - pref: {fileID: 3004594831583318594, guid: 08bb196931c234f49a628edb82a8d710, type: 3}
       probability: 100
+    - pref: {fileID: 2248146331278195821, guid: fb987b02411c7ec4bb41a7f53c8f2f56, type: 3}
+      probability: 100
+    - pref: {fileID: 2502803431165908623, guid: 5b849cb49f4147c4aa344e03977f131a, type: 3}
+      probability: 100
     probabilityAll: 0
   maxEnemy: 200
   spawnTime: 0.3
