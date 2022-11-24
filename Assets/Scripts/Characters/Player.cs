@@ -9,7 +9,7 @@ public class Player : Character, IUpgradeble
     private Level level;
     public static Player instance = null;
     public UnityEvent endRound;
-
+    public float Speed => speed;
     public Level GetLevel => level;
     public Vector3 GetMoveDirection => moveDirection;
 

@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: -7617095499134624783}
   - component: {fileID: 6673464593174049874}
   - component: {fileID: 4573911166684390160}
+  - component: {fileID: 1004896470}
+  - component: {fileID: 1004896471}
   m_Layer: 0
   m_Name: ExplosiveWeapon
   m_TagString: Untagged
@@ -47,13 +49,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a9c34c159c6ce4f885a6628f51f659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Bomb
-  description: It just explosive bomb
   sprite: {fileID: 1682836214, guid: 0ce05ea3dfa32de4e9aaa2c8958dbb69, type: 3}
+  nameLang: {fileID: 1004896470}
+  descriptionLang: {fileID: 1004896471}
   cooldown: 1
   maxLevelCount: 5
-  behavior: {fileID: -7617095499134624783}
-  isStartWeapon: 0
 --- !u!114 &-7617095499134624783
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,7 +69,7 @@ MonoBehaviour:
   projectile: {fileID: 6162771019044189261, guid: 5845bf1fdeb3f0e418dc365d8f6d0b59, type: 3}
   radius: 10
   radiusImprove: 2
-  maxBobmObj: 20
+  maxBobmObj: 10
 --- !u!114 &6673464593174049874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,3 +119,105 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 2
+--- !u!114 &1004896470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573911166684390165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTranslation: 
+  textUIComponent: {fileID: 0}
+  textMeshComponent: {fileID: 0}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: "\u041C\u0438\u043D\u044B"
+  ru: "\u041C\u0438\u043D\u044B"
+  en: Mines
+  tr: Madenler
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 3/3 completed
+  componentTextField: 0
+  countLang: 3
+--- !u!114 &1004896471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4573911166684390165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTranslation: 
+  textUIComponent: {fileID: 0}
+  textMeshComponent: {fileID: 0}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: "\u041E\u0431\u043B\u0430\u0441\u0442\u044C \u0432\u0437\u0440\u044B\u0432\u0430
+    +50%"
+  ru: "\u041E\u0431\u043B\u0430\u0441\u0442\u044C \u0432\u0437\u0440\u044B\u0432\u0430
+    +50%"
+  en: Explosion area +50%
+  tr: "Patlama alan\u0131 +%50"
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 3/3 completed
+  componentTextField: 0
+  countLang: 3

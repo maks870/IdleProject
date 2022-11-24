@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7095154187732122944}
   - component: {fileID: -2097604548177440384}
   - component: {fileID: 1215393480093257734}
+  - component: {fileID: 2092270581}
+  - component: {fileID: 2092270582}
   m_Layer: 0
   m_Name: SlayWeapon
   m_TagString: Untagged
@@ -46,13 +48,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a9c34c159c6ce4f885a6628f51f659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Fireball
-  description: It just throwing knife
   sprite: {fileID: 372985789, guid: 7d8377eae60b3f04ab500b4197320440, type: 3}
+  nameLang: {fileID: 2092270581}
+  descriptionLang: {fileID: 2092270582}
   cooldown: 1
   maxLevelCount: 5
-  behavior: {fileID: -2097604548177440384}
-  isStartWeapon: 1
 --- !u!114 &-2097604548177440384
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,6 +67,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 4060575963102033299, guid: 3e119e44627a47a4abd17a110f62787d, type: 3}
   spawnDistanse: 1
+  pierceCount: 1
 --- !u!114 &1215393480093257734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,3 +101,104 @@ MonoBehaviour:
       cost: 120
     - value: 30
       cost: 120
+--- !u!114 &2092270581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095154187732122972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTranslation: 
+  textUIComponent: {fileID: 0}
+  textMeshComponent: {fileID: 0}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: Fireball
+  ru: "\u041E\u0433\u043D\u0435\u043D\u043D\u044B\u0439 \u0448\u0430\u0440"
+  en: Fireball
+  tr: "Ate\u015F topu"
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 3/3 completed
+  componentTextField: 0
+  countLang: 3
+--- !u!114 &2092270582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7095154187732122972}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTranslation: 
+  textUIComponent: {fileID: 0}
+  textMeshComponent: {fileID: 0}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: Target's pierce +1
+  ru: "\u041F\u0440\u043E\u043D\u0437\u0430\u043D\u0438\u0435 \u0446\u0435\u043B\u0438
+    +1"
+  en: Target's pierce +1
+  tr: Hedef delme +1
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 3/3 completed
+  componentTextField: 0
+  countLang: 3

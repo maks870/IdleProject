@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Character : MonoBehaviour
 {
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer;
     private Vector2 oldPos;
     [SerializeField] protected float speed;
     [SerializeField] protected int hp;
@@ -31,7 +31,7 @@ public class Character : MonoBehaviour
         CheckPosition();
     }
 
-    public void TakeDamage(int damage)
+    public virtual void TakeDamage(int damage)
     {
         if (hp == 0)
             return;

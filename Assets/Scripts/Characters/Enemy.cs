@@ -11,7 +11,7 @@ public class Enemy : Character
     protected GameObject target;
     protected Player player;
     public readonly UnityEvent deathEvent = new UnityEvent();
-    public float Speed { get { return speed; } set { speed = value; } }
+    public float Speed { get { return base.speed; } set { base.speed = value; } }
 
     public void SetTarget(GameObject value)
     {

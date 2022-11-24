@@ -83,7 +83,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.65, y: 0.65}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -127,7 +127,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.65, y: 0.65}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.65, y: 0.65}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -147,10 +147,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e06b272702faeda4285b9858eeb3775d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: -3338749442709606003, guid: ecb71482030aaae47997a2d4a45c2008, type: 3}
   nameLang: {fileID: 5771636919383744173}
   descriptionLang: {fileID: -7526370969596862436}
-  coinValue: 1
+  coinValue: 21
   spriteRenderer: {fileID: 1771116585027188930}
 --- !u!114 &5771636919383744173
 MonoBehaviour:
