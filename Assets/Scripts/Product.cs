@@ -21,10 +21,9 @@ public class Product : MonoBehaviour
     private int maxLvl;
     private bool isMaxLvl = false;
 
-
     void Start()
     {
-        YandexGame.GetDataEvent += UpdatePurchase;//есть вероятность не загрузки
+        YandexGame.SwitchLangEvent += (string m) => UpdatePurchase();//есть вероятность не загрузки
         purchaseButton = GetComponent<Button>();
 
         for (int i = 0; i < upgrader.GetMaxStatLvl(statName); i++)
@@ -43,6 +42,7 @@ public class Product : MonoBehaviour
 
     private void UpdatePurchase()
     {
+        Debug.Log(11111);
         maxLvl = upgrader.GetMaxStatLvl(statName);
         currentLvl = upgrader.GetStatLvl(statName);
         cost = upgrader.GetStatCost(statName);
