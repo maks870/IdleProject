@@ -11,8 +11,8 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
     [SerializeField] private float radiusImprove;
     [SerializeField] private int maxBobmObj = 20;
     private float bombRadius;
-    private List<GameObject> invisiblePull = new List<GameObject>();
-    private List<GameObject> visiblePull = new List<GameObject>();
+    private List<ExplosiveProjectile> invisiblePull = new List<ExplosiveProjectile>();
+    private List<ExplosiveProjectile> visiblePull = new List<ExplosiveProjectile>();
     private void Awake()
     {
         SetDataVariables();
@@ -42,7 +42,7 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
         }
         else
         {
-            GameObject bombObject = visiblePull[0];
+            ExplosiveProjectile bombObject = visiblePull[0];
 
             visiblePull.Remove(bombObject);
             bombObject.GetComponent<ExplosiveProjectile>().Explode();
@@ -67,24 +67,24 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
     {
         for (int i = 0; i < maxBobmObj; i++)
         {
-            GameObject newProjectileObject = Instantiate(projectile, transform.position, Quaternion.identity);
-            newProjectileObject.GetComponent<ExplosiveProjectile>().explosiveBehavior = this;
+            ExplosiveProjectile newProjectileObject = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<ExplosiveProjectile>();
+            newProjectileObject.explosiveBehavior = this;
             AddToPull(newProjectileObject);
         }
     }
-    private GameObject RemoveFromPull()
+    private ExplosiveProjectile RemoveFromPull()
     {
-        GameObject bombObject = invisiblePull[0];
+        ExplosiveProjectile bombObject = invisiblePull[0];
         invisiblePull.Remove(bombObject);
         visiblePull.Add(bombObject);
-        bombObject.SetActive(true);
+        bombObject.gameObject.SetActive(true);
         return bombObject;
     }
-    public void AddToPull(GameObject projectile)
+    public void AddToPull(ExplosiveProjectile projectile)
     {
         invisiblePull.Add(projectile);
         visiblePull.Remove(projectile);
-        projectile.SetActive(false);
+        projectile.gameObject.SetActive(false);
     }
     public override void Combine()
     {

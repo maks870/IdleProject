@@ -7,9 +7,11 @@ public class SlayBehavior : Behavior, IUpgradeble
 {
     [SerializeField] private GameObject projectile;
     [SerializeField] private float spawnDistanse = 2;
-    [SerializeField] private int pierceCount = 1;
-    private Vector3 dir;
+    private int countSpawnProjectilesCount = 4;
     private bool isReady = false;
+    private float angleRadius = 90;
+    private Vector3 dir;
+
 
     private void Awake()
     {
@@ -25,23 +27,32 @@ public class SlayBehavior : Behavior, IUpgradeble
 
     public override void ActiveBehavior()
     {
+        countSpawnProjectilesCount++;
     }
     public override void Use()
     {
         dir = Player.instance.GetMoveDirection;
         if (dir == Vector3.zero) return;
 
-        dir = Player.instance.GetMoveDirection;
-        float angle = Vector3.SignedAngle(Vector3.up, dir, Vector3.forward);
-        Quaternion rotation = Quaternion.Euler(0, 0, angle);
-        GameObject newProjectile = projectile;
-        newProjectile.GetComponent<SlayProjectile>().pierceLeft = pierceCount;
-        Instantiate(newProjectile, transform.position + dir * spawnDistanse, rotation);
+        int anglePartsCount = countSpawnProjectilesCount + 1;
+        float angleOffset = angleRadius / anglePartsCount;
+        float angle;
+
+        for (int i = 1; i < anglePartsCount; i++)
+        {
+            angle = Vector3.SignedAngle(Vector3.up, dir, Vector3.forward) + (angleRadius/2) - (i * angleOffset);
+
+            Quaternion rotation = Quaternion.Euler(0, 0, angle);
+            GameObject newProjectile = Instantiate(projectile, transform.position + dir * spawnDistanse, rotation);
+
+            Vector3 dirProjectile = rotation * Vector3.up;
+            newProjectile.GetComponent<SlayProjectile>().Launch(dirProjectile);
+        }
     }
     public override void Improve(bool isMaxLevel)
     {
         if (!isMaxLevel)
-            pierceCount++;
+            countSpawnProjectilesCount++;
     }
     public void SetDataVariables()
     {

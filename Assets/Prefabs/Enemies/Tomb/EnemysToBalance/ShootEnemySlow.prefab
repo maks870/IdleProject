@@ -49,12 +49,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3.5
-  hp: 2
+  hp: 3
   fly: 0
   damage: 0
   coin: {fileID: 4788945594064710141, guid: a3dcfa91b0d59744c8f72a5d545cbeae, type: 3}
   expPoint: {fileID: 3957463621492816713, guid: 1633b12828da91f4a8cc250e0b449563, type: 3}
-  actionCooldown: 3
+  actionCooldown: 4
   shootRadius: 13
   runningAwayDistance: 10
   projectile: {fileID: 6162771019044189261, guid: 9d3f3bb26b1d0f74aa2448f87369506f, type: 3}

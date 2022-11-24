@@ -67,7 +67,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 4060575963102033299, guid: 3e119e44627a47a4abd17a110f62787d, type: 3}
   spawnDistanse: 1
-  pierceCount: 1
 --- !u!114 &1215393480093257734
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,11 +166,10 @@ MonoBehaviour:
   textUIComponent: {fileID: 0}
   textMeshComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: Target's pierce +1
-  ru: "\u041F\u0440\u043E\u043D\u0437\u0430\u043D\u0438\u0435 \u0446\u0435\u043B\u0438
-    +1"
-  en: Target's pierce +1
-  tr: Hedef delme +1
+  text: "\u041A\u043E\u043B\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E +1"
+  ru: "\u041A\u043E\u043B\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E +1"
+  en: Amount +1
+  tr: Miktar +1
   az: 
   be: 
   he: 

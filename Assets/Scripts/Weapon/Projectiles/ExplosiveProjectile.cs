@@ -15,7 +15,7 @@ public class ExplosiveProjectile : Projectile
 
     private void Start()
     {
-        explodeArea.localScale = new Vector3(newSize, newSize, 0);
+        explodeArea.localScale = new Vector3(newSize * 2, newSize * 2, 0);
         animator = GetComponent<Animator>();
     }
     protected override void OnTriggerEnter2D(Collider2D collision)
@@ -46,7 +46,7 @@ public class ExplosiveProjectile : Projectile
         {
             enemyList[i].TakeDamage(damage);
         }
-        explosiveBehavior.AddToPull(gameObject);
+        explosiveBehavior.AddToPull(this);
         isActivated = false;
         animator.SetBool("Activated", isActivated);
     }

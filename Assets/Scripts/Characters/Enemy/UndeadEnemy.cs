@@ -6,6 +6,8 @@ public class UndeadEnemy : Enemy
 {
     [SerializeField] private bool isDead = false;
     [SerializeField] private bool isDyingProcess = false;
+    [SerializeField] private Sprite firstSprite;
+    [SerializeField] private Sprite secondSprite;
     private Collider2D boxCollider;
     private int baseHp;
     private float baseSpeed;
@@ -16,6 +18,7 @@ public class UndeadEnemy : Enemy
         baseHp = hp;
         baseSpeed = speed;
         boxCollider = GetComponent<Collider2D>();
+        spriteRenderer.sprite = firstSprite;
     }
     protected override void Update()
     {
@@ -52,6 +55,7 @@ public class UndeadEnemy : Enemy
         spriteRenderer.color = color;
         hp = baseHp;
         boxCollider.isTrigger = false;
+        spriteRenderer.sprite = secondSprite;
         isDyingProcess = false;
         isDead = true;
     }
