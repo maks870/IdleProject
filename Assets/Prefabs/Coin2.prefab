@@ -12,9 +12,11 @@ GameObject:
   - component: {fileID: 1771116585027188930}
   - component: {fileID: 7136271810306680368}
   - component: {fileID: 6625202274503085769}
-  - component: {fileID: 3957463621492816713}
+  - component: {fileID: 4788945594064710141}
+  - component: {fileID: 5771636919383744173}
+  - component: {fileID: -7526370969596862436}
   m_Layer: 0
-  m_Name: ExpPoint
+  m_Name: Coin2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,12 +78,12 @@ SpriteRenderer:
   m_SortingLayerID: 775688609
   m_SortingLayer: -1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: ab733c2b79b525841a07c4c3a68a22a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 76a78eb3a9aa98543926e675c2bed1dc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.65, y: 0.65}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -95,7 +97,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1490192420080904487}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 12cff5eea5173a9468488bd00ed08bc9, type: 2}
   m_CullingMode: 0
@@ -120,20 +122,20 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.050812602, y: 0.039924264}
+  m_Offset: {x: -0.0011893511, y: 0.054709435}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.6, y: 1.6}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 1.6, y: 1.2}
+    newSize: {x: 0.65, y: 0.65}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1000545, y: 1.1218317}
+  m_Size: {x: 1.413553, y: 1.1019473}
   m_EdgeRadius: 0
---- !u!114 &3957463621492816713
+--- !u!114 &4788945594064710141
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -142,8 +144,111 @@ MonoBehaviour:
   m_GameObject: {fileID: 1490192420080904487}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84f29e711551543428942e427fbe5aef, type: 3}
+  m_Script: {fileID: 11500000, guid: e06b272702faeda4285b9858eeb3775d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  expValue: 100
+  sprite: {fileID: -3338749442709606003, guid: ecb71482030aaae47997a2d4a45c2008, type: 3}
+  nameLang: {fileID: 5771636919383744173}
+  descriptionLang: {fileID: -7526370969596862436}
+  coinValue: 21
   spriteRenderer: {fileID: 1771116585027188930}
+--- !u!114 &5771636919383744173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490192420080904487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTranslation: 
+  textUIComponent: {fileID: 0}
+  textMeshComponent: {fileID: 0}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: 
+  ru: 
+  en: 
+  tr: 
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 
+  componentTextField: 0
+  countLang: 0
+--- !u!114 &-7526370969596862436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1490192420080904487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f34f36451b093ee4c83ad4aa5459d2ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTranslation: 
+  textUIComponent: {fileID: 0}
+  textMeshComponent: {fileID: 0}
+  infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
+  text: 
+  ru: 
+  en: 
+  tr: 
+  az: 
+  be: 
+  he: 
+  hy: 
+  ka: 
+  et: 
+  fr: 
+  kk: 
+  ky: 
+  lt: 
+  lv: 
+  ro: 
+  tg: 
+  tk: 
+  uk: 
+  uz: 
+  es: 
+  pt: 
+  ar: 
+  id: 
+  ja: 
+  it: 
+  de: 
+  hi: 
+  fontNumber: 0
+  uniqueFont: {fileID: 0}
+  textHeight: 20
+  processTranslateLabel: 
+  componentTextField: 0
+  countLang: 0
