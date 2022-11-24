@@ -6,6 +6,7 @@ public class MenuGame : Menu
 {
     [SerializeField] private Text stopwatchGame;
     [SerializeField] private Text stopwatchMenu;
+    [SerializeField] private GameObject newRecordUI;
     private Stopwatch stopwatch;
     private int pauseCount = 0;
     public static MenuGame instance = null;
@@ -33,6 +34,9 @@ public class MenuGame : Menu
 
         stopwatchGame.text = timeString;
         stopwatchMenu.text = timeString;
+
+        if (YandexGame.savesData.recordScore < CoinCollector.instance.CollectedGold)
+            newRecordUI.gameObject.SetActive(true);
     }
 
     public void SetPause(bool pause)

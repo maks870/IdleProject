@@ -42,10 +42,9 @@ public class AwardPresenter : MonoBehaviour, IUpgradeble
         }
         else
         {
-            Award award;
             foreach (GameObject weapon in currentWeapons)
             {
-                award = weapon.GetComponent<Award>();
+                Award award = weapon.GetComponent<Award>();
                 if (award.Accessibility)
                 {
                     awardList.Add(award);
