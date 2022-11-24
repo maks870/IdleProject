@@ -39,7 +39,7 @@ public class SpinBehavior : Behavior, IUpgradeble
     {
         for (int i = 0; i < spinList.Count; i++)
         {
-            Quaternion rotate = Quaternion.Euler(0, 0, projectileSpeed * Time.deltaTime);
+            Quaternion rotate = Quaternion.Euler(0, 0, -projectileSpeed * Time.deltaTime);
             offset = (rotate * relativeDistanceList[i]).normalized;
             spinList[i].transform.position = transform.position + offset * radius;
             relativeDistanceList[i] = spinList[i].transform.position - transform.position;
