@@ -186,7 +186,7 @@ MonoBehaviour:
   text: Targets +1
   ru: "\u0426\u0435\u043B\u0438 +1"
   en: Targets +1
-  tr: 
+  tr: Hedefler +1
   az: 
   be: 
   he: 
@@ -214,6 +214,6 @@ MonoBehaviour:
   fontNumber: 0
   uniqueFont: {fileID: 0}
   textHeight: 20
-  processTranslateLabel: 1/3
+  processTranslateLabel: 3/3 completed
   componentTextField: 0
-  countLang: 1
+  countLang: 3
