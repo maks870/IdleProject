@@ -27,7 +27,6 @@ public class Menu : MonoBehaviour
         if (YandexGame.savesData.isFirstSession)
         {
             YandexGame.savesData.isFirstSession = false;
-            YandexGame.SaveProgress();
         }
     }
 
