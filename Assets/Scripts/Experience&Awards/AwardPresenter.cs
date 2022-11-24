@@ -32,12 +32,11 @@ public class AwardPresenter : MonoBehaviour, IUpgradeble
         if (currentWeapons.Count != maxWeaponCount)
         {
             Award[] awards = weapons.GetComponentsInChildren<Award>();
+
             foreach (Award award in awards)
             {
                 if (award.Accessibility)
-                {
                     awardList.Add(award);
-                }
             }
         }
         else
@@ -45,10 +44,9 @@ public class AwardPresenter : MonoBehaviour, IUpgradeble
             foreach (GameObject weapon in currentWeapons)
             {
                 Award award = weapon.GetComponent<Award>();
+
                 if (award.Accessibility)
-                {
                     awardList.Add(award);
-                }
             }
         }
     }
@@ -56,12 +54,11 @@ public class AwardPresenter : MonoBehaviour, IUpgradeble
     private void FillCurrentWeapons()
     {
         Weapon[] awardGameObjects = weapons.GetComponentsInChildren<Weapon>();
+
         for (int i = 0; i < awardGameObjects.Length; i++)
         {
             if (awardGameObjects[i].IsActive)
-            {
                 currentWeapons.Add(awardGameObjects[i].gameObject);
-            }
         }
     }
 
@@ -93,8 +90,8 @@ public class AwardPresenter : MonoBehaviour, IUpgradeble
     {
         FillAwardsList();
 
-        int randomAwardsCount = awardList.Count < givingAwardsCount 
-            ? awardList.Count 
+        int randomAwardsCount = awardList.Count < givingAwardsCount
+            ? awardList.Count
             : givingAwardsCount;
 
         List<Award> newAwardsList = new List<Award>();
@@ -109,9 +106,7 @@ public class AwardPresenter : MonoBehaviour, IUpgradeble
         }
 
         if (randomAwards.Count == 0)
-        {
             randomAwards.Add(GetCoinAward());
-        }
 
         return randomAwards;
     }
