@@ -14,6 +14,7 @@ public class Menu : MonoBehaviour
 
     private void Start()
     {
+        Time.timeScale = 1;
         // Проверяем запустился ли плагин
         if (YandexGame.SDKEnabled == true)
         {

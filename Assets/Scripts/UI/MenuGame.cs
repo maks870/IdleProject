@@ -67,7 +67,8 @@ public class MenuGame : Menu
             YandexGame.savesData.recordScore = CoinCollector.instance.CollectedGold;
             YandexGame.NewLeaderboardScores("Leaderboard", CoinCollector.instance.CollectedGold);
         }
-           
+
+        SetPause(false);
         YandexGame.SaveProgress();
         LoadScene(scene);
     }
