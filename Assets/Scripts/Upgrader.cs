@@ -24,7 +24,7 @@ public class Upgrader : MonoBehaviour
         upgradeble = GetComponent<IUpgradeble>();
         upgradeble.Upgrade(statName);
     }
-    public int GetStatCost(string statName, int statLvl)
+    private int GetStatCost(string statName, int statLvl)
     {
         foreach (Stat stat in stats)
         {
@@ -53,7 +53,35 @@ public class Upgrader : MonoBehaviour
         {
             if (stat.name == statName)
             {
-                return stat.levels.Count;
+                return stat.levels.Count - 1;
+            }
+        }
+        return 0;
+    }
+    public float GetValue(string statName)
+    {
+        int statLvl = GetStatLvl(statName);
+        foreach (Stat stat in stats)
+        {
+            if (stat.name == statName)
+            {            
+                return stat.levels[statLvl].value;
+            }
+        }
+        return 0;
+    }
+    public float GetValueUpgrade(string statName)
+    {
+        int statLvl = GetStatLvl(statName);
+        float currentValue;
+        float nextValue;
+        foreach (Stat stat in stats)
+        {
+            if (stat.name == statName)
+            {
+                currentValue = stat.levels[statLvl].value;
+                nextValue = stat.levels[statLvl + 1].value;
+                return nextValue - currentValue;
             }
         }
         return 0;

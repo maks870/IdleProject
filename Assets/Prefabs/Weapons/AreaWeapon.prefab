@@ -49,23 +49,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a9c34c159c6ce4f885a6628f51f659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponName: Cursed Area
-  description: It just cursed area
   sprite: {fileID: 21300000, guid: ca7b6a9a8659f13499dfef366794d442, type: 3}
+  nameLang: {fileID: 0}
+  descriptionLang: {fileID: 0}
   cooldown: 1
   maxLevelCount: 5
-  behavior: {fileID: 2096810405805874226}
-  isStartWeapon: 0
-  translations:
-    languages:
-    - name: en
-      fields:
-      - Area
-      - Radius +1
-    - name: ru
-      fields:
-      - "\u041E\u0431\u043B\u0430\u0441\u0442\u044C"
-      - "\u0420\u0430\u0434\u0438\u0443\u0441 +1"
 --- !u!114 &2096810405805874226
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,7 +102,7 @@ MonoBehaviour:
       cost: 80
     - value: 20
       cost: 160
-    - value: 40
+    - value: 30
       cost: 160
 --- !u!58 &2096810405805874225
 CircleCollider2D:
