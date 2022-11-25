@@ -45,13 +45,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42411758565df444f949226059528d83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minCoinAwardValue: 1
+  coinMultiplierPerRound: 5
   givingAwardsCount: 3
   maxWeaponCount: 3
   weapons: {fileID: 0}
   currentWeapons: []
-  defaultCoin: {fileID: 4788945594064710141, guid: a3dcfa91b0d59744c8f72a5d545cbeae, type: 3}
-  minCoinAwardValue: 15
-  maxCoinAwardValue: 30
+  coinAward: {fileID: 4788945594064710141, guid: c1fbb3ff060d7a649b065ba1da9ded3b, type: 3}
 --- !u!114 &1264012118656359706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -65,7 +65,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-  - name: slots
+  - baseValue: 0
+    name: slots
     levels:
     - value: 1
       cost: 50
@@ -73,7 +74,8 @@ MonoBehaviour:
       cost: 150
     - value: 3
       cost: 150
-  - name: awards
+  - baseValue: 0
+    name: awards
     levels:
     - value: 1
       cost: 70

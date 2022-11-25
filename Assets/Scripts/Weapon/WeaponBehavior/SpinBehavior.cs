@@ -15,6 +15,7 @@ public class SpinBehavior : Behavior, IUpgradeble
     private GameObject spin;
     private Vector3 relativeDistance;
     private Vector3 offset;
+    private Vector3 spinCenter;
     private bool isAddSpin = false;
     private bool isSpinActive = false;
 
@@ -29,6 +30,7 @@ public class SpinBehavior : Behavior, IUpgradeble
 
     void Update()
     {
+        spinCenter = transform.position;
         if (isSpinActive)
         {
             Spin();
@@ -41,8 +43,8 @@ public class SpinBehavior : Behavior, IUpgradeble
         {
             Quaternion rotate = Quaternion.Euler(0, 0, -projectileSpeed * Time.deltaTime);
             offset = (rotate * relativeDistanceList[i]).normalized;
-            spinList[i].transform.position = transform.position + offset * radius;
-            relativeDistanceList[i] = spinList[i].transform.position - transform.position;
+            spinList[i].transform.position = spinCenter + offset * radius;
+            relativeDistanceList[i] = spinList[i].transform.position - spinCenter;
         }
     }
 
@@ -74,9 +76,9 @@ public class SpinBehavior : Behavior, IUpgradeble
         {
             float angle = i * Mathf.PI * 2f / spinCounts;
             Vector3 newPos = new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0);
-            spin = Instantiate(projectileObj, transform.position + newPos, Quaternion.identity);
+            spin = Instantiate(projectileObj, spinCenter + newPos, Quaternion.identity);
             spinList.Add(spin);
-            relativeDistance = spin.transform.position - transform.position;
+            relativeDistance = spin.transform.position - spinCenter;
             relativeDistanceList.Add(relativeDistance);
         }
         TurnOff();
