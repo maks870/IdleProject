@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using YG;
 
@@ -9,9 +10,11 @@ public class MenuGame : Menu
     [SerializeField] private Text stopwatchMenu;
     [SerializeField] private GameObject newRecordUI;
     [SerializeField] private GameObject tipsPanel;
+    [SerializeField] private GameObject rewardedButton;
     private List<GameObject> tips = new List<GameObject>();
     private Stopwatch stopwatch;
     private int pauseCount = 0;
+    public UnityEvent endRoundEvent; 
     
 
     public bool IsPaused => pauseCount == 0 ? false : true;
@@ -63,6 +66,19 @@ public class MenuGame : Menu
     {
         Time.timeScale = 1;
         pauseCount = 0;
+    }
+
+    public override void EndRound() 
+    {
+        base.EndRound();
+        if (CoinCollector.instance.CollectedGold > 1)
+            rewardedButton.gameObject.SetActive(true);
+        else
+            rewardedButton.gameObject.SetActive(false);
+
+        SetPause(true);
+        ActivateTips();
+        endRoundEvent.Invoke();
     }
 
     public void EndGame(int scene)

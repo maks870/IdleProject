@@ -9,7 +9,6 @@ public class Player : Character, IUpgradeble
     [SerializeField] private int maxLevelCount;
     private Level level;
     public static Player instance = null;
-    public UnityEvent endRound;
     public float Speed => speed;
     public Level GetLevel => level;
     public Vector3 GetMoveDirection => moveDirection;
@@ -55,7 +54,7 @@ public class Player : Character, IUpgradeble
     protected override void Dead()
     {
         base.Dead();
-        endRound.Invoke();
+        Menu.instance.EndRound();
     }
 
     public void SetDataVariables()

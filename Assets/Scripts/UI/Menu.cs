@@ -7,7 +7,7 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] private Text allGoldText;
     [SerializeField] private Text goldMultiplierText;
-    [SerializeField] private Button button;
+    [SerializeField] private Button buttonImprove;
     public float goldMultiplier;
     public static Menu instance = null;
     // Подписываемся на событие GetDataEvent в OnEnable
@@ -28,6 +28,8 @@ public class Menu : MonoBehaviour
     {
     }
 
+    public virtual void EndRound() { }
+
     private void Start()
     {
         // Проверяем запустился ли плагин
@@ -44,9 +46,9 @@ public class Menu : MonoBehaviour
             YandexGame.savesData.isFirstSession = false;
         }
 
-        if (SaveChecker.instance?.activeImprovementsUI == true && button != null) 
+        if (SaveChecker.instance?.activeImprovementsUI == true && buttonImprove != null) 
         {
-            button.onClick.Invoke();
+            buttonImprove.onClick.Invoke();
             SaveChecker.instance.activeImprovementsUI = false;
         }
     }
