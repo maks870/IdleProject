@@ -7,7 +7,7 @@ using YG;
 [RequireComponent(typeof(Upgrader))]
 public class ShootBehavior : Behavior, IUpgradeble
 {
-    [SerializeField] private GameObject projectile;
+    [SerializeField] private GameObject projectileObj;
     [SerializeField] private float radius;
     [SerializeField] private CircleCollider2D shootZone;
     private List<Enemy> enemyList = new List<Enemy>();
@@ -66,7 +66,7 @@ public class ShootBehavior : Behavior, IUpgradeble
 
         for (int i = 0; i < counterMax; i++)
         {
-            GameObject shoot = Instantiate(projectile, transform);
+            GameObject shoot = Instantiate(projectileObj, transform);
             shoot.GetComponent<ShootProjectile>().Launch((enemyList[i].transform.position - transform.position).normalized);
         }
     }
@@ -81,8 +81,9 @@ public class ShootBehavior : Behavior, IUpgradeble
     public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
-        projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("shootDamage", YandexGame.savesData.shootWeapon);
-        radius *= upgrader.GetDataVariable("shootRange", YandexGame.savesData.shootWeapon)/100;
+        Projectile projectile = projectileObj.GetComponent<Projectile>();
+        projectile.damage = (int)(projectile.damage * upgrader.GetDataVariable("shootDamage", YandexGame.savesData.shootWeapon) / 100);
+        radius *= upgrader.GetDataVariable("shootRange", YandexGame.savesData.shootWeapon) / 100;
         shootZone.radius = radius;
 
     }

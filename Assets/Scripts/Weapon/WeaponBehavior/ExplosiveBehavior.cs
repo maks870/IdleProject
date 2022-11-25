@@ -5,7 +5,7 @@ using YG;
 [RequireComponent(typeof(Upgrader))]
 public class ExplosiveBehavior : Behavior, IUpgradeble
 {
-    [SerializeField] private GameObject projectile;
+    [SerializeField] private GameObject projectileObj;
     [SerializeField] private float radius;
     [SerializeField] private float radiusImprove;
     [SerializeField] private int maxBobmObj = 20;
@@ -66,7 +66,7 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
     {
         for (int i = 0; i < maxBobmObj; i++)
         {
-            ExplosiveProjectile newProjectileObject = Instantiate(projectile, transform.position, Quaternion.identity).GetComponent<ExplosiveProjectile>();
+            ExplosiveProjectile newProjectileObject = Instantiate(projectileObj, transform.position, Quaternion.identity).GetComponent<ExplosiveProjectile>();
             newProjectileObject.explosiveBehavior = this;
             AddToPull(newProjectileObject);
         }
@@ -91,7 +91,7 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
     }
     public override void ActiveBehavior()
     {
-        bombRadius = projectile.GetComponent<CircleCollider2D>().radius;
+        bombRadius = projectileObj.GetComponent<CircleCollider2D>().radius;
         CreatePull();
     }
     public override void Use()
@@ -108,11 +108,12 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
     public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
-        projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("explodeDamage", YandexGame.savesData.explosiveWeapon);
-        float explodeRadius = projectile.GetComponent<ExplosiveProjectile>().ExplodeRadius;
+        ExplosiveProjectile projectile = projectileObj.GetComponent<ExplosiveProjectile>();
+        projectile.damage = (int)(projectile.damage * upgrader.GetDataVariable("explodeDamage", YandexGame.savesData.explosiveWeapon) / 100);
+        float explodeRadius = projectileObj.GetComponent<ExplosiveProjectile>().ExplodeRadius;
         explodeRadius *= upgrader.GetDataVariable("explodeRadius", YandexGame.savesData.explosiveWeapon) / 100;
-        projectile.GetComponent<CircleCollider2D>().radius = explodeRadius;
-        projectile.GetComponent<ExplosiveProjectile>().newSize = explodeRadius;
+        projectileObj.GetComponent<CircleCollider2D>().radius = explodeRadius;
+        projectile.newSize = explodeRadius;
     }
     public void Upgrade(string statName)
     {

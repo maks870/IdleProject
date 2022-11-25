@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 139fe97de7138624a98568c8a9718686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 4060575963102033299, guid: 3e119e44627a47a4abd17a110f62787d, type: 3}
+  projectileObj: {fileID: 4060575963102033299, guid: 3e119e44627a47a4abd17a110f62787d, type: 3}
   spawnDistanse: 1
 --- !u!114 &1215393480093257734
 MonoBehaviour:
@@ -82,13 +82,13 @@ MonoBehaviour:
   stats:
   - name: slayDamage
     levels:
-    - value: 1
+    - value: 100
       cost: 50
-    - value: 2
+    - value: 120
       cost: 90
-    - value: 3
+    - value: 140
       cost: 130
-    - value: 4
+    - value: 160
       cost: 160
   - name: slaySpeed
     levels:

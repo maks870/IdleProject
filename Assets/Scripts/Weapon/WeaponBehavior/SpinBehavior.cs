@@ -6,7 +6,7 @@ using YG;
 [RequireComponent(typeof(Upgrader))]
 public class SpinBehavior : Behavior, IUpgradeble
 {
-    [SerializeField] private GameObject projectile;
+    [SerializeField] private GameObject projectileObj;
     [SerializeField] private float spinningTime;
     [SerializeField] private float radius;
     private float projectileSpeed;
@@ -24,7 +24,7 @@ public class SpinBehavior : Behavior, IUpgradeble
     }
     private void Start()
     {
-        projectileSpeed = projectile.GetComponent<SpinProjectile>().speed;
+        projectileSpeed = projectileObj.GetComponent<SpinProjectile>().speed;
     }
 
     void Update()
@@ -74,7 +74,7 @@ public class SpinBehavior : Behavior, IUpgradeble
         {
             float angle = i * Mathf.PI * 2f / spinCounts;
             Vector3 newPos = new Vector3(Mathf.Cos(angle) * radius, Mathf.Sin(angle) * radius, 0);
-            spin = Instantiate(projectile, transform.position + newPos, Quaternion.identity);
+            spin = Instantiate(projectileObj, transform.position + newPos, Quaternion.identity);
             spinList.Add(spin);
             relativeDistance = spin.transform.position - transform.position;
             relativeDistanceList.Add(relativeDistance);
@@ -116,8 +116,9 @@ public class SpinBehavior : Behavior, IUpgradeble
     public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
-        projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("spinDamage", YandexGame.savesData.spinWeapon);
-        radius *=  upgrader.GetDataVariable("spinRadius", YandexGame.savesData.spinWeapon)/100;
+        Projectile projectile = projectileObj.GetComponent<Projectile>();
+        projectile.damage = (int)(projectile.damage * upgrader.GetDataVariable("spinDamage", YandexGame.savesData.spinWeapon) / 100);
+        radius *= upgrader.GetDataVariable("spinRadius", YandexGame.savesData.spinWeapon) / 100;
     }
 
     public void Upgrade(string statName)

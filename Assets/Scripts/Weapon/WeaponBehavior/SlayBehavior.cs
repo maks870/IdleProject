@@ -5,7 +5,7 @@ using YG;
 
 public class SlayBehavior : Behavior, IUpgradeble
 {
-    [SerializeField] private GameObject projectile;
+    [SerializeField] private GameObject projectileObj;
     [SerializeField] private float spawnDistanse = 2;
     private int countSpawnProjectilesCount = 0;
     private bool isReady = false;
@@ -40,10 +40,10 @@ public class SlayBehavior : Behavior, IUpgradeble
 
         for (int i = 1; i < anglePartsCount; i++)
         {
-            angle = Vector3.SignedAngle(Vector3.up, dir, Vector3.forward) + (angleRadius/2) - (i * angleOffset);
+            angle = Vector3.SignedAngle(Vector3.up, dir, Vector3.forward) + (angleRadius / 2) - (i * angleOffset);
 
             Quaternion rotation = Quaternion.Euler(0, 0, angle);
-            GameObject newProjectile = Instantiate(projectile, transform.position + dir * spawnDistanse, rotation);
+            GameObject newProjectile = Instantiate(projectileObj, transform.position + dir * spawnDistanse, rotation);
 
             Vector3 dirProjectile = rotation * Vector3.up;
             newProjectile.GetComponent<SlayProjectile>().Launch(dirProjectile);
@@ -57,8 +57,9 @@ public class SlayBehavior : Behavior, IUpgradeble
     public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
-        projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("slayDamage", YandexGame.savesData.slayWeapon);
-        projectile.GetComponent<SlayProjectile>().speed *= upgrader.GetDataVariable("slaySpeed", YandexGame.savesData.slayWeapon)/100;
+        SlayProjectile projectile = projectileObj.GetComponent<SlayProjectile>();
+        projectile.damage = (int)(projectile.damage * upgrader.GetDataVariable("slayDamage", YandexGame.savesData.slayWeapon) / 100);
+        projectile.speed *= upgrader.GetDataVariable("slaySpeed", YandexGame.savesData.slayWeapon) / 100;
     }
     public void Upgrade(string statName)
     {

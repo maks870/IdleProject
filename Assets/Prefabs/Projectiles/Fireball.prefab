@@ -120,9 +120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: decdd734e68076047b915dfd470da3e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
-  speed: 20
-  pierceLeft: 1
+  damage: 10
+  speed: 15
 --- !u!70 &-8606945790929473060
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

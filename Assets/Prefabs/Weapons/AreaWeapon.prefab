@@ -68,7 +68,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbb292ebea4f75246839d94b116abae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 5
   slow: 0
   areaSize: 1
   areaImprove: 0.25
@@ -88,13 +88,13 @@ MonoBehaviour:
   stats:
   - name: areaDamage
     levels:
-    - value: 1
+    - value: 100
       cost: 50
-    - value: 2
+    - value: 150
       cost: 100
-    - value: 3
+    - value: 200
       cost: 150
-    - value: 4
+    - value: 300
       cost: 150
   - name: areaSlow
     levels:

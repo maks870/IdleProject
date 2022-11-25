@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b0d88408be176e4081fd6d325169ce9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 6162771019044189261, guid: a0fd04f943cf9a24d9bb19ff58472a77, type: 3}
+  projectileObj: {fileID: 6162771019044189261, guid: a0fd04f943cf9a24d9bb19ff58472a77, type: 3}
   spinningTime: 2
   radius: 5
 --- !u!58 &7095154187732122946
@@ -100,13 +100,13 @@ MonoBehaviour:
   stats:
   - name: spinDamage
     levels:
-    - value: 1
+    - value: 100
       cost: 30
-    - value: 2
+    - value: 115
       cost: 80
-    - value: 3
+    - value: 130
       cost: 130
-    - value: 4
+    - value: 150
       cost: 130
   - name: spinRadius
     levels:

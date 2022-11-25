@@ -85,7 +85,7 @@ public class AreaBehavior : Behavior, IUpgradeble
     public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
-        damage = (int)upgrader.GetDataVariable("areaDamage", YandexGame.savesData.areaWeapon);
+        damage = (int)(damage * upgrader.GetDataVariable("areaDamage", YandexGame.savesData.areaWeapon) / 100);
         slow = (int)upgrader.GetDataVariable("areaSlow", YandexGame.savesData.areaWeapon);
 
     }

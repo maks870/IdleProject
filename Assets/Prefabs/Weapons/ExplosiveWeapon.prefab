@@ -66,7 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3d29a66a884dce4daecc6e892c8d237, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 6162771019044189261, guid: 5845bf1fdeb3f0e418dc365d8f6d0b59, type: 3}
+  projectileObj: {fileID: 6162771019044189261, guid: 5845bf1fdeb3f0e418dc365d8f6d0b59, type: 3}
   radius: 10
   radiusImprove: 2
   maxBobmObj: 10
@@ -85,13 +85,13 @@ MonoBehaviour:
   stats:
   - name: explodeDamage
     levels:
-    - value: 1
+    - value: 100
       cost: 30
-    - value: 2
+    - value: 130
       cost: 60
-    - value: 3
+    - value: 160
       cost: 90
-    - value: 4
+    - value: 190
       cost: 90
   - name: explodeRadius
     levels:
