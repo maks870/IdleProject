@@ -80,7 +80,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-  - name: slayDamage
+  - baseValue: 10
+    name: slayDamage
     levels:
     - value: 100
       cost: 50
@@ -90,7 +91,8 @@ MonoBehaviour:
       cost: 130
     - value: 160
       cost: 160
-  - name: slaySpeed
+  - baseValue: 15
+    name: slaySpeed
     levels:
     - value: 100
       cost: 30

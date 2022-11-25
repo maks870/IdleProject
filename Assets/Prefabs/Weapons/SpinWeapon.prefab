@@ -98,7 +98,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-  - name: spinDamage
+  - baseValue: 10
+    name: spinDamage
     levels:
     - value: 100
       cost: 30
@@ -108,7 +109,8 @@ MonoBehaviour:
       cost: 130
     - value: 150
       cost: 130
-  - name: spinRadius
+  - baseValue: 5
+    name: spinRadius
     levels:
     - value: 100
       cost: 30

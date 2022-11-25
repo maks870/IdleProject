@@ -86,7 +86,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-  - name: areaDamage
+  - baseValue: 5
+    name: areaDamage
     levels:
     - value: 100
       cost: 50
@@ -96,7 +97,8 @@ MonoBehaviour:
       cost: 150
     - value: 300
       cost: 150
-  - name: areaSlow
+  - baseValue: 0
+    name: areaSlow
     levels:
     - value: 0
       cost: 40

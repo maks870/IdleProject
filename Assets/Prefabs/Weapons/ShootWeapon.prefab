@@ -82,7 +82,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-  - name: shootDamage
+  - baseValue: 10
+    name: shootDamage
     levels:
     - value: 100
       cost: 10
@@ -92,7 +93,8 @@ MonoBehaviour:
       cost: 100
     - value: 175
       cost: 10
-  - name: shootRange
+  - baseValue: 10
+    name: shootRange
     levels:
     - value: 100
       cost: 20

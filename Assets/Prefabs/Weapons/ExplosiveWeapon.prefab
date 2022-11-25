@@ -83,7 +83,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-  - name: explodeDamage
+  - baseValue: 10
+    name: explodeDamage
     levels:
     - value: 100
       cost: 30
@@ -93,7 +94,8 @@ MonoBehaviour:
       cost: 90
     - value: 190
       cost: 90
-  - name: explodeRadius
+  - baseValue: 2
+    name: explodeRadius
     levels:
     - value: 100
       cost: 40
