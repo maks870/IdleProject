@@ -72790,14 +72790,6 @@ PrefabInstance:
       propertyPath: weapons
       value: 
       objectReference: {fileID: 1168119503}
-    - target: {fileID: 1264012118656359707, guid: f6de69de0812dc94a83284e4d95d8947, type: 3}
-      propertyPath: maxCoinAwardValue
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 1264012118656359707, guid: f6de69de0812dc94a83284e4d95d8947, type: 3}
-      propertyPath: minCoinAwardValue
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1264012118656359708, guid: f6de69de0812dc94a83284e4d95d8947, type: 3}
       propertyPath: m_RootOrder
       value: 4
