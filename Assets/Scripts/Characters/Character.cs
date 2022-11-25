@@ -5,14 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class Character : MonoBehaviour
 {
-    protected SpriteRenderer spriteRenderer;
     private Vector2 oldPos;
     [SerializeField] protected float speed;
     [SerializeField] protected int hp;
     [SerializeField] private bool fly;
+    protected SpriteRenderer spriteRenderer;
     protected Rigidbody2D rb;
     protected Vector3 moveDirection;
     protected Animator animator;
+    protected bool isDamaged = false;
+
 
     public int Hp { get => hp; }
 
@@ -51,8 +53,10 @@ public class Character : MonoBehaviour
     private IEnumerator TimerDamageSprite()
     {
         spriteRenderer.material.SetFloat("_White", 1);
+        isDamaged = true;
         yield return new WaitForSeconds(0.2f);
         spriteRenderer.material.SetFloat("_White", 0);
+        isDamaged = false;
     }
 
     private void Move()
