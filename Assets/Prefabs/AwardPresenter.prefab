@@ -65,21 +65,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-  - baseValue: 0
+  - baseValue: 1
     name: slots
     levels:
-    - value: 0
-      cost: 50
     - value: 1
-      cost: 150
+      cost: 50
     - value: 2
+      cost: 150
+    - value: 3
       cost: 150
   - baseValue: 1
     name: awards
     levels:
-    - value: 0
-      cost: 70
     - value: 1
-      cost: 170
+      cost: 70
     - value: 2
+      cost: 170
+    - value: 3
       cost: 170
