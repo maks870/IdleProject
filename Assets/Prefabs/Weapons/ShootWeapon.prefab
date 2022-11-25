@@ -53,7 +53,7 @@ MonoBehaviour:
   nameLang: {fileID: 4573911166552859902}
   descriptionLang: {fileID: 4573911166552859903}
   cooldown: 1
-  maxLevelCount: 5
+  maxLevelCount: 7
 --- !u!114 &4573911166684390167
 MonoBehaviour:
   m_ObjectHideFlags: 0
