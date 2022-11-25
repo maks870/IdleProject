@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42411758565df444f949226059528d83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minCoinAwardValue: 1
+  minCoinAwardValue: 5
   coinMultiplierPerRound: 5
   givingAwardsCount: 3
   maxWeaponCount: 3
@@ -65,7 +65,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats:
-  - baseValue: 0
+  - baseValue: 1
     name: slots
     levels:
     - value: 1
@@ -74,7 +74,7 @@ MonoBehaviour:
       cost: 150
     - value: 3
       cost: 150
-  - baseValue: 0
+  - baseValue: 1
     name: awards
     levels:
     - value: 1
