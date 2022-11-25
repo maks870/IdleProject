@@ -93,6 +93,6 @@ public class MenuGame : Menu
     public void ActiveImprovementsUI()
     {
         SaveChecker.instance.activeImprovementsUI = true;
-        LoadScene(0);
+        EndGame(0);
     }
 }
