@@ -1,4 +1,5 @@
 using UnityEngine;
+using YG;
 
 public class InputControls : MonoBehaviour
 {
@@ -7,7 +8,9 @@ public class InputControls : MonoBehaviour
 
     private void Start()
     {
-        player = Player.instance;     
+        player = Player.instance;
+       // if (YandexGame.EnvironmentData.isDesktop)
+            joystick.isDesktop = true;
     }
 
     private void Update()
