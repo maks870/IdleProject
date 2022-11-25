@@ -93,4 +93,8 @@ public class Character : MonoBehaviour
     protected virtual void Dead()
     {
     }
+    public virtual void TakeDeadlyDamage()
+    {
+        Dead();
+    }
 }

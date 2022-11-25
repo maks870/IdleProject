@@ -66,8 +66,8 @@ public class Enemy : Character
     protected override void Dead()
     {
         base.Dead();
-        ExperienceCollector.instance.Drop(expPoint, transform.position);
-        CoinCollector.instance.Drop(coin, transform.position);
+        ExperienceCollector.instance?.Drop(expPoint, transform.position);
+        CoinCollector.instance?.Drop(coin, transform.position);
         deathEvent.Invoke();
         Destroy(gameObject);
     }

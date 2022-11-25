@@ -16,7 +16,7 @@ public class Destroyer : MonoBehaviour
         {
             Enemy enemy = collision.GetComponent<Enemy>();
             //Spawner.KillEnemy(collision.GetComponent<Enemy>());
-            enemy.deathEvent.Invoke();
+            enemy.TakeDeadlyDamage();
         }
 
         if (collision.GetComponent<Projectile>() != null)
