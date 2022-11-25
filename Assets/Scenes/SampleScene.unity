@@ -73852,6 +73852,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1168119503}
     - target: {fileID: 1264012118656359707, guid: f6de69de0812dc94a83284e4d95d8947, type: 3}
+      propertyPath: minCoinAwardValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1264012118656359707, guid: f6de69de0812dc94a83284e4d95d8947, type: 3}
       propertyPath: coinMultiplierPerRound
       value: 5
       objectReference: {fileID: 0}
