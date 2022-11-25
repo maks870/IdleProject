@@ -13,6 +13,7 @@ public struct StatLvl
 [Serializable]
 public class Stat
 {
+    public float baseValue;
     public string name;
     public List<StatLvl> levels;
 }

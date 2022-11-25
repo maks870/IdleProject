@@ -13,7 +13,6 @@ public class AwardPresenter : MonoBehaviour, IUpgradeble
     [SerializeField] private GameObject weapons;
     [SerializeField] private List<GameObject> currentWeapons = new List<GameObject>();
     [SerializeField] private Coin defaultCoin;
-    [SerializeField] private Spawner spawner;
     private List<Award> awardList = new List<Award>();
     private AwardPresenterUI presenterUI;
 
@@ -66,7 +65,7 @@ public class AwardPresenter : MonoBehaviour, IUpgradeble
 
     private Award GetCoinAward()
     {
-        int maxCoinAwardValue = minCoinAwardValue + coinMultiplierPerRound * spawner.CurrentRound;
+        int maxCoinAwardValue = minCoinAwardValue + coinMultiplierPerRound * Spawner.instance.CurrentRound;
         int randomValueCoin = Random.Range(minCoinAwardValue, maxCoinAwardValue);
         Coin coinAward = defaultCoin;
         coinAward.ChangeCoin(randomValueCoin, defaultCoin.Sprite);

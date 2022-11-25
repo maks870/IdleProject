@@ -7,7 +7,7 @@ using YG;
 public class AreaBehavior : Behavior, IUpgradeble
 {
     [SerializeField] private int damage;
-    [SerializeField] private int slow;
+    [SerializeField] private float slow;
     [SerializeField] private float areaSize = 1;
     [SerializeField] private float areaImprove = 0.25f;
     [SerializeField] private List<Enemy> enemyList = new List<Enemy>();
@@ -85,8 +85,8 @@ public class AreaBehavior : Behavior, IUpgradeble
     public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
-        damage = (int)(damage * upgrader.GetDataVariable("areaDamage", YandexGame.savesData.areaWeapon) / 100);
-        slow = (int)upgrader.GetDataVariable("areaSlow", YandexGame.savesData.areaWeapon);
+        damage = (int)(upgrader.GetBaseValue("areaDamage") * upgrader.GetDataVariable("areaDamage", YandexGame.savesData.areaWeapon) / 100);
+        slow = (upgrader.GetBaseValue("areaSlow") * upgrader.GetDataVariable("areaSlow", YandexGame.savesData.areaWeapon));
 
     }
 

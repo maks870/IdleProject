@@ -70,6 +70,17 @@ public class Upgrader : MonoBehaviour
         }
         return 0;
     }
+    public float GetBaseValue(string statName)
+    {
+        foreach (Stat stat in stats)
+        {
+            if (stat.name == statName)
+            {
+                return stat.baseValue;
+            }
+        }
+        return 0;
+    }
     public float GetValueUpgrade(string statName)
     {
         int statLvl = GetStatLvl(statName);

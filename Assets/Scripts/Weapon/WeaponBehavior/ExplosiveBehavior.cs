@@ -16,6 +16,7 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
     {
         SetDataVariables();
     }
+
     private void DropProjectile()
     {
         bool findPlace = false;
@@ -48,6 +49,7 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
             bombObject.transform.position = transform.position + dropPlace;
         }
     }
+
     private bool CheckPlace(Vector3 dropPlace)
     {
         float range;
@@ -62,6 +64,7 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
         }
         return true;
     }
+
     private void CreatePull()
     {
         for (int i = 0; i < maxBobmObj; i++)
@@ -71,6 +74,7 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
             AddToPull(newProjectileObject);
         }
     }
+
     private ExplosiveProjectile RemoveFromPull()
     {
         ExplosiveProjectile bombObject = invisiblePull[0];
@@ -79,39 +83,46 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
         bombObject.gameObject.SetActive(true);
         return bombObject;
     }
+
     public void AddToPull(ExplosiveProjectile projectile)
     {
         invisiblePull.Add(projectile);
         visiblePull.Remove(projectile);
         projectile.gameObject.SetActive(false);
     }
+
     public override void Combine()
     {
         //логика объединения оружия
     }
+
     public override void ActiveBehavior()
     {
         bombRadius = projectileObj.GetComponent<CircleCollider2D>().radius;
         CreatePull();
     }
+
     public override void Use()
     {
         DropProjectile();
     }
+
     public override void Improve(bool isMaxLevel)
     {
         if (!isMaxLevel)
             radius += radiusImprove;
     }
 
-    // Start is called before the first frame update
     public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
         ExplosiveProjectile projectile = projectileObj.GetComponent<ExplosiveProjectile>();
-        projectile.damage = (int)(projectile.damage * upgrader.GetDataVariable("explodeDamage", YandexGame.savesData.explosiveWeapon) / 100);
-        float explodeRadius = projectileObj.GetComponent<ExplosiveProjectile>().ExplodeRadius;
-        explodeRadius *= upgrader.GetDataVariable("explodeRadius", YandexGame.savesData.explosiveWeapon) / 100;
+
+        float explodeDamage = (int)(upgrader.GetBaseValue("explodeDamage") * upgrader.GetDataVariable("explodeDamage", YandexGame.savesData.explosiveWeapon) / 100);
+        projectile.damage = (int)(projectile.damage * explodeDamage);
+
+        float explodeRadius = (int)(upgrader.GetBaseValue("explodeRadius") * upgrader.GetDataVariable("explodeRadius", YandexGame.savesData.explosiveWeapon) / 100);
+
         projectileObj.GetComponent<CircleCollider2D>().radius = explodeRadius;
         projectile.newSize = explodeRadius;
     }

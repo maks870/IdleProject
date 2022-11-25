@@ -57,8 +57,10 @@ public class ShootBehavior : Behavior, IUpgradeble
 
         enemyList.Sort(delegate (Enemy x, Enemy y)
         {
-            float firstDist = (transform.position - x.transform.position).magnitude;
-            float secondDist = (transform.position - y.transform.position).magnitude;
+            Vector3 xTrans = x.transform.position;
+            Vector3 yTrans = y.transform.position;
+            float firstDist = (transform.position - xTrans).magnitude;
+            float secondDist = (transform.position - yTrans).magnitude;
             return firstDist.CompareTo(secondDist);
         });
 
@@ -82,8 +84,8 @@ public class ShootBehavior : Behavior, IUpgradeble
     {
         Upgrader upgrader = GetComponent<Upgrader>();
         Projectile projectile = projectileObj.GetComponent<Projectile>();
-        projectile.damage = (int)(projectile.damage * upgrader.GetDataVariable("shootDamage", YandexGame.savesData.shootWeapon) / 100);
-        radius *= upgrader.GetDataVariable("shootRange", YandexGame.savesData.shootWeapon) / 100;
+        projectile.damage = (int)(upgrader.GetBaseValue("shootDamage") * upgrader.GetDataVariable("shootDamage", YandexGame.savesData.shootWeapon) / 100);
+        radius = upgrader.GetBaseValue("shootRange") * upgrader.GetDataVariable("shootRange", YandexGame.savesData.shootWeapon) / 100;
         shootZone.radius = radius;
 
     }

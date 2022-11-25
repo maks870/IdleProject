@@ -107,14 +107,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rounds:
-  - countEnemy: 10
+  - countEnemy: 100
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 40
     - pref: {fileID: 8090365220817514843, guid: 015003747980c70498c029412706096b, type: 3}
       probability: 60
     probabilityAll: 0
-  - countEnemy: 15
+  - countEnemy: 100
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 45
@@ -149,7 +149,7 @@ MonoBehaviour:
     - pref: {fileID: 8090365220817514843, guid: 477bc6634bbdc864893d598fba256c83, type: 3}
       probability: 10
     probabilityAll: 0
-  maxEnemy: 200
+  maxEnemy: 100
   spawnTime: 0.7
   targetObject: {fileID: 0}
 --- !u!1 &614046070107127066
