@@ -12,17 +12,13 @@ public class MenuGame : Menu
     private List<GameObject> tips = new List<GameObject>();
     private Stopwatch stopwatch;
     private int pauseCount = 0;
-    public static MenuGame instance = null;
+    
 
     public bool IsPaused => pauseCount == 0 ? false : true;
 
-    private void Awake()
+    protected override void Awake()
     {
-        if (instance == null)
-            instance = this;
-        else if (instance == this)
-            Destroy(gameObject);
-
+        base.Awake();
         ResetPause();
 
         stopwatch = new Stopwatch();
@@ -44,7 +40,7 @@ public class MenuGame : Menu
             newRecordUI.gameObject.SetActive(true);
     }
 
-    public void SetPause(bool pause)
+    public override void SetPause(bool pause)
     {
         if (pause)
             pauseCount++;

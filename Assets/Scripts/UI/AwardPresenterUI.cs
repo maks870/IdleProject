@@ -43,7 +43,7 @@ namespace UserInterfaces
                 {
                     awardPresenter.GiveAward(award);
                     panel.transform.parent.gameObject.SetActive(false);
-                    MenuGame.instance.SetPause(false);
+                    Menu.instance.SetPause(false);
 
                 });
             }
@@ -56,7 +56,7 @@ namespace UserInterfaces
         public void ShowAwards()
         {
             ReplaceAwards();
-            MenuGame.instance.SetPause(true);
+            Menu.instance.SetPause(true);
             panel.transform.parent.gameObject.SetActive(true);
         }
     }

@@ -3066,8 +3066,8 @@ MonoBehaviour:
     - pref: {fileID: 5674000339651005593, guid: 1f1e6ec8986c33e46b3207f53d91b84c, type: 3}
       probability: 100
     probabilityAll: 0
+    spawnTime: 0.3
   maxEnemy: 25
-  spawnTime: 2
   targetObject: {fileID: 1509004865}
 --- !u!4 &583602534
 Transform:
@@ -13435,27 +13435,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_RenderShadows: 1
-  m_RequiresDepthTextureOption: 2
-  m_RequiresOpaqueTextureOption: 2
-  m_CameraType: 0
-  m_Cameras: []
-  m_RendererIndex: -1
-  m_VolumeLayerMask:
-    serializedVersion: 2
-    m_Bits: 1
-  m_VolumeTrigger: {fileID: 0}
-  m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
-  m_Antialiasing: 0
-  m_AntialiasingQuality: 2
-  m_StopNaN: 0
-  m_Dithering: 0
-  m_ClearDepth: 1
-  m_AllowXRRendering: 1
-  m_RequiresDepthTexture: 0
-  m_RequiresColorTexture: 0
-  m_Version: 2
 --- !u!114 &1613891206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13854,6 +13833,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1710342013 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7753665903928346262, guid: 171a5f4e86a774d419a7a32c0f044a37, type: 3}
+  m_PrefabInstance: {fileID: 7753665904524439707}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1720814510
 GameObject:
   m_ObjectHideFlags: 0
@@ -14196,8 +14186,8 @@ MonoBehaviour:
     - pref: {fileID: 5674000339651005593, guid: 1f1e6ec8986c33e46b3207f53d91b84c, type: 3}
       probability: 100
     probabilityAll: 0
+    spawnTime: 0.3
   maxEnemy: 25
-  spawnTime: 2
   targetObject: {fileID: 921833693}
 --- !u!4 &1816894448
 Transform:
@@ -15308,8 +15298,8 @@ MonoBehaviour:
     - pref: {fileID: 5674000339651005593, guid: 1f1e6ec8986c33e46b3207f53d91b84c, type: 3}
       probability: 100
     probabilityAll: 0
+    spawnTime: 0.3
   maxEnemy: 25
-  spawnTime: 2
   targetObject: {fileID: 1358367694}
 --- !u!4 &1990565367
 Transform:
@@ -15796,7 +15786,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allGoldText: {fileID: 376985274}
+  goldMultiplierText: {fileID: 1710342013}
   button: {fileID: 3785792254253729037}
+  goldMultiplier: 0.1
 --- !u!114 &2029505845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15809,7 +15801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5785beefdc3b485478fa63be6da79fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 2029505844}
 --- !u!114 &2029505846
 MonoBehaviour:
   m_ObjectHideFlags: 0

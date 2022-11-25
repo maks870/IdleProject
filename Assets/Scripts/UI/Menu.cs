@@ -6,12 +6,27 @@ using YG;
 public class Menu : MonoBehaviour
 {
     [SerializeField] private Text allGoldText;
+    [SerializeField] private Text goldMultiplierText;
     [SerializeField] private Button button;
+    public float goldMultiplier;
+    public static Menu instance = null;
     // Подписываемся на событие GetDataEvent в OnEnable
     private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
 
     // Отписываемся от события GetDataEvent в OnDisable
     private void OnDisable() => YandexGame.GetDataEvent -= GetLoad;
+
+    protected virtual void Awake() 
+    {
+        if (instance == null)
+            instance = this;
+        else if (instance == this)
+            Destroy(gameObject);
+    }
+
+    public virtual void SetPause(bool pause) 
+    {
+    }
 
     private void Start()
     {
@@ -41,6 +56,11 @@ public class Menu : MonoBehaviour
     {
         if (allGoldText != null)
             allGoldText.text = YandexGame.savesData.gold.ToString();
+        if (goldMultiplierText != null) 
+        {
+            int newGold = (int)(YandexGame.savesData.gold * goldMultiplier);
+            goldMultiplierText.text = "+" + newGold.ToString();
+        }      
     }
 
     public void SaveSafely() 

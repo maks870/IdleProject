@@ -18390,7 +18390,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.6
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -31721,7 +31721,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allGoldText: {fileID: 0}
+  goldMultiplierText: {fileID: 0}
   button: {fileID: 0}
+  goldMultiplier: 0
   stopwatchGame: {fileID: 897014830}
   stopwatchMenu: {fileID: 1779723756}
   newRecordUI: {fileID: 1057785839}
@@ -31828,7 +31830,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5785beefdc3b485478fa63be6da79fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menu: {fileID: 854912839}
 --- !u!1001 &856140303
 PrefabInstance:
   m_ObjectHideFlags: 0
