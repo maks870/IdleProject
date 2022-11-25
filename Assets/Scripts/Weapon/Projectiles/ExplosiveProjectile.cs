@@ -5,6 +5,7 @@ using UnityEngine;
 public class ExplosiveProjectile : Projectile
 {
     [SerializeField] private float timer = 1;
+    [SerializeField] private float explodeRadius;
     [SerializeField] private GameObject explosion;
     [SerializeField] private Transform explodeArea;
     private List<Enemy> enemyList = new List<Enemy>();
@@ -13,6 +14,7 @@ public class ExplosiveProjectile : Projectile
     [HideInInspector] public ExplosiveBehavior explosiveBehavior;
     [HideInInspector] public float newSize;
 
+    public float ExplodeRadius => explodeRadius;
     private void Start()
     {
         explodeArea.localScale = new Vector3(newSize * 2, newSize * 2, 0);

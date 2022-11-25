@@ -117,7 +117,7 @@ public class SpinBehavior : Behavior, IUpgradeble
     {
         Upgrader upgrader = GetComponent<Upgrader>();
         projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("spinDamage", YandexGame.savesData.spinWeapon);
-        radius = upgrader.GetDataVariable("spinRadius", YandexGame.savesData.spinWeapon);
+        radius *=  upgrader.GetDataVariable("spinRadius", YandexGame.savesData.spinWeapon)/100;
     }
 
     public void Upgrade(string statName)

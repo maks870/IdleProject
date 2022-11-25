@@ -1232,7 +1232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefPoint: {fileID: 1819444080505223318, guid: 928b83bf246a69a438fd0d35a62719ac, type: 3}
   statName: shootRange
-  percentageValue: 0
+  percentageValue: 1
   upgrader: {fileID: 6673464593174049874, guid: d3c971b4a7508b84e8acd287ef686bbc, type: 3}
   pointGrid: {fileID: 1390893006}
   costText: {fileID: 253633432}
@@ -1483,7 +1483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefPoint: {fileID: 1819444080505223318, guid: 928b83bf246a69a438fd0d35a62719ac, type: 3}
   statName: slaySpeed
-  percentageValue: 0
+  percentageValue: 1
   upgrader: {fileID: 1215393480093257734, guid: c8a14bae2c0b39f4c98d15bdbd562273, type: 3}
   pointGrid: {fileID: 1499361892}
   costText: {fileID: 644658629}
@@ -7634,7 +7634,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefPoint: {fileID: 1819444080505223318, guid: 928b83bf246a69a438fd0d35a62719ac, type: 3}
   statName: explodeRadius
-  percentageValue: 0
+  percentageValue: 1
   upgrader: {fileID: 6673464593174049874, guid: 4b017ffacd2556c4f85772bcceaf8b75, type: 3}
   pointGrid: {fileID: 515852166}
   costText: {fileID: 1150524665}
@@ -7956,7 +7956,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefPoint: {fileID: 1819444080505223318, guid: 928b83bf246a69a438fd0d35a62719ac, type: 3}
   statName: spinRadius
-  percentageValue: 0
+  percentageValue: 1
   upgrader: {fileID: 1215393480093257734, guid: e819b9fc51ca17245927a0848faad324, type: 3}
   pointGrid: {fileID: 1210178759}
   costText: {fileID: 1907868066}

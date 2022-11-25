@@ -58,7 +58,7 @@ public class SlayBehavior : Behavior, IUpgradeble
     {
         Upgrader upgrader = GetComponent<Upgrader>();
         projectile.GetComponent<Projectile>().damage = (int)upgrader.GetDataVariable("slayDamage", YandexGame.savesData.slayWeapon);
-        projectile.GetComponent<SlayProjectile>().speed = upgrader.GetDataVariable("slaySpeed", YandexGame.savesData.slayWeapon);
+        projectile.GetComponent<SlayProjectile>().speed *= upgrader.GetDataVariable("slaySpeed", YandexGame.savesData.slayWeapon)/100;
     }
     public void Upgrade(string statName)
     {
