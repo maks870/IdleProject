@@ -13,8 +13,6 @@ public class Coin : Award
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    public SpriteRenderer GetSpriteRenderer => spriteRenderer;
-
     public override void AwardAction()
     {
         CoinCollector.instance.AddCoin(coinValue);
