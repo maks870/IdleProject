@@ -4307,7 +4307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefPoint: {fileID: 1819444080505223318, guid: 928b83bf246a69a438fd0d35a62719ac, type: 3}
   statName: speed
-  percentageValue: 0
+  percentageValue: 1
   upgrader: {fileID: 4840190428457942224, guid: fb68b97e498fc4e4daa88e9332c7bee8, type: 3}
   pointGrid: {fileID: 356155463}
   costText: {fileID: 474139092}
