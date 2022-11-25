@@ -17722,7 +17722,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 108
+    m_MaxSize: 170
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -18173,7 +18173,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 108
+    m_MaxSize: 170
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -19244,7 +19244,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &307618666
 RectTransform:
   m_ObjectHideFlags: 0
@@ -31837,6 +31837,7 @@ MonoBehaviour:
   stopwatchGame: {fileID: 897014830}
   stopwatchMenu: {fileID: 1779723756}
   newRecordUI: {fileID: 1057785839}
+  tipsPanel: {fileID: 418499954}
 --- !u!114 &854912840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39862,7 +39863,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 108
+    m_MaxSize: 170
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -41768,7 +41769,7 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 108
+    m_MaxSize: 170
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -74680,6 +74681,14 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4840190428457942252, guid: fb68b97e498fc4e4daa88e9332c7bee8, type: 3}
+      propertyPath: endRound.m_PersistentCalls.m_Calls.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840190428457942252, guid: fb68b97e498fc4e4daa88e9332c7bee8, type: 3}
+      propertyPath: endRound.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840190428457942252, guid: fb68b97e498fc4e4daa88e9332c7bee8, type: 3}
       propertyPath: endRound.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 307618665}
@@ -74691,6 +74700,30 @@ PrefabInstance:
       propertyPath: endRound.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 854912839}
+    - target: {fileID: 4840190428457942252, guid: fb68b97e498fc4e4daa88e9332c7bee8, type: 3}
+      propertyPath: endRound.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 854912839}
+    - target: {fileID: 4840190428457942252, guid: fb68b97e498fc4e4daa88e9332c7bee8, type: 3}
+      propertyPath: endRound.m_PersistentCalls.m_Calls.Array.data[3].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840190428457942252, guid: fb68b97e498fc4e4daa88e9332c7bee8, type: 3}
+      propertyPath: endRound.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: ActivateTips
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840190428457942252, guid: fb68b97e498fc4e4daa88e9332c7bee8, type: 3}
+      propertyPath: endRound.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
+      value: MenuGame, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840190428457942252, guid: fb68b97e498fc4e4daa88e9332c7bee8, type: 3}
+      propertyPath: endRound.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4840190428457942252, guid: fb68b97e498fc4e4daa88e9332c7bee8, type: 3}
+      propertyPath: endRound.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fb68b97e498fc4e4daa88e9332c7bee8, type: 3}
 --- !u!1001 &5137187449951845088

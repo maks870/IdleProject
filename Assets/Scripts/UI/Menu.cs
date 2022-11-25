@@ -29,7 +29,7 @@ public class Menu : MonoBehaviour
             YandexGame.savesData.isFirstSession = false;
         }
 
-        if (SaveChecker.instance.activeImprovementsUI && button != null) 
+        if (SaveChecker.instance?.activeImprovementsUI == true && button != null) 
         {
             button.onClick.Invoke();
             SaveChecker.instance.activeImprovementsUI = false;
