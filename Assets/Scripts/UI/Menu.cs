@@ -6,6 +6,7 @@ using YG;
 public class Menu : MonoBehaviour
 {
     [SerializeField] private Text allGoldText;
+    [SerializeField] private Button button;
     // Подписываемся на событие GetDataEvent в OnEnable
     private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
 
@@ -27,6 +28,12 @@ public class Menu : MonoBehaviour
         {
             YandexGame.savesData.isFirstSession = false;
         }
+
+        if (SaveChecker.instance.activeImprovementsUI && button != null) 
+        {
+            button.onClick.Invoke();
+            SaveChecker.instance.activeImprovementsUI = false;
+        }
     }
 
     // Ваш метод, который будет запускаться в старте
@@ -34,6 +41,11 @@ public class Menu : MonoBehaviour
     {
         if (allGoldText != null)
             allGoldText.text = YandexGame.savesData.gold.ToString();
+    }
+
+    public void SaveSafely() 
+    {
+        SaveChecker.instance.Save();
     }
 
     public void LoadScene(int scene)

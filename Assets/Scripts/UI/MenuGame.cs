@@ -77,4 +77,10 @@ public class MenuGame : Menu
         YandexGame.SaveProgress();
         LoadScene(scene);
     }
+
+    public void ActiveImprovementsUI() 
+    {
+        SaveChecker.instance.activeImprovementsUI = true;
+        LoadScene(0);
+    }
 }

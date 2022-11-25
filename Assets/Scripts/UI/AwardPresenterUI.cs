@@ -9,14 +9,13 @@ namespace UserInterfaces
         [SerializeField] private AwardPresenter awardPresenter;
         [SerializeField] private List<Button> buttonList = new List<Button>();
         [SerializeField] private Button button;
-        private GameObject panel;
+        [SerializeField] private GameObject panel;
 
 
         // Start is called before the first frame update
         void Start()
         {
             awardPresenter.SetPresenterUI = this;
-            panel = transform.GetChild(0).gameObject;
             CreateButtons(awardPresenter.GetAwardsCount);
             ShowAwards();
         }
@@ -43,7 +42,7 @@ namespace UserInterfaces
                 buttonList[i].onClick.AddListener(() =>
                 {
                     awardPresenter.GiveAward(award);
-                    panel.SetActive(false);
+                    panel.transform.parent.gameObject.SetActive(false);
                     MenuGame.instance.SetPause(false);
 
                 });
@@ -58,7 +57,7 @@ namespace UserInterfaces
         {
             ReplaceAwards();
             MenuGame.instance.SetPause(true);
-            panel.SetActive(true);
+            panel.transform.parent.gameObject.SetActive(true);
         }
     }
 }
