@@ -6,15 +6,17 @@ using YG;
 
 public class AwardPresenter : MonoBehaviour, IUpgradeble
 {
+    [SerializeField] private int minCoinAwardValue;
+    [SerializeField] private int coinMultiplierPerRound;
     [SerializeField] private int givingAwardsCount = 3;// устанавливать в awake из YGsaves
     [SerializeField] private int maxWeaponCount = 3; // устанавливать в awake из YGsaves
     [SerializeField] private GameObject weapons;
     [SerializeField] private List<GameObject> currentWeapons = new List<GameObject>();
     [SerializeField] private Coin defaultCoin;
-    [SerializeField] private int minCoinAwardValue;
-    [SerializeField] private int maxCoinAwardValue;
+    [SerializeField] private Spawner spawner;
     private List<Award> awardList = new List<Award>();
     private AwardPresenterUI presenterUI;
+
     public int GetAwardsCount => givingAwardsCount;
     public AwardPresenterUI SetPresenterUI { set { presenterUI = value; } }
 
@@ -64,6 +66,7 @@ public class AwardPresenter : MonoBehaviour, IUpgradeble
 
     private Award GetCoinAward()
     {
+        int maxCoinAwardValue = minCoinAwardValue + coinMultiplierPerRound * spawner.CurrentRound;
         int randomValueCoin = Random.Range(minCoinAwardValue, maxCoinAwardValue);
         Coin coinAward = defaultCoin;
         coinAward.ChangeCoin(randomValueCoin, defaultCoin.Sprite);

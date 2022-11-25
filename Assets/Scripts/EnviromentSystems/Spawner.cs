@@ -33,6 +33,8 @@ public class Spawner : MonoBehaviour
     public GameObject targetObject;
     public static Spawner instance = null;
 
+    public int CurrentRound => roundNumber;
+
     private void Start()
     {
         if (targetObject == null) 

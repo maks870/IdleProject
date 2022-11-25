@@ -7,7 +7,7 @@ public class SlayBehavior : Behavior, IUpgradeble
 {
     [SerializeField] private GameObject projectile;
     [SerializeField] private float spawnDistanse = 2;
-    private int countSpawnProjectilesCount = 4;
+    private int countSpawnProjectilesCount = 0;
     private bool isReady = false;
     private float angleRadius = 90;
     private Vector3 dir;
