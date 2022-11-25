@@ -87,11 +87,11 @@ MonoBehaviour:
     levels:
     - value: 1
       cost: 30
-    - value: 2
-      cost: 60
     - value: 3
+      cost: 60
+    - value: 5
       cost: 90
-    - value: 4
+    - value: 7
       cost: 90
   - name: explodeRadius
     levels:

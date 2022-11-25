@@ -85,11 +85,11 @@ MonoBehaviour:
     levels:
     - value: 1
       cost: 10
-    - value: 3
+    - value: 2
       cost: 50
-    - value: 4
+    - value: 3
       cost: 100
-    - value: 5
+    - value: 4
       cost: 10
   - name: shootRange
     levels:
