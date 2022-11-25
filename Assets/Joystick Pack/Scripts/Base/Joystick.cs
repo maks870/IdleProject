@@ -9,7 +9,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     public float Vertical { get { return (snapY) ? SnapFloat(input.y, AxisOptions.Vertical) : input.y; } }
     public Vector2 Direction { get { return new Vector2(Horizontal, Vertical); } }
 
-    public bool isDesktop = false;
+    [SerializeField] public bool isDesktop = true;
 
     public float HandleRange
     {

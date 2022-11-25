@@ -9,8 +9,15 @@ public class InputControls : MonoBehaviour
     private void Start()
     {
         player = Player.instance;
-       // if (YandexGame.EnvironmentData.isDesktop)
+
+#if !UNITY_EDITOR
+        if (YandexGame.EnvironmentData.isDesktop)
             joystick.isDesktop = true;
+        else
+            joystick.isDesktop = false;
+#else
+        joystick.isDesktop = true;
+#endif
     }
 
     private void Update()
@@ -18,7 +25,7 @@ public class InputControls : MonoBehaviour
         player.SetInputAxis(joystick.Direction + GetDirection());
     }
 
-    private Vector2 GetDirection() 
+    private Vector2 GetDirection()
     {
         return new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
     }
