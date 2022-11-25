@@ -42,7 +42,6 @@ public class Product : MonoBehaviour
 
     private void UpdatePurchase()
     {
-        Debug.Log(11111);
         maxLvl = upgrader.GetMaxStatLvl(statName);
         currentLvl = upgrader.GetStatLvl(statName);
         cost = upgrader.GetStatCost(statName);
