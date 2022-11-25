@@ -19,13 +19,14 @@ public class Round
     public int countEnemy;
     public SpawnEnemy[] spawnEnemies;
     [HideInInspector] public float probabilityAll;
+    public float spawnTime = 0.3f;
 }
 
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private Round[] rounds;
     [SerializeField] private int maxEnemy;
-    [SerializeField] private float spawnTime = 0.3f;
+    
     private int roundNumber = 0;
     private BoxCollider2D[] zones;
     private Enemy enemy;
@@ -65,12 +66,12 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator TimerSpawn()
     {
-        yield return new WaitForSeconds(spawnTime);
-
         if (spawnedEnemies.Count < maxEnemy && rounds[roundNumber]?.spawnEnemies!=null)
         {
             Spawn();
         }
+
+        yield return new WaitForSeconds(rounds[roundNumber].spawnTime);
         StartCoroutine(TimerSpawn());
     }
 
