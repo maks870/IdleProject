@@ -14,7 +14,8 @@ public class Character : MonoBehaviour
     protected Vector3 moveDirection;
     protected Animator animator;
     protected bool isDamaged = false;
-
+    private Shader shaderSpritesDefault;
+    private Shader shaderGUItext;
 
     public int Hp { get => hp; }
 
@@ -23,6 +24,8 @@ public class Character : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        shaderSpritesDefault = Shader.Find("Sprites/Default");
+        shaderGUItext = Shader.Find("GUI/Text Shader");
         oldPos = transform.position;
         animator.SetBool("Fly", fly);
     }
@@ -52,10 +55,12 @@ public class Character : MonoBehaviour
 
     private IEnumerator TimerDamageSprite()
     {
-        spriteRenderer.material.SetFloat("_White", 1);
+        spriteRenderer.material.shader = shaderGUItext;
+        spriteRenderer.color = Color.white;
         isDamaged = true;
         yield return new WaitForSeconds(0.2f);
-        spriteRenderer.material.SetFloat("_White", 0);
+        spriteRenderer.material.shader = shaderSpritesDefault;
+        spriteRenderer.color = Color.white;
         isDamaged = false;
     }
 
