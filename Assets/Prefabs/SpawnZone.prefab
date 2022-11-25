@@ -150,7 +150,7 @@ MonoBehaviour:
       probability: 10
     probabilityAll: 0
   maxEnemy: 200
-  spawnTime: 0.5
+  spawnTime: 0.7
   targetObject: {fileID: 0}
 --- !u!1 &614046070107127066
 GameObject:

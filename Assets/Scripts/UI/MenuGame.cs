@@ -87,7 +87,6 @@ public class MenuGame : Menu
     public void ActivateTips()
     {
         int r = Random.Range(0, tips.Count);
-        Debug.Log(r);
         tips[r].SetActive(true);
     }
 

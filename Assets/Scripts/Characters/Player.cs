@@ -55,7 +55,6 @@ public class Player : Character, IUpgradeble
     protected override void Dead()
     {
         base.Dead();
-        Debug.Log("You dead");
         endRound.Invoke();
     }
 
