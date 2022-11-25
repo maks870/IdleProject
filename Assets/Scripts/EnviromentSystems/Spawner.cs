@@ -118,6 +118,5 @@ public class Spawner : MonoBehaviour
     public void KillEnemy(Enemy enemy) //метод для добавления в событие смерти врага
     {
         spawnedEnemies.Remove(enemy);
-        Destroy(enemy.gameObject);
     }
 }

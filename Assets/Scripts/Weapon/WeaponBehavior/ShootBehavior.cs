@@ -54,22 +54,35 @@ public class ShootBehavior : Behavior, IUpgradeble
         {
             return;
         }
+        List<Vector3> directionList = new List<Vector3>();
 
-        enemyList.Sort(delegate (Enemy x, Enemy y)
+        for (int i = 0; i < enemyList.Count; i++)
         {
-            Vector3 xTrans = x.transform.position;
-            Vector3 yTrans = y.transform.position;
-            float firstDist = (transform.position - xTrans).magnitude;
-            float secondDist = (transform.position - yTrans).magnitude;
+            directionList.Add(enemyList[i].transform.position - transform.position);
+        }
+
+        directionList.Sort(delegate (Vector3 x, Vector3 y)
+        {
+            float firstDist = x.magnitude;
+            float secondDist = x.magnitude;
             return firstDist.CompareTo(secondDist);
         });
+
+        //enemyList.Sort(delegate (Enemy x, Enemy y)
+        //{
+        //    Vector3 xTrans = x.transform.position;
+        //    Vector3 yTrans = y.transform.position;
+        //    float firstDist = (transform.position - xTrans).magnitude;
+        //    float secondDist = (transform.position - yTrans).magnitude;
+        //    return firstDist.CompareTo(secondDist);
+        //});
 
         int counterMax = targetCount < enemyList.Count ? targetCount : enemyList.Count;
 
         for (int i = 0; i < counterMax; i++)
         {
             GameObject shoot = Instantiate(projectileObj, transform);
-            shoot.GetComponent<ShootProjectile>().Launch((enemyList[i].transform.position - transform.position).normalized);
+            shoot.GetComponent<ShootProjectile>().Launch(directionList[i].normalized);
         }
     }
 
