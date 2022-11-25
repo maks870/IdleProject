@@ -150,7 +150,7 @@ MonoBehaviour:
   sprite: {fileID: -3338749442709606003, guid: ecb71482030aaae47997a2d4a45c2008, type: 3}
   nameLang: {fileID: 5771636919383744173}
   descriptionLang: {fileID: -7526370969596862436}
-  coinValue: 21
+  coinValue: 1
   spriteRenderer: {fileID: 1771116585027188930}
 --- !u!114 &5771636919383744173
 MonoBehaviour:

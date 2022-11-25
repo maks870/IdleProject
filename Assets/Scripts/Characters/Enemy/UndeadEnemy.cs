@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UndeadEnemy : Enemy
@@ -8,6 +7,9 @@ public class UndeadEnemy : Enemy
     [SerializeField] private bool isDyingProcess = false;
     [SerializeField] private Sprite firstSprite;
     [SerializeField] private Sprite secondSprite;
+    [SerializeField] private Sprite thirdSprite;
+    [SerializeField] private float blinkDelay;
+    [SerializeField] private Color invincibleColor;
     private Collider2D boxCollider;
     private int baseHp;
     private float baseSpeed;
@@ -48,14 +50,18 @@ public class UndeadEnemy : Enemy
         isDyingProcess = true;
         boxCollider.isTrigger = true;
         Color color = spriteRenderer.color;
-        spriteRenderer.color = new Color(255, 181, 0, 255);
-
-        yield return new WaitForSeconds(time);
-
+        spriteRenderer.color = invincibleColor;
+        for (float i = 0; i < actionCooldown; i += blinkDelay * 2)
+        {
+            spriteRenderer.sprite = firstSprite;
+            yield return new WaitForSeconds(blinkDelay);
+            spriteRenderer.sprite = secondSprite;
+            yield return new WaitForSeconds(blinkDelay);
+        }
         spriteRenderer.color = color;
+        spriteRenderer.sprite = thirdSprite;
         hp = baseHp;
         boxCollider.isTrigger = false;
-        spriteRenderer.sprite = secondSprite;
         isDyingProcess = false;
         isDead = true;
     }

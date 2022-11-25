@@ -138,11 +138,14 @@ MonoBehaviour:
   damage: 1
   coin: {fileID: 4788945594064710141, guid: a3dcfa91b0d59744c8f72a5d545cbeae, type: 3}
   expPoint: {fileID: 3957463621492816713, guid: 1633b12828da91f4a8cc250e0b449563, type: 3}
-  actionCooldown: 3
+  actionCooldown: 2
   isDead: 0
   isDyingProcess: 0
   firstSprite: {fileID: -1619197717, guid: 43a0ab87861bfbc4bbca715be5c3d36c, type: 3}
   secondSprite: {fileID: 1872906606, guid: 43a0ab87861bfbc4bbca715be5c3d36c, type: 3}
+  thirdSprite: {fileID: -956602752, guid: 43a0ab87861bfbc4bbca715be5c3d36c, type: 3}
+  blinkDelay: 0.2
+  invincibleColor: {r: 0.57254905, g: 0.68235296, b: 0.7647059, a: 1}
 --- !u!50 &6072291750650251509
 Rigidbody2D:
   serializedVersion: 4
