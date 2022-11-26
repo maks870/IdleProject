@@ -103,11 +103,11 @@ MonoBehaviour:
     levels:
     - value: 100
       cost: 30
-    - value: 115
+    - value: 125
       cost: 80
-    - value: 130
-      cost: 130
     - value: 150
+      cost: 130
+    - value: 175
       cost: 130
   - baseValue: 5
     name: spinRadius
