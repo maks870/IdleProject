@@ -3052,6 +3052,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1b2bcab46a8e049ac3fe55083ddeea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roundNumber: 0
   rounds:
   - countEnemy: 400
     spawnEnemies:
@@ -14172,6 +14173,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1b2bcab46a8e049ac3fe55083ddeea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roundNumber: 0
   rounds:
   - countEnemy: 400
     spawnEnemies:
@@ -15284,6 +15286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1b2bcab46a8e049ac3fe55083ddeea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  roundNumber: 0
   rounds:
   - countEnemy: 400
     spawnEnemies:
@@ -15787,7 +15790,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allGoldText: {fileID: 376985274}
   goldMultiplierText: {fileID: 1710342013}
-  button: {fileID: 3785792254253729037}
+  buttonImprove: {fileID: 3785792254253729037}
   goldMultiplier: 0.1
 --- !u!114 &2029505845
 MonoBehaviour:
