@@ -16,15 +16,16 @@ public class Menu : MonoBehaviour
     // Отписываемся от события GetDataEvent в OnDisable
     private void OnDisable() => YandexGame.GetDataEvent -= GetLoad;
 
-    protected virtual void Awake() 
+    protected virtual void Awake()
     {
         if (instance == null)
             instance = this;
         else if (instance == this)
             Destroy(gameObject);
+
     }
 
-    public virtual void SetPause(bool pause) 
+    public virtual void SetPause(bool pause)
     {
     }
 
@@ -46,7 +47,7 @@ public class Menu : MonoBehaviour
             YandexGame.savesData.isFirstSession = false;
         }
 
-        if (SaveChecker.instance?.activeImprovementsUI == true && buttonImprove != null) 
+        if (SaveChecker.instance?.activeImprovementsUI == true && buttonImprove != null)
         {
             buttonImprove.onClick.Invoke();
             SaveChecker.instance.activeImprovementsUI = false;
@@ -58,14 +59,18 @@ public class Menu : MonoBehaviour
     {
         if (allGoldText != null)
             allGoldText.text = YandexGame.savesData.gold.ToString();
-        if (goldMultiplierText != null) 
+
+        if (goldMultiplierText != null)
         {
             int newGold = (int)(YandexGame.savesData.gold * goldMultiplier);
+
+            if (newGold < 10)
+                newGold = 10;
             goldMultiplierText.text = "+" + newGold.ToString();
-        }      
+        }
     }
 
-    public void SaveSafely() 
+    public void SaveSafely()
     {
         SaveChecker.instance.Save();
     }
