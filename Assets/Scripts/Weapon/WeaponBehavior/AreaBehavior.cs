@@ -10,9 +10,10 @@ public class AreaBehavior : Behavior, IUpgradeble
     [SerializeField] private float slow;
     [SerializeField] private float areaSize = 1;
     [SerializeField] private float areaImprove = 0.25f;
-    [SerializeField] private List<Enemy> enemyList = new List<Enemy>();
+    [SerializeField] private GameObject spriteObject;
+    private List<Enemy> enemyList = new List<Enemy>();
     private Animator animator;
-    private SpriteRenderer spriteRenderer;
+    
 
     private void Awake()
     {
@@ -21,8 +22,7 @@ public class AreaBehavior : Behavior, IUpgradeble
 
     private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        spriteRenderer.enabled = false;
+        spriteObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -63,7 +63,7 @@ public class AreaBehavior : Behavior, IUpgradeble
 
     public override void ActiveBehavior()
     {
-        spriteRenderer.enabled = true;
+        spriteObject.SetActive(true);
         SetAreaSize();
         animator = GetComponent<Animator>();
     }
