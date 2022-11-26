@@ -21,9 +21,9 @@ public class Product : MonoBehaviour
     private int maxLvl;
     private bool isMaxLvl = false;
 
-    private void OnEnable() => YandexGame.SwitchLangEvent += (string m) => UpdatePurchase();
+    private void OnEnable() => YandexGame.GetDataEvent += UpdatePurchase;
 
-    private void OnDisable() => YandexGame.SwitchLangEvent -= (string m) => UpdatePurchase();//вероятно не работает
+    private void OnDisable() => YandexGame.GetDataEvent -= UpdatePurchase;
 
     void Start()
     {

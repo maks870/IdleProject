@@ -61,8 +61,8 @@ public class MenuGame : Menu
 
     private void ResetPause()
     {
-        Time.timeScale = 1;
         pauseCount = 0;
+        Time.timeScale = 1;
     }
 
     public override void EndRound() 

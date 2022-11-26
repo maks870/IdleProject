@@ -9,6 +9,10 @@ public class SaveChecker : MonoBehaviour
     int oldGold;
     public bool activeImprovementsUI = false;
 
+    private void OnEnable() => YandexGame.GetDataEvent += SetValue;
+
+    private void OnDisable() => YandexGame.GetDataEvent -= SetValue;
+
     private void Awake()
     {
         if (instance == null)
@@ -21,7 +25,10 @@ public class SaveChecker : MonoBehaviour
 
     private void Start()
     {
-        SetValue();
+        if (YandexGame.SDKEnabled == true)
+        {
+            SetValue();
+        }
     }
 
 
@@ -36,6 +43,6 @@ public class SaveChecker : MonoBehaviour
         {
             YandexGame.SaveProgress();
             SetValue();
-        }           
+        }
     }
 }
