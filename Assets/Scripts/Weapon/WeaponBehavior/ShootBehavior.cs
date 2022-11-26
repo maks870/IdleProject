@@ -80,7 +80,7 @@ public class ShootBehavior : Behavior, IUpgradeble
         //    return firstDist.CompareTo(secondDist);
         //});
 
-        int counterMax = targetCount < directionList.Count ? targetCount : directionList.Count;
+        int counterMax = targetCount <= directionList.Count ? targetCount : directionList.Count;
 
         for (int i = 0; i < counterMax; i++)
         {
@@ -111,7 +111,7 @@ public class ShootBehavior : Behavior, IUpgradeble
         YandexGame.savesData.shootWeapon[statName]++;
     }
 
-    public int GetStatLvl(string statName)//разобраться когда работает забирание инфы из сохранения
+    public int GetStatLvl(string statName)
     {
         return YandexGame.savesData.shootWeapon[statName];
     }
