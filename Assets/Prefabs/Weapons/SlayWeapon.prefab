@@ -84,9 +84,9 @@ MonoBehaviour:
     name: slayDamage
     levels:
     - value: 100
-      cost: 50
+      cost: 40
     - value: 120
-      cost: 90
+      cost: 85
     - value: 140
       cost: 130
     - value: 160
@@ -95,11 +95,11 @@ MonoBehaviour:
     name: slaySpeed
     levels:
     - value: 100
-      cost: 30
+      cost: 25
     - value: 115
-      cost: 60
+      cost: 55
     - value: 130
-      cost: 120
+      cost: 95
     - value: 150
       cost: 120
 --- !u!114 &2092270581

@@ -80,6 +80,6 @@ MonoBehaviour:
     name: awards
     levels:
     - value: 2
-      cost: 200
+      cost: 150
     - value: 3
       cost: 200

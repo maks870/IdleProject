@@ -86,23 +86,23 @@ MonoBehaviour:
     name: shootDamage
     levels:
     - value: 100
-      cost: 10
+      cost: 20
     - value: 150
-      cost: 50
+      cost: 65
     - value: 200
-      cost: 100
+      cost: 130
     - value: 250
       cost: 10
   - baseValue: 10
     name: shootRange
     levels:
     - value: 100
-      cost: 20
-    - value: 130
-      cost: 40
-    - value: 160
+      cost: 10
+    - value: 120
+      cost: 30
+    - value: 140
       cost: 60
-    - value: 190
+    - value: 170
       cost: 60
 --- !u!58 &4573911166684390160
 CircleCollider2D:

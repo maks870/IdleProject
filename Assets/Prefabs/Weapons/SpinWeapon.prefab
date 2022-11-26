@@ -102,22 +102,22 @@ MonoBehaviour:
     name: spinDamage
     levels:
     - value: 100
-      cost: 30
+      cost: 35
     - value: 125
-      cost: 80
+      cost: 85
     - value: 150
-      cost: 130
+      cost: 155
     - value: 175
       cost: 130
   - baseValue: 5
     name: spinRadius
     levels:
     - value: 100
-      cost: 30
+      cost: 40
     - value: 110
-      cost: 60
+      cost: 75
     - value: 120
-      cost: 120
+      cost: 110
     - value: 130
       cost: 120
 --- !u!114 &558244197
