@@ -52,6 +52,7 @@ public class RewardedAd : MonoBehaviour
     private void MultyplyAllGold(float multiply)
     {
         float newGold = YandexGame.savesData.gold * multiply;
+
         if (newGold < 10)
             newGold = 10;
         AddGold((int)newGold);
