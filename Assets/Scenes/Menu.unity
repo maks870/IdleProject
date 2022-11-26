@@ -15991,9 +15991,10 @@ MonoBehaviour:
   textUIComponent: {fileID: 0}
   textMeshComponent: {fileID: 0}
   infoYG: {fileID: 11400000, guid: 162644796a8b0d044bce3d6fda0641e3, type: 2}
-  text: "\u0412\u044B\u0431\u043E\u0440 \u043E\u0440\u0443\u0436\u0438\u044F +"
-  ru: "\u0412\u044B\u0431\u043E\u0440 \u043E\u0440\u0443\u0436\u0438\u044F +"
-  en: Weapon selection +
+  text: Weapon choice +
+  ru: "\u041E\u0440\u0443\u0436\u0438\u0435 \u043D\u0430 \u0432\u044B\u0431\u043E\u0440
+    +"
+  en: Weapon choice +
   tr: "Silah se\xE7imi +"
   az: 
   be: 
