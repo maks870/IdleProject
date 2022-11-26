@@ -20,42 +20,17 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: {x: 0, y: 0, z: 0}
-        inSlope: {x: 0, y: 0, z: -35.906578}
-        outSlope: {x: 0, y: 0, z: -35.906578}
+        inSlope: {x: 0, y: 0, z: 53.029945}
+        outSlope: {x: 0, y: 0, z: 53.029945}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 1}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.9990561}
       - serializedVersion: 3
         time: 3.3833334
-        value: {x: 0, y: 0, z: -180}
-        inSlope: {x: 0, y: 0, z: -36.428734}
-        outSlope: {x: 0, y: 0, z: -36.428734}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.99414}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: Aura 1_1
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0, y: 0, z: 0}
-        inSlope: {x: 0, y: 0, z: -17.391562}
-        outSlope: {x: 0, y: 0, z: -17.391562}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.998254}
-      - serializedVersion: 3
-        time: 3.3833334
-        value: {x: 0, y: 0, z: -90}
-        inSlope: {x: 0, y: 0, z: -18.2446}
-        outSlope: {x: 0, y: 0, z: -18.2446}
+        value: {x: 0, y: 0, z: 180}
+        inSlope: {x: 0, y: 0, z: 53.03628}
+        outSlope: {x: 0, y: 0, z: 53.03628}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 1}
@@ -63,32 +38,57 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Aura 1_2
+    path: Sprites/Aura 1_1
   - curve:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
         time: 0
         value: {x: 0, y: 0, z: 45}
-        inSlope: {x: 0, y: 0, z: 18.164349}
-        outSlope: {x: 0, y: 0, z: 18.164349}
+        inSlope: {x: 0, y: 0, z: 26.600985}
+        outSlope: {x: 0, y: 0, z: 26.600985}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.9887021}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 1}
       - serializedVersion: 3
         time: 3.3833334
         value: {x: 0, y: 0, z: 135}
-        inSlope: {x: 0, y: 0, z: 17.13262}
-        outSlope: {x: 0, y: 0, z: 17.13262}
+        inSlope: {x: 0, y: 0, z: 26.75262}
+        outSlope: {x: 0, y: 0, z: 26.75262}
         tangentMode: 0
         weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.9969485}
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.9988109}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: Aura 1_0
+    path: Sprites/Aura 1_0
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: -26.863953}
+        outSlope: {x: 0, y: 0, z: -26.863953}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 1}
+      - serializedVersion: 3
+        time: 3.3833334
+        value: {x: 0, y: 0, z: -90}
+        inSlope: {x: 0, y: 0, z: -26.609623}
+        outSlope: {x: 0, y: 0, z: -26.609623}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 1}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Sprites/Aura 1_2
   m_PositionCurves: []
   m_ScaleCurves: []
   m_FloatCurves: []
@@ -101,21 +101,21 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 899379609
+      path: 2672891865
       attribute: 4
       script: {fileID: 0}
       typeID: 4
       customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 2895257635
+      path: 3897960271
       attribute: 4
       script: {fileID: 0}
       typeID: 4
       customType: 4
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 1117536527
+      path: 106448483
       attribute: 4
       script: {fileID: 0}
       typeID: 4
@@ -149,101 +149,17 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 0
-        inSlope: -35.906578
-        outSlope: -35.906578
+        inSlope: 53.029945
+        outSlope: 53.029945
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 1
+        outWeight: 0.9990561
       - serializedVersion: 3
         time: 3.3833334
-        value: -180
-        inSlope: -36.428734
-        outSlope: -36.428734
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.99414
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAnglesRaw.z
-    path: Aura 1_1
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.3833334
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAnglesRaw.x
-    path: Aura 1_2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.3833334
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAnglesRaw.y
-    path: Aura 1_2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: -17.391562
-        outSlope: -17.391562
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.998254
-      - serializedVersion: 3
-        time: 3.3833334
-        value: -90
-        inSlope: -18.2446
-        outSlope: -18.2446
+        value: 180
+        inSlope: 53.03628
+        outSlope: 53.03628
         tangentMode: 0
         weightedMode: 0
         inWeight: 1
@@ -252,63 +168,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Aura 1_2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.3833334
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAnglesRaw.x
-    path: Aura 1_0
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 3.3833334
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 136
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: localEulerAnglesRaw.y
-    path: Aura 1_0
+    path: Sprites/Aura 1_1
     classID: 4
     script: {fileID: 0}
   - curve:
@@ -317,89 +177,57 @@ AnimationClip:
       - serializedVersion: 3
         time: 0
         value: 45
-        inSlope: 18.164349
-        outSlope: 18.164349
+        inSlope: 26.600985
+        outSlope: 26.600985
         tangentMode: 0
         weightedMode: 0
         inWeight: 0.33333334
-        outWeight: 0.9887021
+        outWeight: 1
       - serializedVersion: 3
         time: 3.3833334
         value: 135
-        inSlope: 17.13262
-        outSlope: 17.13262
+        inSlope: 26.75262
+        outSlope: 26.75262
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.9969485
+        inWeight: 0.9988109
         outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: localEulerAnglesRaw.z
-    path: Aura 1_0
-    classID: 4
-    script: {fileID: 0}
-  m_EulerEditorCurves:
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Aura 1_0
+    path: Sprites/Aura 1_0
     classID: 4
     script: {fileID: 0}
   - curve:
       serializedVersion: 2
-      m_Curve: []
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: -26.863953
+        outSlope: -26.863953
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 1
+      - serializedVersion: 3
+        time: 3.3833334
+        value: -90
+        inSlope: -26.609623
+        outSlope: -26.609623
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 1
+        outWeight: 0.33333334
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Aura 1_0
+    attribute: localEulerAnglesRaw.z
+    path: Sprites/Aura 1_2
     classID: 4
     script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Aura 1_0
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.x
-    path: Aura 1_2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.y
-    path: Aura 1_2
-    classID: 4
-    script: {fileID: 0}
-  - curve:
-      serializedVersion: 2
-      m_Curve: []
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    attribute: m_LocalEulerAngles.z
-    path: Aura 1_2
-    classID: 4
-    script: {fileID: 0}
+  m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events: []
