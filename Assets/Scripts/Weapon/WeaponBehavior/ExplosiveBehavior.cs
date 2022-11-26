@@ -36,17 +36,14 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
                 break;
         }
 
-        if (invisiblePull.Count > 0)
-        {
-            RemoveFromPull().transform.position = transform.position + dropPlace;
-        }
-        else
+        if (invisiblePull.Count <= 0)
         {
             ExplosiveProjectile bombObject = visiblePull[0];
             visiblePull.Remove(bombObject);
-            bombObject?.Explode();
-            bombObject.transform.position = transform.position + dropPlace;
+            bombObject.Explode();
         }
+
+        RemoveFromPull().transform.position = transform.position + dropPlace;
     }
 
     private bool CheckPlace(Vector3 dropPlace)
@@ -117,8 +114,7 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
         Upgrader upgrader = GetComponent<Upgrader>();
         ExplosiveProjectile projectile = projectileObj.GetComponent<ExplosiveProjectile>();
 
-        float explodeDamage = (int)(upgrader.GetBaseValue("explodeDamage") * upgrader.GetDataVariable("explodeDamage", YandexGame.savesData.explosiveWeapon) / 100);
-        projectile.damage = (int)(projectile.damage * explodeDamage);
+        projectile.damage = (int)(upgrader.GetBaseValue("explodeDamage") * upgrader.GetDataVariable("explodeDamage", YandexGame.savesData.explosiveWeapon) / 100);
 
         float explodeRadius = (int)(upgrader.GetBaseValue("explodeRadius") * upgrader.GetDataVariable("explodeRadius", YandexGame.savesData.explosiveWeapon) / 100);
 

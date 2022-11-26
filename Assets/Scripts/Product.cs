@@ -83,7 +83,7 @@ public class Product : MonoBehaviour
         {
             isMaxLvl = true;
             purchaseButton.enabled = false;
-            descriptionText.enabled = false;
+            //descriptionText.enabled = false;
         }
         else
         {

@@ -64,7 +64,7 @@ public class ShootBehavior : Behavior, IUpgradeble
         directionList.Sort(delegate (Vector3 x, Vector3 y)
         {
             float firstDist = x.magnitude;
-            float secondDist = x.magnitude;
+            float secondDist = y.magnitude;
             return firstDist.CompareTo(secondDist);
         });
 
