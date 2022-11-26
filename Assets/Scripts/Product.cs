@@ -66,6 +66,7 @@ public class Product : MonoBehaviour
 
         if (isMaxLvl)
         {
+            currentTranslation = currentTranslation.TrimEnd('+');
             costText.text = maxCostLang.currentTranslation;
             currentValue = upgrader.GetValue(statName).ToString();
         }
@@ -77,7 +78,7 @@ public class Product : MonoBehaviour
 
         if (percentageValue)
         {
-            currentValue = currentTranslation == descriptionLang.tr
+            currentValue = descriptionLang.currentTranslation == descriptionLang.tr
                 ? "%" + currentValue
                 : currentValue + "%";
         }
