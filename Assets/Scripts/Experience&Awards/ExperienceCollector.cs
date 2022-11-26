@@ -6,11 +6,15 @@ public class ExperienceCollector : MonoBehaviour
     [SerializeField] private int maxExpObj = 100;
     [SerializeField] private int currentExperience = 0;
     [SerializeField] private int experienceToLvlup = 100;
-    [SerializeField] private double lvlExpMultiply = 1.3;
+    [SerializeField] private int multiplySteps = 10;
+    [SerializeField] private double startLvlExpMultiply = 2;
+    [SerializeField] private double endLvlExpMultiply = 1.3;
     [SerializeField] private GameObject expPref;
     private AwardPresenter presenter;
     private List<GameObject> invisiblePull = new List<GameObject>();
     private List<GameObject> visiblePull = new List<GameObject>();
+    private int currentLvl = 0;
+
     public static ExperienceCollector instance = null;
 
     public int CurrentExp => currentExperience;
@@ -92,12 +96,23 @@ public class ExperienceCollector : MonoBehaviour
         if (currentExperience >= experienceToLvlup)
         {
             currentExperience -= experienceToLvlup;
-            if (currentExperience >= experienceToLvlup) 
+            if (currentExperience >= experienceToLvlup)
             {
                 Debug.LogError("Двойной LVLUP, двойная пауза");
             }
-            experienceToLvlup = (int)(experienceToLvlup * lvlExpMultiply);
+            experienceToLvlup = CountExpToLvlUp();
+            currentLvl++;
             presenter.GiveAwards();
         }
+    }
+    private int CountExpToLvlUp()
+    {
+        if (currentLvl < multiplySteps)
+        {
+            double step = (startLvlExpMultiply - endLvlExpMultiply) / multiplySteps;
+            int expToLvlUp = (int)(experienceToLvlup * (startLvlExpMultiply - step * currentLvl));
+            return expToLvlUp;
+        }
+        return (int)(experienceToLvlup * endLvlExpMultiply);
     }
 }
