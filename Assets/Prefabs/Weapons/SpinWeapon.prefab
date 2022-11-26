@@ -114,11 +114,11 @@ MonoBehaviour:
     levels:
     - value: 100
       cost: 30
-    - value: 140
+    - value: 110
       cost: 60
-    - value: 180
+    - value: 120
       cost: 120
-    - value: 220
+    - value: 130
       cost: 120
 --- !u!114 &558244197
 MonoBehaviour:
