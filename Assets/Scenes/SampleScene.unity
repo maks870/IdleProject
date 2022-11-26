@@ -449,7 +449,7 @@ MonoBehaviour:
   de: 
   hi: 
   fontNumber: 0
-  uniqueFont: {fileID: 0}
+  uniqueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   textHeight: 20
   processTranslateLabel: 3/3 completed
   componentTextField: 1
@@ -17856,7 +17856,7 @@ MonoBehaviour:
   de: 
   hi: 
   fontNumber: 0
-  uniqueFont: {fileID: 0}
+  uniqueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   textHeight: 20
   processTranslateLabel: 3/3 completed
   componentTextField: 1
@@ -39324,7 +39324,7 @@ MonoBehaviour:
   de: 
   hi: 
   fontNumber: 0
-  uniqueFont: {fileID: 0}
+  uniqueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   textHeight: 20
   processTranslateLabel: 3/3 completed
   componentTextField: 1
@@ -40659,7 +40659,7 @@ MonoBehaviour:
   de: 
   hi: 
   fontNumber: 0
-  uniqueFont: {fileID: 0}
+  uniqueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   textHeight: 20
   processTranslateLabel: 3/3 completed
   componentTextField: 1
@@ -40807,7 +40807,7 @@ MonoBehaviour:
   de: 
   hi: 
   fontNumber: 0
-  uniqueFont: {fileID: 0}
+  uniqueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   textHeight: 20
   processTranslateLabel: 3/3 completed
   componentTextField: 1
@@ -57063,7 +57063,7 @@ MonoBehaviour:
   de: 
   hi: 
   fontNumber: 0
-  uniqueFont: {fileID: 0}
+  uniqueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   textHeight: 20
   processTranslateLabel: 3/3 completed
   componentTextField: 1
@@ -67825,7 +67825,7 @@ MonoBehaviour:
   de: 
   hi: 
   fontNumber: 0
-  uniqueFont: {fileID: 0}
+  uniqueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   textHeight: 20
   processTranslateLabel: 3/3 completed
   componentTextField: 1
@@ -74224,7 +74224,7 @@ MonoBehaviour:
   de: 
   hi: 
   fontNumber: 0
-  uniqueFont: {fileID: 0}
+  uniqueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   textHeight: 20
   processTranslateLabel: 3/3 completed
   componentTextField: 1
