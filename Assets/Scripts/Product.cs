@@ -21,9 +21,12 @@ public class Product : MonoBehaviour
     private int maxLvl;
     private bool isMaxLvl = false;
 
+    private void OnEnable() => YandexGame.SwitchLangEvent += (string m) => UpdatePurchase();
+
+    private void OnDisable() => YandexGame.SwitchLangEvent -= (string m) => UpdatePurchase();//вероятно не работает
+
     void Start()
     {
-        YandexGame.SwitchLangEvent += (string m) => UpdatePurchase();//есть вероятность не загрузки
         purchaseButton = GetComponent<Button>();
 
         for (int i = 0; i < upgrader.GetMaxStatLvl(statName); i++)
@@ -31,7 +34,11 @@ public class Product : MonoBehaviour
             GameObject point = Instantiate(prefPoint, pointGrid);
             points.Add(point.transform.GetChild(0).GetComponent<Image>());
         }
-        UpdatePurchase();
+
+        if (YandexGame.SDKEnabled == true)
+        {
+            UpdatePurchase();
+        }
     }
 
     private void RefreshPoints()
@@ -47,6 +54,7 @@ public class Product : MonoBehaviour
         cost = upgrader.GetStatCost(statName);
         CheckMaxLevel();
         UpdateText();
+        Debug.Log(points.Count);
     }
 
     private void UpdateText()

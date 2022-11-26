@@ -88,8 +88,8 @@ public class MenuGame : Menu
     public void EndGame(int scene)
     {
         YandexGame.savesData.gold += CoinCollector.instance.CollectedGold;
-        ResetPause();
         YandexGame.SaveProgress();
+        ResetPause();
         LoadScene(scene);
     }
 

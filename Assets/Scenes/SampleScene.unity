@@ -449,7 +449,7 @@ MonoBehaviour:
   de: 
   hi: 
   fontNumber: 0
-  uniqueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  uniqueFont: {fileID: 0}
   textHeight: 20
   processTranslateLabel: 3/3 completed
   componentTextField: 1
@@ -475,12 +475,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3f4c28413c892e34dace644caffc02a3, type: 3}
     m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 94
+    m_MaxSize: 181
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -17793,8 +17793,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -0.379}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 5.999939, y: 33.00003}
-  m_SizeDelta: {x: 611.7716, y: 343.5958}
+  m_AnchoredPosition: {x: 3.6756, y: 33.00003}
+  m_SizeDelta: {x: 621.0345, y: 343.5958}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &212624223
 MonoBehaviour:
@@ -17856,7 +17856,7 @@ MonoBehaviour:
   de: 
   hi: 
   fontNumber: 0
-  uniqueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  uniqueFont: {fileID: 0}
   textHeight: 20
   processTranslateLabel: 3/3 completed
   componentTextField: 1
@@ -17882,12 +17882,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3f4c28413c892e34dace644caffc02a3, type: 3}
     m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 94
+    m_MaxSize: 172
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -39326,7 +39326,7 @@ MonoBehaviour:
   de: 
   hi: 
   fontNumber: 0
-  uniqueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  uniqueFont: {fileID: 0}
   textHeight: 20
   processTranslateLabel: 3/3 completed
   componentTextField: 1
@@ -39352,12 +39352,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3f4c28413c892e34dace644caffc02a3, type: 3}
     m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 94
+    m_MaxSize: 172
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -40661,7 +40661,7 @@ MonoBehaviour:
   de: 
   hi: 
   fontNumber: 0
-  uniqueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  uniqueFont: {fileID: 0}
   textHeight: 20
   processTranslateLabel: 3/3 completed
   componentTextField: 1
@@ -40687,7 +40687,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3f4c28413c892e34dace644caffc02a3, type: 3}
     m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 1
@@ -40809,7 +40809,7 @@ MonoBehaviour:
   de: 
   hi: 
   fontNumber: 0
-  uniqueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  uniqueFont: {fileID: 0}
   textHeight: 20
   processTranslateLabel: 3/3 completed
   componentTextField: 1
@@ -40835,12 +40835,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3f4c28413c892e34dace644caffc02a3, type: 3}
     m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 94
+    m_MaxSize: 172
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -57091,12 +57091,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3f4c28413c892e34dace644caffc02a3, type: 3}
     m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 94
+    m_MaxSize: 148
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -67827,7 +67827,7 @@ MonoBehaviour:
   de: 
   hi: 
   fontNumber: 0
-  uniqueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  uniqueFont: {fileID: 0}
   textHeight: 20
   processTranslateLabel: 3/3 completed
   componentTextField: 1
@@ -67853,12 +67853,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3f4c28413c892e34dace644caffc02a3, type: 3}
     m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 94
+    m_MaxSize: 172
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -74226,7 +74226,7 @@ MonoBehaviour:
   de: 
   hi: 
   fontNumber: 0
-  uniqueFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  uniqueFont: {fileID: 0}
   textHeight: 20
   processTranslateLabel: 3/3 completed
   componentTextField: 1
@@ -74252,12 +74252,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 3f4c28413c892e34dace644caffc02a3, type: 3}
     m_FontSize: 0
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 0
-    m_MaxSize: 94
+    m_MaxSize: 172
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
