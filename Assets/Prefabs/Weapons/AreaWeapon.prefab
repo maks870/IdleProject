@@ -91,11 +91,11 @@ MonoBehaviour:
     levels:
     - value: 100
       cost: 50
-    - value: 125
+    - value: 140
       cost: 100
-    - value: 150
+    - value: 180
       cost: 150
-    - value: 200
+    - value: 220
       cost: 150
   - baseValue: 1
     name: areaSlow
