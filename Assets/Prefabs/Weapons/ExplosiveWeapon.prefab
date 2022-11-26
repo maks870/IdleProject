@@ -87,22 +87,22 @@ MonoBehaviour:
     name: explodeDamage
     levels:
     - value: 100
-      cost: 30
+      cost: 50
     - value: 200
-      cost: 60
+      cost: 100
     - value: 300
-      cost: 90
+      cost: 200
     - value: 400
       cost: 90
   - baseValue: 2
     name: explodeRadius
     levels:
     - value: 100
-      cost: 40
+      cost: 35
     - value: 125
-      cost: 80
+      cost: 90
     - value: 150
-      cost: 120
+      cost: 145
     - value: 175
       cost: 120
 --- !u!58 &4573911166684390160

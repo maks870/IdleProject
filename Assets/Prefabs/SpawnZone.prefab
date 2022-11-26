@@ -82,7 +82,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614046069948930681}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
     - pref: {fileID: 8090365220817514843, guid: 015003747980c70498c029412706096b, type: 3}
       probability: 60
     probabilityAll: 0
-    spawnTime: 0.4
+    spawnTime: 0.3
   - countEnemy: 70
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
@@ -125,7 +125,7 @@ MonoBehaviour:
     - pref: {fileID: 8090365220817514843, guid: 957aef6a2c94fda48a01e9d5f612e942, type: 3}
       probability: 10
     probabilityAll: 0
-    spawnTime: 0.4
+    spawnTime: 0.3
   - countEnemy: 60
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
@@ -138,7 +138,7 @@ MonoBehaviour:
       probability: 20
     probabilityAll: 0
     spawnTime: 0.3
-  - countEnemy: 50
+  - countEnemy: 70
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 25
@@ -152,7 +152,7 @@ MonoBehaviour:
       probability: 15
     probabilityAll: 0
     spawnTime: 0.3
-  - countEnemy: 50
+  - countEnemy: 70
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 31
@@ -164,7 +164,7 @@ MonoBehaviour:
       probability: 7
     probabilityAll: 0
     spawnTime: 0.3
-  - countEnemy: 50
+  - countEnemy: 70
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 20
@@ -179,8 +179,8 @@ MonoBehaviour:
     - pref: {fileID: 2502803431165908623, guid: 5b849cb49f4147c4aa344e03977f131a, type: 3}
       probability: 5
     probabilityAll: 0
-    spawnTime: 0.3
-  - countEnemy: 50
+    spawnTime: 0.2
+  - countEnemy: 100
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 25
@@ -191,8 +191,8 @@ MonoBehaviour:
     - pref: {fileID: 3004594831583318594, guid: 08bb196931c234f49a628edb82a8d710, type: 3}
       probability: 25
     probabilityAll: 0
-    spawnTime: 0.3
-  - countEnemy: 50
+    spawnTime: 0.2
+  - countEnemy: 100
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 15
@@ -205,8 +205,8 @@ MonoBehaviour:
     - pref: {fileID: 5674000339651005593, guid: ff139563b28ebd846a53c7cef49d4581, type: 3}
       probability: 20
     probabilityAll: 0
-    spawnTime: 0.3
-  - countEnemy: 50
+    spawnTime: 0.2
+  - countEnemy: 100
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 15
@@ -217,14 +217,14 @@ MonoBehaviour:
     - pref: {fileID: 3004594831583318594, guid: 08bb196931c234f49a628edb82a8d710, type: 3}
       probability: 20
     - pref: {fileID: 5674000339651005593, guid: ff139563b28ebd846a53c7cef49d4581, type: 3}
-      probability: 10
+      probability: 15
     - pref: {fileID: 2502803431165908623, guid: 5b849cb49f4147c4aa344e03977f131a, type: 3}
-      probability: 10
+      probability: 5
     - pref: {fileID: 8090365220817514843, guid: 477bc6634bbdc864893d598fba256c83, type: 3}
       probability: 10
     probabilityAll: 0
-    spawnTime: 0.3
-  - countEnemy: 50
+    spawnTime: 0.1
+  - countEnemy: 70
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 20
@@ -237,8 +237,8 @@ MonoBehaviour:
     - pref: {fileID: 5325241181129791845, guid: beb19f8086182ec498ca86b1bfc28488, type: 3}
       probability: 10
     probabilityAll: 0
-    spawnTime: 0.3
-  - countEnemy: 50
+    spawnTime: 0.2
+  - countEnemy: 70
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 15
@@ -247,12 +247,12 @@ MonoBehaviour:
     - pref: {fileID: 8090365220817514843, guid: 957aef6a2c94fda48a01e9d5f612e942, type: 3}
       probability: 40
     - pref: {fileID: 5325241181129791845, guid: beb19f8086182ec498ca86b1bfc28488, type: 3}
-      probability: 15
+      probability: 20
     - pref: {fileID: 2502803431165908623, guid: 5b849cb49f4147c4aa344e03977f131a, type: 3}
-      probability: 15
+      probability: 10
     probabilityAll: 0
     spawnTime: 0.3
-  - countEnemy: 50
+  - countEnemy: 70
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 15
@@ -261,36 +261,102 @@ MonoBehaviour:
     - pref: {fileID: 8090365220817514843, guid: 957aef6a2c94fda48a01e9d5f612e942, type: 3}
       probability: 15
     - pref: {fileID: 8090365220817514843, guid: 477bc6634bbdc864893d598fba256c83, type: 3}
-      probability: 30
+      probability: 35
     - pref: {fileID: 2502803431165908623, guid: 5b849cb49f4147c4aa344e03977f131a, type: 3}
-      probability: 15
+      probability: 5
     - pref: {fileID: 2248146331278195821, guid: fb987b02411c7ec4bb41a7f53c8f2f56, type: 3}
-      probability: 10
+      probability: 5
     probabilityAll: 0
-    spawnTime: 0.3
-  - countEnemy: 50
+    spawnTime: 0.2
+  - countEnemy: 200
+    spawnEnemies:
+    - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
+      probability: 20
+    - pref: {fileID: 8090365220817514843, guid: 015003747980c70498c029412706096b, type: 3}
+      probability: 20
+    - pref: {fileID: 8090365220817514843, guid: 957aef6a2c94fda48a01e9d5f612e942, type: 3}
+      probability: 20
+    - pref: {fileID: 8090365220817514843, guid: 477bc6634bbdc864893d598fba256c83, type: 3}
+      probability: 15
+    - pref: {fileID: 5674000339651005593, guid: ff139563b28ebd846a53c7cef49d4581, type: 3}
+      probability: 5
+    - pref: {fileID: 3004594831583318594, guid: 08bb196931c234f49a628edb82a8d710, type: 3}
+      probability: 5
+    - pref: {fileID: 2502803431165908623, guid: 5b849cb49f4147c4aa344e03977f131a, type: 3}
+      probability: 5
+    - pref: {fileID: 2248146331278195821, guid: fb987b02411c7ec4bb41a7f53c8f2f56, type: 3}
+      probability: 5
+    - pref: {fileID: 5325241181129791845, guid: beb19f8086182ec498ca86b1bfc28488, type: 3}
+      probability: 5
+    probabilityAll: 0
+    spawnTime: 0.1
+  - countEnemy: 200
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 10
     - pref: {fileID: 8090365220817514843, guid: 015003747980c70498c029412706096b, type: 3}
       probability: 10
     - pref: {fileID: 8090365220817514843, guid: 957aef6a2c94fda48a01e9d5f612e942, type: 3}
-      probability: 10
+      probability: 15
     - pref: {fileID: 8090365220817514843, guid: 477bc6634bbdc864893d598fba256c83, type: 3}
       probability: 15
     - pref: {fileID: 5674000339651005593, guid: ff139563b28ebd846a53c7cef49d4581, type: 3}
       probability: 15
     - pref: {fileID: 3004594831583318594, guid: 08bb196931c234f49a628edb82a8d710, type: 3}
-      probability: 15
+      probability: 20
     - pref: {fileID: 2502803431165908623, guid: 5b849cb49f4147c4aa344e03977f131a, type: 3}
-      probability: 10
+      probability: 5
     - pref: {fileID: 2248146331278195821, guid: fb987b02411c7ec4bb41a7f53c8f2f56, type: 3}
       probability: 5
     - pref: {fileID: 5325241181129791845, guid: beb19f8086182ec498ca86b1bfc28488, type: 3}
-      probability: 10
+      probability: 5
     probabilityAll: 0
-    spawnTime: 0.3
-  maxEnemy: 100
+    spawnTime: 0.1
+  - countEnemy: 70
+    spawnEnemies:
+    - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
+      probability: 10
+    - pref: {fileID: 8090365220817514843, guid: 015003747980c70498c029412706096b, type: 3}
+      probability: 10
+    - pref: {fileID: 8090365220817514843, guid: 957aef6a2c94fda48a01e9d5f612e942, type: 3}
+      probability: 15
+    - pref: {fileID: 8090365220817514843, guid: 477bc6634bbdc864893d598fba256c83, type: 3}
+      probability: 15
+    - pref: {fileID: 5674000339651005593, guid: ff139563b28ebd846a53c7cef49d4581, type: 3}
+      probability: 14
+    - pref: {fileID: 3004594831583318594, guid: 08bb196931c234f49a628edb82a8d710, type: 3}
+      probability: 24
+    - pref: {fileID: 2502803431165908623, guid: 5b849cb49f4147c4aa344e03977f131a, type: 3}
+      probability: 4
+    - pref: {fileID: 2248146331278195821, guid: fb987b02411c7ec4bb41a7f53c8f2f56, type: 3}
+      probability: 4
+    - pref: {fileID: 5325241181129791845, guid: beb19f8086182ec498ca86b1bfc28488, type: 3}
+      probability: 4
+    probabilityAll: 0
+    spawnTime: 0.05
+  - countEnemy: 70
+    spawnEnemies:
+    - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
+      probability: 11
+    - pref: {fileID: 8090365220817514843, guid: 015003747980c70498c029412706096b, type: 3}
+      probability: 11
+    - pref: {fileID: 8090365220817514843, guid: 957aef6a2c94fda48a01e9d5f612e942, type: 3}
+      probability: 13
+    - pref: {fileID: 8090365220817514843, guid: 477bc6634bbdc864893d598fba256c83, type: 3}
+      probability: 13
+    - pref: {fileID: 5674000339651005593, guid: ff139563b28ebd846a53c7cef49d4581, type: 3}
+      probability: 16
+    - pref: {fileID: 3004594831583318594, guid: 08bb196931c234f49a628edb82a8d710, type: 3}
+      probability: 26
+    - pref: {fileID: 2502803431165908623, guid: 5b849cb49f4147c4aa344e03977f131a, type: 3}
+      probability: 3
+    - pref: {fileID: 2248146331278195821, guid: fb987b02411c7ec4bb41a7f53c8f2f56, type: 3}
+      probability: 3
+    - pref: {fileID: 5325241181129791845, guid: beb19f8086182ec498ca86b1bfc28488, type: 3}
+      probability: 4
+    probabilityAll: 0
+    spawnTime: 0.025
+  maxEnemy: 200
   targetObject: {fileID: 0}
 --- !u!1 &614046070107127066
 GameObject:

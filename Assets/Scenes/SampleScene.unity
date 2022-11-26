@@ -19797,7 +19797,9 @@ MonoBehaviour:
   maxExpObj: 100
   currentExperience: 0
   experienceToLvlup: 100
-  lvlExpMultiply: 1.5
+  multiplySteps: 5
+  startLvlExpMultiply: 2
+  endLvlExpMultiply: 1.1
   expPref: {fileID: 1490192420080904487, guid: 1633b12828da91f4a8cc250e0b449563, type: 3}
 --- !u!4 &350815554 stripped
 Transform:
@@ -42594,9 +42596,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4c775c53944c6f40aed51a0e0850039, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxCoinCount: 10
+  maxCoinCount: 20
   defaultCoin: {fileID: 1490192420080904487, guid: a3dcfa91b0d59744c8f72a5d545cbeae, type: 3}
-  coinDropChance: 50
+  coinDropChance: 20
   collectedGold: 0
 --- !u!58 &1186040163
 CircleCollider2D:
