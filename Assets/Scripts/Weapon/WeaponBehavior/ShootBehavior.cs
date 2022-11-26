@@ -12,6 +12,7 @@ public class ShootBehavior : Behavior, IUpgradeble
     [SerializeField] private CircleCollider2D shootZone;
     private List<Enemy> enemyList = new List<Enemy>();
     private int targetCount = 1;
+    private bool isAddTarget = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -50,6 +51,12 @@ public class ShootBehavior : Behavior, IUpgradeble
 
     public override void Use()
     {
+        if (isAddTarget)
+        {
+            targetCount++;
+            isAddTarget = false;
+        }
+
         if (enemyList.Count == 0)
         {
             return;
@@ -92,7 +99,7 @@ public class ShootBehavior : Behavior, IUpgradeble
     public override void Improve(bool isMaxLevel)
     {
         if (!isMaxLevel)
-            targetCount++;
+            isAddTarget = true;
 
     }
 
