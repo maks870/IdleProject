@@ -31773,7 +31773,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allGoldText: {fileID: 0}
   goldMultiplierText: {fileID: 0}
-  button: {fileID: 0}
+  buttonImprove: {fileID: 0}
   goldMultiplier: 0
   stopwatchGame: {fileID: 897014830}
   stopwatchMenu: {fileID: 1779723756}
@@ -56433,62 +56433,6 @@ PrefabInstance:
     - target: {fileID: 614046069948930681, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
       propertyPath: m_Name
       value: SpawnZone (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
-      propertyPath: spawnTime
-      value: 0.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
-      propertyPath: rounds.Array.size
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
-      propertyPath: rounds.Array.data[0].countEnemy
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
-      propertyPath: rounds.Array.data[1].countEnemy
-      value: 70
-      objectReference: {fileID: 0}
-    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
-      propertyPath: rounds.Array.data[2].countEnemy
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
-      propertyPath: rounds.Array.data[3].countEnemy
-      value: 50
-      objectReference: {fileID: 0}
-    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
-      propertyPath: rounds.Array.data[3].spawnEnemies.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
-      propertyPath: rounds.Array.data[2].spawnEnemies.Array.data[3].pref
-      value: 
-      objectReference: {fileID: 5674000339651005593, guid: ff139563b28ebd846a53c7cef49d4581, type: 3}
-    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
-      propertyPath: rounds.Array.data[3].spawnEnemies.Array.data[3].pref
-      value: 
-      objectReference: {fileID: 5674000339651005593, guid: ff139563b28ebd846a53c7cef49d4581, type: 3}
-    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
-      propertyPath: rounds.Array.data[3].spawnEnemies.Array.data[4].pref
-      value: 
-      objectReference: {fileID: 8090365220817514843, guid: 477bc6634bbdc864893d598fba256c83, type: 3}
-    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
-      propertyPath: rounds.Array.data[3].spawnEnemies.Array.data[0].probability
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
-      propertyPath: rounds.Array.data[3].spawnEnemies.Array.data[1].probability
-      value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
-      propertyPath: rounds.Array.data[3].spawnEnemies.Array.data[3].probability
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
-      propertyPath: rounds.Array.data[3].spawnEnemies.Array.data[4].probability
-      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}

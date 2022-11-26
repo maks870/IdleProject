@@ -62,12 +62,24 @@ public class Enemy : Character
     {
         return Vector3.Distance(target.transform.position, transform.position);
     }
+    public override void TakeDeadlyDamage(bool noDrop)
+    {
+        if (noDrop)
+        {
+            deathEvent.Invoke();
+            Destroy(gameObject);
+        }
+        else
+        {
+            Dead();
+        }
+    }
 
     protected override void Dead()
     {
         base.Dead();
         ExperienceCollector.instance?.Drop(expPoint, transform.position);
-        CoinCollector.instance?.Drop(coin, transform.position);
+        CoinCollector.instance.Drop(coin, transform.position);
         deathEvent.Invoke();
         Destroy(gameObject);
     }

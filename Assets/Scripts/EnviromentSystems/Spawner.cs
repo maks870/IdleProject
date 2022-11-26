@@ -9,7 +9,7 @@ using Random = UnityEngine.Random;
 public class SpawnEnemy
 {
     public GameObject pref;
-    [Range(0, 100)] 
+    [Range(0, 100)]
     public float probability;
 }
 
@@ -24,10 +24,10 @@ public class Round
 
 public class Spawner : MonoBehaviour
 {
+    [SerializeField] private int roundNumber = 0;
     [SerializeField] private Round[] rounds;
     [SerializeField] private int maxEnemy;
-    
-    private int roundNumber = 0;
+
     private BoxCollider2D[] zones;
     private Enemy enemy;
     private List<Enemy> spawnedEnemies = new List<Enemy>();
@@ -38,7 +38,7 @@ public class Spawner : MonoBehaviour
 
     private void Start()
     {
-        if (targetObject == null) 
+        if (targetObject == null)
         {
             targetObject = Player.instance.gameObject;
         }
@@ -51,11 +51,11 @@ public class Spawner : MonoBehaviour
         else if (instance == this)
             Destroy(gameObject);
 
-        foreach (Round round in rounds) 
+        foreach (Round round in rounds)
         {
             float probAll = 0;
 
-            foreach (SpawnEnemy spawnEnemy in round.spawnEnemies) 
+            foreach (SpawnEnemy spawnEnemy in round.spawnEnemies)
             {
                 probAll += spawnEnemy.probability;
             }
@@ -66,7 +66,7 @@ public class Spawner : MonoBehaviour
 
     private IEnumerator TimerSpawn()
     {
-        if (spawnedEnemies.Count < maxEnemy && rounds[roundNumber]?.spawnEnemies!=null)
+        if (spawnedEnemies.Count < maxEnemy && rounds[roundNumber]?.spawnEnemies != null)
         {
             Spawn();
         }
@@ -81,7 +81,7 @@ public class Spawner : MonoBehaviour
         float prob = Random.Range(0, probMax);
         GameObject spawnObject = null;
 
-        for (int i = 0; i < rounds[roundNumber].spawnEnemies.Length; i++) 
+        for (int i = 0; i < rounds[roundNumber].spawnEnemies.Length; i++)
         {
             SpawnEnemy spawnEnemy = rounds[roundNumber].spawnEnemies[i];
 
@@ -105,7 +105,7 @@ public class Spawner : MonoBehaviour
             roundNumber++;
     }
 
-    private Vector2 SpawnPosition() 
+    private Vector2 SpawnPosition()
     {
         int rand = Random.Range(0, zones.Length);
 

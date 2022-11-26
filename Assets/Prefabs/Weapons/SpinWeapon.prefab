@@ -67,7 +67,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileObj: {fileID: 6162771019044189261, guid: a0fd04f943cf9a24d9bb19ff58472a77, type: 3}
-  spinningTime: 2
+  spinningTime: 3
   radius: 5
 --- !u!58 &7095154187732122946
 CircleCollider2D:
