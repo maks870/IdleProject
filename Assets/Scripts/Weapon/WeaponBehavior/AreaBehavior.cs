@@ -30,7 +30,7 @@ public class AreaBehavior : Behavior, IUpgradeble
         if (collision.GetComponent<Enemy>() != null)
         {
             Enemy enemy = collision.GetComponent<Enemy>();
-            enemy.Speed *= (100f - slow) / 100f;
+            enemy.speedMultiplier *= (100f - slow) / 100f;
             enemyList.Add(enemy);
             enemy.deathEvent.AddListener(delegate { enemyList.Remove(enemy); });
         }
@@ -41,7 +41,7 @@ public class AreaBehavior : Behavior, IUpgradeble
         if (collision.GetComponent<Enemy>() != null)
         {
             Enemy enemy = collision.GetComponent<Enemy>();
-            enemy.Speed /= (100f - slow) / 100f;
+            enemy.speedMultiplier /= (100f - slow) / 100f;
             enemyList.Remove(enemy);
             enemy.deathEvent.RemoveListener(delegate { enemyList.Remove(enemy); });
         }

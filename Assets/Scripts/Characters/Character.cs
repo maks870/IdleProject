@@ -16,7 +16,7 @@ public class Character : MonoBehaviour
     protected bool isDamaged = false;
     private Shader shaderSpritesDefault;
     private Shader shaderGUItext;
-
+    public float speedMultiplier = 1;
     public int Hp { get => hp; }
 
     protected virtual void Start()
@@ -66,7 +66,7 @@ public class Character : MonoBehaviour
 
     private void Move()
     {
-        rb.velocity = moveDirection * speed;
+        rb.velocity = moveDirection * speed * speedMultiplier;
     }
 
     private void CheckPosition()
