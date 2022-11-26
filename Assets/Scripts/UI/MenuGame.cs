@@ -37,10 +37,7 @@ public class MenuGame : Menu
         //или создать отдельный объект 
 
         stopwatchGame.text = timeString;
-        stopwatchMenu.text = timeString;
-
-        if (YandexGame.savesData.recordScore < CoinCollector.instance.CollectedGold)
-            newRecordUI.gameObject.SetActive(true);
+        stopwatchMenu.text = timeString;           
     }
 
     public override void SetPause(bool pause)
@@ -76,6 +73,13 @@ public class MenuGame : Menu
         else
             rewardedButton.gameObject.SetActive(false);
 
+        if (YandexGame.savesData.recordScore < CoinCollector.instance.CollectedGold)//Сохранение нового рекорда
+        {
+            newRecordUI.gameObject.SetActive(true);
+            YandexGame.savesData.recordScore = CoinCollector.instance.CollectedGold;
+            YandexGame.NewLeaderboardScores("Leaderboard", CoinCollector.instance.CollectedGold);
+        }
+
         SetPause(true);
         ActivateTips();
         endRoundEvent.Invoke();
@@ -84,13 +88,6 @@ public class MenuGame : Menu
     public void EndGame(int scene)
     {
         YandexGame.savesData.gold += CoinCollector.instance.CollectedGold;
-
-        if (YandexGame.savesData.recordScore < CoinCollector.instance.CollectedGold)
-        {
-            YandexGame.savesData.recordScore = CoinCollector.instance.CollectedGold;
-            YandexGame.NewLeaderboardScores("Leaderboard", CoinCollector.instance.CollectedGold);
-        }
-
         ResetPause();
         YandexGame.SaveProgress();
         LoadScene(scene);
