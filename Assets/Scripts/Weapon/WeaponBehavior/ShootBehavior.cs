@@ -58,7 +58,10 @@ public class ShootBehavior : Behavior, IUpgradeble
 
         for (int i = 0; i < enemyList.Count; i++)
         {
-            directionList.Add(enemyList[i].transform.position - transform.position);
+            if (enemyList[i] != null)
+            {
+                directionList.Add(enemyList[i].transform.position - transform.position);
+            }
         }
 
         directionList.Sort(delegate (Vector3 x, Vector3 y)

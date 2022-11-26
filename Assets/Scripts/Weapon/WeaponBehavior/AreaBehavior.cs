@@ -72,7 +72,7 @@ public class AreaBehavior : Behavior, IUpgradeble
     {
         for (int i = 0; i < enemyList.Count; i++)
         {
-            enemyList[i].TakeDamage(damage);
+            enemyList[i]?.TakeDamage(damage);
         }
         animator.SetTrigger("Use");
     }

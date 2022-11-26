@@ -46,7 +46,7 @@ public class ExplosiveProjectile : Projectile
         Instantiate(explosion, transform.position, Quaternion.identity);
         for (int i = 0; i < enemyList.Count; i++)
         {
-            enemyList[i].TakeDamage(damage);
+            enemyList[i]?.TakeDamage(damage);
         }
         explosiveBehavior.AddToPull(this);
         isActivated = false;
