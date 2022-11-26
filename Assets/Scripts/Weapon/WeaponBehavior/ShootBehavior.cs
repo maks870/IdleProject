@@ -80,7 +80,7 @@ public class ShootBehavior : Behavior, IUpgradeble
         //    return firstDist.CompareTo(secondDist);
         //});
 
-        int counterMax = targetCount < enemyList.Count ? targetCount : enemyList.Count;
+        int counterMax = targetCount < directionList.Count ? targetCount : directionList.Count;
 
         for (int i = 0; i < counterMax; i++)
         {

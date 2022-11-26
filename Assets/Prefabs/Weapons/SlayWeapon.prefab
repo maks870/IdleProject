@@ -86,9 +86,9 @@ MonoBehaviour:
     - value: 100
       cost: 40
     - value: 120
-      cost: 85
+      cost: 90
     - value: 140
-      cost: 130
+      cost: 160
     - value: 160
       cost: 160
   - baseValue: 15
@@ -97,9 +97,9 @@ MonoBehaviour:
     - value: 100
       cost: 25
     - value: 115
-      cost: 55
+      cost: 65
     - value: 130
-      cost: 95
+      cost: 105
     - value: 150
       cost: 120
 --- !u!114 &2092270581
