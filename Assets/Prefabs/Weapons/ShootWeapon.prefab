@@ -99,9 +99,9 @@ MonoBehaviour:
     - value: 100
       cost: 10
     - value: 120
-      cost: 30
-    - value: 140
       cost: 60
+    - value: 140
+      cost: 120
     - value: 170
       cost: 60
 --- !u!58 &4573911166684390160
