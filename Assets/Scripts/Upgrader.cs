@@ -79,6 +79,10 @@ public class Upgrader : MonoBehaviour
             if (stat.name == statName)
             {
                 currentValue = stat.levels[statLvl].value;
+                if (currentValue == stat.levels[stat.levels.Count - 1].value)
+                {
+                    return 0;
+                }
                 nextValue = stat.levels[statLvl + 1].value;
                 return nextValue - currentValue;
             }
