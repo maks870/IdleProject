@@ -7,18 +7,6 @@ public class Upgrader : MonoBehaviour
 {
     public List<Stat> stats = new List<Stat>();
     IUpgradeble upgradeble;
-    public float GetDataVariable(string statName, Dictionary<string, int> data)
-    {
-        int statLvl = data[statName];
-        foreach (Stat stat in stats)
-        {
-            if (stat.name == statName)
-            {
-                return stat.levels[statLvl].value;
-            }
-        }
-        return 0;
-    }
     public void Upgrade(string statName)
     {
         upgradeble = GetComponent<IUpgradeble>();
@@ -64,7 +52,7 @@ public class Upgrader : MonoBehaviour
         foreach (Stat stat in stats)
         {
             if (stat.name == statName)
-            {            
+            {
                 return stat.levels[statLvl].value;
             }
         }

@@ -114,20 +114,20 @@ public class ExplosiveBehavior : Behavior, IUpgradeble
         Upgrader upgrader = GetComponent<Upgrader>();
         ExplosiveProjectile projectile = projectileObj.GetComponent<ExplosiveProjectile>();
 
-        projectile.damage = (int)(upgrader.GetBaseValue("explodeDamage") * upgrader.GetDataVariable("explodeDamage", YandexGame.savesData.explosiveWeapon) / 100);
+        projectile.damage = (int)(upgrader.GetBaseValue("explodeDamage") * upgrader.GetValue("explodeDamage") / 100);
 
-        float explodeRadius = (int)(upgrader.GetBaseValue("explodeRadius") * upgrader.GetDataVariable("explodeRadius", YandexGame.savesData.explosiveWeapon) / 100);
+        float explodeRadius = (int)(upgrader.GetBaseValue("explodeRadius") * upgrader.GetValue("explodeRadius") / 100);
 
         projectileObj.GetComponent<CircleCollider2D>().radius = explodeRadius;
         projectile.newSize = explodeRadius;
     }
     public void Upgrade(string statName)
     {
-        YandexGame.savesData.explosiveWeapon[statName]++;
+        YandexGame.savesData.explosiveWeapon.AddValue(statName, 1);
     }
 
     public int GetStatLvl(string statName)
     {
-        return YandexGame.savesData.explosiveWeapon[statName];
+        return YandexGame.savesData.explosiveWeapon.GetValue(statName);
     }
 }

@@ -60,15 +60,15 @@ public class Player : Character, IUpgradeble
     public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
-        hp = (int)(upgrader.GetBaseValue("health") * upgrader.GetDataVariable("health", YandexGame.savesData.playerSkill));
-        speed = upgrader.GetBaseValue("speed") * upgrader.GetDataVariable("speed", YandexGame.savesData.playerSkill) / 100;
+        hp = (int)(upgrader.GetBaseValue("health") * upgrader.GetValue("health"));
+        speed = upgrader.GetBaseValue("speed") * upgrader.GetValue("speed") / 100;
     }
     public void Upgrade(string statName)
     {
-        YandexGame.savesData.playerSkill[statName]++;
+        YandexGame.savesData.playerSkill.AddValue(statName, 1);
     }
     public int GetStatLvl(string statName)
     {
-        return YandexGame.savesData.playerSkill[statName];
+        return YandexGame.savesData.playerSkill.GetValue(statName);
     }
 }

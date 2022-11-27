@@ -115,17 +115,17 @@ public class AwardPresenter : MonoBehaviour, IUpgradeble
     public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
-        maxWeaponCount = (int)(upgrader.GetBaseValue("slots") * upgrader.GetDataVariable("slots", YandexGame.savesData.inventory));
-        givingAwardsCount = (int)(upgrader.GetBaseValue("slots") * upgrader.GetDataVariable("awards", YandexGame.savesData.inventory));
+        maxWeaponCount = (int)(upgrader.GetBaseValue("slots") * upgrader.GetValue("slots"));
+        givingAwardsCount = (int)(upgrader.GetBaseValue("slots") * upgrader.GetValue("awards"));
     }
 
     public void Upgrade(string statName)
     {
-        YandexGame.savesData.inventory[statName]++;
+        YandexGame.savesData.inventory.AddValue(statName, 1);
     }
 
     public int GetStatLvl(string statName)
     {
-        return YandexGame.savesData.inventory[statName];
+        return YandexGame.savesData.inventory.GetValue(statName);
     }
 }

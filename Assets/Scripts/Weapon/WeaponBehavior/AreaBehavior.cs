@@ -13,7 +13,7 @@ public class AreaBehavior : Behavior, IUpgradeble
     [SerializeField] private GameObject spriteObject;
     private List<Enemy> enemyList = new List<Enemy>();
     private Animator animator;
-    
+
 
     private void Awake()
     {
@@ -85,18 +85,17 @@ public class AreaBehavior : Behavior, IUpgradeble
     public void SetDataVariables()
     {
         Upgrader upgrader = GetComponent<Upgrader>();
-        damage = (int)(upgrader.GetBaseValue("areaDamage") * upgrader.GetDataVariable("areaDamage", YandexGame.savesData.areaWeapon) / 100);
-        slow = (upgrader.GetBaseValue("areaSlow") * upgrader.GetDataVariable("areaSlow", YandexGame.savesData.areaWeapon));
-
+        damage = (int)(upgrader.GetBaseValue("areaDamage") * upgrader.GetValue("areaDamage") / 100);
+        slow = upgrader.GetBaseValue("areaSlow") * upgrader.GetValue("areaSlow");
     }
 
     public void Upgrade(string statName)
     {
-        YandexGame.savesData.areaWeapon[statName]++;
+        YandexGame.savesData.areaWeapon.AddValue(statName, 1);
     }
 
     public int GetStatLvl(string statName)
     {
-        return YandexGame.savesData.areaWeapon[statName];
+        return YandexGame.savesData.areaWeapon.GetValue(statName);
     }
 }

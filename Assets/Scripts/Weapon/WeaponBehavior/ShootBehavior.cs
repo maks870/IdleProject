@@ -107,19 +107,19 @@ public class ShootBehavior : Behavior, IUpgradeble
     {
         Upgrader upgrader = GetComponent<Upgrader>();
         Projectile projectile = projectileObj.GetComponent<Projectile>();
-        projectile.damage = (int)(upgrader.GetBaseValue("shootDamage") * upgrader.GetDataVariable("shootDamage", YandexGame.savesData.shootWeapon) / 100);
-        radius = upgrader.GetBaseValue("shootRange") * upgrader.GetDataVariable("shootRange", YandexGame.savesData.shootWeapon) / 100;
+        projectile.damage = (int)(upgrader.GetBaseValue("shootDamage") * upgrader.GetValue("shootDamage") / 100);
+        radius = upgrader.GetBaseValue("shootRange") * upgrader.GetValue("shootRange") / 100;
         shootZone.radius = radius;
 
     }
 
     public void Upgrade(string statName)
     {
-        YandexGame.savesData.shootWeapon[statName]++;
+        YandexGame.savesData.shootWeapon.AddValue(statName, 1);
     }
 
     public int GetStatLvl(string statName)
     {
-        return YandexGame.savesData.shootWeapon[statName];
+        return YandexGame.savesData.shootWeapon.GetValue(statName);
     }
 }

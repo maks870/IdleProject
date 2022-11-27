@@ -9,17 +9,17 @@ namespace YG
         public bool isFirstSession = true;
         public string language = "ru";
         public int recordScore = 0;
-       // public bool feedbackDone;
+        // public bool feedbackDone;
         public bool promptDone;
         public bool sound = true;
 
-        public Dictionary<string, int> areaWeapon = new Dictionary<string, int>(2) { ["areaDamage"] = 0, ["areaSlow"] = 0 };
-        public Dictionary<string, int> shootWeapon = new Dictionary<string, int>(2) { ["shootDamage"] = 0, ["shootRange"] = 0 };
-        public Dictionary<string, int> spinWeapon = new Dictionary<string, int>(2) { ["spinDamage"] = 0, ["spinRadius"] = 0 };
-        public Dictionary<string, int> explosiveWeapon = new Dictionary<string, int>(2) { ["explodeDamage"] = 0, ["explodeRadius"] = 0 };
-        public Dictionary<string, int> slayWeapon = new Dictionary<string, int>(2) { ["slayDamage"] = 0, ["slaySpeed"] = 0 };
-        public Dictionary<string, int> playerSkill = new Dictionary<string, int>(2) { ["health"] = 0, ["speed"] = 0 };
-        public Dictionary<string, int> inventory = new Dictionary<string, int>(2) { ["slots"] = 0, ["awards"] = 0 };
+        public DataObject areaWeapon = new DataObject(new List<DataValue>() { new DataValue("areaDamage", 0), new DataValue("areaSlow", 0) });
+        public DataObject shootWeapon = new DataObject(new List<DataValue>() { new DataValue("shootDamage", 0), new DataValue("shootRange", 0) });
+        public DataObject spinWeapon = new DataObject(new List<DataValue>() { new DataValue("spinDamage", 0), new DataValue("spinRadius", 0) });
+        public DataObject explosiveWeapon = new DataObject(new List<DataValue>() { new DataValue("explodeDamage", 0), new DataValue("explodeRadius", 0) });
+        public DataObject slayWeapon = new DataObject(new List<DataValue>() { new DataValue("slayDamage", 0), new DataValue("slaySpeed", 0) });
+        public DataObject playerSkill = new DataObject(new List<DataValue>() { new DataValue("health", 0), new DataValue("speed", 0) });
+        public DataObject inventory = new DataObject(new List<DataValue>() { new DataValue("slots", 0), new DataValue("awards", 0) });
         public int gold = 0;
     }
 }

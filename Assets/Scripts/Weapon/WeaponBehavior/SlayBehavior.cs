@@ -11,8 +11,6 @@ public class SlayBehavior : Behavior, IUpgradeble
     private bool isReady = false;
     private float angleRadius = 90;
     private Vector3 dir;
-
-
     private void Awake()
     {
         SetDataVariables();
@@ -58,16 +56,15 @@ public class SlayBehavior : Behavior, IUpgradeble
     {
         Upgrader upgrader = GetComponent<Upgrader>();
         SlayProjectile projectile = projectileObj.GetComponent<SlayProjectile>();
-        projectile.damage = (int)(upgrader.GetBaseValue("slayDamage") * upgrader.GetDataVariable("slayDamage", YandexGame.savesData.slayWeapon) / 100);
-        projectile.speed = upgrader.GetBaseValue("slaySpeed") * upgrader.GetDataVariable("slaySpeed", YandexGame.savesData.slayWeapon) / 100;
+        projectile.damage = (int)(upgrader.GetBaseValue("slayDamage") * upgrader.GetValue("slayDamage") / 100);
+        projectile.speed = upgrader.GetBaseValue("slaySpeed") * upgrader.GetValue("slaySpeed") / 100;
     }
     public void Upgrade(string statName)
     {
-        YandexGame.savesData.slayWeapon[statName]++;
+        YandexGame.savesData.slayWeapon.AddValue(statName, 1);
     }
-
     public int GetStatLvl(string statName)
     {
-        return YandexGame.savesData.slayWeapon[statName];
+        return YandexGame.savesData.slayWeapon.GetValue(statName);
     }
 }
