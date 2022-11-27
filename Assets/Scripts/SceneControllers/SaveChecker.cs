@@ -5,8 +5,8 @@ using YG;
 
 public class SaveChecker : MonoBehaviour
 {
+    private int oldGold;
     public static SaveChecker instance = null;
-    int oldGold;
     public bool activeImprovementsUI = false;
 
     private void OnEnable() => YandexGame.GetDataEvent += SetValue;
