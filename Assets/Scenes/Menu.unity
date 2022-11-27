@@ -13349,7 +13349,6 @@ GameObject:
   - component: {fileID: 1613891204}
   - component: {fileID: 1613891203}
   - component: {fileID: 1613891202}
-  - component: {fileID: 1613891205}
   - component: {fileID: 1613891206}
   m_Layer: 0
   m_Name: Main Camera
@@ -13424,18 +13423,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1613891205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1613891201}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1613891206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14705,6 +14692,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 2029505857}
+        m_TargetAssemblyTypeName: Debug1, Assembly-CSharp
+        m_MethodName: Checker
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1931602774
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15345,10 +15344,10 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002722085}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c731235d9bb8227418177517c5ffc164, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -15754,6 +15753,7 @@ GameObject:
   - component: {fileID: 2029505851}
   - component: {fileID: 2029505850}
   - component: {fileID: 2029505849}
+  - component: {fileID: 2029505857}
   m_Layer: 0
   m_Name: MenuController
   m_TagString: Untagged
@@ -16361,6 +16361,18 @@ MonoBehaviour:
   processTranslateLabel: 3/3 completed
   componentTextField: 0
   countLang: 3
+--- !u!114 &2029505857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2029505841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89d435fb2c8d6d64e84081aa638cf46a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2058110966
 GameObject:
   m_ObjectHideFlags: 0
@@ -17196,18 +17208,18 @@ PrefabInstance:
     - target: {fileID: 3785792253530032496, guid: cb38c38feb3cd6441a94077e09c2eac1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2029505857}
     - target: {fileID: 3785792253530032496, guid: cb38c38feb3cd6441a94077e09c2eac1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3785792253530032496, guid: cb38c38feb3cd6441a94077e09c2eac1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetValue
+      value: Checker
       objectReference: {fileID: 0}
     - target: {fileID: 3785792253530032496, guid: cb38c38feb3cd6441a94077e09c2eac1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: SaveChecker, Assembly-CSharp
+      value: Debug1, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3785792253530032496, guid: cb38c38feb3cd6441a94077e09c2eac1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_BoolArgument
