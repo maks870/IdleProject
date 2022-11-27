@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class DataObject : MonoBehaviour
+public class DataObject
 {
     public List<DataValue> dataValues;
 

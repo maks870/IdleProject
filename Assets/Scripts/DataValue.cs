@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class DataValue : MonoBehaviour
+public class DataValue
 {
     public string valueName;
     public int value;

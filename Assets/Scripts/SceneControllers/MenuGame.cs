@@ -11,6 +11,7 @@ public class MenuGame : Menu
     [SerializeField] private GameObject newRecordUI;
     [SerializeField] private GameObject tipsPanel;
     [SerializeField] private GameObject rewardedButton;
+    [SerializeField] private LeaderboardYG leaderboardYG;
     private List<GameObject> tips = new List<GameObject>();
     private Stopwatch stopwatch;
     private int pauseCount = 0;
@@ -21,9 +22,8 @@ public class MenuGame : Menu
 
     protected override void Awake()
     {
+        Time.timeScale = 0;
         base.Awake();
-        ResetPause();
-
         stopwatch = new Stopwatch();
         stopwatch.StartStopWatch();
 
@@ -53,12 +53,6 @@ public class MenuGame : Menu
             Time.timeScale = 1;
     }
 
-    public void ContinueGame()
-    {
-        Player.instance.AddHp(1);
-        SetPause(false);
-    }
-
     private void ResetPause()
     {
         pauseCount = 0;
@@ -78,6 +72,7 @@ public class MenuGame : Menu
             newRecordUI.gameObject.SetActive(true);
             YandexGame.savesData.recordScore = CoinCollector.instance.CollectedGold;
             YandexGame.NewLeaderboardScores("Leaderboard", CoinCollector.instance.CollectedGold);
+            leaderboardYG?.UpdateLB();
         }
 
         SetPause(true);
@@ -88,7 +83,7 @@ public class MenuGame : Menu
     public void EndGame(int scene)
     {
         YandexGame.savesData.gold += CoinCollector.instance.CollectedGold;
-        YandexGame.SaveProgress();
+        SaveChecker.instance.Save();
         ResetPause();
         LoadScene(scene);
     }

@@ -5,20 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(Upgrader))]
 public abstract class Behavior : MonoBehaviour
 {
-    public virtual void ActiveBehavior()
-    {
-
-    }
-    public virtual void Use()
-    {
-        Debug.Log("Абстрактный Use");
-    }
-    public virtual void Combine()
-    {
-        Debug.Log("Абстрактный Combine");
-    }
-    public virtual void Improve(bool isMaxLevel)
-    {
-        Debug.Log("Абстрактный Improve");
-    }
+    public abstract void ActiveBehavior();
+    public abstract void Use();
+    public abstract void Combine();
+    public abstract void Improve(bool isMaxLevel);
 }

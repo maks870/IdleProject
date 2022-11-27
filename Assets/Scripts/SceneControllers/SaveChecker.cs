@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using YG;
 
@@ -30,7 +28,6 @@ public class SaveChecker : MonoBehaviour
             SetValue();
         }
     }
-
 
     private void SetValue()
     {

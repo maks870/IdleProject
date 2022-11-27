@@ -7,11 +7,11 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private GameObject[] chunksCenter;
     [SerializeField] private GameObject[] chunksRight;
     private GameObject[][] chunks = new GameObject[3][];
-    private Camera camera;
+    private Camera cam;
     public Vector2Int vecint;
     void Start()
     {
-        camera = Camera.main;
+        cam = Camera.main;
         chunks[0] = chunksLeft;
         chunks[1] = chunksCenter;
         chunks[2] = chunksRight;
@@ -21,7 +21,7 @@ public class MapGenerator : MonoBehaviour
     //|0,2|1,2|2,2|
     void Update()
     {
-        Vector2 vec = camera.transform.position - chunks[1][1].transform.position;
+        Vector2 vec = cam.transform.position - chunks[1][1].transform.position;
         vec = vec / chunkSize;
         vecint = Vector2Int.FloorToInt(vec);
         if (vecint != Vector2Int.zero)

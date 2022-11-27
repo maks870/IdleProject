@@ -21,9 +21,18 @@ public class Product : MonoBehaviour
     private int maxLvl;
     private bool isMaxLvl = false;
 
-    private void OnEnable() => YandexGame.GetDataEvent += UpdatePurchase;
+    private void OnEnable()
+    {
+        YandexGame.GetDataEvent += UpdatePurchase;
+        YandexGame.SwitchLangEvent += UpdateText;
+        UpdateText();
+    }
 
-    private void OnDisable() => YandexGame.GetDataEvent -= UpdatePurchase;
+    private void OnDisable()
+    {
+        YandexGame.GetDataEvent -= UpdatePurchase;
+        YandexGame.SwitchLangEvent -= UpdateText;
+    }
 
     void Start()
     {
@@ -47,6 +56,11 @@ public class Product : MonoBehaviour
             points[i].enabled = i < currentLvl;
     }
 
+    private void UpdateText(string str) 
+    {
+        UpdateText();
+    }
+
     private void UpdatePurchase()
     {
         maxLvl = upgrader.GetMaxStatLvl(statName);
@@ -54,7 +68,6 @@ public class Product : MonoBehaviour
         cost = upgrader.GetStatCost(statName);
         CheckMaxLevel();
         UpdateText();
-        Debug.Log(points.Count);
     }
 
     private void UpdateText()
@@ -107,7 +120,7 @@ public class Product : MonoBehaviour
 
         if (balance < 0)
         {
-            Debug.Log("Нехватает денег бичара");
+           
         }
         else
         {

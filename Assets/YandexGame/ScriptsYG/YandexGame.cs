@@ -448,7 +448,7 @@ namespace YG
         public void _SwitchLanguage(string language)
         {
             savesData.language = language;
-            SaveProgress();
+           // SaveProgress();
 
             SwitchLangEvent?.Invoke(language);
         }
@@ -456,7 +456,7 @@ namespace YG
         public static void SwitchLanguage(string language)
         {
             savesData.language = language;
-            SaveProgress();
+            //SaveProgress();
 
             SwitchLangEvent?.Invoke(language);
         }

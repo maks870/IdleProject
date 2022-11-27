@@ -44,7 +44,7 @@ public class RewardedAd : MonoBehaviour
     private void AddGold(int gold)
     {
         YandexGame.savesData.gold += gold;
-        YandexGame.SaveProgress();
+        SaveChecker.instance.Save();
         menu?.GetLoad();
     }
 

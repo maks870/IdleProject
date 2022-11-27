@@ -78,15 +78,6 @@ public class ShootBehavior : Behavior, IUpgradeble
             return firstDist.CompareTo(secondDist);
         });
 
-        //enemyList.Sort(delegate (Enemy x, Enemy y)
-        //{
-        //    Vector3 xTrans = x.transform.position;
-        //    Vector3 yTrans = y.transform.position;
-        //    float firstDist = (transform.position - xTrans).magnitude;
-        //    float secondDist = (transform.position - yTrans).magnitude;
-        //    return firstDist.CompareTo(secondDist);
-        //});
-
         int counterMax = targetCount <= directionList.Count ? targetCount : directionList.Count;
 
         for (int i = 0; i < counterMax; i++)
@@ -100,7 +91,6 @@ public class ShootBehavior : Behavior, IUpgradeble
     {
         if (!isMaxLevel)
             isAddTarget = true;
-
     }
 
     public void SetDataVariables()
@@ -110,7 +100,6 @@ public class ShootBehavior : Behavior, IUpgradeble
         projectile.damage = (int)(upgrader.GetBaseValue("shootDamage") * upgrader.GetValue("shootDamage") / 100);
         radius = upgrader.GetBaseValue("shootRange") * upgrader.GetValue("shootRange") / 100;
         shootZone.radius = radius;
-
     }
 
     public void Upgrade(string statName)

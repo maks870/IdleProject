@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using YG;
 
@@ -8,19 +6,11 @@ public class SlayBehavior : Behavior, IUpgradeble
     [SerializeField] private GameObject projectileObj;
     [SerializeField] private float spawnDistanse = 2;
     private int countSpawnProjectilesCount = 0;
-    private bool isReady = false;
     private float angleRadius = 90;
     private Vector3 dir;
     private void Awake()
     {
         SetDataVariables();
-    }
-    private void Update()
-    {
-    }
-    public override void Combine()
-    {
-        //логика объединения оружия
     }
 
     public override void ActiveBehavior()
@@ -66,5 +56,9 @@ public class SlayBehavior : Behavior, IUpgradeble
     public int GetStatLvl(string statName)
     {
         return YandexGame.savesData.slayWeapon.GetValue(statName);
+    }
+
+    public override void Combine()
+    {
     }
 }
