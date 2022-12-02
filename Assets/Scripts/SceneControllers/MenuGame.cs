@@ -22,7 +22,7 @@ public class MenuGame : Menu
 
     protected override void Awake()
     {
-        Time.timeScale = 0;
+        //Time.timeScale = 0;
         base.Awake();
         stopwatch = new Stopwatch();
         stopwatch.StartStopWatch();

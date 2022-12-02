@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,6 +21,7 @@ public class Product : MonoBehaviour
     private int currentLvl;
     private int maxLvl;
     private bool isMaxLvl = false;
+    private Color costTextColor;
 
     private void OnEnable()
     {
@@ -37,6 +39,7 @@ public class Product : MonoBehaviour
     void Start()
     {
         purchaseButton = GetComponent<Button>();
+        costTextColor = costText.color;
 
         for (int i = 0; i < upgrader.GetMaxStatLvl(statName); i++)
         {
@@ -120,7 +123,7 @@ public class Product : MonoBehaviour
 
         if (balance < 0)
         {
-           
+            StartCoroutine(ChangeColor());
         }
         else
         {
@@ -129,5 +132,12 @@ public class Product : MonoBehaviour
             UpdatePurchase();
             YandexGame.savesData.gold = gold;
         }
+    }
+
+    private IEnumerator ChangeColor() 
+    {
+        costText.color = Color.red;
+        yield return new WaitForSeconds(0.4f);
+        costText.color = costTextColor;
     }
 }

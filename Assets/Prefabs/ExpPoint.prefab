@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3957463621492816713}
   m_Layer: 0
   m_Name: ExpPoint
-  m_TagString: Untagged
+  m_TagString: Magnetized
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

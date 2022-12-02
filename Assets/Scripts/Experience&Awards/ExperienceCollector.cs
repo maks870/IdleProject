@@ -10,7 +10,7 @@ public class ExperienceCollector : MonoBehaviour
     [SerializeField] private double startLvlExpMultiply = 2;
     [SerializeField] private double endLvlExpMultiply = 1.3;
     [SerializeField] private GameObject expPref;
-    private AwardPresenter presenter;
+    [SerializeField] private AwardPresenter presenter;
     private List<GameObject> invisiblePull = new List<GameObject>();
     private List<GameObject> visiblePull = new List<GameObject>();
     private int currentLvl = 0;
@@ -30,8 +30,6 @@ public class ExperienceCollector : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        presenter = transform.parent.GetComponentInChildren<AwardPresenter>();
         CreatePull();
     }
 
