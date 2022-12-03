@@ -19,7 +19,7 @@ public class Destroyer : MonoBehaviour
 
         if (collision.GetComponent<Projectile>() != null)
         {
-            collision.GetComponent<Projectile>().Dead() ;
+            collision.GetComponent<Projectile>().Dead();
         }
     }
 }

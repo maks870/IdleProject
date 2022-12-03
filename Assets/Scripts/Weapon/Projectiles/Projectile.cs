@@ -9,7 +9,7 @@ public abstract class Projectile : MonoBehaviour
         if (collision.GetComponent<Enemy>() != null)
         {
             collision.GetComponent<Enemy>().TakeDamage(damage);
-            Destroy(gameObject);
+            Dead();
         }
     }
 

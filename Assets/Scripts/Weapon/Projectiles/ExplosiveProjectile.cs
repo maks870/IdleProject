@@ -48,7 +48,9 @@ public class ExplosiveProjectile : Projectile
         {
             enemyList[i]?.TakeDamage(damage);
         }
-        Dead();
+        explosiveBehavior.AddToPull(this);
+        isActivated = false;
+        animator.SetBool("Activated", isActivated);
     }
     IEnumerator TimerToExplode()
     {
@@ -59,8 +61,6 @@ public class ExplosiveProjectile : Projectile
 
     public override void Dead()
     {
-        explosiveBehavior.AddToPull(this);
-        isActivated = false;
-        animator.SetBool("Activated", isActivated);
+        Explode();
     }
 }
