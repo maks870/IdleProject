@@ -52,6 +52,8 @@ public class AwardPresenter : MonoBehaviour, IUpgradeble
                     awardList.Add(award);
             }
         }
+        if (isFirstWeaponSelect)
+            isFirstWeaponSelect = false;
     }
 
     private void FillCurrentWeapons()
