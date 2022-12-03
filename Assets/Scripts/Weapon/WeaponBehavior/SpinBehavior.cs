@@ -28,13 +28,17 @@ public class SpinBehavior : Behavior, IUpgradeble
         projectileSpeed = projectileObj.GetComponent<SpinProjectile>().speed;
     }
 
-    void Update()
+    private void FixedUpdate()
     {
         spinCenter = transform.position;
         if (isSpinActive)
         {
             Spin();
         }
+
+    }
+    void Update()
+    {
     }
 
     private void Spin()

@@ -128,7 +128,7 @@ MonoBehaviour:
     - value: 100
       cost: 20
     - value: 140
-      cost: 55
+      cost: 30
     - value: 180
       cost: 100
     - value: 220
@@ -137,9 +137,9 @@ MonoBehaviour:
     name: areaSlow
     levels:
     - value: 0
-      cost: 35
+      cost: 30
     - value: 15
-      cost: 60
+      cost: 45
     - value: 30
       cost: 115
     - value: 45

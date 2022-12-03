@@ -69,9 +69,9 @@ MonoBehaviour:
     name: slots
     levels:
     - value: 2
-      cost: 150
+      cost: 60
     - value: 3
-      cost: 400
+      cost: 100
     - value: 4
       cost: 1000
     - value: 5
@@ -80,6 +80,6 @@ MonoBehaviour:
     name: awards
     levels:
     - value: 2
-      cost: 200
+      cost: 120
     - value: 3
       cost: 200

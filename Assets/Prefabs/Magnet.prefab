@@ -104,7 +104,7 @@ MonoBehaviour:
     - value: 100
       cost: 40
     - value: 115
-      cost: 80
+      cost: 60
     - value: 130
       cost: 120
     - value: 150

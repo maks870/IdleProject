@@ -74481,7 +74481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxCoinCount: 20
   defaultCoin: {fileID: 1490192420080904487, guid: a3dcfa91b0d59744c8f72a5d545cbeae, type: 3}
-  coinDropChance: 20
+  coinDropChance: 30
   collectedGold: 0
 --- !u!1001 &2061188792
 PrefabInstance:

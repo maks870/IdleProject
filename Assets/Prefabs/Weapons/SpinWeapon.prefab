@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a9c34c159c6ce4f885a6628f51f659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  notStartAward: 0
   sprite: {fileID: 21300000, guid: d76adcda01d7f6946bfe033e811728f0, type: 3}
   nameLang: {fileID: 558244197}
   descriptionLang: {fileID: 558244198}
@@ -102,9 +103,9 @@ MonoBehaviour:
     name: spinDamage
     levels:
     - value: 100
-      cost: 30
+      cost: 35
     - value: 125
-      cost: 85
+      cost: 55
     - value: 150
       cost: 150
     - value: 175
@@ -113,9 +114,9 @@ MonoBehaviour:
     name: spinRadius
     levels:
     - value: 100
-      cost: 35
+      cost: 30
     - value: 110
-      cost: 85
+      cost: 40
     - value: 120
       cost: 135
     - value: 130
