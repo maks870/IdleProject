@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Weapon : Award
 {
-    [SerializeField] private IUpgradeble IImprovable;
+    [SerializeField] private IUpgradeble upgradeble;
     [SerializeField] private float cooldown;
     [SerializeField] private int maxLevelCount = 5;
     private Behavior behavior;

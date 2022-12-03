@@ -14,6 +14,7 @@ public class AwardPresenter : MonoBehaviour, IUpgradeble
     [SerializeField] private Coin coinAward;
     private List<Award> awardList = new List<Award>();
     private AwardPresenterUI presenterUI;
+    private bool isFirstWeaponSelect = true;
 
     public int GetAwardsCount => givingAwardsCount;
     public AwardPresenterUI SetPresenterUI { set { presenterUI = value; } }
@@ -32,9 +33,11 @@ public class AwardPresenter : MonoBehaviour, IUpgradeble
         if (currentWeapons.Count != maxWeaponCount)
         {
             Award[] awards = weapons.GetComponentsInChildren<Award>();
-
             foreach (Award award in awards)
             {
+                if (isFirstWeaponSelect && award.NotStartAward)
+                    continue;
+
                 if (award.Accessibility)
                     awardList.Add(award);
             }

@@ -108,7 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roundNumber: 0
   rounds:
-  - countEnemy: 70
+  - countEnemy: 90
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 40
@@ -116,7 +116,7 @@ MonoBehaviour:
       probability: 60
     probabilityAll: 0
     spawnTime: 0.3
-  - countEnemy: 70
+  - countEnemy: 90
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 45
@@ -126,7 +126,7 @@ MonoBehaviour:
       probability: 10
     probabilityAll: 0
     spawnTime: 0.3
-  - countEnemy: 60
+  - countEnemy: 80
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 30
@@ -138,7 +138,7 @@ MonoBehaviour:
       probability: 20
     probabilityAll: 0
     spawnTime: 0.3
-  - countEnemy: 70
+  - countEnemy: 100
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 25
@@ -152,7 +152,7 @@ MonoBehaviour:
       probability: 15
     probabilityAll: 0
     spawnTime: 0.3
-  - countEnemy: 70
+  - countEnemy: 100
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 31
@@ -164,7 +164,7 @@ MonoBehaviour:
       probability: 7
     probabilityAll: 0
     spawnTime: 0.3
-  - countEnemy: 70
+  - countEnemy: 100
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 20
@@ -180,7 +180,7 @@ MonoBehaviour:
       probability: 5
     probabilityAll: 0
     spawnTime: 0.2
-  - countEnemy: 100
+  - countEnemy: 120
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 25
@@ -192,7 +192,7 @@ MonoBehaviour:
       probability: 25
     probabilityAll: 0
     spawnTime: 0.2
-  - countEnemy: 100
+  - countEnemy: 120
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 15
@@ -206,7 +206,7 @@ MonoBehaviour:
       probability: 20
     probabilityAll: 0
     spawnTime: 0.2
-  - countEnemy: 100
+  - countEnemy: 120
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 15
@@ -224,7 +224,7 @@ MonoBehaviour:
       probability: 10
     probabilityAll: 0
     spawnTime: 0.1
-  - countEnemy: 70
+  - countEnemy: 100
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 20
@@ -238,7 +238,7 @@ MonoBehaviour:
       probability: 10
     probabilityAll: 0
     spawnTime: 0.2
-  - countEnemy: 70
+  - countEnemy: 100
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 15
@@ -252,7 +252,7 @@ MonoBehaviour:
       probability: 10
     probabilityAll: 0
     spawnTime: 0.3
-  - countEnemy: 70
+  - countEnemy: 100
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 15
@@ -268,7 +268,7 @@ MonoBehaviour:
       probability: 5
     probabilityAll: 0
     spawnTime: 0.2
-  - countEnemy: 200
+  - countEnemy: 250
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 20
@@ -290,7 +290,7 @@ MonoBehaviour:
       probability: 5
     probabilityAll: 0
     spawnTime: 0.1
-  - countEnemy: 200
+  - countEnemy: 250
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 10
@@ -312,7 +312,7 @@ MonoBehaviour:
       probability: 5
     probabilityAll: 0
     spawnTime: 0.1
-  - countEnemy: 70
+  - countEnemy: 250
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 10
@@ -334,7 +334,7 @@ MonoBehaviour:
       probability: 4
     probabilityAll: 0
     spawnTime: 0.05
-  - countEnemy: 70
+  - countEnemy: 250
     spawnEnemies:
     - pref: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
       probability: 11
@@ -356,7 +356,7 @@ MonoBehaviour:
       probability: 4
     probabilityAll: 0
     spawnTime: 0.025
-  maxEnemy: 200
+  maxEnemy: 250
   targetObject: {fileID: 0}
 --- !u!1 &614046070107127066
 GameObject:
