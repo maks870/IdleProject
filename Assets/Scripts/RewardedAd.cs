@@ -31,6 +31,9 @@ public class RewardedAd : MonoBehaviour
             default:
                 MultyplyAllGold(menu.goldMultiplier);
                 break;
+            case 4:
+                AddGold(10000);
+                break;
         }
     }
 

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4840190428193520717
+--- !u!1 &4450120419889814397
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4840190428193520817}
-  - component: {fileID: 4840190428193520819}
-  - component: {fileID: 4840190428193520718}
-  - component: {fileID: 4840190428193520716}
-  - component: {fileID: 4840190428287190067}
+  - component: {fileID: 8022736592355241270}
+  - component: {fileID: 6319953592887636344}
+  - component: {fileID: 339165751650182124}
+  - component: {fileID: 2269747136944306490}
+  - component: {fileID: 6828374971889956500}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -20,13 +20,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4840190428193520817
+--- !u!4 &8022736592355241270
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4840190428193520717}
+  m_GameObject: {fileID: 4450120419889814397}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,25 +35,25 @@ Transform:
   m_Father: {fileID: 4840190428457942250}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4840190428193520819
+--- !u!114 &6319953592887636344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4840190428193520717}
+  m_GameObject: {fileID: 4450120419889814397}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c617cff381690064fbd1845b8c3485c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!20 &4840190428193520718
+--- !u!20 &339165751650182124
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4840190428193520717}
+  m_GameObject: {fileID: 4450120419889814397}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
@@ -90,21 +90,21 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &4840190428193520716
+--- !u!81 &2269747136944306490
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4840190428193520717}
+  m_GameObject: {fileID: 4450120419889814397}
   m_Enabled: 1
---- !u!114 &4840190428287190067
+--- !u!114 &6828374971889956500
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4840190428193520717}
+  m_GameObject: {fileID: 4450120419889814397}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
@@ -230,8 +230,6 @@ GameObject:
   - component: {fileID: 4840190428457942255}
   - component: {fileID: 4840190428457942254}
   - component: {fileID: 4840190428457942225}
-  - component: {fileID: 238483674}
-  - component: {fileID: 238483675}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -251,7 +249,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4840190428193520817}
+  - {fileID: 8022736592355241270}
   - {fileID: 4840190428269802068}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -378,39 +376,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   joystick: {fileID: 0}
---- !u!114 &238483674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4840190428457942248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65c0ba55d943a8e49a8e9687036632a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxExpObj: 100
-  currentExperience: 0
-  experienceToLvlup: 100
-  multiplySteps: 10
-  startLvlExpMultiply: 3
-  endLvlExpMultiply: 1.1
-  expPref: {fileID: 1490192420080904487, guid: 1633b12828da91f4a8cc250e0b449563, type: 3}
-  presenter: {fileID: 0}
---- !u!114 &238483675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4840190428457942248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4c775c53944c6f40aed51a0e0850039, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxCoinCount: 20
-  defaultCoin: {fileID: 1490192420080904487, guid: a3dcfa91b0d59744c8f72a5d545cbeae, type: 3}
-  coinDropChance: 20
-  collectedGold: 0

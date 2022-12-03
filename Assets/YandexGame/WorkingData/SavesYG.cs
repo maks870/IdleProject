@@ -20,7 +20,7 @@ namespace YG
         public DataObject slayWeapon = new DataObject(new List<DataValue>() { new DataValue("slayDamage", 0), new DataValue("slaySpeed", 0) });
         public DataObject playerSkill = new DataObject(new List<DataValue>() { new DataValue("health", 0), new DataValue("speed", 0) });
         public DataObject inventory = new DataObject(new List<DataValue>() { new DataValue("slots", 0), new DataValue("awards", 0) });
-        public DataObject collector = new DataObject(new List<DataValue>() { new DataValue("collectorRadius", 0) });
+        public DataObject collector = new DataObject(new List<DataValue>() { new DataValue("collectorRadius", 0), new DataValue("experienceMultiplier", 0) });
         public int gold = 0;
     }
 }
