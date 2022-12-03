@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShootProjectile : Projectile
@@ -10,11 +8,17 @@ public class ShootProjectile : Projectile
         if (collision.GetComponent<Enemy>() != null)
         {
             collision.GetComponent<Enemy>().TakeDamage(damage);
-            Destroy(gameObject);
+            Dead();
         }
     }
+
     public void Launch(Vector3 direction)
     {
         GetComponent<Rigidbody2D>().AddForce(direction * speed, ForceMode2D.Impulse);
+    }
+
+    public override void Dead()
+    {
+        Destroy(gameObject);
     }
 }

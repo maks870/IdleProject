@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Collider2D))]
-public class Projectile : MonoBehaviour
+public abstract class Projectile : MonoBehaviour
 {
     public int damage;
     protected virtual void OnTriggerEnter2D(Collider2D collision)
@@ -12,4 +12,6 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public abstract void Dead();
 }

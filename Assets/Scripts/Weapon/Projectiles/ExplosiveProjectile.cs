@@ -48,14 +48,18 @@ public class ExplosiveProjectile : Projectile
         {
             enemyList[i]?.TakeDamage(damage);
         }
-        explosiveBehavior.AddToPull(this);
-        isActivated = false;
-        animator.SetBool("Activated", isActivated);
     }
     IEnumerator TimerToExplode()
     {
         animator.SetBool("Activated", isActivated);
         yield return new WaitForSeconds(timer);
         Explode();
+    }
+
+    public override void Dead()
+    {
+        explosiveBehavior.AddToPull(this);
+        isActivated = false;
+        animator.SetBool("Activated", isActivated);
     }
 }

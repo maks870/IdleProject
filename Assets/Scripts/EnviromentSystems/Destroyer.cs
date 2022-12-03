@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Destroyer : MonoBehaviour
@@ -21,7 +19,7 @@ public class Destroyer : MonoBehaviour
 
         if (collision.GetComponent<Projectile>() != null)
         {
-            Destroy(collision.GetComponent<Projectile>().gameObject);
+            collision.GetComponent<Projectile>().Dead() ;
         }
     }
 }
