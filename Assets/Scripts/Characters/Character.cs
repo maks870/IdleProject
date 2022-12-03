@@ -32,8 +32,12 @@ public class Character : MonoBehaviour
 
     protected virtual void Update()
     {
-        Move();
         CheckPosition();
+    }
+
+    private void FixedUpdate()
+    {
+        Move();
     }
 
     public virtual void TakeDamage(int damage)
@@ -66,7 +70,7 @@ public class Character : MonoBehaviour
 
     private void Move()
     {
-        rb.velocity = moveDirection * speed * speedMultiplier;
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDirection, speed/40 * speedMultiplier);
     }
 
     private void CheckPosition()

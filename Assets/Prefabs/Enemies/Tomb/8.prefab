@@ -135,9 +135,11 @@ MonoBehaviour:
   speed: 2
   hp: 1
   fly: 0
+  speedMultiplier: 1
   damage: 1
   coin: {fileID: 4788945594064710141, guid: a3dcfa91b0d59744c8f72a5d545cbeae, type: 3}
   expPoint: {fileID: 3957463621492816713, guid: 1633b12828da91f4a8cc250e0b449563, type: 3}
+  actionCooldown: 0
 --- !u!50 &5988673356580707593
 Rigidbody2D:
   serializedVersion: 4
@@ -146,7 +148,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5325241181129791845}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
