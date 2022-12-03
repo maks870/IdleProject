@@ -277,9 +277,9 @@ MonoBehaviour:
     - value: 3
       cost: 30
     - value: 4
-      cost: 60
+      cost: 40
     - value: 5
-      cost: 90
+      cost: 50
     - value: 6
       cost: 60
   - baseValue: 4
@@ -288,9 +288,9 @@ MonoBehaviour:
     - value: 100
       cost: 40
     - value: 115
-      cost: 80
+      cost: 55
     - value: 130
-      cost: 160
+      cost: 70
     - value: 150
       cost: 120
 --- !u!58 &4840190428457942255

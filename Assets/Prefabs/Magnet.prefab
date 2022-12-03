@@ -106,6 +106,6 @@ MonoBehaviour:
     - value: 115
       cost: 60
     - value: 130
-      cost: 120
+      cost: 80
     - value: 150
       cost: 0
