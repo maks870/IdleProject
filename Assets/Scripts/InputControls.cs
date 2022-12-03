@@ -5,16 +5,37 @@ public class InputControls : MonoBehaviour
 {
     [SerializeField] private Joystick joystick;
     private Player player;
+    private Camera cam;
+    private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
+
+    // Отписываемся от события GetDataEvent в OnDisable
+    private void OnDisable() => YandexGame.GetDataEvent -= GetLoad;
 
     private void Start()
     {
+        cam = Camera.main;
         player = Player.instance;
 
+
+        if (YandexGame.SDKEnabled == true)
+        {
+            GetLoad();
+        }
+
+        joystick.isDesktop = true;
+
+    }
+
+    private void GetLoad()
+    {
 #if !UNITY_EDITOR
         if (YandexGame.EnvironmentData.isDesktop)
             joystick.isDesktop = true;
         else
+        {
             joystick.isDesktop = false;
+            cam.orthographicSize = 10;
+        }
 #else
         joystick.isDesktop = true;
 #endif
