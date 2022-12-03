@@ -54,7 +54,7 @@ MonoBehaviour:
   simpleLvlExpMultiply: 4
   currentLvl: 0
   startLvlExpMultiply: 3
-  endLvlExpMultiply: 1.05
+  endLvlExpMultiply: 1.06
   expPref: {fileID: 1490192420080904487, guid: 1633b12828da91f4a8cc250e0b449563, type: 3}
   presenter: {fileID: 0}
 --- !u!58 &2285724984280613154
