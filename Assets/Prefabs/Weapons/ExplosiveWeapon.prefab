@@ -49,6 +49,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a9c34c159c6ce4f885a6628f51f659, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  notStartAward: 1
   sprite: {fileID: 1682836214, guid: 0ce05ea3dfa32de4e9aaa2c8958dbb69, type: 3}
   nameLang: {fileID: 1004896470}
   descriptionLang: {fileID: 1004896471}
