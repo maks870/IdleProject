@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ArmoredEnemy : Enemy
 {
-    [SerializeField] private float accelerationMultiplier = 1.5f;
     [SerializeField] private Sprite armoredSprite;
     [SerializeField] private Sprite nonArmoredSprite;
     private bool isArmored = true;
@@ -13,14 +12,14 @@ public class ArmoredEnemy : Enemy
     {
         spriteRenderer.sprite = armoredSprite;
         isArmored = true;
-        speed /= accelerationMultiplier;
+        speed /= speedMultiplier;
     }
 
     private void ArmorOff()
     {
         spriteRenderer.sprite = nonArmoredSprite;
         isArmored = false;
-        speed *= accelerationMultiplier;
+        speed *= speedMultiplier;
         StartCoroutine(ReloadArmor(actionCooldown));
     }
 

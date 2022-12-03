@@ -137,11 +137,11 @@ MonoBehaviour:
     levels:
     - value: 0
       cost: 60
-    - value: 10
+    - value: 15
       cost: 100
-    - value: 20
-      cost: 180
     - value: 30
+      cost: 180
+    - value: 45
       cost: 160
 --- !u!58 &2096810405805874225
 CircleCollider2D:
