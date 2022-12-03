@@ -414,7 +414,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Version 0.0.1.0
+  m_Text: Version 0.0.1.2
 --- !u!222 &91437489
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5734,8 +5734,8 @@ RectTransform:
   - {fileID: 135904643}
   - {fileID: 1194677560}
   - {fileID: 2058110967}
-  - {fileID: 1582000172}
   - {fileID: 1402660452}
+  - {fileID: 1582000172}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8920,7 +8920,7 @@ RectTransform:
   - {fileID: 113952920}
   - {fileID: 1319685486}
   m_Father: {fileID: 1121457356}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -12560,7 +12560,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6102728658565683430, guid: fe28e1944fda31a4180b1fc64a8f7462, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6102728658565683430, guid: fe28e1944fda31a4180b1fc64a8f7462, type: 3}
       propertyPath: m_AnchorMax.x
