@@ -48,6 +48,7 @@ public class ExplosiveProjectile : Projectile
         {
             enemyList[i]?.TakeDamage(damage);
         }
+        Dead();
     }
     IEnumerator TimerToExplode()
     {
