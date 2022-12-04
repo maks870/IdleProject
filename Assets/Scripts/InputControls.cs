@@ -3,7 +3,9 @@ using YG;
 
 public class InputControls : MonoBehaviour
 {
-    [SerializeField] private Joystick joystick;
+    [SerializeField] private Joystick joystickDesktop;
+    [SerializeField] private Joystick joystickMobile;
+    private Joystick joystick;
     private Player player;
     private Camera cam;
     private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
@@ -25,22 +27,23 @@ public class InputControls : MonoBehaviour
 
     private void GetLoad()
     {
+        SwitchJoystick(YandexGame.EnvironmentData.isDesktop);
+    }
+
+    private void SwitchJoystick(bool desktop)
+    {
 #if !UNITY_EDITOR
-        if (YandexGame.EnvironmentData.isDesktop)
-            joystick.isDesktop = true;
-        else
-        {
-            joystick.isDesktop = false;
-            cam.orthographicSize = 10;
-        }
+        joystickDesktop.gameObject.SetActive(desktop);
+        joystickMobile.gameObject.SetActive(!desktop); 
 #else
-        joystick.isDesktop = true;
+        joystickDesktop.gameObject.SetActive(true);
+        joystickMobile.gameObject.SetActive(false);
 #endif
     }
 
     private void Update()
     {
-        player.SetInputAxis(joystick.Direction + GetDirection());
+        player.SetInputAxis(joystickDesktop.Direction + joystickMobile.Direction + GetDirection());
     }
 
     private Vector2 GetDirection()
