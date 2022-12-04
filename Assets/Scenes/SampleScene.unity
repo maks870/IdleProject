@@ -57674,6 +57674,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SpawnZone (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: rounds.Array.data[0].spawnTime
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: rounds.Array.data[0].countEnemy
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
 --- !u!4 &1522374641 stripped
