@@ -3,6 +3,8 @@ using UnityEngine;
 public class SlayProjectile : Projectile
 {
     public float speed;
+    private bool isMove = false;
+    private Vector3 moveDirection;
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
@@ -11,9 +13,16 @@ public class SlayProjectile : Projectile
             collision.GetComponent<Enemy>().TakeDamage(damage);
         }
     }
-    public void Launch(Vector3 dir)
+    public void Launch(Vector3 direction)
     {
-        GetComponent<Rigidbody2D>().AddForce(dir * speed, ForceMode2D.Impulse);
+        isMove = true;
+        moveDirection = direction;
+    }
+
+    private void FixedUpdate()
+    {
+        if (isMove)
+            transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDirection, speed / 50);
     }
 
     public override void Dead()

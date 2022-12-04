@@ -111,7 +111,7 @@ MonoBehaviour:
     it: 
     de: 
     hi: 
-  debug: 0
+  debug: 1
   staticRBTInGame: 0
   sitelock: 0
   SDKStartDelay: 0
