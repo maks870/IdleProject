@@ -36,6 +36,10 @@ public class Spawner : MonoBehaviour
 
     public int CurrentRound => roundNumber;
 
+    private void Awake()
+    {
+    }
+
     private void Start()
     {
         if (targetObject == null)

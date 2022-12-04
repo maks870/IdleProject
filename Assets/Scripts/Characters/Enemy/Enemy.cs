@@ -62,9 +62,9 @@ public class Enemy : Character
     {
         return Vector3.Distance(target.transform.position, transform.position);
     }
-    public override void TakeDeadlyDamage(bool noDrop)
+    public override void TakeDeadlyDamage(bool drop)
     {
-        if (noDrop)
+        if (!drop)
         {
             deathEvent.Invoke();
             Destroy(gameObject);
