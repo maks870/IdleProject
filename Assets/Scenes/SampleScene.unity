@@ -32199,6 +32199,7 @@ GameObject:
   - component: {fileID: 854912837}
   - component: {fileID: 854912839}
   - component: {fileID: 854912840}
+  - component: {fileID: 854912842}
   - component: {fileID: 854912841}
   m_Layer: 0
   m_Name: MenuController
@@ -32403,6 +32404,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5785beefdc3b485478fa63be6da79fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &854912842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854912836}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7c79262cf302b54ba3b70a3083ba4a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursorTexture: {fileID: 2800000, guid: 7d324b83d7de8d443a36f7978b8b4d4f, type: 3}
+  cursorMode: 0
+  hotSpot: {x: 0, y: 0}
 --- !u!1001 &856140303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32794,7 +32810,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607, type: 3}
       propertyPath: pauseType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3157483472541429372, guid: caf9732433f4dc044845763962493607, type: 3}
       propertyPath: pauseMethod
@@ -57558,6 +57574,14 @@ PrefabInstance:
     - target: {fileID: 614046069948930681, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
       propertyPath: m_Name
       value: SpawnZone (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: maxEnemy
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: rounds.Array.size
+      value: 23
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}

@@ -21,9 +21,6 @@ public class InputControls : MonoBehaviour
         {
             GetLoad();
         }
-
-        joystick.isDesktop = true;
-
     }
 
     private void GetLoad()
