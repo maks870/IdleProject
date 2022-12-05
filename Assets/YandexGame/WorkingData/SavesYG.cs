@@ -10,7 +10,7 @@ namespace YG
         public string language = "ru";
         public int recordScore = 0;
         // public bool feedbackDone;
-        public bool promptDone;
+        public bool promptDone = true;
         public bool sound = true;
 
         public DataObject areaWeapon = new DataObject(new List<DataValue>() { new DataValue("areaDamage", 0), new DataValue("areaSlow", 0) });
