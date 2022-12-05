@@ -32343,7 +32343,7 @@ MonoBehaviour:
   newRecordUI: {fileID: 415880673}
   tipsPanel: {fileID: 418499954}
   rewardedButton: {fileID: 7753665903913634147}
-  leaderboardYG: {fileID: 0}
+  leaderboardYG: {fileID: 274762494218995872}
   endRoundEvent:
     m_PersistentCalls:
       m_Calls:
@@ -76027,29 +76027,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1258336354}
     m_Modifications:
+    - target: {fileID: 6759729122987043093, guid: 393137afd78171d428af27fd99ba6953, type: 3}
+      propertyPath: m_Text
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6759729123162567661, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6759729123162567661, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6759729123162567661, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 170
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6759729123162567661, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6759729123162567661, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 85
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6759729123162567661, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -17.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6759729124415291191, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: nameLB
@@ -76161,10 +76165,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6759729124415291195, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 393137afd78171d428af27fd99ba6953, type: 3}
+--- !u!114 &274762494218995872 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6759729124415291191, guid: 393137afd78171d428af27fd99ba6953, type: 3}
+  m_PrefabInstance: {fileID: 274762494218995871}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187494022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 423e13a42d313f948a13bcedae13febe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &354837934976070368
 Transform:
   m_ObjectHideFlags: 0
