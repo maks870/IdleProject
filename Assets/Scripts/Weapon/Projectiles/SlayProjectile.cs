@@ -27,5 +27,6 @@ public class SlayProjectile : Projectile
 
     public override void Dead()
     {
+        Destroy(gameObject);
     }
 }
