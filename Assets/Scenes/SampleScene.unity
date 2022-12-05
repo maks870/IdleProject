@@ -31316,7 +31316,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 62.391525, y: 0}
+  m_Offset: {x: 51, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -34168,7 +34168,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 46.72}
+  m_Offset: {x: 0, y: 37}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -54985,7 +54985,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -62.39153, y: 0}
+  m_Offset: {x: -51, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -57766,6 +57766,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 209265563}
     m_Modifications:
+    - target: {fileID: 614046069350134089, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 614046069350134089, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: m_Size.y
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 614046069350134094, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -32
+      objectReference: {fileID: 0}
     - target: {fileID: 614046069948930680, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -57821,6 +57833,50 @@ PrefabInstance:
     - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
       propertyPath: rounds.Array.data[0].countEnemy
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: rounds.Array.data[0].spawnEnemies.Array.data[0].pref
+      value: 
+      objectReference: {fileID: 2351663781930858432, guid: 1100b7ba66b0a5d4eb39c806834b8965, type: 3}
+    - target: {fileID: 614046069948930683, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: rounds.Array.data[0].spawnEnemies.Array.data[1].pref
+      value: 
+      objectReference: {fileID: 8090365220817514843, guid: 015003747980c70498c029412706096b, type: 3}
+    - target: {fileID: 614046070107127076, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: m_Size.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 614046070107127076, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: m_Size.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 614046070107127077, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 614046070272029432, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 614046070272029435, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: m_Size.x
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 614046070272029435, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: m_Size.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 614046071085003570, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 614046071085003570, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: m_Size.y
+      value: 42
+      objectReference: {fileID: 0}
+    - target: {fileID: 614046071085003571, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 32
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41df6c4f7815e7747ba30823738db8a0, type: 3}
@@ -66664,7 +66720,7 @@ GameObject:
   - component: {fileID: 1785901776}
   - component: {fileID: 1785901775}
   m_Layer: 0
-  m_Name: DestroyUpDown
+  m_Name: DestroyZoneDown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -66698,7 +66754,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -46.72}
+  m_Offset: {x: 0, y: -37}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}

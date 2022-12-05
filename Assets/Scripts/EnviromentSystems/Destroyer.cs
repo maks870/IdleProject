@@ -13,8 +13,6 @@ public class Destroyer : MonoBehaviour
             enemy.transform.position = SpawnPosition();
         }
 
-       
-
         if (collision.GetComponent<Projectile>() != null)
         {
             collision.GetComponent<Projectile>().Dead();
