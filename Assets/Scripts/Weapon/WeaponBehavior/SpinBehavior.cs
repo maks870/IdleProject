@@ -54,11 +54,12 @@ public class SpinBehavior : Behavior, IUpgradeble
 
     private void TurnOn()
     {
+        isSpinActive = true;
+        Spin();
         foreach (GameObject spin in spinList)
         {
             spin.gameObject.SetActive(true);
         }
-        isSpinActive = true;
     }
 
     private void TurnOff()
