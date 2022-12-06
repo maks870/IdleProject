@@ -76033,31 +76033,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6759729123162567661, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6759729123162567661, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6759729123162567661, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 6759729123162567661, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 6759729123162567661, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 6759729123162567661, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -17.5
       objectReference: {fileID: 0}
     - target: {fileID: 6759729124415291191, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: nameLB
-      value: Leaderboard
+      value: Gold
       objectReference: {fileID: 0}
     - target: {fileID: 6759729124415291191, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: quantityTop
@@ -76165,7 +76165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6759729124415291195, guid: 393137afd78171d428af27fd99ba6953, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 393137afd78171d428af27fd99ba6953, type: 3}

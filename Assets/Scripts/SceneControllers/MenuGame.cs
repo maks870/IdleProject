@@ -71,7 +71,7 @@ public class MenuGame : Menu
         {
             newRecordUI.gameObject.SetActive(true);
             YandexGame.savesData.recordScore = CoinCollector.instance.CollectedGold;
-            YandexGame.NewLeaderboardScores("Leaderboard", CoinCollector.instance.CollectedGold);
+            leaderboardYG.NewScore(CoinCollector.instance.CollectedGold);
             leaderboardYG?.UpdateLB();
         }
 
